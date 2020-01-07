@@ -3,6 +3,29 @@ import UserGrid from '../UserGrid/UserGrid';
 import './GameBoard.css';
 
 class GameBoard extends React.Component {
+
+  /*
+  
+    export object = {
+        hits
+        misses
+        our Ships
+    }
+
+    import object = {
+        our hits 
+        our misses
+        opponents hits/misses
+        our ships
+        whose turn
+    }
+
+  */ 
+
+
+  /*
+        Add opponents hits/misses to state
+  */
   state = {
     moves: [],
     ships: [],

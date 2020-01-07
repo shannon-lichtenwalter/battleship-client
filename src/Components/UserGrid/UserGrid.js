@@ -29,6 +29,43 @@ class UserGrid extends React.Component{
         })
       }
 
+    findMyIndex=(letter, num)=>{
+        let temp = 0;
+        switch(letter){
+            case('A'):
+                temp = num
+                break;
+            case('B'):
+                temp = num+10
+                break; 
+            case('C'):
+                temp = num+20
+                break;
+            case('D'):
+                temp = num+30
+                break;
+            case('E'):
+                temp = num+40
+                break;
+            case('F'):
+                temp = num+50
+                break;
+            case('G'):
+                temp = num+60
+                break;
+            case('H'):
+                temp = num+70
+                break;
+            case('I'):
+                temp = num+80
+                break;
+            case('J'):
+                temp = num+90
+                break;
+        }
+        return temp
+    }
+
     handleRenderGrid = () => {
         let counter = 0;
         //setting the rows and columns of the gameboard grid
@@ -50,7 +87,8 @@ class UserGrid extends React.Component{
               }
               counter++
               return <Cell key={letter + num} 
-                id={letter+num} 
+                id={letter + num}
+                idNumber={this.findMyIndex(letter,num)} 
                 x={num} 
                 y ={letter} 
                 handleSelectTarget={this.handleSelectTarget} 

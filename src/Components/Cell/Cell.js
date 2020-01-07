@@ -2,11 +2,17 @@ import React from 'react';
 import './Cell.css';
 
 class Cell extends React.Component {
-state = {
-  x: this.props.x,
-  y: this.props.y,
-  occupied: null,
-  hasBeenShot: null,
+
+constructor(props){
+  super(props);
+    this.state = {
+      x: this.props.x,
+      y: this.props.y,
+      occupied: null,
+      hasBeenShot: null,
+      index: this.findMyIndex,  
+  }
+  //this.findMyIndex = this.findMyIndex.bind(this)
 }
 
 determineClassName = () => {
