@@ -30,7 +30,6 @@ determineClassName = () => {
 }
 
 canCellBeClicked = () => {
-  console.log('here');
   if(this.props.hits && this.props.hits.includes(this.props.id)){
     return false;
   }
@@ -46,7 +45,6 @@ canCellBeClicked = () => {
 }
 
 handleClick = () => {
-  console.log('yes');
   let click = this.canCellBeClicked();
   if(click){
     this.props.handleSelectTarget(this.props.id, this.props.idNumber)
@@ -54,8 +52,6 @@ handleClick = () => {
 }
 
   render () {
-
-    //console.log(this.props.id)
     return (
       //Adding in an id of label for the cells that are not part of the 
       //gameplay but are the labels for the board.

@@ -61,7 +61,6 @@ class UserGrid extends React.Component {
     }
 
     handleCheckValue = (value, idNum) => {
-        console.log('first' + this.state.boat.length);
         if(this.state.boat.length === 0){
             this.setState({
                 boat: [{value, idNum}]
