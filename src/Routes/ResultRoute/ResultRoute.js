@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Result from '../../Componenets/Result/Result';
+import Result from '../../Components/Result/Result';
 
 export default class ResultRoute extends Component {
   render() {

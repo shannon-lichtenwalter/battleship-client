@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Gameroom from '../../Componenets/Gameroom/Gameroom';
+import Gameroom from '../../Components/Gameroom/Gameroom';
 
 export default class GameroomRoute extends Component {
   render() {
