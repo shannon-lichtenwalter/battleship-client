@@ -84,8 +84,10 @@ class GameBoard extends React.Component {
             return <Cell key={letter} id={letter} label={true}/>
           }
           return <Cell key={letter + num} 
-            id={letter + num} x={num} 
-            y ={letter} handleSelectTarget={this.handleSelectTarget} 
+            id={letter + num} 
+            x={num} 
+            y ={letter} 
+            handleSelectTarget={this.handleSelectTarget} 
             selected={this.state.selected}
             hits={this.state.hits}
             misses={this.state.misses}/>
