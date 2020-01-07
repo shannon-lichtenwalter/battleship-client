@@ -1,5 +1,5 @@
 import React from 'react';
-import Cell from '../Cell/Cell';
+import UserGrid from '../UserGrid/UserGrid';
 import './GameBoard.css';
 
 class GameBoard extends React.Component {
@@ -14,12 +14,12 @@ class GameBoard extends React.Component {
     misses: [],
   }
 
-  handleSelectTarget = (value) => {
-    this.setState({
-      selected: value,
-      message: null,
-    })
-  }
+  // handleSelectTarget = (value) => {
+  //   this.setState({
+  //     selected: value,
+  //     message: null,
+  //   })
+  // }
 
   checkForHits = () => {
     let result = 'miss';
@@ -66,43 +66,44 @@ class GameBoard extends React.Component {
 
 
 
-  handleRenderGrid = () => {
-    //setting the rows and columns of the gameboard grid
-    let y= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    let x = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
-    //map over the letters and for each letter return a 'column' div.
-    //each 'column' div will have a style of 'display:inline-block' so that the
-    // columns will align on the grid.
-    return y.map((num, index) => {
-      return (
-      <div key= {index} className='column'> 
-      {/* These cells will be the top row of the grid and will have a letter for each cell*/}
-      <Cell id={num} label={true} />
-        {x.map((letter, index) => {
-          if(num === 0){
-            // these cells will be the most left coulumn and will have the numbers listed in each cell.
-            return <Cell key={letter} id={letter} label={true}/>
-          }
-          return <Cell key={letter + num} 
-            id={letter + num} 
-            x={num} 
-            y ={letter} 
-            handleSelectTarget={this.handleSelectTarget} 
-            selected={this.state.selected}
-            hits={this.state.hits}
-            misses={this.state.misses}/>
-          })
-        }
-      </div>
-    )
-  })
-}
+//   handleRenderGrid = () => {
+//     //setting the rows and columns of the gameboard grid
+//     let y= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//     let x = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+//     //map over the letters and for each letter return a 'column' div.
+//     //each 'column' div will have a style of 'display:inline-block' so that the
+//     // columns will align on the grid.
+//     return y.map((num, index) => {
+//       return (
+//       <div key= {index} className='column'> 
+//       {/* These cells will be the top row of the grid and will have a letter for each cell*/}
+//       <Cell id={num} label={true} />
+//         {x.map((letter, index) => {
+//           if(num === 0){
+//             // these cells will be the most left coulumn and will have the numbers listed in each cell.
+//             return <Cell key={letter} id={letter} label={true}/>
+//           }
+//           return <Cell key={letter + num} 
+//             id={letter + num} 
+//             x={num} 
+//             y ={letter} 
+//             handleSelectTarget={this.handleSelectTarget} 
+//             selected={this.state.selected}
+//             hits={this.state.hits}
+//             misses={this.state.misses}/>
+//           })
+//         }
+//       </div>
+//     )
+//   })
+// }
 
   render () {
     return (
       <>
         <div className='grid'>
-          {this.handleRenderGrid()}
+          {/* {this.handleRenderGrid()} */}
+          <UserGrid />
         </div>
         <h2 className='message'>{this.state.message && this.state.message} </h2>
         <h3>Select your target</h3>

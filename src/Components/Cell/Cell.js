@@ -48,6 +48,8 @@ handleClick = () => {
 }
 
   render () {
+
+    //console.log(this.props.id)
     return (
       //Adding in an id of label for the cells that are not part of the 
       //gameplay but are the labels for the board.
