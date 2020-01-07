@@ -49,7 +49,7 @@ handleClick = () => {
   console.log('yes');
   let click = this.canCellBeClicked();
   if(click){
-    this.props.handleSelectTarget(this.props.id)
+    this.props.handleSelectTarget(this.props.id, this.props.idNumber)
   }
 }
 
