@@ -1,0 +1,10 @@
+.UserGrid{
+    display:flex;
+    flex-direction: row;
+}
+
+h2{
+    display:block;
+    max-width: 25vw;
+    font-size: 1em;
+}

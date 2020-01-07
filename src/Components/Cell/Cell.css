@@ -1,0 +1,23 @@
+.cell {
+  height: 1rem;
+  width: 1rem;
+  background-color: grey;
+  margin: 2px;
+  font-size: 1vw;
+}
+
+#label {
+  background-color: rgb(43, 162, 236);
+}
+
+.selected {
+  background-color: red;
+}
+
+.hit {
+  background-color: lightgreen
+}
+
+.miss {
+  background-color: black;
+}

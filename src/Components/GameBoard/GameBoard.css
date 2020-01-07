@@ -1,0 +1,11 @@
+/* .column{
+  display: inline-block;
+} */
+
+.grid {
+  display: flex;
+}
+
+.message {
+  color: red;
+}
