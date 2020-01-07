@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Landing from '../../Componenets/Landing/Landing';
+import Landing from '../../Components/Landing/Landing';
 
 export default class LandingRoute extends Component {
   render() {

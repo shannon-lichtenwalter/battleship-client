@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Dashboard from '../../Componenets/Dasehboard/Dashboard';
+import Dashboard from '../../Components/Dashboard/Dashboard';
 
 export default class DashboardRoute extends Component {
   render() {
