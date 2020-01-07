@@ -10,11 +10,12 @@ class UserGrid extends React.Component {
             selected: '',
             message: null,
             boat: [],
-            playerShips: [{ 'name': 'aircraftCarrier', 'length': 5, 'spaces': [] },
-            { 'name': 'battleship', 'length': 4, 'spaces': [] },
-            { 'name': 'cruiser', 'length': 3, 'spaces': [] },
-            { 'name': 'submarine', 'length': 3, 'spaces': [] },
-            { 'name': 'defender', 'length': 2, 'spaces': [] }]
+            counter: 0,
+            playerShips: [{ 'name': 'Aircraft Carrier', 'length': 5, 'spaces': [] },
+            { 'name': 'Battleship', 'length': 4, 'spaces': [] },
+            { 'name': 'Cruiser', 'length': 3, 'spaces': [] },
+            { 'name': 'Submarine', 'length': 3, 'spaces': [] },
+            { 'name': 'Defender', 'length': 2, 'spaces': [] }]
         }
     }
 
@@ -22,14 +23,45 @@ class UserGrid extends React.Component {
 
     }
 
+    //This function is called by the render. It will look at the counter value to determine
+    // if the user still needs to set their ship locations or if all the ship values have been set.
+    //counter was added to state in order to access the different ships, counter is incremeneted in a later function
+    //after a boat has been completely built.
+
     handleSetShips = () => {
-        if(this.state.playerShips[0].spaces.length ===0){
-            return `Please select cells for ${this.state.playerShips[0].name}`
+        if(this.state.counter > 4){
+            return `All Ships Have Been Set`
+        } else {
+            return `Please select cells for ${this.state.playerShips[this.state.counter].name}.
+        This ship is ${this.state.playerShips[this.state.counter].length} spaces long`
         }
+        
+    }
+
+    //This function is called by render simply as a visual tool for the user to see which cells they have selected so far
+    //for the respective boats. We may not need this later on, but is helpful to see which cells are representing the boat so far.
+    displayBoats = () => {
+        return this.state.playerShips.map((ship, index) => {
+            return <li key={index}>{ship.name} : {ship.spaces.length !== 0 ? ship.spaces.map(space => space.value + ', ') : 'ship not built yet'}</li>
+        })
+    }
+
+    //this function is used as a callback function after updating the boat values in state. this will allow us to check and see if the
+    //boat is finishe being built. if so it will update the playerShips in state with the values.
+    handleCheckBoatLength = () => {
+        if(this.state.boat.length === this.state.playerShips[this.state.counter].length){
+            let currentShips = this.state.playerShips;
+            currentShips[this.state.counter].spaces = this.state.boat
+            this.setState({
+                playerShips: currentShips,
+                counter: this.state.counter + 1,
+                boat: [],
+            })
+        } 
     }
 
     handleCheckValue = (value, idNum) => {
-        console.log(idNum);
+        console.log('first' + this.state.boat.length);
         if(this.state.boat.length === 0){
             this.setState({
                 boat: [{value, idNum}]
@@ -37,36 +69,39 @@ class UserGrid extends React.Component {
         }
         else {
             let lastIdNum = this.state.boat[this.state.boat.length-1].idNum;
-            console.log(lastIdNum)
             if(lastIdNum % 10 === 0 && idNum === lastIdNum + 1){
                 return
             }
             if((lastIdNum - 1) % 10 === 0 && idNum === lastIdNum -1 ){
                 return
             }
-            
+
             if(this.state.boat.length === 1) {
                 if (lastIdNum + 1 === idNum 
                 || lastIdNum -1 === idNum 
                 || lastIdNum + 10 === idNum 
                 || lastIdNum -10 === idNum){
+                    //After setting state with a new boat value we have a callback function that checks the length of the
+                    // boat that is currently being built and compares it to what the length of that model boat should be to determine if the boat is fully built yet
                     this.setState({
                         boat:[...this.state.boat, {value, idNum}]
-                    })
+                    }, () => this.handleCheckBoatLength())
+            }
+            } else {
+            //this logic in the else statement is incorrect and not functional for building the boats. This is just to test the setting ships
+            //functionality. After setting state with a new boat value we have a callback function that checks the length of the
+            // boat that is currently being built and compares it to what the length of that model boat should be to determine if the boat is fully built yet
+            this.setState({
+                boat:[...this.state.boat, {value, idNum}]
+            }, () => this.handleCheckBoatLength())
             }
         }
-
-
-        }
-
-
     }
 
     handleSelectTarget = (value, idNum) => {
-        this.handleCheckValue(value, idNum);
+        this.handleCheckValue(value, idNum); 
         this.setState({
             selected: value,
-            //boat: [...this.state.boat, value],
             message: null,
         })
     }
@@ -153,6 +188,7 @@ class UserGrid extends React.Component {
                     {this.handleRenderGrid()}
                 </div>
                 <h2>{this.handleSetShips()} </h2>
+                <h3>{this.displayBoats()}</h3>
             </div>
 
         )
