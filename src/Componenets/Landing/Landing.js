@@ -6,7 +6,7 @@ export default class Landing extends Component {
 
   render() {
     return (
-      <div className='Landing'>
+      <div className='landing'>
         <h1>Battleship</h1>
         <button>
           <Link to='/login'>

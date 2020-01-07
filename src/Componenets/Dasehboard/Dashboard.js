@@ -6,7 +6,7 @@ export default class Dashboard extends Component {
 
   render() {
     return (
-      <div className='Dashboard'>
+      <div className='dashboard'>
         <h1>Statuses</h1>
         
         <div className='stats'>
@@ -23,7 +23,7 @@ export default class Dashboard extends Component {
           <p># / #</p>
         </div>
 
-        <div className='D-button'>
+        <div className='d-button'>
           <button>
             <Link to='/ai'>
               AI

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-route-dom';
+import { Switch } from 'react-router-dom';
 import './App.css';
 
 /* import route js files */
-import GameroomRoute from './Routes/GameroomRoute/GameroomRoute';
+//import GameroomRoute from './Routes/GameroomRoute/GameroomRoute';
 import HelpRoute from './Routes/HelpRoute/HelpRoute';
 import LandingRoute from './Routes/LandingRoute/LandingRoute';
 import LoginRoute from './Routes/LoginRoute/LoginRoute';
 import PrivateOnlyRoute from './Componenets/PrivateOnlyRoute/PrivateOnlyRoute';
 import PublicOnlyRoute from './Componenets/PublicOnlyRoute/PublicOnlyRoute';
-import ResultRoute from './Routes/ResultRoute/ResultRoute';
+//import ResultRoute from './Routes/ResultRoute/ResultRoute';
 import SettingRoute from './Routes/SettingRoute/SettingRoute';
 import SignupRoute from './Routes/SignupRoute/SignupRoute';
 import DashboardRoute from './Routes/DashboardRoute/DashboardRoute';
@@ -18,10 +18,10 @@ export default class App extends Component {
   
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <main>
           <Switch>
-          <PublicOnlyRoute
+            <PublicOnlyRoute
               exact
               path={'/'}
               component={LandingRoute}
@@ -36,10 +36,20 @@ export default class App extends Component {
               path={'/login'}
               component={LoginRoute}
             />
+            <PublicOnlyRoute
+              exact
+              path={'/help'}
+              component={HelpRoute}
+            />
             <PrivateOnlyRoute
               exact
               path={'/dashboard'}
               component={DashboardRoute}
+            />
+            <PrivateOnlyRoute
+              exact
+              path={'/setting'}
+              component={SettingRoute}
             />
           </Switch>
         </main>
