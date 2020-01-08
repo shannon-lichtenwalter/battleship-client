@@ -76,6 +76,15 @@ export default class Signup extends Component {
           />
         </div>
 
+        <div>
+          <Label htmlFor='signup-email-input'>Email<Required /></Label>
+          <Input
+            id='signup-email-input'
+            name='email'
+            required
+          />
+        </div>
+
         <Button type='submit'>Sign up</Button>
         {' '}
 
