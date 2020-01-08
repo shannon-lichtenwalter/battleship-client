@@ -10,10 +10,10 @@ class UserGrid extends React.Component{
             selected: '',
             message: null,
             playerShips:[{'name':'aircraftCarrier', 'length':5, 'spaces':[]},
-                         {'name':'battleship', 'length':4, 'spaces':[]},
-                         {'name':'cruiser', 'length':3, 'spaces':[]},
-                         {'name':'submarine', 'length':3, 'spaces':[]},
-                         {'name':'defender', 'length':2, 'spaces':[]}]
+                        {'name':'battleship', 'length':4, 'spaces':[]},
+                        {'name':'cruiser', 'length':3, 'spaces':[]},
+                        {'name':'submarine', 'length':3, 'spaces':[]},
+                        {'name':'defender', 'length':2, 'spaces':[]}]
         }
     }
 
@@ -24,10 +24,10 @@ class UserGrid extends React.Component{
 
     handleSelectTarget = (value) => {
         this.setState({
-          selected: value,
-          message: null,
+            selected: value,
+            message: null,
         })
-      }
+    }
 
     findMyIndex=(letter, num)=>{
         let temp = 0;
@@ -76,17 +76,17 @@ class UserGrid extends React.Component{
         // columns will align on the grid.
         return y.map((num, index) => {
             //counter++
-          return (
-          <div key= {index} className='column'> 
-          {/* These cells will be the top row of the grid and will have a letter for each cell*/}
-          <Cell id={num} label={true} />
+            return (
+            <div key= {index} className='column'> 
+            {/* These cells will be the top row of the grid and will have a letter for each cell*/}
+            <Cell id={num} label={true} />
             {x.map((letter, index) => {
-              if(num === 0){
+                if(num === 0){
                 // these cells will be the most left coulumn and will have the numbers listed in each cell.
                 return <Cell key={letter} id={letter} label={true}/>
-              }
-              counter++
-              return <Cell key={letter + num} 
+            }
+            counter++
+            return <Cell key={letter + num} 
                 id={letter + num}
                 idNumber={this.findMyIndex(letter,num)} 
                 x={num} 
@@ -96,15 +96,14 @@ class UserGrid extends React.Component{
                 //hits={this.state.hits}
                 //misses={this.state.misses}
                 />
-              })
+                })
             }
-          </div>
+        </div>
         )
-      })
-    }
+    })
+}
 
     render(){
-
         return(
             <div className='UserContainer'>
                 <div className='UserGrid'>
@@ -115,6 +114,8 @@ class UserGrid extends React.Component{
 
         )
     }
-}
+};
 
 export default UserGrid;
+
+

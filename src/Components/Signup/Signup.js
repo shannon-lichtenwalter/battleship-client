@@ -1,16 +1,56 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Input, Required, Label } from '../Form/Form';
+import AuthApiService from '../../Services/auth-api-service';
+import Button from '../Button/Button';
 import './Signup.css';
 
 export default class Signup extends Component {
+  static defaultProps = {
+    onRegistrationSuccess: () => { }
+  };
+
+  state = { error: null };
+  firstInput = React.createRef();
+
+  handleSubmit = ev => {
+    ev.preventDefault()
+    const { name, username, password } = ev.target
+
+    AuthApiService.postUser({
+      name: name.value,
+      username: username.value,
+      password: password.value,
+    })
+      .then(user => {
+        name.value = ''
+        username.value = ''
+        password.value = ''
+        this.props.onRegistrationSuccess()
+      })
+      .catch(res => {
+        this.setState({ error: res.error })
+      })
+  };
+
+  componentDidMount() {
+    console.log(this.firstInput)
+    this.firstInput.current.focus()
+  };
 
   render() {
+    const { error } = this.state;
     return (
-      <form className='signupform'>
+      <form className='signupform' onSubmit={this.handleSubmit}>
         <h1>Sign up</h1>
+        <div role='alert'>
+          { error && <p>{ error }</p>}
+        </div>
+
         <div>
-          <label htmlFor='signup-name-input'>Name</label>
-          <input
+          <Label htmlFor='signup-name-input'>Name<Required /></Label>
+          <Input
+            ref={this.firstInput}
             id='signup-name-input'
             name='name'
             required
@@ -18,8 +58,8 @@ export default class Signup extends Component {
         </div>
 
         <div>
-          <label htmlFor='signup-username-input'>Userame</label>
-          <input
+          <Label htmlFor='signup-username-input'>Userame<Required /></Label>
+          <Input
             id='signup-username-input'
             name='username'
             required
@@ -27,20 +67,23 @@ export default class Signup extends Component {
         </div>
 
         <div>
-          <label htmlFor='signup-password-input'>Password</label>
-          <input
+          <Label htmlFor='signup-password-input'>Password<Required /></Label>
+          <Input
             id='signup-password-input'
             name='password'
+            type='password'
             required
           />
         </div>
 
-        <button type='submit'>Sign up</button>
-        <button>
+        <Button type='submit'>Sign up</Button>
+        {' '}
+
+        <Button>
           <Link to='/guest'>
             Guest
           </Link>
-        </button> <br />
+        </Button> <br />
 
         <Link to='/login'>Already have an account?</Link>
       </form>

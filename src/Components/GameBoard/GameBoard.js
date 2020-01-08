@@ -10,7 +10,7 @@ class GameBoard extends React.Component {
         hits
         misses
         our Ships
-    }
+    };
 
     import object = {
         our hits 
@@ -18,13 +18,12 @@ class GameBoard extends React.Component {
         opponents hits/misses
         our ships
         whose turn
-    }
-
+    };
   */ 
 
 
   /*
-        Add opponents hits/misses to state
+  Add opponents hits/misses to state
   */
   state = {
     moves: [],
@@ -35,7 +34,7 @@ class GameBoard extends React.Component {
     message: null,
     hits: [],
     misses: [],
-  }
+  };
 
   // handleSelectTarget = (value) => {
   //   this.setState({
@@ -61,7 +60,7 @@ class GameBoard extends React.Component {
       }  
     })
     return result;
-  }
+  };
 
   checkForMisses = (result) => {
     if(result !== 'hit'){
@@ -72,8 +71,8 @@ class GameBoard extends React.Component {
         selected: null,
         moves:[...this.state.moves, this.state.selected]
       })
-  }
-}
+    }
+  };
 
   handleFire = (event) => {
     event.preventDefault();
@@ -85,9 +84,7 @@ class GameBoard extends React.Component {
       let result = this.checkForHits();
       this.checkForMisses(result);
     }
-  }
-
-
+  };
 
 //   handleRenderGrid = () => {
 //     //setting the rows and columns of the gameboard grid
@@ -136,7 +133,9 @@ class GameBoard extends React.Component {
         </form>
       </>
     )
-  }
-}
+  };
+};
 
 export default GameBoard;
+
+
