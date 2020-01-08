@@ -44,7 +44,7 @@ export default class Login extends Component {
 
   render() {
     return (
-      <form className='loginform'>
+      <form className='loginform' onSubmit={event => this.handleSubmit(event)}>
         <div>
           <Label htmlFor='login-username-input'>Username<Required /></Label>
           <Input
