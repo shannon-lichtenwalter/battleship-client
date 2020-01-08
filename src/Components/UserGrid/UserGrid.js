@@ -8,19 +8,23 @@ class UserGrid extends React.Component {
         super(props);
         this.state = {
             selected: '',
+            currentId:'',
             message: null,
             boat: [],
             playerShips: [{ 'name': 'aircraftCarrier', 'length': 5, 'spaces': [] },
             { 'name': 'battleship', 'length': 4, 'spaces': [] },
             { 'name': 'cruiser', 'length': 3, 'spaces': [] },
             { 'name': 'submarine', 'length': 3, 'spaces': [] },
-            { 'name': 'defender', 'length': 2, 'spaces': [] }]
+            { 'name': 'defender', 'length': 2, 'spaces': [] }],
+            shipOccupied:[],
+            currentShipAlignment:null,
+            shipTileLaid:false,
         }
     }
 
-    componentDidMount() {
-
-    }
+    // componentDidMount(){
+    //     this.refs.c.checkForShipTile()
+    // }
 
     handleSetShips = () => {
         if(this.state.playerShips[0].spaces.length ===0){
@@ -28,38 +32,128 @@ class UserGrid extends React.Component {
         }
     }
 
+    // updateShipT=(idNum)=>{
+    //     this.refs.c.updateShipTile(idNum)
+    // }   
+
     handleCheckValue = (value, idNum) => {
         console.log(idNum);
+        if(this.state.boat.length < 5){
         if(this.state.boat.length === 0){
             this.setState({
-                boat: [{value, idNum}]
+                boat: [{value, idNum}],
+                shipOccupied:[idNum],
+                shipTileLaid:true,
             })
+            //this.refs.c.updateShipTile(idNum)
+            //this.updateShipT(idNum)
         }
         else {
-            let lastIdNum = this.state.boat[this.state.boat.length-1].idNum;
-            console.log(lastIdNum)
-            if(lastIdNum % 10 === 0 && idNum === lastIdNum + 1){
-                return
-            }
-            if((lastIdNum - 1) % 10 === 0 && idNum === lastIdNum -1 ){
-                return
-            }
-            
-            if(this.state.boat.length === 1) {
-                if (lastIdNum + 1 === idNum 
-                || lastIdNum -1 === idNum 
-                || lastIdNum + 10 === idNum 
-                || lastIdNum -10 === idNum){
-                    this.setState({
-                        boat:[...this.state.boat, {value, idNum}]
-                    })
+            let lastIdNum = idNum;
+            let firstIdNum = this.state.shipOccupied[0]
+            let validHRangeHigh = 5 + firstIdNum > 100 ? 0 : 5 + firstIdNum;
+            let validHRangeLow = (-5) + firstIdNum < 0 ? 0 : (-5) + firstIdNum;
+            let validVRangeHigh = 50 + firstIdNum > 100 ? 100 : 50 + firstIdNum;
+            let validVRangeLow = (-50) + firstIdNum < 0 ? 0 : (-50) + firstIdNum;
+            let firstDigit = this.state.boat[0].value.charAt(0)
+            let firstCurrentDigit = value.charAt(0)
+            //console.log(firstDigit.charAt(0))
+            //console.log(firstCurrentDigit.charAt(0))
+            if(lastIdNum < validHRangeHigh && lastIdNum > validHRangeLow){
+                if(((lastIdNum == firstIdNum + 1 ) || (lastIdNum == firstIdNum - 1)) && 
+                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
+                (Math.max(...this.state.shipOccupied) - lastIdNum < 5) &&
+                (this.state.currentShipAlignment !== 'vertical' )){
+                    if(firstCurrentDigit.charAt(0)==firstDigit.charAt(0)){
+                    //if((lastIdNum-1) % 10 !== 0){
+                        this.setState({
+                            boat:[...this.state.boat, {value, idNum}],
+                            shipOccupied:[...this.state.shipOccupied, idNum],
+                            currentShipAlignment:'horizontal'
+                        })                  
+                    } //this.state.currentShipAlignment !== 'horizontal'
+                } else 
+                if((lastIdNum == firstIdNum + 2 || lastIdNum == firstIdNum - 2) && 
+                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
+                (Math.max(...this.state.shipOccupied) - lastIdNum < 5) && 
+                (this.state.currentShipAlignment !== 'vertical' ) ) {
+                    if(firstCurrentDigit.charAt(0)==firstDigit.charAt(0)){
+                            this.setState({
+                                boat:[...this.state.boat, {value, idNum}],
+                                shipOccupied:[...this.state.shipOccupied, idNum],
+                                currentShipAlignment:'horizontal'
+                            })
+                        }
+                } else 
+                if((lastIdNum == firstIdNum + 3 || lastIdNum == firstIdNum - 3) && 
+                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
+                (Math.max(...this.state.shipOccupied) - lastIdNum < 5) && 
+                (this.state.currentShipAlignment !== 'vertical' )) {
+                    if(firstCurrentDigit.charAt(0)==firstDigit.charAt(0)){
+                            this.setState({
+                                boat:[...this.state.boat, {value, idNum}],
+                                shipOccupied:[...this.state.shipOccupied, idNum],
+                                currentShipAlignment:'horizontal'
+                            })
+                        }
+                } else 
+                if((lastIdNum == firstIdNum + 4 || lastIdNum == firstIdNum - 4) && 
+                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
+                (Math.max(...this.state.shipOccupied) - lastIdNum < 5) && 
+                (this.state.currentShipAlignment !== 'vertical' )) {
+                    if(firstCurrentDigit.charAt(0)==firstDigit.charAt(0)){
+                            this.setState({
+                                boat:[...this.state.boat, {value, idNum}],
+                                shipOccupied:[...this.state.shipOccupied, idNum],
+                                currentShipAlignment:'horizontal'
+                            })
+                        }
+                    }
+            } else if(lastIdNum < validVRangeHigh && lastIdNum > validVRangeLow){
+                if(((lastIdNum == firstIdNum + 10 ) || (lastIdNum == firstIdNum - 10)) &&
+                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
+                (Math.max(...this.state.shipOccupied) - lastIdNum < 50) &&
+                (this.state.currentShipAlignment !== 'horizontal')){
+                        this.setState({
+                            boat:[...this.state.boat, {value, idNum}],
+                            shipOccupied:[...this.state.shipOccupied, idNum],
+                            currentShipAlignment:'vertical'
+                        })
+                } else 
+                if((lastIdNum == firstIdNum + 20 || lastIdNum == firstIdNum - 20) && 
+                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
+                (Math.max(...this.state.shipOccupied) - lastIdNum < 50) && 
+                (this.state.currentShipAlignment !== 'horizontal')) {
+                        this.setState({
+                            boat:[...this.state.boat, {value, idNum}],
+                            shipOccupied:[...this.state.shipOccupied, idNum],
+                            currentShipAlignment:'vertical'
+                        })
+                } else 
+                if((lastIdNum == firstIdNum + 30 || lastIdNum == firstIdNum - 30) && 
+                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
+                (Math.max(...this.state.shipOccupied) - lastIdNum < 50) && 
+                (this.state.currentShipAlignment !== 'horizontal')) {
+                        this.setState({
+                            boat:[...this.state.boat, {value, idNum}],
+                            shipOccupied:[...this.state.shipOccupied, idNum],
+                             currentShipAlignment:'vertical'
+                        })
+                } else 
+                if((lastIdNum == firstIdNum + 40 || lastIdNum == firstIdNum - 40) && 
+                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
+                (Math.max(...this.state.shipOccupied) - lastIdNum < 50) && 
+                (this.state.currentShipAlignment !== 'horizontal')) {
+                        this.setState({
+                            boat:[...this.state.boat, {value, idNum}],
+                            shipOccupied:[...this.state.shipOccupied, idNum],
+                            currentShipAlignment:'vertical'
+                        })
+                }
             }
         }
-
-
-        }
-
-
+    }
+        //this.refs.c.checkForShipTile()
     }
 
     handleSelectTarget = (value, idNum) => {
@@ -68,7 +162,10 @@ class UserGrid extends React.Component {
             selected: value,
             //boat: [...this.state.boat, value],
             message: null,
+            currentId: idNum
+            //selected: idNum
         })
+        //this.handleCheckValue(value, idNum);
     }
 
     findMyIndex = (letter, num) => {
@@ -135,6 +232,9 @@ class UserGrid extends React.Component {
                             y={letter}
                             handleSelectTarget={this.handleSelectTarget}
                             selected={this.state.selected}
+                            shipTiles={this.state.shipOccupied}
+                            currentId={this.state.currentId}
+                            ref="c"
                         //hits={this.state.hits}
                         //misses={this.state.misses}
                         />
