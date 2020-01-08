@@ -48,17 +48,7 @@ export default class Signup extends Component {
         </div>
 
         <div>
-          <Label htmlFor='signup-name-input'>Name<Required /></Label>
-          <Input
-            ref={this.firstInput}
-            id='signup-name-input'
-            name='name'
-            required
-          />
-        </div>
-
-        <div>
-          <Label htmlFor='signup-username-input'>Userame<Required /></Label>
+          <Label htmlFor='signup-username-input'>Username<Required /></Label>
           <Input
             id='signup-username-input'
             name='username'
