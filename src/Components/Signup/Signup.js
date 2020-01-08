@@ -34,7 +34,7 @@ export default class Signup extends Component {
   };
 
   componentDidMount() {
-    console.log(this.firstInput)
+    //console.log(this.firstInput)
     this.firstInput.current.focus()
   };
 
@@ -42,7 +42,6 @@ export default class Signup extends Component {
     const { error } = this.state;
     return (
       <form className='signupform' onSubmit={this.handleSubmit}>
-        <h1>Sign up</h1>
         <div role='alert'>
           { error && <p>{ error }</p>}
         </div>
@@ -50,6 +49,7 @@ export default class Signup extends Component {
         <div>
           <Label htmlFor='signup-username-input'>Username<Required /></Label>
           <Input
+            ref={this.firstInput}
             id='signup-username-input'
             name='username'
             required

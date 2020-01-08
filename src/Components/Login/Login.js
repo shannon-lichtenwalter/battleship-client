@@ -45,7 +45,6 @@ export default class Login extends Component {
   render() {
     return (
       <form className='loginform'>
-        <h1>Login</h1>
         <div>
           <Label htmlFor='login-username-input'>Username<Required /></Label>
           <Input

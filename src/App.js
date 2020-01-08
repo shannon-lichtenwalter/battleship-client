@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 /* import route js files */
@@ -13,6 +13,7 @@ import PublicOnlyRoute from './Components/PublicOnlyRoute/PublicOnlyRoute';
 import SettingRoute from './Routes/SettingRoute/SettingRoute';
 import SignupRoute from './Routes/SignupRoute/SignupRoute';
 import DashboardRoute from './Routes/DashboardRoute/DashboardRoute';
+import NotFoundRoute from './Routes/NotFoundRoute/NotFoundRoute';
 
 export default class App extends Component {
   
@@ -50,6 +51,9 @@ export default class App extends Component {
               exact
               path={'/setting'}
               component={SettingRoute}
+            />
+            <Route
+              component={NotFoundRoute}
             />
           </Switch>
         </main>
