@@ -15,6 +15,10 @@ import SettingRoute from './Routes/SettingRoute/SettingRoute';
 import SignupRoute from './Routes/SignupRoute/SignupRoute';
 import DashboardRoute from './Routes/DashboardRoute/DashboardRoute';
 import NotFoundRoute from './Routes/NotFoundRoute/NotFoundRoute';
+import DeleteAccountRoute from './Routes/DeleteAccountRoute/DeleteAccountRoute';
+import PasswordChangeRoute from './Routes/PasswordChangeRoute/PasswordChangeRoute';
+import ResetAccountRoute from './Routes/ResetAccountRoute/ResetAccountRoute';
+import UsernameChangeRoute from './Routes/UsernameChangeRoute/UsernameChangeRoute';
 
 export default class App extends Component {
   
@@ -68,6 +72,27 @@ export default class App extends Component {
               path={'/gameroom'}
               component={GameroomRoute}
             />
+            <PrivateOnlyRoute
+              exact
+              path={'/deleteAccount'}
+              component={DeleteAccountRoute}
+            />
+            <PrivateOnlyRoute
+              exact
+              path={'/ResetAccount'}
+              component={ResetAccountRoute}
+            />
+            <PrivateOnlyRoute
+              exact
+              path={'/passwordChange'}
+              component={PasswordChangeRoute}
+            />
+            <PrivateOnlyRoute
+              exact
+              path={'/UsernameChange'}
+              component={UsernameChangeRoute}
+            />
+            
             <Route
               component={NotFoundRoute}
             />
