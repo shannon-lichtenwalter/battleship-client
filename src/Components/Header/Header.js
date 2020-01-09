@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import TokenService from '../../Services/token-service';
 import Button from '../Button/Button';
+import './Header.css'
 
 class Header extends Component {
 
