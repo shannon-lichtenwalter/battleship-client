@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
+import Footer from '../Footer/Footer';
 import './Landing.css';
 
 export default class Landing extends Component {
@@ -8,15 +10,13 @@ export default class Landing extends Component {
     return (
       <div className='landing'>
         <h1>Battleship</h1>
-        <button>
+        <Button>
           <Link to='/login'>
             Login
           </Link>
-        </button>
+        </Button>
 
-        {/* <footer>
-          Copyright © since 2020
-        </footer> */}
+        <Footer />
       </div>
     );
   };

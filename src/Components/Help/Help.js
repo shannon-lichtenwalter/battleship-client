@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Button from '../Button/Button';
+import Footer from '../Footer/Footer';
 import './Help.css';
 
 class Help extends Component {
@@ -9,7 +10,7 @@ class Help extends Component {
     return (
       <div className='help'>
         <h1>Help</h1>
-        <div>
+        <div className='helpIB'>
           <h2>Instructions</h2>
           <ul>
             <li>1. How to Play</li>
@@ -20,7 +21,7 @@ class Help extends Component {
           </ul>
         </div>
 
-        <div>
+        <div className='helpIB'>
           <h2>Bug Report</h2>
           <ul>
             <li>1. Contact Info</li>
@@ -35,10 +36,8 @@ class Help extends Component {
             Exit
           </Link>
         </Button>
-
-        <footer>
-          Copyright © since 2020
-        </footer>
+        
+        <Footer />
       </div>
     );
   };

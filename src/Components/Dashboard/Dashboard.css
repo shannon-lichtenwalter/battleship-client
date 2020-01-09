@@ -1,0 +1,24 @@
+header {
+  background-color: red;
+  display: flex;
+  justify-content: space-evenly;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  position: fixed;
+}
+
+footer {
+  margin-top: 3rem;
+}
+
+.stats {
+  margin-top: 5.5rem;
+}
+
+@media screen and (min-width: 1025px) {
+  .stats {
+    margin-top: 9.5rem;
+  }
+}

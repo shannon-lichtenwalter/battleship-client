@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Button from '../Button/Button';
+import Footer from '../Footer/Footer';
 import './Dashboard.css';
 //import TokenService from '../../Services/token-service';
 import Header from '../Header/Header';
@@ -13,6 +14,7 @@ class Dashboard extends Component {
         <Header />
         
         <div className='stats'>
+          <h1>Statues</h1>
           <h2>Win</h2>
           <p># times</p>
 
@@ -45,10 +47,7 @@ class Dashboard extends Component {
             </Link>
           </Button>
         </div>
-
-        <footer>
-          Copyright © since 2020
-        </footer>
+        <Footer />
       </div>
     );
   };

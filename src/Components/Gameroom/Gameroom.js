@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../Footer/Footer';
 import './Gameroom.css';
 
 export default class Gameroom extends Component {
@@ -16,9 +17,7 @@ export default class Gameroom extends Component {
           </Link>
         </button>
         
-        <footer>
-          Copyright © since 2020
-        </footer>
+        <Footer />
       </div>
     );
   };

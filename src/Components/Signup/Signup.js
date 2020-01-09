@@ -85,11 +85,9 @@ export default class Signup extends Component {
         </Button> <br />
 
         <Link to='/login'>Already have an account?</Link>
-      </form>
 
-      // <footer>
-      // Copyright © since 2020
-      // </footer>
+        
+      </form>
     );
   };
   

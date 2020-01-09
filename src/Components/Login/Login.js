@@ -85,10 +85,6 @@ class Login extends Component {
 
         <Link to='/signup'>Need to create an account?</Link>
       </form>
-
-      // <footer>
-      //   Copyright © since 2020
-      // </footer>
     );
   };
   

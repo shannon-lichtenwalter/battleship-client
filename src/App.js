@@ -23,7 +23,7 @@ export default class App extends Component {
       <div className="app">
         <main>
           <Switch>
-            <PublicOnlyRoute
+            <Route
               exact
               path={'/'}
               component={LandingRoute}

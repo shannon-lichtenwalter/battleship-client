@@ -8,13 +8,6 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <Button onClick={( ) => {
-          TokenService.clearAuthToken()
-          this.props.history.push('/login')
-        }}>
-          Logout
-        </Button>
-
         <Button>
           <Link to='/setting'>
             Setting
@@ -25,6 +18,13 @@ class Header extends Component {
           <Link to='/help'>
             Help
           </Link>
+        </Button>
+
+        <Button onClick={( ) => {
+          TokenService.clearAuthToken()
+          this.props.history.push('/login')
+        }}>
+          Logout
         </Button>
       </header>
       
