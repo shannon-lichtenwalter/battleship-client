@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import { Input, Required, Label } from '../Form/Form';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
-// import Footer from '../Footer/Footer';
+import Footer from '../Footer/Footer';
 
 class DeleteAccount extends Component {
   
@@ -17,6 +17,8 @@ class DeleteAccount extends Component {
             Done
           </Link>
         </Button>
+
+        <Footer />
       </div>
     )
   }
