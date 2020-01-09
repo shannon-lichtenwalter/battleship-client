@@ -15,13 +15,15 @@ import SettingRoute from './Routes/SettingRoute/SettingRoute';
 import SignupRoute from './Routes/SignupRoute/SignupRoute';
 import DashboardRoute from './Routes/DashboardRoute/DashboardRoute';
 import NotFoundRoute from './Routes/NotFoundRoute/NotFoundRoute';
+import Dashboard from './Components/Dashboard/Dashboard';
 
 export default class App extends Component {
   
   render() {
     return (
       <div className="app">
-        <GameBoard />
+        <Dashboard /> 
+        <GameBoard room={null}/>
         <main>
           <Switch>
             <PublicOnlyRoute
