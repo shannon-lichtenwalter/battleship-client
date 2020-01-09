@@ -1,5 +1,7 @@
 import React from 'react';
 import Cell from '../Cell/Cell';
+import gameMovesApiService from '../../Services/game-moves-api-service';
+import BattleShipContext from '../../Contexts/battleship-context';
 import './OpponentGrid.css';
 
 class OpponentGrid extends React.Component {
@@ -21,32 +23,26 @@ class OpponentGrid extends React.Component {
     }
   }
 
+  static contextType = BattleShipContext;
+
     handleSelectTarget = (value) => {
     this.setState({
       selected: value,
       message: null,
     })
   }
-//this function checks the opponent ships stored in state to see if a hit was made. This will need
-// to be refactored to check the database to see if a hit was made.
-  checkForHits = () => {
-    let result = 'miss';
-    this.state.opponentShips.forEach(ship => {
-      if(ship.spaces.includes(this.state.selected)){
-        this.setState({
-            result: 'hit',
-            message: `Direct Hit on the ${ship.name}!`,
-            hits: [...this.state.hits, this.state.selected],
-            selected: null,
-          })
-          result = 'hit'
-      }
-    })
-    return result;
+//changes the message displayed to the user if a hit was made
+  checkForHits = (result, ship) => {
+    if(result === 'hit'){
+      this.setState({
+        result: 'hit',
+        message: `Direct Hit on the ${ship}!`,
+        hits: [...this.state.hits, this.state.selected],
+        selected: null,
+      })
+    }
   }
-//this function checks to see if the result was a hit. If not it will return the miss message and store
-// the selected value in the state for misses. This will need
-// to be refactored to check the database to see if a hit/miss was made.
+//changes the message displayed to the user if a miss was made
   checkForMisses = (result) => {
     if(result !== 'hit'){
       this.setState({
@@ -57,7 +53,11 @@ class OpponentGrid extends React.Component {
       })
   }
 }
-//this will need to be refactored to check the database for hit/miss
+//this function makes sure a user has selected a target. If so, post request is 
+//made to the database to determine if it was a hit or a miss on the opponents' ships.
+//with the response from the database we call check for Hits and check for Misses which will update
+//what the user sees based on a hit or a miss.
+
   handleFire = (event) => {
     event.preventDefault();
     if(this.state.selected === null){
@@ -65,8 +65,11 @@ class OpponentGrid extends React.Component {
         message: 'Must Choose a Target'
       })
     }else {
-      let result = this.checkForHits();
-      this.checkForMisses(result);
+      gameMovesApiService.fireAtTarget(this.state.selected, this.context.gameId, this.context.playerNum)
+      .then(res => {
+        this.checkForHits(res.result, res.ship);
+        this.checkForMisses(res.result);
+      }).catch((e) => this.context.setError(e));
     }
   }
 
@@ -103,6 +106,8 @@ class OpponentGrid extends React.Component {
       case ('J'):
         temp = num + 90
         break;
+      default:
+        temp = num
     }
     return temp
   }
