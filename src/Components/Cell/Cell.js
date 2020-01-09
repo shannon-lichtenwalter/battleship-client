@@ -28,6 +28,7 @@ constructor(props){
 //   }
 //   this.checkForShipTile()
 // }
+<<<<<<< HEAD
 
 // updateShipTile=(value, selected)=>{
 //   console.log(value)
@@ -38,6 +39,18 @@ constructor(props){
 //   }
 // }
 
+=======
+
+// updateShipTile=(value, selected)=>{
+//   console.log(value)
+//   console.log(selected)
+//   //console.log(this.state.x + this.state.y)
+//   if(value === selected){
+//     this.setState({shipTile : true})
+//   }
+// }
+
+>>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
 determineClassName = () => {
   //console.log(this.props.selected)
   //console.log(this.props.id)
@@ -50,7 +63,11 @@ determineClassName = () => {
   } else
   if(this.props.shipTiles.length > 0){
       if (this.props.shipTiles.indexOf(this.props.idNumber) !== (-1)){
+<<<<<<< HEAD
          className = 'ship'
+=======
+        className = 'ship'
+>>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
       }
   //this.setState({shipTile:true})
   //} 
@@ -127,7 +144,9 @@ handleClick = () => {
         {this.props.id}
       </div>
     )
-  }
-}
+  };
+};
 
 export default Cell;
+
+
