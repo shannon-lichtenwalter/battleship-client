@@ -1,6 +1,20 @@
 import React from 'react';
 import UserGrid from '../UserGrid/UserGrid';
+import io from 'socket.io-client';
+import config from '../../config';
 import './GameBoard.css';
+
+const socket = io(config.URL, {
+  transportOptions: {
+    polling: {
+      extraHeaders: {
+        'Authorization' : 'Bearer thisismyjwt'
+      }
+    }
+  }
+  
+});
+
 
 class GameBoard extends React.Component {
 
@@ -85,6 +99,12 @@ class GameBoard extends React.Component {
       let result = this.checkForHits();
       this.checkForMisses(result);
     }
+
+
+
+    //testing sockets.
+    socket.emit('join_room', 'random')
+    socket.on('joined', data => console.log(data))
   }
 
 
