@@ -18,6 +18,7 @@ class UserGrid extends React.Component {
             { 'name': 'submarine', 'length': 3, 'spaces': [] },
             { 'name': 'defender', 'length': 2, 'spaces': [] }],
             shipOccupied:[],
+            allShipTilesOccupied:[],
             currentShipAlignment:null,
             shipTileLaid:false,
         }
@@ -41,8 +42,6 @@ class UserGrid extends React.Component {
         
     }
 
-<<<<<<< HEAD
-=======
     //this function is used as a callback function after updating the boat values in state. this will allow us to check and see if the
     //boat is finishe being built. if so it will update the playerShips in state with the values.
     handleCheckBoatLength = () => {
@@ -66,195 +65,150 @@ class UserGrid extends React.Component {
         })
     }
 
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
     // updateShipT=(idNum)=>{
     //     this.refs.c.updateShipTile(idNum)
     // }   
 
     handleCheckValue = (value, idNum) => {
         console.log(idNum);
-<<<<<<< HEAD
-        if(this.state.boat.length < 5){
-=======
-        if(this.state.boat.length < this.state.playerShips[this.state.counter].length){
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
-        if(this.state.boat.length === 0){
+        if(this.state.boat.length <= this.state.playerShips[this.state.counter].length){
+        if((this.state.boat.length === 0) && (this.state.shipTileLaid ===false)){
             this.setState({
                 boat: [{value, idNum}],
                 shipOccupied:[idNum],
                 shipTileLaid:true,
-<<<<<<< HEAD
-            })
-=======
+                allShipTilesOccupied:[idNum]
             }, () => this.handleCheckBoatLength())
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
             //this.refs.c.updateShipTile(idNum)
             //this.updateShipT(idNum)
-        }
-        else {
+        } 
+        else if((this.state.boat.length === 0 && this.state.shipTileLaid ===true)&&(this.state.allShipTilesOccupied.indexOf(idNum)==(-1)))
+        {
+            this.setState({
+                boat: [{value, idNum}],
+                shipOccupied:[idNum],
+                allShipTilesOccupied:[...this.state.allShipTilesOccupied, idNum]
+            }, () => this.handleCheckBoatLength())
+        } 
+        else
+        {
+            //console.log(this.state.playerShips[this.state.counter].spaces[0])
             let lastIdNum = idNum;
-            let firstIdNum = this.state.shipOccupied[0]
+            let firstIdNum = this.state.boat.length > 0 ? this.state.boat[0].idNum : idNum
             let validHRangeHigh = 5 + firstIdNum > 100 ? 0 : 5 + firstIdNum;
             let validHRangeLow = (-5) + firstIdNum < 0 ? 0 : (-5) + firstIdNum;
             let validVRangeHigh = 50 + firstIdNum > 100 ? 100 : 50 + firstIdNum;
             let validVRangeLow = (-50) + firstIdNum < 0 ? 0 : (-50) + firstIdNum;
-            let firstDigit = this.state.boat[0].value.charAt(0)
+            let firstDigit =  this.state.boat.length > 0 ? this.state.boat[0].value.charAt(0) : value.charAt(0)
             let firstCurrentDigit = value.charAt(0)
+            console.log(firstDigit)
             //console.log(firstDigit.charAt(0))
             //console.log(firstCurrentDigit.charAt(0))
             if(lastIdNum < validHRangeHigh && lastIdNum > validHRangeLow){
                 if(((lastIdNum == firstIdNum + 1 ) || (lastIdNum == firstIdNum - 1)) && 
-                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
+                this.state.allShipTilesOccupied.indexOf(lastIdNum)==(-1) && 
                 (Math.max(...this.state.shipOccupied) - lastIdNum < 5) &&
                 (this.state.currentShipAlignment !== 'vertical' )){
                     if(firstCurrentDigit.charAt(0)==firstDigit.charAt(0)){
-<<<<<<< HEAD
-=======
                        // if()
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
                     //if((lastIdNum-1) % 10 !== 0){
                         this.setState({
                             boat:[...this.state.boat, {value, idNum}],
                             shipOccupied:[...this.state.shipOccupied, idNum],
-                            currentShipAlignment:'horizontal'
-<<<<<<< HEAD
-                        })                  
-=======
+                            currentShipAlignment:'horizontal',
+                            allShipTilesOccupied:[...this.state.allShipTilesOccupied, idNum]
                         }, () => this.handleCheckBoatLength())                  
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
                     } //this.state.currentShipAlignment !== 'horizontal'
                 } else 
                 if((lastIdNum == firstIdNum + 2 || lastIdNum == firstIdNum - 2) && 
-                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
-<<<<<<< HEAD
-                (Math.max(...this.state.shipOccupied) - lastIdNum < 5) && 
-=======
+                this.state.allShipTilesOccupied.indexOf(lastIdNum)==(-1) && 
                 (Math.max(...this.state.shipOccupied) - lastIdNum < 5) &&
                 (this.state.playerShips[this.state.counter].length > 2) && 
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
                 (this.state.currentShipAlignment !== 'vertical' ) ) {
                     if(firstCurrentDigit.charAt(0)==firstDigit.charAt(0)){
                             this.setState({
                                 boat:[...this.state.boat, {value, idNum}],
                                 shipOccupied:[...this.state.shipOccupied, idNum],
-                                currentShipAlignment:'horizontal'
-<<<<<<< HEAD
-                            })
-=======
+                                currentShipAlignment:'horizontal',
+                                allShipTilesOccupied:[...this.state.allShipTilesOccupied, idNum]
                             }, () => this.handleCheckBoatLength())
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
                         }
                 } else 
                 if((lastIdNum == firstIdNum + 3 || lastIdNum == firstIdNum - 3) && 
-                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
+                this.state.allShipTilesOccupied.indexOf(lastIdNum)==(-1) && 
                 (Math.max(...this.state.shipOccupied) - lastIdNum < 5) && 
-<<<<<<< HEAD
-=======
                 (this.state.playerShips[this.state.counter].length > 3) &&
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
                 (this.state.currentShipAlignment !== 'vertical' )) {
                     if(firstCurrentDigit.charAt(0)==firstDigit.charAt(0)){
                             this.setState({
                                 boat:[...this.state.boat, {value, idNum}],
                                 shipOccupied:[...this.state.shipOccupied, idNum],
-                                currentShipAlignment:'horizontal'
-<<<<<<< HEAD
-                            })
-=======
+                                currentShipAlignment:'horizontal',
+                                allShipTilesOccupied:[...this.state.allShipTilesOccupied, idNum]
                             }, () => this.handleCheckBoatLength())
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
                         }
                 } else 
                 if((lastIdNum == firstIdNum + 4 || lastIdNum == firstIdNum - 4) && 
-                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
+                this.state.allShipTilesOccupied.indexOf(lastIdNum)==(-1) && 
                 (Math.max(...this.state.shipOccupied) - lastIdNum < 5) && 
-<<<<<<< HEAD
-=======
                 (this.state.playerShips[this.state.counter].length > 4) &&
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
                 (this.state.currentShipAlignment !== 'vertical' )) {
                     if(firstCurrentDigit.charAt(0)==firstDigit.charAt(0)){
                             this.setState({
                                 boat:[...this.state.boat, {value, idNum}],
                                 shipOccupied:[...this.state.shipOccupied, idNum],
-                                currentShipAlignment:'horizontal'
-<<<<<<< HEAD
-                            })
-=======
+                                currentShipAlignment:'horizontal',
+                                allShipTilesOccupied:[...this.state.allShipTilesOccupied, idNum]
                             }, () => this.handleCheckBoatLength())
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
                         }
                     }
             } else if(lastIdNum < validVRangeHigh && lastIdNum > validVRangeLow){
                 if(((lastIdNum == firstIdNum + 10 ) || (lastIdNum == firstIdNum - 10)) &&
-                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
+                this.state.allShipTilesOccupied.indexOf(lastIdNum)==(-1) && 
                 (Math.max(...this.state.shipOccupied) - lastIdNum < 50) &&
                 (this.state.currentShipAlignment !== 'horizontal')){
                         this.setState({
                             boat:[...this.state.boat, {value, idNum}],
                             shipOccupied:[...this.state.shipOccupied, idNum],
-                            currentShipAlignment:'vertical'
-<<<<<<< HEAD
-                        })
-                } else 
-                if((lastIdNum == firstIdNum + 20 || lastIdNum == firstIdNum - 20) && 
-                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
-                (Math.max(...this.state.shipOccupied) - lastIdNum < 50) && 
-=======
+                            currentShipAlignment:'vertical',
+                            allShipTilesOccupied:[...this.state.allShipTilesOccupied, idNum]
                         }, () => this.handleCheckBoatLength())
                 } else 
                 if((lastIdNum == firstIdNum + 20 || lastIdNum == firstIdNum - 20) && 
-                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
+                this.state.allShipTilesOccupied.indexOf(lastIdNum)==(-1) && 
                 (Math.max(...this.state.shipOccupied) - lastIdNum < 50) &&
                 (this.state.playerShips[this.state.counter].length > 2) && 
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
                 (this.state.currentShipAlignment !== 'horizontal')) {
                         this.setState({
                             boat:[...this.state.boat, {value, idNum}],
                             shipOccupied:[...this.state.shipOccupied, idNum],
-                            currentShipAlignment:'vertical'
-<<<<<<< HEAD
-                        })
-=======
+                            currentShipAlignment:'vertical',
+                            allShipTilesOccupied:[...this.state.allShipTilesOccupied, idNum]
                         }, () => this.handleCheckBoatLength())
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
                 } else 
                 if((lastIdNum == firstIdNum + 30 || lastIdNum == firstIdNum - 30) && 
-                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
+                this.state.allShipTilesOccupied.indexOf(lastIdNum)==(-1) && 
                 (Math.max(...this.state.shipOccupied) - lastIdNum < 50) && 
-<<<<<<< HEAD
-=======
                 (this.state.playerShips[this.state.counter].length > 3) &&
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
                 (this.state.currentShipAlignment !== 'horizontal')) {
                         this.setState({
                             boat:[...this.state.boat, {value, idNum}],
                             shipOccupied:[...this.state.shipOccupied, idNum],
-<<<<<<< HEAD
-                             currentShipAlignment:'vertical'
-                        })
-=======
-                            currentShipAlignment:'vertical'
+                             currentShipAlignment:'vertical',
+                             allShipTilesOccupied:[...this.state.allShipTilesOccupied, idNum]
                         }, () => this.handleCheckBoatLength())
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
                 } else 
                 if((lastIdNum == firstIdNum + 40 || lastIdNum == firstIdNum - 40) && 
-                this.state.shipOccupied.indexOf(lastIdNum)==(-1) && 
+                this.state.allShipTilesOccupied.indexOf(lastIdNum)==(-1) && 
                 (Math.max(...this.state.shipOccupied) - lastIdNum < 50) && 
-<<<<<<< HEAD
-=======
                 (this.state.playerShips[this.state.counter].length > 4) &&
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
                 (this.state.currentShipAlignment !== 'horizontal')) {
                         this.setState({
                             boat:[...this.state.boat, {value, idNum}],
                             shipOccupied:[...this.state.shipOccupied, idNum],
-                            currentShipAlignment:'vertical'
-<<<<<<< HEAD
-                        })
-=======
+                            currentShipAlignment:'vertical',
+                            allShipTilesOccupied:[...this.state.allShipTilesOccupied, idNum]
                         }, () => this.handleCheckBoatLength())
->>>>>>> 5240c089ff199d52fcd054cfe8956357b33bf304
                 }
             }
         }
@@ -340,6 +294,7 @@ class UserGrid extends React.Component {
                             selected={this.state.selected}
                             shipTiles={this.state.shipOccupied}
                             currentId={this.state.currentId}
+                            allShipTiles={this.state.allShipTilesOccupied}
                             ref="c"
                         //hits={this.state.hits}
                         //misses={this.state.misses}
@@ -364,8 +319,6 @@ class UserGrid extends React.Component {
 
         )
     }
-};
+}
 
 export default UserGrid;
-
-
