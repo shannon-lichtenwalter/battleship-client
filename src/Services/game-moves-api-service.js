@@ -6,7 +6,7 @@ const gameMovesApiService = {
   //we need to also send the gameId of the current game so that the locations of the players' ships
   // are stored for that game only.
   setShips(shipData, gameId, playerNum) {
-    return fetch(`${config.API_ENDPOINT}/ships`, {
+    return fetch(`${config.API_ENDPOINT}/api/ships`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -30,7 +30,7 @@ const gameMovesApiService = {
   //will be a result object containing 'hit' or 'miss' as the result and a ship name or null for ship value.
   // ie:  result = {result:'hit', ship:'aircraft carrier'} or result = {result:'miss', ship:null}.
   fireAtTarget(target, gameId, playerNum){
-    return fetch(`${config.API_ENDPOINT}/ships/opponent`, {
+    return fetch(`${config.API_ENDPOINT}/api/ships/opponent`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
