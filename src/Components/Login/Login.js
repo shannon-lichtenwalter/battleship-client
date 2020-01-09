@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import AuthApiService from '../../Services/auth-api-service';
 import UserContext from '../../Contexts/UserContext';
 import { Input, Required, Label } from '../Form/Form';
 import Button from '../Button/Button';
+import TokenService from '../../Services/token-service';
 import './Login.css';
 
-export default class Login extends Component {
+class Login extends Component {
   static defaultProps = {
     onLoginSuccess: () => { }
   }
@@ -28,10 +29,19 @@ export default class Login extends Component {
       password: password.value,
     })
       .then(res => {
+        console.log(res)
         username.value = ''
         password.value = ''
-        this.context.processLogin(res.authToken)
-        this.props.onLoginSuccess()
+        TokenService.saveAuthToken(res.authToken)
+        const jwtPayload = TokenService.parseAuthToken()        
+        console.log(jwtPayload)
+
+      //   this.setUser({
+      //     id: jwtPayload.user_id,
+      //     username: jwtPayload.sub,
+      // })
+        console.log('line41')
+        this.props.history.push('/dashboard')
       })
       .catch(res => {
         this.setState({ error: res.error })
@@ -66,6 +76,7 @@ export default class Login extends Component {
 
         <Button type='submit'>Login</Button>
         {' '}
+        
         <Button>
           <Link to='/guest'>
             Guest
@@ -76,11 +87,13 @@ export default class Login extends Component {
       </form>
 
       // <footer>
-      // Copyright © since 2020
+      //   Copyright © since 2020
       // </footer>
     );
   };
   
 };
+
+export default withRouter(Login);
 
 

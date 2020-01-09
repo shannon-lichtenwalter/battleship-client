@@ -1,50 +1,41 @@
-import config from '../config';
-import TokenService from './token-service';
+let _timeoutId
+let _idleCallback = null
+let _notIdleEvents = [
+  'mousedown',
+  'mousemove',
+  'keypress',
+  'scroll',
+  'touchstart',
+]
+const _FIVE_MINUTES_IN_MS = 5 * 60 * 1000
 
-const AuthApiService = {
-  postUser(user) {
-    return fetch(`${config.API_ENDPOINT}/user`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(user),
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+const IdleService = {
+  setIdleCallback(idleCallback) {
+    _idleCallback = idleCallback
   },
-  postLogin({ username, password }) {
-    return fetch(`${config.API_ENDPOINT}/auth/token`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({ username, password }),
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(err => Promise.reject(err))
-          : res.json()
-      )
+  resetIdleTimer(ev) {
+    clearTimeout(_timeoutId)
+    _timeoutId = setTimeout(_idleCallback, _FIVE_MINUTES_IN_MS)
   },
-  refreshToken() {
-    return fetch(`${config.API_ENDPOINT}/auth/token`, {
-      method: 'PUT',
-      headers: {
-        'authorization': `Bearer ${TokenService.getAuthToken()}`,
-      },
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
+  regiserIdleTimerResets() {
+    _notIdleEvents.forEach(event =>
+      document.addEventListener(
+        event,
+        IdleService.resetIdleTimer,
+        true,
       )
+    )
   },
-};
+  unRegisterIdleResets() {
+    clearTimeout(_timeoutId)
+    _notIdleEvents.forEach(event =>
+      document.removeEventListener(
+        event,
+        IdleService.resetIdleTimer,
+        true,
+      )
+    )
+  },
+}
 
-export default AuthApiService;
-
-
+export default IdleService

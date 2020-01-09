@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
+//import Header from './Components/Header/Header';
 
 /* import route js files */
-//import GameroomRoute from './Routes/GameroomRoute/GameroomRoute';
+import GameroomRoute from './Routes/GameroomRoute/GameroomRoute';
 import HelpRoute from './Routes/HelpRoute/HelpRoute';
 import LandingRoute from './Routes/LandingRoute/LandingRoute';
 import LoginRoute from './Routes/LoginRoute/LoginRoute';
 import PrivateOnlyRoute from './Components/PrivateOnlyRoute/PrivateOnlyRoute';
 import PublicOnlyRoute from './Components/PublicOnlyRoute/PublicOnlyRoute';
-//import ResultRoute from './Routes/ResultRoute/ResultRoute';
+import ResultRoute from './Routes/ResultRoute/ResultRoute';
 import SettingRoute from './Routes/SettingRoute/SettingRoute';
 import SignupRoute from './Routes/SignupRoute/SignupRoute';
 import DashboardRoute from './Routes/DashboardRoute/DashboardRoute';
@@ -32,12 +33,12 @@ export default class App extends Component {
               path={'/signup'}
               component={SignupRoute}
             />
-            <PublicOnlyRoute
+            {/* <PublicOnlyRoute 
               exact
-              path={'/login'}
-              component={LoginRoute}
-            />
-            <PublicOnlyRoute
+              path={'/help'}
+              component={HelpRoute}
+            /> */}
+            <PrivateOnlyRoute
               exact
               path={'/help'}
               component={HelpRoute}
@@ -52,15 +53,25 @@ export default class App extends Component {
               path={'/setting'}
               component={SettingRoute}
             />
+            <PrivateOnlyRoute
+              exact
+              path={'/result'}
+              component={ResultRoute}
+            />
+            <PrivateOnlyRoute
+              exact
+              path={'/gameroom'}
+              component={GameroomRoute}
+            />
             <Route
               component={NotFoundRoute}
             />
           </Switch>
         </main>
+
       </div>
     );
   }
-  
 };
 
 

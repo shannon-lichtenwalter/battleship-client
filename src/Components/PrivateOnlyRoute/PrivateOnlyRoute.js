@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import UserContext from '../../Contexts/UserContext';
+//import UserContext from '../../Contexts/UserContext';
+import TokenService from '../../Services/token-service';
 
 export default function PrivateOnlyRoute({ component, ...props }) {
   const Component = component;
@@ -9,20 +10,16 @@ export default function PrivateOnlyRoute({ component, ...props }) {
     <Route
       {...props}
       render={componentProps => (
-        <UserContext.Consumer>
-          {userContext =>
-            !!userContext.user.id
+            TokenService.hasAuthToken()
               ? <Component {...componentProps} />
               : (
                 <Redirect
                   to={{
-                    pathname: userContext.user.idle ? '/login' : '/help',
+                    pathname: '/login',
                     state: { from: componentProps.location },
                   }}
                 />
               )
-          }
-        </UserContext.Consumer>
       )}
     />
   )

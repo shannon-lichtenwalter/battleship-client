@@ -14,9 +14,9 @@ export default class Landing extends Component {
           </Link>
         </button>
 
-        <footer>
+        {/* <footer>
           Copyright © since 2020
-        </footer>
+        </footer> */}
       </div>
     );
   };

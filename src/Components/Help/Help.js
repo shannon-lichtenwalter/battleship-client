@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import Button from '../Button/Button';
 import './Help.css';
 
-export default class Help extends Component {
+class Help extends Component {
 
   render() {
     return (
@@ -29,11 +30,11 @@ export default class Help extends Component {
           </ul>
         </div>
 
-        <button>
+        <Button>
           <Link to='/dashboard'>
             Exit
           </Link>
-        </button>
+        </Button>
 
         <footer>
           Copyright © since 2020
@@ -44,4 +45,4 @@ export default class Help extends Component {
   
 };
 
-
+export default withRouter(Help);

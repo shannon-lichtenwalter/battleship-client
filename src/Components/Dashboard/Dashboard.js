@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import Button from '../Button/Button';
 import './Dashboard.css';
+//import TokenService from '../../Services/token-service';
+import Header from '../Header/Header';
 
-export default class Dashboard extends Component {
+class Dashboard extends Component {
 
   render() {
     return (
       <div className='dashboard'>
-        <h1>Statuses</h1>
+        <Header />
         
         <div className='stats'>
           <h2>Win</h2>
@@ -24,29 +27,23 @@ export default class Dashboard extends Component {
         </div>
 
         <div className='d-button'>
-          <button>
+          <Button>
             <Link to='/ai'>
               AI
             </Link>
-          </button>
+          </Button>
           
-          <button>
+          <Button>
             <Link to='/live'>
               Live
             </Link>
-          </button>
+          </Button>
 
-          <button>
+          <Button>
             <Link to='/passive'>
               Passive
             </Link>
-          </button>
-
-          <button>
-            <Link to='/setting'>
-              Setting
-            </Link>
-          </button>
+          </Button>
         </div>
 
         <footer>
@@ -57,5 +54,7 @@ export default class Dashboard extends Component {
   };
   
 };
+
+export default withRouter(Dashboard);
 
 
