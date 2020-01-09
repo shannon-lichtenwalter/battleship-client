@@ -23,6 +23,7 @@ class UserGrid extends React.Component {
             allShipTilesOccupied:[],
             currentShipAlignment:null,
             shipTileLaid:false,
+            placementFail:false,
         }
     }
 
@@ -52,21 +53,60 @@ class UserGrid extends React.Component {
         }
         
     }
+
+    checkBoatValidity = () =>{
+        let temp = []
+        let temp2 = []
+        let status = true;
+        for(let i=0; i < this.state.boat.length; i++){
+            temp.push(this.state.boat[i].idNum)  
+        }
+        temp.sort(function(a,b){return a-b})
+        console.log(temp)
+        for(let i=0; i < temp.length-1; i++){
+            if((((temp[i+1])-temp[i]) !== 1) && (((temp[i+1])-temp[i]) !== 10)){
+                console.log('Invalid Ship Arrangement')
+                status = false;
+            }
+        }
+        if(!status){
+            temp2 = this.state.allShipTilesOccupied
+            temp2.splice(-temp.length, temp.length)
+        }
+        console.log(temp2)
+        console.log(status)
+        return status 
+    }
+
     //this function is used as a callback function after updating the boat values in state. this will allow us to check and see if the
     //boat is finished being built. if so it will update the playerShips in state with the values. It will also reset the boat back to empty and will 
     //increment the counter in order to move on to the next boat to build.
     handleCheckBoatLength = () => {
         if(this.state.boat.length === this.state.playerShips[this.state.counter].length){
-            let currentShips = this.state.playerShips;
-            let boatValues = this.state.boat.map(boat => boat.value);
-            console.log(boatValues);
-            currentShips[this.state.counter].spaces = boatValues
-            this.setState({
-                playerShips: currentShips,
-                counter: this.state.counter + 1,
-                boat: [],
-                currentShipAlignment: null,
+            // if(){
+
+            // }
+            let status = this.checkBoatValidity()
+            if(status){
+                let currentShips = this.state.playerShips;
+                let boatValues = this.state.boat.map(boat => boat.value);
+                console.log(boatValues);
+                currentShips[this.state.counter].spaces = boatValues
+                this.setState({
+                    playerShips: currentShips,
+                    counter: this.state.counter + 1,
+                    boat: [],
+                    currentShipAlignment: null,
             })
+        } else{
+            this.messageCreator()
+            this.setState({
+                placementFail:true,
+                boat: [],
+                currentShipAlignment:null,
+                shipOccupied:[],
+            })
+        }
         } 
     }
 
@@ -78,10 +118,6 @@ class UserGrid extends React.Component {
         })
     }
 
-    // updateShipT=(idNum)=>{
-    //     this.refs.c.updateShipTile(idNum)
-    // }   
-
     handleCheckValue = (value, idNum) => {
         console.log(idNum);
         if(this.state.boat.length <= this.state.playerShips[this.state.counter].length){
@@ -90,17 +126,17 @@ class UserGrid extends React.Component {
                 boat: [{value, idNum}],
                 shipOccupied:[idNum],
                 shipTileLaid:true,
-                allShipTilesOccupied:[idNum]
+                allShipTilesOccupied:[idNum],
+                placementFail:false,
             }, () => this.handleCheckBoatLength())
-            //this.refs.c.updateShipTile(idNum)
-            //this.updateShipT(idNum)
         } 
         else if((this.state.boat.length === 0 && this.state.shipTileLaid ===true)&&(this.state.allShipTilesOccupied.indexOf(idNum)===(-1)))
         {
             this.setState({
                 boat: [{value, idNum}],
                 shipOccupied:[idNum],
-                allShipTilesOccupied:[...this.state.allShipTilesOccupied, idNum]
+                allShipTilesOccupied:[...this.state.allShipTilesOccupied, idNum],
+                placementFail:false,
             }, () => this.handleCheckBoatLength())
         } 
         else
@@ -108,15 +144,15 @@ class UserGrid extends React.Component {
             //console.log(this.state.playerShips[this.state.counter].spaces[0])
             let lastIdNum = idNum;
             let firstIdNum = this.state.boat.length > 0 ? this.state.boat[0].idNum : idNum
-            let validHRangeHigh = 5 + firstIdNum > 100 ? 0 : 5 + firstIdNum;
+            let validHRangeHigh = 5 + firstIdNum > 100 ? 100 : 5 + firstIdNum;
             let validHRangeLow = (-5) + firstIdNum < 0 ? 0 : (-5) + firstIdNum;
             let validVRangeHigh = 50 + firstIdNum > 100 ? 100 : 50 + firstIdNum;
             let validVRangeLow = (-50) + firstIdNum < 0 ? 0 : (-50) + firstIdNum;
             let firstDigit =  this.state.boat.length > 0 ? this.state.boat[0].value.charAt(0) : value.charAt(0)
             let firstCurrentDigit = value.charAt(0)
             console.log(firstDigit)
-            //console.log(firstDigit.charAt(0))
-            //console.log(firstCurrentDigit.charAt(0))
+            console.log(firstDigit.charAt(0))
+            console.log(firstCurrentDigit.charAt(0))
             if(lastIdNum < validHRangeHigh && lastIdNum > validHRangeLow){
                 if(((lastIdNum === firstIdNum + 1 ) || (lastIdNum === firstIdNum - 1)) && 
                 this.state.allShipTilesOccupied.indexOf(lastIdNum)===(-1) && 
@@ -281,6 +317,14 @@ class UserGrid extends React.Component {
         return temp
     }
 
+    messageCreator=()=>{
+        if(this.state.placementFail){
+            return 'Please try placing your ship again. Previous placement was invalid'
+        } else {
+            return null
+        }
+    }
+
     handleRenderGrid = () => {
         //setting the rows and columns of the gameboard grid
         let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -308,9 +352,6 @@ class UserGrid extends React.Component {
                             shipTiles={this.state.shipOccupied}
                             currentId={this.state.currentId}
                             allShipTiles={this.state.allShipTilesOccupied}
-                            ref="c"
-                        //hits={this.state.hits}
-                        //misses={this.state.misses}
                         />
                     })
                     }
@@ -326,6 +367,7 @@ class UserGrid extends React.Component {
                 <div className='UserGrid'>
                     {this.handleRenderGrid()}
                 </div>
+                <span className='ErrorSpan'><p>{this.messageCreator()}</p></span>
                 <h2>{this.handleSetShips()} </h2>
                 <h3>{this.displayBoats()}</h3>
             </div>
