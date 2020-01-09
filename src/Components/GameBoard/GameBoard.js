@@ -12,7 +12,7 @@ class GameBoard extends React.Component {
         hits
         misses
         our Ships
-    }
+    };
 
     import object = {
         our hits 
@@ -20,13 +20,12 @@ class GameBoard extends React.Component {
         opponents hits/misses
         our ships
         whose turn
-    }
-
+    };
   */ 
 
 
   /*
-        Add opponents hits/misses to state
+  Add opponents hits/misses to state
   */
   state = {
     userShips: [],
@@ -73,7 +72,9 @@ class GameBoard extends React.Component {
       </>
       </BattleShipContext.Provider>
     )
-  }
-}
+  };
+};
 
 export default GameBoard;
+
+
