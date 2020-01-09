@@ -1,6 +1,6 @@
 import React from 'react';
 import Cell from '../Cell/Cell';
-import gameMovesApiService from '../../game-moves-api-service';
+import gameMovesApiService from '../../Services/game-moves-api-service';
 import BattleShipContext from '../../Contexts/battleship-context';
 import './OpponentGrid.css';
 

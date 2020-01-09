@@ -1,4 +1,4 @@
-import config from './config';
+import config from '../config';
 //import TokenService from './token-service';
 
 const gameMovesApiService = {

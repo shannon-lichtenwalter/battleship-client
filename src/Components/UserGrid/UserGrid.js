@@ -1,7 +1,7 @@
 import React from 'react';
 import Cell from '../Cell/Cell';
 import './UserGrid.css';
-import gameMovesApiService from '../../game-moves-api-service';
+import gameMovesApiService from '../../Services/game-moves-api-service';
 import BattleShipContext from '../../Contexts/battleship-context';
 
 class UserGrid extends React.Component {
