@@ -10,6 +10,7 @@ class DeleteAccount extends Component {
     return (
       <div>
         <h1>Delete Account</h1>
+        <h2>Really want to delete account? <br /> Are you sure??</h2>
         <p>Need to think about how will be look likes...</p>
 
         <Button>

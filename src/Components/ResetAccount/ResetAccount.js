@@ -12,6 +12,7 @@ class ResetAccount extends Component {
     return (
       <div>
         <h1>Reset Account</h1>
+        <h2>Really want to reset account? <br /> Are you sure??</h2>
         <p>Need to think about how will be look likes...</p>
 
         <Button>

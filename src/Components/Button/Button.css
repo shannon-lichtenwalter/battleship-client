@@ -5,7 +5,6 @@ Button {
   color: black;
   background-color: white;
   border: 0.3rem solid #b8d843;
-  border-radius: 1rem;
 }
 
 button a {
