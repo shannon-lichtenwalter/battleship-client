@@ -84,9 +84,10 @@ export default class Signup extends Component {
           </Link>
         </Button> <br />
 
-        <Link to='/login'>Already have an account?</Link>
+        <div className='btnLink'>
+          <Link to='/login'>Already have an account?</Link>
+        </div>
 
-        
       </form>
     );
   };

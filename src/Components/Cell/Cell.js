@@ -79,8 +79,8 @@ checkForShipTile = () => {
   console.log(this.props.shipTiles)
   console.log(this.props.currentId)
   if ((this.props.shipTiles) && (this.props.shipTiles.indexOf(this.props.currentId)!==(-1)) ){
-   this.setState({isShipTile:true})
- }
+    this.setState({isShipTile:true})
+  }
  //this.render()
 }
 

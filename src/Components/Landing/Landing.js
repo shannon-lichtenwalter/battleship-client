@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
-import Footer from '../Footer/Footer';
 import './Landing.css';
 
 export default class Landing extends Component {
@@ -16,7 +15,6 @@ export default class Landing extends Component {
           </Link>
         </Button>
 
-        <Footer />
       </div>
     );
   };
