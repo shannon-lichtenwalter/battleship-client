@@ -51,7 +51,12 @@ determineClassName = () => {
   } else
   if(this.props.allShipTiles.length > 0){
       if (this.props.allShipTiles.indexOf(this.props.idNumber) !== (-1)){
-         className = 'ship'
+        className += ' ship'
+        if(this.props.opponentShots && this.props.opponentShots.includes(this.props.id)) {
+          className += '-shot'
+        }
+      } else if(this.props.opponentShots && this.props.opponentShots.includes(this.props.id)) {
+        className += ' shot'
       }
   //this.setState({shipTile:true})
   //} 
