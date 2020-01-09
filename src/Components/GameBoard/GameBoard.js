@@ -49,6 +49,12 @@ class GameBoard extends React.Component {
     })
   }
 
+  componentDidMount = () =>{
+    //fetch game data based on game id. set the state with the game data and pass
+    //down as props to userGrid (needs ships for the user and opponent hits) and opponentGrid
+    //(needs user's hits and misses to re-mark the board)
+  }
+
   render () {
     return (
       <BattleShipContext.Provider value={{
