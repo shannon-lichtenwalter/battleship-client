@@ -11,7 +11,7 @@ export default class SignupRoute extends Component {
 
   handleRegistrationSuccess = () => {
     const { history } = this.props
-    history.push('/login')
+    history.push('/signup')
   };
   
   render() {

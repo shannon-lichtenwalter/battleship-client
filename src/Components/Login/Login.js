@@ -18,11 +18,11 @@ export default class Login extends Component {
   firstInput = React.createRef()
 
   handleSubmit = ev => {
+    console.log('success login')
     ev.preventDefault()
     const { username, password } = ev.target
 
     this.setState({ error: null })
-
     AuthApiService.postLogin({
       username: username.value,
       password: password.value,

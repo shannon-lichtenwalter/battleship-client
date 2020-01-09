@@ -11,7 +11,7 @@ export default class LoginRoute extends Component {
 
   handleLoginSuccess = () => {
     const { history } = this.props
-    history.push('/dashboard')
+    history.push('/login')
   };
 
   render() {

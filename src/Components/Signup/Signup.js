@@ -9,21 +9,21 @@ export default class Signup extends Component {
   static defaultProps = {
     onRegistrationSuccess: () => { }
   };
-
+  
   state = { error: null };
   firstInput = React.createRef();
 
   handleSubmit = ev => {
     ev.preventDefault()
-    const { name, username, password } = ev.target
+    const { username, password, email } = ev.target
 
     AuthApiService.postUser({
-      name: name.value,
       username: username.value,
       password: password.value,
+      email: email.value
     })
       .then(user => {
-        name.value = ''
+        email.value = ''
         username.value = ''
         password.value = ''
         this.props.onRegistrationSuccess()
