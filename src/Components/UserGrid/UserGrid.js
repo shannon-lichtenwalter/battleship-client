@@ -1,6 +1,8 @@
 import React from 'react';
 import Cell from '../Cell/Cell';
-import './UserGrid.css'
+import './UserGrid.css';
+import gameMovesApiService from '../../game-moves-api-service';
+import BattleShipContext from '../../Contexts/battleship-context';
 
 class UserGrid extends React.Component {
 
@@ -24,6 +26,9 @@ class UserGrid extends React.Component {
         }
     }
 
+
+    static contextType = BattleShipContext;
+
     // componentDidMount(){
     //     this.refs.c.checkForShipTile()
     // }
@@ -31,9 +36,15 @@ class UserGrid extends React.Component {
     //This function is called by the render. It will look at the counter value to determine
     // if the user still needs to set their ship locations or if all the ship values have been set.
     //counter was added to state in order to access the different ships, counter is incremeneted in a later function
-    //after a boat has been completely built.
+    //after a boat has been completely built. If all the boats have been build, then an API call is made to update the
+    //player's ships location in the database.
+
+
     handleSetShips = () => {
         if(this.state.counter > 4){
+            //once all the ships are set, the data is sent to the database to be stored
+            gameMovesApiService.setShips(this.state.playerShips, this.context.gameId, this.context.playerNum)
+            .catch((e) => this.context.setError(e));
             return `All Ships Have Been Set`
         } else {
             return `Please select cells for ${this.state.playerShips[this.state.counter].name}.
@@ -41,13 +52,15 @@ class UserGrid extends React.Component {
         }
         
     }
-
     //this function is used as a callback function after updating the boat values in state. this will allow us to check and see if the
-    //boat is finishe being built. if so it will update the playerShips in state with the values.
+    //boat is finished being built. if so it will update the playerShips in state with the values. It will also reset the boat back to empty and will 
+    //increment the counter in order to move on to the next boat to build.
     handleCheckBoatLength = () => {
         if(this.state.boat.length === this.state.playerShips[this.state.counter].length){
             let currentShips = this.state.playerShips;
-            currentShips[this.state.counter].spaces = this.state.boat
+            let boatValues = this.state.boat.map(boat => boat.value);
+            console.log(boatValues);
+            currentShips[this.state.counter].spaces = boatValues
             this.setState({
                 playerShips: currentShips,
                 counter: this.state.counter + 1,
