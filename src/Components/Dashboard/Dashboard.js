@@ -4,6 +4,8 @@ import './Dashboard.css';
 
 export default class Dashboard extends Component {
 
+  
+
   render() {
     return (
       <div className='dashboard'>
@@ -39,12 +41,6 @@ export default class Dashboard extends Component {
           <button>
             <Link to='/passive'>
               Passive
-            </Link>
-          </button>
-
-          <button>
-            <Link to='/setting'>
-              Setting
             </Link>
           </button>
         </div>

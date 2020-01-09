@@ -65,12 +65,23 @@ class OpponentGrid extends React.Component {
         message: 'Must Choose a Target'
       })
     }else {
-      gameMovesApiService.fireAtTarget(this.state.selected, this.context.gameId, this.context.playerNum)
-      .then(res => {
+      // gameMovesApiService.fireAtTarget(this.state.selected, this.context.gameId, this.context.playerNum)
+      // .then(res => {
+      //   this.checkForHits(res.result, res.ship);
+      //   this.checkForMisses(res.result);
+      // }).catch((e) => this.context.setError(e));
+
+
+      this.props.socket.emit('fire', {target: this.state.selected, gameId: this.context.gameId, playerNum: this.context.playerNum, roomId: this.props.room})
+      this.props.socket.on('response', res => {
+        console.log(res);
         this.checkForHits(res.result, res.ship);
         this.checkForMisses(res.result);
-      }).catch((e) => this.context.setError(e));
+      })
+
     }
+
+    
   }
 
   findMyIndex = (letter, num) => {

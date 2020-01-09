@@ -23,15 +23,29 @@ class UserGrid extends React.Component {
             allShipTilesOccupied:[],
             currentShipAlignment:null,
             shipTileLaid:false,
+            opponentShots: [],
+            shipsReady:false
         }
     }
 
 
     static contextType = BattleShipContext;
 
-    // componentDidMount(){
-    //     this.refs.c.checkForShipTile()
-    // }
+
+    //{result: "hit", ship: "defender", playerNum: "player1", target: "J7"}
+    componentDidMount = () => {
+        //this.refs.c.checkForShipTile()
+        console.log(this.props.socket)
+        this.props.socket.on('response', data => {
+            console.log(data);
+            if(this.context.playerNum !== data.playerNum) {
+                this.setState({
+                    message: `${data.playerNum} ${data.result} your ${data.ship}`,
+                    opponentShots: [...this.state.opponentShots, data.target]
+                })
+            }
+        })
+    }
 
     //This function is called by the render. It will look at the counter value to determine
     // if the user still needs to set their ship locations or if all the ship values have been set.
@@ -41,15 +55,19 @@ class UserGrid extends React.Component {
 
 
     handleSetShips = () => {
-        if(this.state.counter > 4){
+        if(this.state.counter > 4 && !this.state.shipsReady){
             //once all the ships are set, the data is sent to the database to be stored
             gameMovesApiService.setShips(this.state.playerShips, this.context.gameId, this.context.playerNum)
+            .then(() => {
+                this.setState({
+                    shipsReady: true
+                })
+            })
             .catch((e) => this.context.setError(e));
-            return `All Ships Have Been Set`
-        } else {
+        } else if(this.state.counter <= 4){
             return `Please select cells for ${this.state.playerShips[this.state.counter].name}.
-        This ship is ${this.state.playerShips[this.state.counter].length} spaces long`
-        }
+            This ship is ${this.state.playerShips[this.state.counter].length} spaces long`
+        } else return `All Ships Have Been Set`
         
     }
     //this function is used as a callback function after updating the boat values in state. this will allow us to check and see if the
@@ -230,15 +248,17 @@ class UserGrid extends React.Component {
     }
 
     handleSelectTarget = (value, idNum) => {
-        this.handleCheckValue(value, idNum);
-        this.setState({
-            selected: value,
-            //boat: [...this.state.boat, value],
-            message: null,
-            currentId: idNum
-            //selected: idNum
-        })
-        //this.handleCheckValue(value, idNum);
+        if(!this.state.shipsReady) {
+            this.handleCheckValue(value, idNum);
+            this.setState({
+                selected: value,
+                //boat: [...this.state.boat, value],
+                message: null,
+                currentId: idNum
+                //selected: idNum
+            })
+            //this.handleCheckValue(value, idNum);
+        }
     }
 
     findMyIndex = (letter, num) => {
@@ -309,6 +329,7 @@ class UserGrid extends React.Component {
                             currentId={this.state.currentId}
                             allShipTiles={this.state.allShipTilesOccupied}
                             ref="c"
+                            opponentShots={this.state.opponentShots}
                         //hits={this.state.hits}
                         //misses={this.state.misses}
                         />
@@ -325,7 +346,9 @@ class UserGrid extends React.Component {
             <div className='UserContainer'>
                 <div className='UserGrid'>
                     {this.handleRenderGrid()}
+
                 </div>
+                {this.state.message && <p>{this.state.message}</p>}
                 <h2>{this.handleSetShips()} </h2>
                 <h3>{this.displayBoats()}</h3>
             </div>

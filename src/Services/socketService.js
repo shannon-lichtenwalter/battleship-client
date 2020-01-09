@@ -1,7 +1,7 @@
-import config from '../config';
-import io from 'socket.io';
-const URL = config.URL;
+// import config from '../config';
+// import io from 'socket.io';
+// const URL = config.URL;
 
-const socket = io.connect(URL);
+// const socket = io.connect(URL);
 
-export default socket;
+// export default socket;
