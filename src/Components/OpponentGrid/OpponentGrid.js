@@ -106,6 +106,8 @@ class OpponentGrid extends React.Component {
       case ('J'):
         temp = num + 90
         break;
+      default:
+        temp = num
     }
     return temp
   }

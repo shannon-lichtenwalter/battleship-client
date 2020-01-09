@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import GameBoard from './Components/GameBoard/GameBoard';
 import './App.css';
 
 /* import route js files */
@@ -20,6 +21,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="app">
+        <GameBoard />
         <main>
           <Switch>
             <PublicOnlyRoute

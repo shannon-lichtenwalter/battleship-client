@@ -74,7 +74,7 @@ class UserGrid extends React.Component {
     //for the respective boats. We may not need this later on, but is helpful to see which cells are representing the boat so far.
     displayBoats = () => {
         return this.state.playerShips.map((ship, index) => {
-            return <li key={index}>{ship.name} : {ship.spaces.length !== 0 ? ship.spaces.map(space => space.value + ', ') : 'ship not built yet'}</li>
+            return <li key={index}>{ship.name} : {ship.spaces.length !== 0 ? ship.spaces.join(', ') : 'ship not built yet'}</li>
         })
     }
 
@@ -95,7 +95,7 @@ class UserGrid extends React.Component {
             //this.refs.c.updateShipTile(idNum)
             //this.updateShipT(idNum)
         } 
-        else if((this.state.boat.length === 0 && this.state.shipTileLaid ===true)&&(this.state.allShipTilesOccupied.indexOf(idNum)==(-1)))
+        else if((this.state.boat.length === 0 && this.state.shipTileLaid ===true)&&(this.state.allShipTilesOccupied.indexOf(idNum)===(-1)))
         {
             this.setState({
                 boat: [{value, idNum}],
@@ -118,13 +118,13 @@ class UserGrid extends React.Component {
             //console.log(firstDigit.charAt(0))
             //console.log(firstCurrentDigit.charAt(0))
             if(lastIdNum < validHRangeHigh && lastIdNum > validHRangeLow){
-                if(((lastIdNum == firstIdNum + 1 ) || (lastIdNum == firstIdNum - 1)) && 
-                this.state.allShipTilesOccupied.indexOf(lastIdNum)==(-1) && 
+                if(((lastIdNum === firstIdNum + 1 ) || (lastIdNum === firstIdNum - 1)) && 
+                this.state.allShipTilesOccupied.indexOf(lastIdNum)===(-1) && 
                 (Math.max(...this.state.shipOccupied) - lastIdNum < 5) &&
                 (this.state.currentShipAlignment !== 'vertical' )){
-                    if(firstCurrentDigit.charAt(0)==firstDigit.charAt(0)){
+                    if(firstCurrentDigit.charAt(0)===firstDigit.charAt(0)){
                        // if()
-                    //if((lastIdNum-1) % 10 !== 0){
+                    //if((lastIdNum-1) % 10 != 0){
                         this.setState({
                             boat:[...this.state.boat, {value, idNum}],
                             shipOccupied:[...this.state.shipOccupied, idNum],
@@ -133,12 +133,12 @@ class UserGrid extends React.Component {
                         }, () => this.handleCheckBoatLength())                  
                     } //this.state.currentShipAlignment !== 'horizontal'
                 } else 
-                if((lastIdNum == firstIdNum + 2 || lastIdNum == firstIdNum - 2) && 
-                this.state.allShipTilesOccupied.indexOf(lastIdNum)==(-1) && 
+                if((lastIdNum === firstIdNum + 2 || lastIdNum === firstIdNum - 2) && 
+                this.state.allShipTilesOccupied.indexOf(lastIdNum)===(-1) && 
                 (Math.max(...this.state.shipOccupied) - lastIdNum < 5) &&
                 (this.state.playerShips[this.state.counter].length > 2) && 
                 (this.state.currentShipAlignment !== 'vertical' ) ) {
-                    if(firstCurrentDigit.charAt(0)==firstDigit.charAt(0)){
+                    if(firstCurrentDigit.charAt(0)===firstDigit.charAt(0)){
                             this.setState({
                                 boat:[...this.state.boat, {value, idNum}],
                                 shipOccupied:[...this.state.shipOccupied, idNum],
@@ -147,12 +147,12 @@ class UserGrid extends React.Component {
                             }, () => this.handleCheckBoatLength())
                         }
                 } else 
-                if((lastIdNum == firstIdNum + 3 || lastIdNum == firstIdNum - 3) && 
-                this.state.allShipTilesOccupied.indexOf(lastIdNum)==(-1) && 
+                if((lastIdNum === firstIdNum + 3 || lastIdNum === firstIdNum - 3) && 
+                this.state.allShipTilesOccupied.indexOf(lastIdNum)===(-1) && 
                 (Math.max(...this.state.shipOccupied) - lastIdNum < 5) && 
                 (this.state.playerShips[this.state.counter].length > 3) &&
                 (this.state.currentShipAlignment !== 'vertical' )) {
-                    if(firstCurrentDigit.charAt(0)==firstDigit.charAt(0)){
+                    if(firstCurrentDigit.charAt(0)===firstDigit.charAt(0)){
                             this.setState({
                                 boat:[...this.state.boat, {value, idNum}],
                                 shipOccupied:[...this.state.shipOccupied, idNum],
@@ -161,12 +161,12 @@ class UserGrid extends React.Component {
                             }, () => this.handleCheckBoatLength())
                         }
                 } else 
-                if((lastIdNum == firstIdNum + 4 || lastIdNum == firstIdNum - 4) && 
-                this.state.allShipTilesOccupied.indexOf(lastIdNum)==(-1) && 
+                if((lastIdNum === firstIdNum + 4 || lastIdNum === firstIdNum - 4) && 
+                this.state.allShipTilesOccupied.indexOf(lastIdNum)===(-1) && 
                 (Math.max(...this.state.shipOccupied) - lastIdNum < 5) && 
                 (this.state.playerShips[this.state.counter].length > 4) &&
                 (this.state.currentShipAlignment !== 'vertical' )) {
-                    if(firstCurrentDigit.charAt(0)==firstDigit.charAt(0)){
+                    if(firstCurrentDigit.charAt(0)===firstDigit.charAt(0)){
                             this.setState({
                                 boat:[...this.state.boat, {value, idNum}],
                                 shipOccupied:[...this.state.shipOccupied, idNum],
@@ -176,8 +176,8 @@ class UserGrid extends React.Component {
                         }
                     }
             } else if(lastIdNum < validVRangeHigh && lastIdNum > validVRangeLow){
-                if(((lastIdNum == firstIdNum + 10 ) || (lastIdNum == firstIdNum - 10)) &&
-                this.state.allShipTilesOccupied.indexOf(lastIdNum)==(-1) && 
+                if(((lastIdNum === firstIdNum + 10 ) || (lastIdNum === firstIdNum - 10)) &&
+                this.state.allShipTilesOccupied.indexOf(lastIdNum)===(-1) && 
                 (Math.max(...this.state.shipOccupied) - lastIdNum < 50) &&
                 (this.state.currentShipAlignment !== 'horizontal')){
                         this.setState({
@@ -187,8 +187,8 @@ class UserGrid extends React.Component {
                             allShipTilesOccupied:[...this.state.allShipTilesOccupied, idNum]
                         }, () => this.handleCheckBoatLength())
                 } else 
-                if((lastIdNum == firstIdNum + 20 || lastIdNum == firstIdNum - 20) && 
-                this.state.allShipTilesOccupied.indexOf(lastIdNum)==(-1) && 
+                if((lastIdNum === firstIdNum + 20 || lastIdNum === firstIdNum - 20) && 
+                this.state.allShipTilesOccupied.indexOf(lastIdNum)===(-1) && 
                 (Math.max(...this.state.shipOccupied) - lastIdNum < 50) &&
                 (this.state.playerShips[this.state.counter].length > 2) && 
                 (this.state.currentShipAlignment !== 'horizontal')) {
@@ -199,20 +199,20 @@ class UserGrid extends React.Component {
                             allShipTilesOccupied:[...this.state.allShipTilesOccupied, idNum]
                         }, () => this.handleCheckBoatLength())
                 } else 
-                if((lastIdNum == firstIdNum + 30 || lastIdNum == firstIdNum - 30) && 
-                this.state.allShipTilesOccupied.indexOf(lastIdNum)==(-1) && 
+                if((lastIdNum === firstIdNum + 30 || lastIdNum === firstIdNum - 30) && 
+                this.state.allShipTilesOccupied.indexOf(lastIdNum)===(-1) && 
                 (Math.max(...this.state.shipOccupied) - lastIdNum < 50) && 
                 (this.state.playerShips[this.state.counter].length > 3) &&
                 (this.state.currentShipAlignment !== 'horizontal')) {
                         this.setState({
                             boat:[...this.state.boat, {value, idNum}],
                             shipOccupied:[...this.state.shipOccupied, idNum],
-                             currentShipAlignment:'vertical',
-                             allShipTilesOccupied:[...this.state.allShipTilesOccupied, idNum]
+                            currentShipAlignment:'vertical',
+                            allShipTilesOccupied:[...this.state.allShipTilesOccupied, idNum]
                         }, () => this.handleCheckBoatLength())
                 } else 
-                if((lastIdNum == firstIdNum + 40 || lastIdNum == firstIdNum - 40) && 
-                this.state.allShipTilesOccupied.indexOf(lastIdNum)==(-1) && 
+                if((lastIdNum === firstIdNum + 40 || lastIdNum === firstIdNum - 40) && 
+                this.state.allShipTilesOccupied.indexOf(lastIdNum)===(-1) && 
                 (Math.max(...this.state.shipOccupied) - lastIdNum < 50) && 
                 (this.state.playerShips[this.state.counter].length > 4) &&
                 (this.state.currentShipAlignment !== 'horizontal')) {
@@ -274,12 +274,14 @@ class UserGrid extends React.Component {
             case ('J'):
                 temp = num + 90
                 break;
+            default:
+                temp = num
         }
+
         return temp
     }
 
     handleRenderGrid = () => {
-        let counter = 0;
         //setting the rows and columns of the gameboard grid
         let y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         let x = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
@@ -287,7 +289,6 @@ class UserGrid extends React.Component {
         //each 'column' div will have a style of 'display:inline-block' so that the
         // columns will align on the grid.
         return y.map((num, index) => {
-            //counter++
             return (
                 <div key={index} className='column'>
                     {/* These cells will be the top row of the grid and will have a letter for each cell*/}
@@ -297,7 +298,6 @@ class UserGrid extends React.Component {
                             // these cells will be the most left coulumn and will have the numbers listed in each cell.
                             return <Cell key={letter} id={letter} label={true} />
                         }
-                        counter++
                         return <Cell key={letter + num}
                             id={letter + num}
                             idNumber={this.findMyIndex(letter, num)}
