@@ -65,7 +65,7 @@ class GameBoard extends React.Component {
       transportOptions: {
         polling: {
           extraHeaders: {
-            'Authorization' : 'Bearer thisismyjwt'
+            'Authorization' : 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1Nzg2NzE4OTcsInN1YiI6ImFkbWluMSJ9.6aAwWOioUWtrDW86wibje53po5AgZqI1UanpZc8axc0'
           }
         }
       }
