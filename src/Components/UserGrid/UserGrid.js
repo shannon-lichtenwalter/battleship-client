@@ -34,19 +34,19 @@ class UserGrid extends React.Component {
 
 
     //{result: "hit", ship: "defender", playerNum: "player1", target: "J7"}
-    // componentDidMount = () => {
-    //     //this.refs.c.checkForShipTile()
-    //     console.log(this.props.socket)
-    //     this.props.socket.on('response', data => {
-    //         console.log(data);
-    //         if(this.context.playerNum !== data.playerNum) {
-    //             this.setState({
-    //                 message: `${data.playerNum} ${data.result} your ${data.ship}`,
-    //                 opponentShots: [...this.state.opponentShots, data.target]
-    //             })
-    //         }
-    //     })
-    // }
+    componentDidMount = () => {
+        //this.refs.c.checkForShipTile()
+        console.log(this.props.socket)
+        this.props.socket.on('response', data => {
+            console.log(data);
+            if(this.context.playerNum !== data.playerNum) {
+                this.setState({
+                    message: `${data.playerNum} ${data.result} your ${data.ship}`,
+                    opponentShots: [...this.state.opponentShots, data.target]
+                })
+            }
+        })
+    }
 
     //This function is called by the render. It will look at the counter value to determine
     // if the user still needs to set their ship locations or if all the ship values have been set.
