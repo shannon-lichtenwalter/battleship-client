@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import Button from '../Button/Button';
 import Footer from '../Footer/Footer';
 import './Help.css';
@@ -31,12 +31,11 @@ class Help extends Component {
           </ul>
         </div>
 
-        <Button>
-          <Link to='/dashboard'>
-            Exit
-          </Link>
+        <Button onClick={() => {
+          this.props.history.push('/dashboard')
+        }}> Exit
         </Button>
-        
+
         <Footer />
       </div>
     );

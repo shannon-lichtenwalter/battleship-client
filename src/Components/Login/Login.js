@@ -74,14 +74,15 @@ class Login extends Component {
           />
         </div>
 
-        <Button type='submit'>Login</Button>
-        {' '}
-        
-        <Button>
-          <Link to='/guest'>
-            Guest
-          </Link>
-        </Button> <br />
+        <div className='loginbtn'>
+          <Button type='submit'>Login</Button>
+          {' '}
+          
+          <Button onClick={() => {
+            this.props.history.push('/guest')
+          }}> Guest
+          </Button> <br />
+        </div>
 
         <div className='btnLink'>
           <Link to='/signup'>Need to create an account?</Link>

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Input, Required, Label } from '../Form/Form';
 import AuthApiService from '../../Services/auth-api-service';
 import Button from '../Button/Button';
 import './Signup.css';
 
-export default class Signup extends Component {
+class Signup extends Component {
   static defaultProps = {
     onRegistrationSuccess: () => { }
   };
@@ -75,14 +75,15 @@ export default class Signup extends Component {
           />
         </div>
 
-        <Button type='submit'>Sign up</Button>
-        {' '}
+        <div className='signupbtn'>
+          <Button type='submit'>Sign up</Button>
+          {' '}
 
-        <Button>
-          <Link to='/guest'>
-            Guest
-          </Link>
-        </Button> <br />
+          <Button onClick={() => {
+            this.props.history.push('/guest')
+          }}> Guest
+          </Button> <br />
+        </div>
 
         <div className='btnLink'>
           <Link to='/login'>Already have an account?</Link>
@@ -94,4 +95,4 @@ export default class Signup extends Component {
   
 };
 
-
+export default withRouter(Signup);

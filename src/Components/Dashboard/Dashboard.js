@@ -29,24 +29,22 @@ class Dashboard extends Component {
         </div>
 
         <div className='d-button'>
-          <Button>
-            <Link to='/ai'>
-              AI
-            </Link>
+          <Button onClick={() => {
+            this.props.history.push('/ai')
+          }}> AI
+          </Button>
+        
+          <Button onClick={() => {
+          this.props.history.push('/live')
+          }}> live
           </Button>
           
-          <Button>
-            <Link to='/live'>
-              Live
-            </Link>
-          </Button>
-
-          <Button>
-            <Link to='/passive'>
-              Passive
-            </Link>
+          <Button onClick={() => {
+          this.props.history.push('/passive')
+          }}> Passive
           </Button>
         </div>
+        
         <Footer />
       </div>
     );
