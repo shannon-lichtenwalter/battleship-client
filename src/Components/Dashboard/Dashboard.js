@@ -35,12 +35,12 @@ class Dashboard extends Component {
           </Button>
         
           <Button onClick={() => {
-          this.props.history.push('/live')
+            this.props.history.push('/live')
           }}> live
           </Button>
           
           <Button onClick={() => {
-          this.props.history.push('/passive')
+            this.props.history.push('/passive')
           }}> Passive
           </Button>
         </div>

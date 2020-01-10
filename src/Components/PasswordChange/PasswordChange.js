@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Input, Required, Label } from '../Form/Form';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import Button from '../Button/Button';
 import Footer from '../Footer/Footer';
 
@@ -32,10 +32,9 @@ class PasswordChange extends Component {
             />
           </div>
 
-          <Button>
-            <Link to='/dashboard'>
-              Done
-            </Link>
+          <Button onClick={() => {
+            this.props.history.push('/dashboard')
+          }}> Done
           </Button>
         </form>
 
@@ -45,4 +44,4 @@ class PasswordChange extends Component {
   }
 }
 
-export default PasswordChange;
+export default withRouter(PasswordChange);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Input, Required, Label } from '../Form/Form';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import Button from '../Button/Button';
 import Footer from '../Footer/Footer';
 
@@ -13,10 +13,9 @@ class DeleteAccount extends Component {
         <h2>Really want to delete account? <br /> Are you sure??</h2>
         <p>Need to think about how will be look likes...</p>
 
-        <Button>
-          <Link to='/signup'>
-            Done
-          </Link>
+        <Button onClick={() => {
+            this.props.history.push('/signup')
+          }}> Done
         </Button>
 
         <Footer />
@@ -25,4 +24,4 @@ class DeleteAccount extends Component {
   }
 }
 
-export default DeleteAccount;
+export default withRouter(DeleteAccount);
