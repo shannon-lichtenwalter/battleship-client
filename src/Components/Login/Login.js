@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import AuthApiService from '../../Services/auth-api-service';
 import UserContext from '../../Contexts/UserContext';
 import { Input, Required, Label } from '../Form/Form';
 import Button from '../Button/Button';
+import TokenService from '../../Services/token-service';
 import './Login.css';
 
-export default class Login extends Component {
+class Login extends Component {
   static defaultProps = {
     onLoginSuccess: () => { }
   }
@@ -18,7 +19,7 @@ export default class Login extends Component {
   firstInput = React.createRef()
 
   handleSubmit = ev => {
-    console.log('success login')
+    //console.log('success login')
     ev.preventDefault()
     const { username, password } = ev.target
 
@@ -28,10 +29,19 @@ export default class Login extends Component {
       password: password.value,
     })
       .then(res => {
+        //console.log(res)
         username.value = ''
         password.value = ''
-        this.context.processLogin(res.authToken)
-        this.props.onLoginSuccess()
+        TokenService.saveAuthToken(res.authToken)
+        const jwtPayload = TokenService.parseAuthToken()        
+        console.log(jwtPayload)
+
+      //   this.setUser({
+      //     id: jwtPayload.user_id,
+      //     username: jwtPayload.sub,
+      // })
+        //console.log('line41')
+        this.props.history.push('/dashboard')
       })
       .catch(res => {
         this.setState({ error: res.error })
@@ -64,23 +74,25 @@ export default class Login extends Component {
           />
         </div>
 
-        <Button type='submit'>Login</Button>
-        {' '}
-        <Button>
-          <Link to='/guest'>
-            Guest
-          </Link>
-        </Button> <br />
+        <div className='loginbtn'>
+          <Button type='submit'>Login</Button>
+          {' '}
+          
+          <Button onClick={() => {
+            this.props.history.push('/guest')
+          }}> Guest
+          </Button> <br />
+        </div>
 
-        <Link to='/signup'>Need to create an account?</Link>
+        <div className='btnLink'>
+          <Link to='/signup'>Need to create an account?</Link>
+        </div>
       </form>
-
-      // <footer>
-      // Copyright © since 2020
-      // </footer>
     );
   };
   
 };
+
+export default withRouter(Login);
 
 

@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import Button from '../Button/Button';
 import './Landing.css';
 
-export default class Landing extends Component {
+class Landing extends Component {
 
   render() {
     return (
       <div className='landing'>
         <h1>Battleship</h1>
-        <button>
-          <Link to='/login'>
-            Login
-          </Link>
-        </button>
+        
+        <Button onClick={() => {
+            this.props.history.push('/login')
+        }}> Login
+        </Button>
 
-        <footer>
-          Copyright © since 2020
-        </footer>
       </div>
     );
   };
 
 };
 
-
+export default withRouter(Landing);

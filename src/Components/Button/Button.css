@@ -1,0 +1,19 @@
+Button {
+  font-size: 1.5rem;
+  margin: 0.5%;
+  color: black;
+  background-color: white;
+  border: 0.2rem solid #2cdbdb;
+  padding: 0.6rem;
+}
+
+button a {
+  text-decoration: none;
+  color: black;
+}
+
+button a:hover,
+button:hover {
+  color: white;
+  background-color: #2d2dec;
+}

@@ -1,0 +1,17 @@
+ul {
+  list-style-type: none;
+  display: inline;
+}
+
+li {
+  font-size: 1.3rem;
+}
+
+.helpIB {
+  border: 0.1rem solid black;
+  padding-bottom: 2.2rem;
+  margin-bottom: 2rem !important;
+  max-width: 43rem;
+  margin: 0 auto;
+}
+

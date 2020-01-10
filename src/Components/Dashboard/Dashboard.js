@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import Button from '../Button/Button';
+import Footer from '../Footer/Footer';
 import './Dashboard.css';
+//import TokenService from '../../Services/token-service';
+import Header from '../Header/Header';
 
-export default class Dashboard extends Component {
+class Dashboard extends Component {
 
   
 
   render() {
     return (
       <div className='dashboard'>
-        <h1>Statuses</h1>
+        <Header />
         
         <div className='stats'>
+          <h1>Statues</h1>
           <h2>Win</h2>
           <p># times</p>
 
@@ -26,32 +31,30 @@ export default class Dashboard extends Component {
         </div>
 
         <div className='d-button'>
-          <button>
-            <Link to='/ai'>
-              AI
-            </Link>
-          </button>
+          <Button onClick={() => {
+            this.props.history.push('/ai')
+          }}> AI
+          </Button>
+        
+          <Button onClick={() => {
+            this.props.history.push('/live')
+          }}> live
+          </Button>
           
-          <button>
-            <Link to='/live'>
-              Live
-            </Link>
-          </button>
+          <Button onClick={() => {
+            this.props.history.push('/passive')
+          }}> Passive
+          </Button>
 
-          <button>
-            <Link to='/passive'>
-              Passive
-            </Link>
-          </button>
         </div>
-
-        <footer>
-          Copyright © since 2020
-        </footer>
+        
+        <Footer />
       </div>
     );
   };
   
 };
+
+export default withRouter(Dashboard);
 
 

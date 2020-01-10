@@ -2,19 +2,24 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import GameBoard from './Components/GameBoard/GameBoard';
 import './App.css';
+//import Header from './Components/Header/Header';
 
 /* import route js files */
-//import GameroomRoute from './Routes/GameroomRoute/GameroomRoute';
+import GameroomRoute from './Routes/GameroomRoute/GameroomRoute';
 import HelpRoute from './Routes/HelpRoute/HelpRoute';
 import LandingRoute from './Routes/LandingRoute/LandingRoute';
 import LoginRoute from './Routes/LoginRoute/LoginRoute';
 import PrivateOnlyRoute from './Components/PrivateOnlyRoute/PrivateOnlyRoute';
 import PublicOnlyRoute from './Components/PublicOnlyRoute/PublicOnlyRoute';
-//import ResultRoute from './Routes/ResultRoute/ResultRoute';
+import ResultRoute from './Routes/ResultRoute/ResultRoute';
 import SettingRoute from './Routes/SettingRoute/SettingRoute';
 import SignupRoute from './Routes/SignupRoute/SignupRoute';
 import DashboardRoute from './Routes/DashboardRoute/DashboardRoute';
 import NotFoundRoute from './Routes/NotFoundRoute/NotFoundRoute';
+import DeleteAccountRoute from './Routes/DeleteAccountRoute/DeleteAccountRoute';
+import PasswordChangeRoute from './Routes/PasswordChangeRoute/PasswordChangeRoute';
+import ResetAccountRoute from './Routes/ResetAccountRoute/ResetAccountRoute';
+import UsernameChangeRoute from './Routes/UsernameChangeRoute/UsernameChangeRoute';
 import Dashboard from './Components/Dashboard/Dashboard';
 
 export default class App extends Component {
@@ -26,7 +31,7 @@ export default class App extends Component {
         <GameBoard room={null}/>
         <main>
           <Switch>
-            <PublicOnlyRoute
+            <Route
               exact
               path={'/'}
               component={LandingRoute}
@@ -41,7 +46,12 @@ export default class App extends Component {
               path={'/login'}
               component={LoginRoute}
             />
-            <PublicOnlyRoute
+            {/* <PublicOnlyRoute 
+              exact
+              path={'/help'}
+              component={HelpRoute}
+            /> */}
+            <PrivateOnlyRoute
               exact
               path={'/help'}
               component={HelpRoute}
@@ -56,15 +66,46 @@ export default class App extends Component {
               path={'/setting'}
               component={SettingRoute}
             />
+            <PrivateOnlyRoute
+              exact
+              path={'/result'}
+              component={ResultRoute}
+            />
+            <PrivateOnlyRoute
+              exact
+              path={'/gameroom'}
+              component={GameroomRoute}
+            />
+            <PrivateOnlyRoute
+              exact
+              path={'/deleteAccount'}
+              component={DeleteAccountRoute}
+            />
+            <PrivateOnlyRoute
+              exact
+              path={'/ResetAccount'}
+              component={ResetAccountRoute}
+            />
+            <PrivateOnlyRoute
+              exact
+              path={'/passwordChange'}
+              component={PasswordChangeRoute}
+            />
+            <PrivateOnlyRoute
+              exact
+              path={'/UsernameChange'}
+              component={UsernameChangeRoute}
+            />
+            
             <Route
               component={NotFoundRoute}
             />
           </Switch>
         </main>
+
       </div>
     );
   }
-  
 };
 
 

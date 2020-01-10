@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import Button from '../Button/Button';
+import Footer from '../Footer/Footer';
 import './Help.css';
 
-export default class Help extends Component {
+class Help extends Component {
 
   render() {
     return (
       <div className='help'>
         <h1>Help</h1>
-        <div>
+        <div className='helpIB'>
           <h2>Instructions</h2>
           <ul>
             <li>1. How to Play</li>
@@ -19,7 +21,7 @@ export default class Help extends Component {
           </ul>
         </div>
 
-        <div>
+        <div className='helpIB'>
           <h2>Bug Report</h2>
           <ul>
             <li>1. Contact Info</li>
@@ -29,19 +31,16 @@ export default class Help extends Component {
           </ul>
         </div>
 
-        <button>
-          <Link to='/dashboard'>
-            Exit
-          </Link>
-        </button>
+        <Button onClick={() => {
+          this.props.history.push('/dashboard')
+        }}> Exit
+        </Button>
 
-        <footer>
-          Copyright © since 2020
-        </footer>
+        <Footer />
       </div>
     );
   };
   
 };
 
-
+export default withRouter(Help);

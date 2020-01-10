@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
+import Footer from '../Footer/Footer';
 import './Result.css';
 
 export default class Result extends Component {
@@ -16,27 +18,25 @@ export default class Result extends Component {
           <p>Shots Fired</p>
         </div>
 
-        <button>
+        <Button>
           <Link>
             Rematch
           </Link>
-        </button>
+        </Button>
 
-        <button>
+        <Button>
           <Link>
             New Game
           </Link>
-        </button>
+        </Button>
 
-        <button>
+        <Button>
           <Link to='/dashboard'>
             Exit
           </Link>
-        </button>
+        </Button>
 
-        <footer>
-          Copyright © since 2020
-        </footer>
+        <Footer />
       </div>
     );
   };
