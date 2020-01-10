@@ -5,7 +5,7 @@ import config from '../../config';
 import OpponentGrid from '../OpponentGrid/OpponentGrid';
 import BattleShipContext from '../../Contexts/battleship-context';
 import './GameBoard.css';
-import socket from '../../Services/socketService';
+import TokenService from '../../Services/token-service';
 
 
 
@@ -65,13 +65,15 @@ class GameBoard extends React.Component {
       transportOptions: {
         polling: {
           extraHeaders: {
-            'Authorization' : 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1Nzg2NzE4OTcsInN1YiI6ImFkbWluMSJ9.6aAwWOioUWtrDW86wibje53po5AgZqI1UanpZc8axc0'
+            'Authorization' : `Bearer ${TokenService.getAuthToken()}`
           }
         }
       }
     });
     let roomName = this.state.room ? this.state.room: 'random';
     socket.emit('join_room', roomName);
+
+    
     socket.on('joined', data =>  {
       console.log(data);
       this.setState({

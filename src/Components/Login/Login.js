@@ -19,7 +19,6 @@ class Login extends Component {
   firstInput = React.createRef()
 
   handleSubmit = ev => {
-    //console.log('success login')
     ev.preventDefault()
     const { username, password } = ev.target
 
@@ -29,18 +28,10 @@ class Login extends Component {
       password: password.value,
     })
       .then(res => {
-        //console.log(res)
         username.value = ''
         password.value = ''
         TokenService.saveAuthToken(res.authToken)
-        const jwtPayload = TokenService.parseAuthToken()        
-        console.log(jwtPayload)
-
-      //   this.setUser({
-      //     id: jwtPayload.user_id,
-      //     username: jwtPayload.sub,
-      // })
-        //console.log('line41')
+      
         this.props.history.push('/dashboard')
       })
       .catch(res => {

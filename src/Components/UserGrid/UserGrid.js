@@ -36,7 +36,6 @@ class UserGrid extends React.Component {
     //{result: "hit", ship: "defender", playerNum: "player1", target: "J7"}
     componentDidMount = () => {
         //this.refs.c.checkForShipTile()
-        console.log(this.props.socket)
         this.props.socket.on('response', data => {
             console.log(data);
             if(this.context.playerNum !== data.playerNum) {

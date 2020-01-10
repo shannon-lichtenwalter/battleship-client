@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import GameBoard from './Components/GameBoard/GameBoard';
 import './App.css';
 //import Header from './Components/Header/Header';
 
@@ -20,15 +19,14 @@ import DeleteAccountRoute from './Routes/DeleteAccountRoute/DeleteAccountRoute';
 import PasswordChangeRoute from './Routes/PasswordChangeRoute/PasswordChangeRoute';
 import ResetAccountRoute from './Routes/ResetAccountRoute/ResetAccountRoute';
 import UsernameChangeRoute from './Routes/UsernameChangeRoute/UsernameChangeRoute';
-import Dashboard from './Components/Dashboard/Dashboard';
 
 export default class App extends Component {
   
   render() {
     return (
       <div className="app">
-        <Dashboard /> 
-        <GameBoard room={null}/>
+        {/* <Dashboard /> 
+        <GameBoard room={null}/> */}
         <main>
           <Switch>
             <Route

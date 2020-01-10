@@ -37,7 +37,7 @@ class Dashboard extends Component {
           </Button>
         
           <Button onClick={() => {
-            this.props.history.push('/live')
+            this.props.history.push('/gameroom')
           }}> live
           </Button>
           
