@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import AuthApiService from '../../Services/auth-api-service';
-import UserContext from '../../Contexts/UserContext';
 import { Input, Required, Label } from '../Form/Form';
 import Button from '../Button/Button';
 import TokenService from '../../Services/token-service';
@@ -12,7 +11,6 @@ class Login extends Component {
     onLoginSuccess: () => { }
   }
 
-  static contextType = UserContext
 
   state = { error: null }
 

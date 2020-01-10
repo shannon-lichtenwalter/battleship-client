@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Login from '../../Components/Login/Login';
-//import UserContext from '../../Contexts/UserContext';
 
 export default class LoginRoute extends Component {
   static defaultProps = {
