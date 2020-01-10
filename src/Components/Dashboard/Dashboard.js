@@ -8,6 +8,8 @@ import Header from '../Header/Header';
 
 class Dashboard extends Component {
 
+  
+
   render() {
     return (
       <div className='dashboard'>
@@ -43,6 +45,7 @@ class Dashboard extends Component {
             this.props.history.push('/passive')
           }}> Passive
           </Button>
+
         </div>
         
         <Footer />

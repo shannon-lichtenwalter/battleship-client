@@ -7,6 +7,7 @@ class Cell extends React.Component {
     selected:null,
     idNumber:-2,
     shipTiles:[],
+    allShipTiles:[],
   }
 
 constructor(props){
@@ -48,9 +49,14 @@ determineClassName = () => {
   if (this.props.misses && this.props.misses.includes(this.props.id)){
     className += ' miss'
   } else
-  if(this.props.shipTiles.length > 0){
-      if (this.props.shipTiles.indexOf(this.props.idNumber) !== (-1)){
-        className = 'ship'
+  if(this.props.allShipTiles.length > 0){
+      if (this.props.allShipTiles.indexOf(this.props.idNumber) !== (-1)){
+        className += ' ship'
+        if(this.props.opponentShots && this.props.opponentShots.includes(this.props.id)) {
+          className += '-shot'
+        }
+      } else if(this.props.opponentShots && this.props.opponentShots.includes(this.props.id)) {
+        className += ' shot'
       }
   //this.setState({shipTile:true})
   //} 
@@ -76,11 +82,12 @@ determineClassName = () => {
 }
 
 checkForShipTile = () => {
-  console.log(this.props.shipTiles)
+  console.log(this.props.allShipTiles)
   console.log(this.props.currentId)
-  if ((this.props.shipTiles) && (this.props.shipTiles.indexOf(this.props.currentId)!==(-1)) ){
-    this.setState({isShipTile:true})
-  }
+
+  if ((this.props.allShipTiles) && (this.props.allShipTiles.indexOf(this.props.currentId)!==(-1)) ){
+   this.setState({isShipTile:true})
+ }
  //this.render()
 }
 
@@ -127,9 +134,7 @@ handleClick = () => {
         {this.props.id}
       </div>
     )
-  };
-};
+  }
+}
 
 export default Cell;
-
-
