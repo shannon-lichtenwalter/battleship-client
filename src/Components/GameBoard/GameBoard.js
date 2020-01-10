@@ -95,7 +95,7 @@ class GameBoard extends React.Component {
       <>
       {this.state.error && <p className='errorMessage'>{this.state.error}</p>}
       <h2>Your Ships</h2>
-      {this.state.socket && <UserGrid socket={this.state.socket} /> }
+      {/*this.state.socket && */<UserGrid /*socket={this.state.socket}*/ /> }
 
       <h2>Opponent Ships</h2>
       <OpponentGrid socket={this.state.socket} room={this.state.room}/>
