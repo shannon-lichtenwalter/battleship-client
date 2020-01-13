@@ -91,7 +91,7 @@ class UserGrid extends React.Component {
                         shipsReady: false,
                         placementFail: false,
                     })
-                });
+                }); 
         } else if (this.state.counter <= 4) {
             return `Please select cells for ${this.state.playerShips[this.state.counter].name}.
             This ship is ${this.state.playerShips[this.state.counter].length} spaces long`
