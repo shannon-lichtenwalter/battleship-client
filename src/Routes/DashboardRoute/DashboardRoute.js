@@ -5,7 +5,7 @@ export default class DashboardRoute extends Component {
   render() {
     return (
       <section>
-        <Dashboard />
+        <Dashboard setGameData={this.props.setGameData}/>
       </section>
     )
   }
