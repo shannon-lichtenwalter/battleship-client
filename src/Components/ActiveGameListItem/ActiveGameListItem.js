@@ -1,6 +1,7 @@
 import React from 'react';
 import loadGamesApiService from '../../Services/load-game-api-service';
 import { withRouter } from 'react-router';
+import Button from '../Button/Button';
 
 class ActiveGameListItem extends React.Component {
     state = {
@@ -74,9 +75,11 @@ class ActiveGameListItem extends React.Component {
                 <ul className='activeGameDetails'>
                     <li>GameRoom: #{this.state.room_id}</li>
                     <li>Turn: {this.state.userId && this.determineTurn()}</li>
-                    <li><button onClick={this.handleResumeGame}>
-                        Resume Game?
-          </button></li>
+                    <li>
+                        <Button onClick={this.handleResumeGame}>
+                            Resume Game?
+                        </Button>
+                    </li>
                 </ul>
             </>
         )

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Gameboard from '../GameBoard/GameBoard';
+import Button from '../Button/Button';
 import './Gameroom.css';
 
-export default class Gameroom extends Component {
+class Gameroom extends Component {
 
   render() {
     return (
@@ -12,12 +13,11 @@ export default class Gameroom extends Component {
         <Gameboard gameData={this.props.gameData} /> 
         <p>Chat</p>
 
-        <button>
-          <Link to='/dashboard'>
-            Exit
-          </Link>
-        </button>
-        
+        <Button onClick={() => {
+            this.props.history.push('/dashboard')
+          }}> Exit
+        </Button>
+
         <Footer />
       </div>
     );
@@ -25,4 +25,4 @@ export default class Gameroom extends Component {
   
 };
 
-
+export default withRouter(Gameroom);

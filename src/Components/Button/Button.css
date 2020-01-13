@@ -2,9 +2,8 @@ Button {
   font-size: 1.5rem;
   margin: 0.5%;
   color: black;
-  background-color: white;
-  border: 0.2rem solid #2cdbdb;
-  padding: 0.6rem;
+  background-color: #2cdbdb;
+  padding: 0.5rem;
 }
 
 button a {
@@ -15,5 +14,5 @@ button a {
 button a:hover,
 button:hover {
   color: white;
-  background-color: #2d2dec;
+  background-color: #1c1cd6;
 }

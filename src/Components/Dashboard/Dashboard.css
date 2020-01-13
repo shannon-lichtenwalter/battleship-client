@@ -1,14 +1,15 @@
-/* .stats {
+.stats {
   margin-top: 5rem;
 }
 
 .d-button {
   padding: 2rem;
-} */
+}
 
 .dashboardWelcome {
   font-size: 1.4rem;
   text-align: left;
+  margin-top: 5rem;
 }
 
 .activeGames, .activeGameDetails {

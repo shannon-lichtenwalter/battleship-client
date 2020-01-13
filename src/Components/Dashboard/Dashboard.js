@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ActiveGameListItem from '../ActiveGameListItem/ActiveGameListItem';
 import LoadGameApiService from '../../Services/load-game-api-service';
+import Header from '../Header/Header';
+import Button from '../Button/Button';
 
 import './Dashboard.css';
 
@@ -35,15 +37,16 @@ export default class Dashboard extends Component {
   render() {
     return (
       <div className='dashboard'>
+        <Header />
         <h2 className='dashboardWelcome'>Welcome back, User</h2>
         {this.state.error && <p>{this.state.error}</p>}
         <div className='startGames'>
         <h3>Play BattleShip</h3>          
-          <button onClick={()=> this.props.setGameData(null)}>
+          <Button onClick={()=> this.props.setGameData(null)}>
             <Link to='/gameroom'>
               Start a New Game
             </Link>
-          </button>
+          </Button>
         <h4>Return to an Active Game:</h4>
         <ul className='activeGames'>
           {this.state.activeGames && this.state.activeGames.map((game, index) => {
@@ -56,16 +59,16 @@ export default class Dashboard extends Component {
         
         <div className='stats'>
           <h2>Stats</h2>
-          <h2>Win</h2>
+          <h3>Win</h3>
           <p># times</p>
 
-          <h2>Lose</h2>
+          <h3>Lose</h3>
           <p># times</p>
 
-          <h2>Draw</h2>
+          <h3>Draw</h3>
           <p># times</p>
 
-          <h2>Win Ratio</h2>
+          <h3>Win Ratio</h3>
           <p># / #</p>
         </div>
 

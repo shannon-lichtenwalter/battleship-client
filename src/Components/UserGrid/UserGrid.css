@@ -3,7 +3,7 @@
     flex-direction: row;
 }
 
-h2{
+.UserContainer h2{
     display:block;
     /* max-width: 25vw; */
     font-size: 1em;
