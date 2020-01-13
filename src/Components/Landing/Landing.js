@@ -20,12 +20,20 @@ class Landing extends Component {
 
         <div id='app-info'>
             <p>
-              Testingdjgfflhgskjhfsdkfhgdfghdskjghdkjfghigurh
+              Welcome to Battleship! The interactive game where you can challenge
+              opponents in the classic game of sinking ships. This application allows
+              the user to play a live game of battleship against another user. The user will
+              receive live updates on their opponents advancements on the game board. Additionally,
+              user's have the ability to leave a game and return to it later.
+              To test out the site please create a new accout, or log in with the username: ****
+              and password: ****.
+
+              Fire Away!
             </p>
 
             <Button onClick={() => {
                 this.props.history.push('/login')
-            }}> Login
+            }}> Proceed to Login
             </Button>
         </div>
 

@@ -13,3 +13,12 @@ header Button {
   width: 100%;
   margin: 0 auto;
 }
+
+
+.titleBar {
+  display: block;
+}
+
+.navButtons {
+  display:block;
+}

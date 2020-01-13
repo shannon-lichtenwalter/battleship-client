@@ -1,10 +1,13 @@
+.landingPage {
+  width: 100%;
+}
 .landing {
   background-image: url('../../Img/deep-ocean.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   position: center;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -14,7 +17,7 @@
 
 .landing h1 {
   color: white;
-  font-size: 10rem;
+  font-size: 2.5rem;
   /* letter-spacing: 3rem; */
   font-family: 'Merienda One', cursive;
 }
@@ -29,8 +32,8 @@
 
 .arrow {
   box-sizing: border-box;
-  height: 5vw;
-  width: 5vw;
+  height: 10vw;
+  width: 10vw;
   border-style: solid;
   border-color: white;
   border-width: 0px 5px 5px 0px;
@@ -44,11 +47,59 @@
 
 .arrow-nav {
   display: block;
-  margin-top: 10rem;
+  position: relative;
+  top: 8rem;
 }
 
 #app-info {
   width: 80%;
   margin: 5rem auto;
-  background-color: lightgray;
+  background-color: rgb(211, 211, 211, 0.5);
+  padding: 15px;
+  border-radius:
+}
+
+#app-info > p{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+@media only screen and (min-width: 400px) {
+  .landing h1 {
+    font-size:3.5rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .landing h1 {
+    font-size:4.5rem;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  #app-info {
+    width: 60%;
+  }
+.arrow{
+  height: 7vw;
+  width: 7vw;
+}
+}
+
+  @media only screen and (min-width: 900px) {
+    .landing h1 {
+      font-size:5.5rem;
+    }
+    .arrow{
+      height: 5vw;
+      width: 5vw;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+  .landing h1 {
+    font-size:6.5rem;
+  }
+  #app-info {
+    width: 40%;
+  }
 }
