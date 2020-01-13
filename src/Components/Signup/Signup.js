@@ -47,9 +47,18 @@ class Signup extends Component {
         </div>
 
         <div>
-          <Label htmlFor='signup-username-input'>Username<Required /></Label>
+          <Label htmlFor='signup-email-input'>Enter your Email<Required /></Label>
           <Input
             ref={this.firstInput}
+            id='signup-email-input'
+            name='email'
+            required
+          />
+        </div>
+
+        <div>
+          <Label htmlFor='signup-username-input'>Choose a username<Required /></Label>
+          <Input
             id='signup-username-input'
             name='username'
             required
@@ -57,20 +66,11 @@ class Signup extends Component {
         </div>
 
         <div>
-          <Label htmlFor='signup-password-input'>Password<Required /></Label>
+          <Label htmlFor='signup-password-input'>Choose a password<Required /></Label>
           <Input
             id='signup-password-input'
             name='password'
             type='password'
-            required
-          />
-        </div>
-
-        <div>
-          <Label htmlFor='signup-email-input'>Email<Required /></Label>
-          <Input
-            id='signup-email-input'
-            name='email'
             required
           />
         </div>
