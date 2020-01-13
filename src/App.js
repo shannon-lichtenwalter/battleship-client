@@ -21,12 +21,11 @@ import ResetAccountRoute from './Routes/ResetAccountRoute/ResetAccountRoute';
 import UsernameChangeRoute from './Routes/UsernameChangeRoute/UsernameChangeRoute';
 
 export default class App extends Component {
-  
+ 
+
   render() {
     return (
       <div className="app">
-        {/* <Dashboard /> 
-        <GameBoard room={null}/> */}
         <main>
           <Switch>
             <Route

@@ -56,6 +56,9 @@ class GameBoard extends React.Component {
     })
   }
 
+  clearError = () => { 
+    this.setState({ error: null, }) 
+  }
   
   componentDidMount = () =>{
     //fetch game data based on game id. set the state with the game data and pass
@@ -84,6 +87,12 @@ class GameBoard extends React.Component {
         socket: socket
       })
     });
+
+    socket.on('reconnected', () => {
+      this.setState({
+        socket:socket
+      })
+    });
   }
 
   render () {
@@ -92,7 +101,8 @@ class GameBoard extends React.Component {
         gameId: this.state.gameId,
         playerNum: this.state.playerNum,
         error: this.state.error,
-        setError: this.setError
+        setError: this.setError,
+        clearError: this.clearError
       }}>
       <>
       {this.state.error && <p className='errorMessage'>{this.state.error}</p>}

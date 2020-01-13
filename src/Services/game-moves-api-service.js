@@ -1,5 +1,5 @@
 import config from '../config';
-//import TokenService from './token-service';
+import TokenService from './token-service';
 
 const gameMovesApiService = {
   // this function is used to store the users ships' location in the database.
@@ -10,7 +10,7 @@ const gameMovesApiService = {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        //'authorization': `bearer ${TokenService.getAuthToken()}`
+        'authorization': `bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify({
         shipData,
@@ -34,7 +34,7 @@ const gameMovesApiService = {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        //'authorization': `bearer ${TokenService.getAuthToken()}`
+        'authorization': `bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify({
         target,

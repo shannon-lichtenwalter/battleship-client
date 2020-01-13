@@ -73,10 +73,13 @@ class OpponentGrid extends React.Component {
 
 
       this.props.socket.emit('fire', {target: this.state.selected, gameId: this.context.gameId, playerNum: this.context.playerNum, roomId: this.props.room})
+
+
       this.props.socket.on('response', res => {
         console.log(res);
         this.checkForHits(res.result, res.ship);
         this.checkForMisses(res.result);
+        //swap turns
       })
 
     }
