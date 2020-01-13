@@ -7,13 +7,27 @@ class Landing extends Component {
 
   render() {
     return (
-      <div className='landing'>
-        <h1>Battleship</h1>
-        
-        <Button onClick={() => {
-            this.props.history.push('/login')
-        }}> Login
-        </Button>
+      <div className='landingPage'>
+        <div className='landing'>
+          <h1>BATTLESHIP</h1>
+            <div className='arrow-nav'>
+              <a href='#app-info'>
+                <div className='arrow'> 
+                </div>
+              </a>
+            </div>
+        </div>
+
+        <div id='app-info'>
+            <p>
+              Testingdjgfflhgskjhfsdkfhgdfghdskjghdkjfghigurh
+            </p>
+
+            <Button onClick={() => {
+                this.props.history.push('/login')
+            }}> Login
+            </Button>
+        </div>
 
       </div>
     );

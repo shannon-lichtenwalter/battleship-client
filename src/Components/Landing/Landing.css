@@ -1,0 +1,54 @@
+.landing {
+  background-image: url('../../Img/deep-ocean.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing h1 {
+  color: white;
+  font-size: 10rem;
+  /* letter-spacing: 3rem; */
+  font-family: 'Merienda One', cursive;
+}
+
+.landing p{
+  color: white;
+}
+
+.landing Button {
+  font-size: 3rem;
+}
+
+.arrow {
+  box-sizing: border-box;
+  height: 5vw;
+  width: 5vw;
+  border-style: solid;
+  border-color: white;
+  border-width: 0px 5px 5px 0px;
+  transform: rotate(45deg);
+  transition: border-width 150ms ease-in-out;
+}
+
+.arrow:hover {
+  border-color: aqua;
+}
+
+.arrow-nav {
+  display: block;
+  margin-top: 10rem;
+}
+
+#app-info {
+  width: 80%;
+  margin: 5rem auto;
+  background-color: lightgray;
+}

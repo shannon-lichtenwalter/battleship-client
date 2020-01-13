@@ -34,7 +34,6 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="app">
         <main>
           <Switch>
             <Route
@@ -110,8 +109,6 @@ export default class App extends Component {
             />
           </Switch>
         </main>
-
-      </div>
     );
   }
 };
