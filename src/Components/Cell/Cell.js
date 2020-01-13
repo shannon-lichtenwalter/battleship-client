@@ -48,7 +48,29 @@ determineClassName = () => {
   } else
   if (this.props.misses && this.props.misses.includes(this.props.id)){
     className += ' miss'
-  } else
+  }
+
+  // the following is determining classNames for cells of resumedGames only.
+  if(this.props.resumedGame){
+    let shipSpaces = [];
+    this.props.playerShips.map(ship => {
+      return ship.spaces.map(space => shipSpaces.push(space))
+    })
+      if(shipSpaces.includes(this.props.id)){
+        className += ' ship'
+        if(this.props.opponentHits){
+          if(this.props.opponentHits.includes(this.props.id)){
+          className += '-shot'
+          }
+        }
+      }else if (this.props.opponentMisses){
+        if(this.props.opponentMisses.includes(this.props.id)) {
+        className += ' shot'
+        }
+      }
+    };
+
+
   if(this.props.allShipTiles.length > 0){
       if (this.props.allShipTiles.indexOf(this.props.idNumber) !== (-1)){
         className += ' ship'
@@ -58,26 +80,14 @@ determineClassName = () => {
       } else if(this.props.opponentShots && this.props.opponentShots.includes(this.props.id)) {
         className += ' shot'
       }
-  //this.setState({shipTile:true})
-  //} 
-    //this.setState({shipTile:true})
+  
   } 
-  // if ((this.props.selected === this.props.id) && (this.props.shipTiles) && 
-  //    (this.props.shipTiles.indexOf(this.props.id)!==(-1) && 
-  //    this.state.shipTile)){
-  //       className = 'ship'
-  //   //this.setState({shipTile:true})
-  // } 
+
   else if (this.props.selected === this.props.id) {
     className += ' selected'
     //console.log(this.props.shipTiles)
   } 
-  // if ((this.props.selected === this.props.id) && (this.props.shipTiles.length > 0) && (this.props.shipTiles.indexOf(this.props.id)!==(-1))){
-  //     className += ' ship'
-  // }
-   //else if (this.props.selected && this.props.shipOccupied.indexOf(this.props.id)!==(-1)) {
-    //className += ' ship'
-  //}
+
   return className;
 }
 
@@ -127,7 +137,7 @@ handleClick = () => {
       {this.props.label 
         ? 'label' 
         : ''} 
-        style={this.state.shipTile ? { 'backgroundColor': 'blue' } : null}
+        //style={this.state.shipTile ? { 'backgroundColor': 'blue' } : null}
         className={this.determineClassName()}
         onClick={() => this.handleClick()}
                             >

@@ -19,9 +19,18 @@ import DeleteAccountRoute from './Routes/DeleteAccountRoute/DeleteAccountRoute';
 import PasswordChangeRoute from './Routes/PasswordChangeRoute/PasswordChangeRoute';
 import ResetAccountRoute from './Routes/ResetAccountRoute/ResetAccountRoute';
 import UsernameChangeRoute from './Routes/UsernameChangeRoute/UsernameChangeRoute';
+import Gameroom from './Components/Gameroom/Gameroom';
 
 export default class App extends Component {
- 
+  state = {
+    gameData: null,
+  }
+
+  setGameData = (gameData) => {
+      this.setState({
+      gameData
+    })
+  }
 
   render() {
     return (
@@ -56,7 +65,7 @@ export default class App extends Component {
             <PrivateOnlyRoute
               exact
               path={'/dashboard'}
-              component={DashboardRoute}
+              component={() => <DashboardRoute setGameData={this.setGameData}/>}
             />
             <PrivateOnlyRoute
               exact
@@ -71,7 +80,9 @@ export default class App extends Component {
             <PrivateOnlyRoute
               exact
               path={'/gameroom'}
-              component={GameroomRoute}
+              component={() => <Gameroom
+                gameData={this.state.gameData}
+                />}
             />
             <PrivateOnlyRoute
               exact

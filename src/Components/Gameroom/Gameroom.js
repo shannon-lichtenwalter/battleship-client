@@ -9,7 +9,7 @@ export default class Gameroom extends Component {
   render() {
     return (
       <div>
-        <Gameboard /> 
+        <Gameboard gameData={this.props.gameData} /> 
         <p>Chat</p>
 
         <button>

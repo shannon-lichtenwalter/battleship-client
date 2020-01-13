@@ -18,8 +18,9 @@ class OpponentGrid extends React.Component {
       { 'name': 'Defender', 'length': 2, 'spaces': ['D2', 'D3'] }],
       result: null,
       message: null,
-      hits: [],
-      misses: [],
+      hits: this.props.hits ? this.props.hits : [],
+      misses: this.props.misses ? this.props.misses : [],
+      turn: this.props.userTurn
     }
   }
 
@@ -79,7 +80,7 @@ class OpponentGrid extends React.Component {
         console.log(res);
         this.checkForHits(res.result, res.ship);
         this.checkForMisses(res.result);
-        //swap turns
+        //this.props.changeTurn();
       })
 
     }

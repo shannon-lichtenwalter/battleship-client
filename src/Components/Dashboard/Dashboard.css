@@ -1,8 +1,30 @@
-.stats {
+/* .stats {
   margin-top: 5rem;
 }
 
 .d-button {
   padding: 2rem;
+} */
+
+.dashboardWelcome {
+  font-size: 1.4rem;
+  text-align: left;
 }
 
+.activeGames, .activeGameDetails {
+  list-style: none;
+  padding: 0px;
+}
+
+.activeGames {
+  border: 1px solid grey;
+  width: 80%;
+  text-align: left;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+}
+
+.activeGames >li {
+  font-weight: bold;
+}
