@@ -61,6 +61,7 @@ class Login extends Component {
           <Input
             id='login-password-input'
             name='password'
+            type='password'
             required
           />
         </div>
