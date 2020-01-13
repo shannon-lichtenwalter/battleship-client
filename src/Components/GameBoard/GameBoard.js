@@ -44,6 +44,8 @@ class GameBoard extends React.Component {
     playerNum: this.props.gameData ? this.props.gameData.currentUser : null,
     room: this.props.gameData ? this.props.gameData.room_id : null,
     resumedGame: this.props.gameData ? true : false,
+    opponentShipsReady: this.props.gameData ? this.props.gameData.opponentShips : null,
+    shipsReady: this.props.gameData && this.props.gameData.userShips ? true : false,
     socket: null,
     error: null
   }
@@ -55,11 +57,18 @@ class GameBoard extends React.Component {
     })
   }
 
-  // changeTurn = () => {
-  //   this.setState({
-  //     userTurn: !this.state.userTurn
-  //   })
-  // }
+  setShipsReady = () => {
+    console.log('setting ships ready')
+    this.setState({
+      shipsReady: true
+    })
+  }
+
+  changeTurn = () => {
+    this.setState({
+      userTurn: !this.state.userTurn
+    })
+  }
 
   determineOpponentShots = () => {
     console.log(this.state.opponentHits);
@@ -112,9 +121,23 @@ class GameBoard extends React.Component {
         socket: socket
       })
     });
+
+    socket.on('opponent_ready', () => {
+      this.setState({
+        opponentShipsReady: true
+      })
+    });
   }
 
   render() {
+    let gameStarted = (this.state.shipsReady && this.state.opponentShipsReady);
+    let opponentGrid = this.state.shipsReady ? 
+      <OpponentGrid 
+        socket={this.state.socket} room={this.state.room} hits={this.state.userHits} misses={this.state.userMisses} 
+        changeTurn={this.changeTurn} userTurn = {this.state.userTurn} 
+        gameStart={this.state.shipsReady && this.state.opponentShipsReady} /> 
+      : null;
+
     return (
       <BattleShipContext.Provider value={{
         gameId: this.state.gameId,
@@ -128,10 +151,15 @@ class GameBoard extends React.Component {
           <h2>Your Ships</h2>
           {this.state.socket && <UserGrid
             socket={this.state.socket} userShips={this.state.userShips} opponentHits={this.state.opponentHits}
-            opponentMisses={this.state.opponentMisses} resumedGame={this.state.resumedGame} changeTurn={this.changeTurn} />}
+            opponentMisses={this.state.opponentMisses} resumedGame={this.state.resumedGame} changeTurn={this.changeTurn} 
+            setShipsReady={this.setShipsReady} room={this.state.room} shipsReady={this.state.shipsReady} />}
 
-          <h2>Opponent Ships</h2>
-          <OpponentGrid socket={this.state.socket} room={this.state.room} hits={this.state.userHits} misses={this.state.userMisses} changeTurn={this.changeTurn} userTurn = {this.state.userTurn}/>
+          {/* <h2>Opponent Ships</h2>
+          <OpponentGrid 
+          socket={this.state.socket} room={this.state.room} hits={this.state.userHits} misses={this.state.userMisses} 
+          changeTurn={this.changeTurn} userTurn = {this.state.userTurn} 
+          gameStart={this.state.shipsReady && this.state.opponentShipsReady} /> */}
+          {opponentGrid}
         </>
       </BattleShipContext.Provider>
     )

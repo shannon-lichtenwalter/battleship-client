@@ -46,12 +46,14 @@ class ActiveGameListItem extends React.Component {
                     storeData.userMisses = gameData.player1_misses;
                     storeData.opponentHits = gameData.player2_hits;
                     storeData.opponentMisses = gameData.player2_misses;
+                    storeData.opponentShips = gameData.player2_ships;
                 } else {
                     storeData.userShips = gameData.player2_ships;
                     storeData.userHits = gameData.player2_hits;
                     storeData.userMisses = gameData.player2_misses;
                     storeData.opponentHits = gameData.player1_hits;
                     storeData.opponentMisses = gameData.player1_misses;
+                    storeData.opponentShips = gameData.player1_ships;
                 }
                 storeData.currentUser = gameData.currentUser;
                 storeData.turn = gameData.currentUser === gameData.turn;

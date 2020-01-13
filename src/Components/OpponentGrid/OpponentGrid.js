@@ -78,9 +78,9 @@ class OpponentGrid extends React.Component {
 
       this.props.socket.on('response', res => {
         console.log(res);
+        // this.props.changeTurn();
         this.checkForHits(res.result, res.ship);
         this.checkForMisses(res.result);
-        //this.props.changeTurn();
       })
 
     }
@@ -161,17 +161,25 @@ class OpponentGrid extends React.Component {
   }
 
   render() {
+
+
+    let buttonDisableBool = (this.props.userTurn) ? 
+    <div>
+      <h3>Select your target</h3>
+      <p>You have selected: {this.state.selected}</p>
+      <form onSubmit={(event)=> this.handleFire(event)}>
+        <button type='submit'>Fire!</button>
+      </form>
+    </div>
+    : null;
+
     return (
       <div className='OpponentContainer'>
         <div className='OpponentGrid'>
           {this.handleRenderGrid()}
         </div>
         <h2 className='message'>{this.state.message && this.state.message} </h2>
-        <h3>Select your target</h3>
-        <p>You have selected: {this.state.selected}</p>
-        <form onSubmit={(event)=> this.handleFire(event)}>
-          <button type='submit'> Fire!</button>
-        </form>
+        {buttonDisableBool}
       </div>
     )
   }
