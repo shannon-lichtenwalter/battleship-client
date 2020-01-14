@@ -1,29 +1,54 @@
-/* .stats {
+.stats {
   margin-top: 5rem;
 }
 
 .d-button {
   padding: 2rem;
-} */
+}
 
 .dashboardWelcome {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   text-align: left;
+  margin-left: 1rem;
+  margin-top: 7rem;
 }
 
 .activeGames, .activeGameDetails {
   list-style: none;
-  padding: 0px;
+  padding: 0;
 }
 
 .activeGames {
-  border: 1px solid grey;
+  border: 0.1rem solid white; 
   width: 80%;
-  text-align: left;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   padding: 10px;
 }
+
+
+@media screen and (min-width: 900px) {
+  .activeGames {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .activeGames {
+    width: 60%;
+  }
+
+  .startGames h3 {
+    font-size: 3rem;
+  }
+
+  .dashboardWelcome {
+    font-size: 1.6rem;
+    margin-top: 7.5rem;
+  }
+
+  .startGames h4 {
+    font-size: 1.6rem;
+  }
 
 .activeGames >li {
   font-weight: bold;
@@ -31,4 +56,5 @@
 
 h2 > span.username {
   color: rgb(16, 43, 86, 0.6);
+
 }

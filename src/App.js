@@ -4,7 +4,7 @@ import './App.css';
 //import Header from './Components/Header/Header';
 
 /* import route js files */
-import GameroomRoute from './Routes/GameroomRoute/GameroomRoute';
+//import GameroomRoute from './Routes/GameroomRoute/GameroomRoute';
 import HelpRoute from './Routes/HelpRoute/HelpRoute';
 import LandingRoute from './Routes/LandingRoute/LandingRoute';
 import LoginRoute from './Routes/LoginRoute/LoginRoute';
@@ -34,7 +34,6 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="app">
         <main>
           <Switch>
             <Route
@@ -52,11 +51,6 @@ export default class App extends Component {
               path={'/login'}
               component={LoginRoute}
             />
-            {/* <PublicOnlyRoute 
-              exact
-              path={'/help'}
-              component={HelpRoute}
-            /> */}
             <PrivateOnlyRoute
               exact
               path={'/help'}
@@ -110,8 +104,6 @@ export default class App extends Component {
             />
           </Switch>
         </main>
-
-      </div>
     );
   }
 };

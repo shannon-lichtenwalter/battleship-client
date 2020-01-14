@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Login from '../../Components/Login/Login';
+import './LoginRoute.css';
 
 export default class LoginRoute extends Component {
   static defaultProps = {
@@ -14,7 +15,7 @@ export default class LoginRoute extends Component {
       <section className='login'>
         <h1>Login</h1>
 
-          <Login />
+        <Login />
       </section>
     )
   }

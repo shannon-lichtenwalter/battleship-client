@@ -1,0 +1,35 @@
+.banner {
+  background-image: url('../../Img/deep-ocean.jpg');
+  background-position: right top;
+  color: white;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+.banner h1 {
+  -webkit-text-stroke: 0.7px rgb(192, 124, 34);
+  /* text-shadow: 0 5px 10px 0 rgba(191, 163, 127, 0.3); */
+}
+
+@media screen and (min-width: 700px) {
+  .banner {
+    background-position: left top;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .banner {
+    background-position: center top;
+    justify-content: flex-start;
+  }
+
+  .banner h1 {
+    margin-left: 1rem;
+  }
+}

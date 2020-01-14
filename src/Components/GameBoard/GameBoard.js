@@ -8,11 +8,7 @@ import './GameBoard.css';
 import TokenService from '../../Services/token-service';
 import Chat from '../Chat/Chat';
 
-
-
-
 class GameBoard extends React.Component {
-
   /*
   
     export object = {
@@ -29,7 +25,6 @@ class GameBoard extends React.Component {
         whose turn
     };
   */
-
 
   /*
   Add opponents hits/misses to state
@@ -105,7 +100,6 @@ class GameBoard extends React.Component {
     });
     let roomName = this.state.room ? this.state.room : 'random';
     socket.emit('join_room', roomName);
-
 
     socket.on('joined', data => {
       this.setState({
