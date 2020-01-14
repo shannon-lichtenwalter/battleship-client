@@ -4,7 +4,7 @@ import './Chat.css'
 
 export default class Chat extends React.Component {
     state = {
-        messages: [{username:'schmittywormenjagermanjensen', message:'hello'}, {username:'Me', message:'Hi yourself schmittywormenjagermanjensenschmittywormenjagermanjensenschmittywormenjagermanjensenschmittywormenjagermanjensenschmittywormenjagermanjensenschmittywormenjagermanjensenschmittywormenjagermanjensenschmittywormenjagermanjensenschmittywormenjagermanjensenschmittywormenjagermanjensen'}, {username:'schmittywormenjagermanjensen', message:'glhf'}]
+        messages: []
     }
 
     componentDidMount = () => {
