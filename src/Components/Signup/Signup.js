@@ -30,6 +30,7 @@ class Signup extends Component {
         this.props.onRegistrationSuccess()
       })
       .catch(res => {
+        console.log('error catch here')
         this.setState({ error: res.error })
       })
   };

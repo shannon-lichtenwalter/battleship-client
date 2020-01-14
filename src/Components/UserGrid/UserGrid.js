@@ -25,9 +25,9 @@ class UserGrid extends React.Component {
             shipTileLaid: false,
             opponentShots: [],
             opponentHits: this.props.opponentHits,
-            opponentMisses:this.props.opponentMisses,
+            opponentMisses: this.props.opponentMisses,
             shipsReady: this.props.shipsReady,
-            placementFail:false,
+            placementFail: false,
             resumedGame: this.props.resumedGame,
         }
     };
@@ -38,11 +38,17 @@ class UserGrid extends React.Component {
     componentDidMount = () => {
         //this.refs.c.checkForShipTile()
         this.props.socket.on('response', data => {
-        
+
             this.props.changeTurn();
             if (this.context.playerNum !== data.playerNum) {
+                let message = null;
+                if (data.result === 'missed') {
+                    message = `${data.playerNum} missed!`
+                } else {
+                    message = `${data.playerNum} ${data.result} your ${data.ship}`
+                }
                 this.setState({
-                    message: `${data.playerNum} ${data.result} your ${data.ship}`,
+                    message,
                     opponentShots: [...this.state.opponentShots, data.target]
                 })
 
@@ -86,7 +92,7 @@ class UserGrid extends React.Component {
                         shipsReady: false,
                         placementFail: false,
                     })
-                }); 
+                });
         } else if (this.state.counter <= 4) {
             return `Please select cells for ${this.state.playerShips[this.state.counter].name}.
             This ship is ${this.state.playerShips[this.state.counter].length} spaces long`
@@ -101,10 +107,10 @@ class UserGrid extends React.Component {
             temp.push(this.state.boat[i].idNum)
         }
         temp.sort(function (a, b) { return a - b })
-        
+
         for (let i = 0; i < temp.length - 1; i++) {
             if ((((temp[i + 1]) - temp[i]) !== 1) && (((temp[i + 1]) - temp[i]) !== 10)) {
-                
+
                 status = false;
             }
         }
@@ -112,7 +118,7 @@ class UserGrid extends React.Component {
             temp2 = this.state.allShipTilesOccupied
             temp2.splice(-temp.length, temp.length)
         }
-        
+
         return status
     };
 
@@ -128,7 +134,7 @@ class UserGrid extends React.Component {
             if (status) {
                 let currentShips = this.state.playerShips;
                 let boatValues = this.state.boat.map(boat => boat.value);
-                
+
                 currentShips[this.state.counter].spaces = boatValues
                 this.setState({
                     playerShips: currentShips,
@@ -190,7 +196,7 @@ class UserGrid extends React.Component {
                     let validVRangeLow = (-50) + firstIdNum < 0 ? 0 : (-50) + firstIdNum;
                     let firstDigit = this.state.boat.length > 0 ? this.state.boat[0].value.charAt(0) : value.charAt(0)
                     let firstCurrentDigit = value.charAt(0)
-                    
+
                     if (lastIdNum < validHRangeHigh && lastIdNum > validHRangeLow) {
                         if (((lastIdNum === firstIdNum + 1) || (lastIdNum === firstIdNum - 1)) &&
                             this.state.allShipTilesOccupied.indexOf(lastIdNum) === (-1) &&
@@ -301,7 +307,7 @@ class UserGrid extends React.Component {
                 }
             }
         } else {
-            
+
             let tempAllTilesOccupied = this.state.allShipTilesOccupied
             let tempShipOccupied = this.state.shipOccupied
             let tempBoat = this.state.boat
@@ -329,7 +335,7 @@ class UserGrid extends React.Component {
     };
 
     handleSelectTarget = (value, idNum) => {
-        if(this.context.error) {
+        if (this.context.error) {
             this.context.clearError();
         }
         if (!this.state.shipsReady) {

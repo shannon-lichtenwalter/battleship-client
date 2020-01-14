@@ -6,6 +6,7 @@ import OpponentGrid from '../OpponentGrid/OpponentGrid';
 import BattleShipContext from '../../Contexts/battleship-context';
 import './GameBoard.css';
 import TokenService from '../../Services/token-service';
+import Chat from '../Chat/Chat';
 
 class GameBoard extends React.Component {
   /*
@@ -65,20 +66,20 @@ class GameBoard extends React.Component {
     })
   }
 
-  determineOpponentShots = () => {
-    console.log(this.state.opponentHits);
-    console.log(this.state.opponentMisses);
+  // determineOpponentShots = () => {
+  //   console.log(this.state.opponentHits);
+  //   console.log(this.state.opponentMisses);
 
-    if (this.state.opponentHits && this.state.opponentMisses) {
-      return [...this.state.opponenetHits, ...this.state.opponenetMisses]
-    } else if (this.state.opponentHits) {
-      return this.state.opponentHits
-    } else if (this.state.opponentMisses) {
-      return this.state.opponenetMisses
-    } else {
-      return []
-    }
-  }
+  //   if (this.state.opponentHits && this.state.opponentMisses) {
+  //     return [...this.state.opponenetHits, ...this.state.opponenetMisses]
+  //   } else if (this.state.opponentHits) {
+  //     return this.state.opponentHits
+  //   } else if (this.state.opponentMisses) {
+  //     return this.state.opponenetMisses
+  //   } else {
+  //     return []
+  //   }
+  // }
 
   clearError = () => {
     this.setState({ error: null, })
@@ -121,15 +122,22 @@ class GameBoard extends React.Component {
         opponentShipsReady: true
       })
     });
-  }
+
+    socket.on('win', data => {
+      if(data.winner === this.state.playerNum){
+        alert('You won!')
+      }else{
+        alert('You lost')
+      }
+    })
+  };
 
   render() {
-    let gameStarted = (this.state.shipsReady && this.state.opponentShipsReady);
-    let opponentGrid = this.state.shipsReady ? 
-      <OpponentGrid 
+    let opponentGrid = this.state.shipsReady && this.state.socket ? 
+        <OpponentGrid 
         socket={this.state.socket} room={this.state.room} hits={this.state.userHits} misses={this.state.userMisses} 
         changeTurn={this.changeTurn} userTurn = {this.state.userTurn} 
-        gameStart={this.state.shipsReady && this.state.opponentShipsReady} /> 
+        gameStart={this.state.shipsReady && this.state.opponentShipsReady} />
       : null;
 
     return (
@@ -154,6 +162,10 @@ class GameBoard extends React.Component {
           changeTurn={this.changeTurn} userTurn = {this.state.userTurn} 
           gameStart={this.state.shipsReady && this.state.opponentShipsReady} /> */}
           {opponentGrid}
+
+
+
+          {this.state.socket && <Chat socket={this.state.socket} room={this.state.room}/>}
         </>
       </BattleShipContext.Provider>
     )

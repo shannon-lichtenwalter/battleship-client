@@ -11,7 +11,18 @@ class Gameroom extends Component {
   render() {
     return (
       <div>
+
         <Banner />
+
+        <Gameboard gameData={this.props.gameData} /> 
+        
+
+        <button>
+          <Link to='/dashboard'>
+            Exit
+          </Link>
+        </button>
+
         
         <div className='gameroom'>
           <Gameboard gameData={this.props.gameData} /> 
