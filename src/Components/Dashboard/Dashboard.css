@@ -40,4 +40,8 @@
   .activeGames {
     width: 60%;
   }
+
+  .startGames h3 {
+    font-size: 3rem;
+  }
 }

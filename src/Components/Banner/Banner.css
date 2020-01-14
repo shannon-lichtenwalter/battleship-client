@@ -1,5 +1,6 @@
 .banner {
   background-image: url('../../Img/deep-ocean.jpg');
+  background-position: right top;
   color: white;
   display: flex;
   justify-content: center;
@@ -9,4 +10,17 @@
   overflow: hidden;
   position: fixed;
   width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .banner {
+    background-position: left top;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .banner {
+    background-position: left top;
+    justify-content: flex-start;
+  }
 }
