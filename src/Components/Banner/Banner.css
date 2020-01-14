@@ -21,6 +21,5 @@
 @media screen and (min-width: 1025px) {
   .banner {
     background-position: left top;
-    justify-content: flex-start;
   }
 }
