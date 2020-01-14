@@ -23,7 +23,7 @@ class Dashboard extends Component {
   componentDidMount(){
     LoadGameApiService.getAllActiveGames()
     .then(res => {
-      console.log(res);
+      //console.log(res);
       this.setState({
         activeGames: res.result,
         userId: res.userId

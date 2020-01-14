@@ -15,6 +15,7 @@ header Button {
   background-color: rgb(162, 188, 214);
   margin-top: 3.6rem;
   border-radius: 0;
+  border: 0;
 }
 
 header Button:hover {

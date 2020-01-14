@@ -12,6 +12,11 @@
   width: 100%;
 }
 
+.banner h1 {
+  -webkit-text-stroke: 0.7px rgb(168, 164, 164);
+  text-shadow: 0 10px 50px 0 rgba(168, 164, 164, 0.5);
+}
+
 @media screen and (min-width: 600px) {
   .banner {
     background-position: left top;

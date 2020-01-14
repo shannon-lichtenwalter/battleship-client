@@ -2,6 +2,7 @@ import React from 'react';
 import loadGamesApiService from '../../Services/load-game-api-service';
 import { withRouter } from 'react-router';
 import Button from '../Button/Button';
+import './ActiveGameListItem.css';
 
 class ActiveGameListItem extends React.Component {
     state = {
@@ -72,8 +73,9 @@ class ActiveGameListItem extends React.Component {
 
     render() {
         return (
-            <>
+            <div className='activeGameListItem'>
                 <li>{this.state.player1_username} versus {this.state.player2_username}</li>
+                
                 <ul className='activeGameDetails'>
                     <li>GameRoom: #{this.state.room_id}</li>
                     <li>Turn: {this.state.userId && this.determineTurn()}</li>
@@ -83,7 +85,7 @@ class ActiveGameListItem extends React.Component {
                         </Button>
                     </li>
                 </ul>
-            </>
+            </div>
         )
     }
 }
