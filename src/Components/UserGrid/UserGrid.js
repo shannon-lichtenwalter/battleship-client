@@ -26,23 +26,21 @@ class UserGrid extends React.Component {
             opponentShots: [],
             opponentHits: this.props.opponentHits,
             opponentMisses:this.props.opponentMisses,
-            shipsReady: this.props.resumedGame && this.props.userShips ? true : false,
+            shipsReady: this.props.shipsReady,
             placementFail:false,
             resumedGame: this.props.resumedGame,
         }
     };
 
-
     static contextType = BattleShipContext;
-
 
     //{result: "hit", ship: "defender", playerNum: "player1", target: "J7"}
     componentDidMount = () => {
         //this.refs.c.checkForShipTile()
         this.props.socket.on('response', data => {
         
+            this.props.changeTurn();
             if (this.context.playerNum !== data.playerNum) {
-                //this.props.changeTurn()
                 this.setState({
                     message: `${data.playerNum} ${data.result} your ${data.ship}`,
                     opponentShots: [...this.state.opponentShots, data.target]
@@ -59,16 +57,14 @@ class UserGrid extends React.Component {
     //after a boat has been completely built. If all the boats have been build, then an API call is made to update the
     //player's ships location in the database.
 
-
     handleSetShips = () => {
-        if (this.state.counter === 5 && !this.state.shipsReady) {
+        if (this.state.counter === 5 && !this.props.shipsReady) {
             //once all the ships are set, the data is sent to the database to be stored
 
             gameMovesApiService.setShips(this.state.playerShips, this.context.gameId, this.context.playerNum)
-                .then((asdf) => {
-                    this.setState({
-                        shipsReady: true
-                    })
+                .then(() => {
+                    this.props.setShipsReady();
+                    this.props.socket.emit('ships_ready', this.props.room);
                 })
                 .catch((e) => {
                     this.context.setError(e);
@@ -90,7 +86,7 @@ class UserGrid extends React.Component {
                         shipsReady: false,
                         placementFail: false,
                     })
-                });
+                }); 
         } else if (this.state.counter <= 4) {
             return `Please select cells for ${this.state.playerShips[this.state.counter].name}.
             This ship is ${this.state.playerShips[this.state.counter].length} spaces long`

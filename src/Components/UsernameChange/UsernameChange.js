@@ -3,6 +3,8 @@ import { Input, Required, Label } from '../Form/Form';
 import { withRouter } from 'react-router-dom';
 import Button from '../Button/Button';
 import Footer from '../Footer/Footer';
+import Banner from '../Banner/Banner';
+import './UsernameChange.css';
 
 class UsernameChange extends Component {
 
@@ -11,34 +13,38 @@ class UsernameChange extends Component {
   render() {
     return (
       <div>
-        <h1>Username Change</h1>
-        <form>
-          <div>
-            <Label htmlFor='username-change'>New Username<Required /></Label>
-            <Input 
-              ref={this.firstInput}
-              id='username-change'
-              name='newUsername'
-              required
-            />
-          </div>
+        <Banner />
 
-          <div>
-            <Label htmlFor='confirm-username-change'>Confirm New Username<Required /></Label>
-            <Input 
-              id='confirm-username-change'
-              name='confirmNewUsername'
-              required
-            />
-          </div>
+        <div className='settingOption'>
+          <h1>Username Change</h1>
+          <form>
+            <div>
+              <Label htmlFor='username-change'>New Username<Required /></Label>
+              <Input 
+                ref={this.firstInput}
+                id='username-change'
+                name='newUsername'
+                required
+              />
+            </div>
 
-          <Button onClick={() => {
-            this.props.history.push('/dashboard')
-          }}> Done
-          </Button>
-        </form>
+            <div>
+              <Label htmlFor='confirm-username-change'>Confirm New Username<Required /></Label>
+              <Input 
+                id='confirm-username-change'
+                name='confirmNewUsername'
+                required
+              />
+            </div>
 
-        <Footer />
+            <Button onClick={() => {
+              this.props.history.push('/setting')
+            }}> Done
+            </Button>
+          </form>
+
+          <Footer />
+        </div>
       </div>
     )
   }

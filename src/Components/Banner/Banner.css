@@ -1,0 +1,12 @@
+.banner {
+  background-image: url('../../Img/deep-ocean.jpg');
+  color: white;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}

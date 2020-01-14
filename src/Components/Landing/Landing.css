@@ -1,6 +1,7 @@
 .landingPage {
   width: 100%;
 }
+
 .landing {
   background-image: url('../../Img/deep-ocean.jpg');
   background-size: cover;
@@ -79,26 +80,28 @@
   #app-info {
     width: 60%;
   }
-.arrow{
-  height: 7vw;
-  width: 7vw;
-}
+  .arrow{
+    height: 7vw;
+    width: 7vw;
+  }
 }
 
-  @media only screen and (min-width: 900px) {
-    .landing h1 {
-      font-size:5.5rem;
-    }
-    .arrow{
-      height: 5vw;
-      width: 5vw;
-    }
+@media only screen and (min-width: 900px) {
+  .landing h1 {
+    font-size:5.5rem;
+  }
+
+  .arrow{
+    height: 5vw;
+    width: 5vw;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
   .landing h1 {
     font-size:6.5rem;
   }
+  
   #app-info {
     width: 40%;
   }

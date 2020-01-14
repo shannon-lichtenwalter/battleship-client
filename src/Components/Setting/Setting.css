@@ -1,3 +1,11 @@
+.setting {
+  margin-top: 8rem;
+}
+
+.setting h1 {
+  margin-bottom: 2rem;
+}
+
 .setting a {
   font-size: 1.5rem;
   color: black;
@@ -5,4 +13,8 @@
 
 li {
   margin-bottom: 1.5rem;
+}
+
+.settingsLink ul {
+  display: inline;
 }

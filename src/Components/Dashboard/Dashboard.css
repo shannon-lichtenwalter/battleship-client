@@ -7,9 +7,9 @@
 }
 
 .dashboardWelcome {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   text-align: left;
-  margin-top: 5rem;
+  margin-top: 8rem;
 }
 
 .activeGames, .activeGameDetails {
@@ -18,7 +18,7 @@
 }
 
 .activeGames {
-  border: 1px solid grey;
+  border: 0.1rem solid black; 
   width: 80%;
   text-align: left;
   margin-right: auto;
@@ -28,4 +28,16 @@
 
 .activeGames >li {
   font-weight: bold;
+}
+
+@media screen and (min-width: 900px) {
+  .activeGames {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .activeGames {
+    width: 60%;
+  }
 }

@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import ActiveGameListItem from '../ActiveGameListItem/ActiveGameListItem';
 import LoadGameApiService from '../../Services/load-game-api-service';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import Button from '../Button/Button';
 import './Dashboard.css';
 
-export default class Dashboard extends Component {
+class Dashboard extends Component {
   state = {
     activeGames: [],
     userId: null,
@@ -36,23 +37,24 @@ export default class Dashboard extends Component {
     return (
       <div className='dashboard'>
         <Header />
+
         <h2 className='dashboardWelcome'>Welcome back, User</h2>
         {this.state.error && <p>{this.state.error}</p>}
+        
         <div className='startGames'>
-        
-        <h3>Play BattleShip</h3>          
-          <Button onClick={()=> this.props.setGameData(null)}>
-            <Link to='/gameroom'>
-              Start a New Game
-            </Link>
-          </Button>
-        <h4>Return to an Active Game:</h4>
-        
-        <ul className='activeGames'>
-          {this.state.activeGames && this.state.activeGames.map((game, index) => {
-          return <ActiveGameListItem key={index} setGameData={this.props.setGameData} game={game} userId={this.state.userId}/> 
-          })}
-        </ul>
+          <h3>Play BattleShip</h3>          
+            <Button onClick={()=> this.props.setGameData(null)}>
+              <Link to='/gameroom'>
+                Start a New Game!
+              </Link>
+            </Button>
+          <h4>Return to an Active Game:</h4>
+          
+          <ul className='activeGames'>
+            {this.state.activeGames && this.state.activeGames.map((game, index) => {
+            return <ActiveGameListItem key={index} setGameData={this.props.setGameData} game={game} userId={this.state.userId}/> 
+            })}
+          </ul>
         </div>
 
         <div className='stats'>
@@ -70,12 +72,12 @@ export default class Dashboard extends Component {
           <p># / #</p>
         </div>
 
-        <footer>
-          Copyright © since 2020
-        </footer>
+        <Footer />
       </div>
     );
   };
 };
+
+export default Dashboard;
 
 

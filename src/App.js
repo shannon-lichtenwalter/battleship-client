@@ -4,7 +4,7 @@ import './App.css';
 //import Header from './Components/Header/Header';
 
 /* import route js files */
-import GameroomRoute from './Routes/GameroomRoute/GameroomRoute';
+//import GameroomRoute from './Routes/GameroomRoute/GameroomRoute';
 import HelpRoute from './Routes/HelpRoute/HelpRoute';
 import LandingRoute from './Routes/LandingRoute/LandingRoute';
 import LoginRoute from './Routes/LoginRoute/LoginRoute';

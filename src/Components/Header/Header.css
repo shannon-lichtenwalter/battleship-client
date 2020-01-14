@@ -12,13 +12,11 @@ header {
 header Button {
   width: 100%;
   margin: 0 auto;
+  background-color: rgb(162, 188, 214);
+  margin-top: 3.6rem;
+  border-radius: 0;
 }
 
-
-.titleBar {
-  display: block;
-}
-
-.navButtons {
-  display:block;
+header Button:hover {
+  background-color:rgb(16, 43, 86);
 }
