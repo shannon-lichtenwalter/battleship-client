@@ -42,7 +42,7 @@ class Dashboard extends Component {
         {this.state.error && <p>{this.state.error}</p>}
         
         <div className='startGames'>
-          <h3>Play BattleShip</h3>          
+          <h3>Play Battleship</h3>          
             <Button onClick={()=> this.props.setGameData(null)}>
               <Link to='/gameroom'>
                 Start a New Game!

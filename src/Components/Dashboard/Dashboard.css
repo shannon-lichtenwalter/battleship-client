@@ -9,18 +9,18 @@
 .dashboardWelcome {
   font-size: 1.3rem;
   text-align: left;
+  margin-left: 1rem;
   margin-top: 7rem;
 }
 
 .activeGames, .activeGameDetails {
   list-style: none;
-  padding: 0px;
+  padding: 0;
 }
 
 .activeGames {
-  border: 0.1rem solid black; 
+  border: 0.1rem solid white; 
   width: 80%;
-  text-align: left;
   margin: 0 auto;
   padding: 10px;
 }

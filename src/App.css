@@ -10,7 +10,8 @@ main {
 }
 
 body {
-  box-sizing: border-box;
+  background-color: rgb(5, 21, 46);
+  color: white;
 }
 
 h1 {

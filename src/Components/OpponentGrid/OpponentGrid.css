@@ -1,5 +1,5 @@
 .OpponentContainer {
-  border: 2px solid black;
+  border: 2px solid white;
   display: flex;
   flex-direction: column;
   justify-content: center;
