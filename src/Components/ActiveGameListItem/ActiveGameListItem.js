@@ -78,7 +78,7 @@ class ActiveGameListItem extends React.Component {
                     <li>Turn: {this.state.userId && this.determineTurn()}</li>
                     <li><button onClick={this.handleResumeGame}>
                         Resume Game?
-          </button></li>
+                        </button></li>
                 </ul>
             </>
         )

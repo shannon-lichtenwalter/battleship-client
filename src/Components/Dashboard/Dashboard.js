@@ -10,7 +10,9 @@ export default class Dashboard extends Component {
     activeGames: [],
     userId: null,
     error: null,
-    userStats: {}
+    userStats: {},
+    myTurnGames: [],
+    opponentTurnGames: []
   }
 
   setError = (err) => {
@@ -28,6 +30,26 @@ export default class Dashboard extends Component {
         activeGames: res.result,
         userId: res.userId
       })
+      return res
+    }).then(res => {
+      //the following then block is sorting which games is it the logged in
+      //users turn in versus the games that are waiting for the opponent.
+      let myTurnGames = [];
+      let opponentTurnGames = [];
+
+      res.result.map(game => {
+        if(res.userId === game.player1 && game.turn === 'player1'){
+          myTurnGames.push(game)
+      }else if(res.userId === game.player2 && game.turn === 'player2'){
+        myTurnGames.push(game)
+      }else{
+        opponentTurnGames.push(game)
+      }
+    });
+    this.setState({
+      myTurnGames,
+      opponentTurnGames,
+    })
     })
     .catch((e) => this.setError(e));
     
@@ -54,8 +76,13 @@ export default class Dashboard extends Component {
             </Link>
           </button>
         <h4>Return to an Active Game:</h4>
-        <ul className='activeGames'>
-          {this.state.activeGames && this.state.activeGames.map((game, index) => {
+        <ul className='activeGames myturn'>
+          {this.state.myTurnGames.length !== 0 && <h4>Your Turn!</h4>}
+          {this.state.myTurnGames && this.state.myTurnGames.map((game, index) => {
+          return <ActiveGameListItem key={index} setGameData={this.props.setGameData} game={game} userId={this.state.userId}/> 
+          })}
+          {this.state.opponentTurnGames.length !== 0 && <h4>Waiting For Opponent...</h4>}
+          {this.state.opponentTurnGames && this.state.opponentTurnGames.map((game, index) => {
           return <ActiveGameListItem key={index} setGameData={this.props.setGameData} game={game} userId={this.state.userId}/> 
           })}
         </ul>
