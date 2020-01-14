@@ -1,0 +1,13 @@
+.activeGameListItem > li {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1025px) {
+  .activeGameListItem li {
+    font-size: 1.6rem;
+  }
+  
+  .activeGameDetails li {
+    font-size: 1.4rem;
+  }
+}

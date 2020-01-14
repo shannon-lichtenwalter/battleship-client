@@ -1,17 +1,38 @@
-ul {
+.helpIB ul {
   list-style-type: none;
-  /* display: inline; */
+  display: inline;
+}
+
+.help {
+  margin-top: 8rem;
+}
+
+.help h1 {
+  margin-bottom: 2rem;
 }
 
 li {
   font-size: 1.3rem;
+  display: block;
 }
 
 .helpIB {
-  border: 0.1rem solid black;
+  border: 0.1rem solid white;
   padding-bottom: 2.2rem;
   margin-bottom: 2rem !important;
-  max-width: 43rem;
+  width: 80%;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 900px) {
+  .helpIB {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .helpIB {
+    width: 60%;
+  }
 }
 

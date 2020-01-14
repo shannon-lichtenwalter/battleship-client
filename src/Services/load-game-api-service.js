@@ -38,6 +38,7 @@ const loadGamesApiService = {
         )
     },
 
+
     getAllUserStats(){
       return fetch(`${config.API_ENDPOINT}/api/games/stats`, {
         method: 'GET',
@@ -53,7 +54,9 @@ const loadGamesApiService = {
         )
     }
 
+
   };
 
-
 export default loadGamesApiService;
+
+

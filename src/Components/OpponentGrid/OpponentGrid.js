@@ -1,5 +1,7 @@
 import React from 'react';
 import Cell from '../Cell/Cell';
+
+
 import BattleShipContext from '../../Contexts/battleship-context';
 import './OpponentGrid.css';
 
@@ -15,7 +17,7 @@ class OpponentGrid extends React.Component {
       misses: this.props.misses ? this.props.misses : [],
       turn: this.props.userTurn
     }
-  }
+  };
 
   static contextType = BattleShipContext;
 
@@ -47,8 +49,11 @@ class OpponentGrid extends React.Component {
         selected: null,
       })
     }
-  }
-  //changes the message displayed to the user if a miss was made
+
+  };
+
+//changes the message displayed to the user if a miss was made
+
   checkForMisses = (result) => {
     if (result !== 'hit') {
       this.setState({
@@ -58,11 +63,14 @@ class OpponentGrid extends React.Component {
         selected: null,
       })
     }
-  }
-  //this function makes sure a user has selected a target. If so, post request is 
-  //made to the database to determine if it was a hit or a miss on the opponents' ships.
-  //with the response from the database we call check for Hits and check for Misses which will update
-  //what the user sees based on a hit or a miss.
+
+  };
+
+//this function makes sure a user has selected a target. If so, post request is 
+//made to the database to determine if it was a hit or a miss on the opponents' ships.
+//with the response from the database we call check for Hits and check for Misses which will update
+//what the user sees based on a hit or a miss.
+
 
   handleFire = (event) => {
     event.preventDefault();
@@ -70,8 +78,10 @@ class OpponentGrid extends React.Component {
       this.setState({
         message: 'Must Choose a Target'
       })
+
     } else {
       this.props.socket.emit('fire', { target: this.state.selected, gameId: this.context.gameId, playerNum: this.context.playerNum, roomId: this.props.room })
+
     }
   }
 
@@ -112,7 +122,7 @@ class OpponentGrid extends React.Component {
         temp = num
     }
     return temp
-  }
+  };
 
   handleRenderGrid = () => {
     //setting the rows and columns of the gameboard grid
@@ -145,7 +155,7 @@ class OpponentGrid extends React.Component {
         </div>
       )
     })
-  }
+  };
 
   render() {
 
@@ -161,7 +171,7 @@ class OpponentGrid extends React.Component {
       : null;
 
     return (
-      <div className='OpponentContainer'>
+      <div className='OpponentContainer grid'>
         <div className='OpponentGrid'>
           {this.handleRenderGrid()}
         </div>
@@ -173,4 +183,5 @@ class OpponentGrid extends React.Component {
 }
 
 export default OpponentGrid;
+
 
