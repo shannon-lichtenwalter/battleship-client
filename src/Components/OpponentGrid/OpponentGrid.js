@@ -1,6 +1,5 @@
 import React from 'react';
 import Cell from '../Cell/Cell';
-import gameMovesApiService from '../../Services/game-moves-api-service';
 import BattleShipContext from '../../Contexts/battleship-context';
 import './OpponentGrid.css';
 
@@ -10,12 +9,6 @@ class OpponentGrid extends React.Component {
     super(props);
     this.state = {
       selected: null,
-      //hard coding these for testing, will need from database in future
-      opponentShips: [{ 'name': 'Aircraft Carrier', 'length': 5, 'spaces': ['A4','A5','A6','A7', 'A8'] },
-      { 'name': 'Battleship', 'length': 4, 'spaces': ['H3', 'H4', 'H5', 'H6'] },
-      { 'name': 'Cruiser', 'length': 3, 'spaces': ['I1', 'I2', 'I3'] },
-      { 'name': 'Submarine', 'length': 3, 'spaces': ['E1', 'F1', 'G1'] },
-      { 'name': 'Defender', 'length': 2, 'spaces': ['D2', 'D3'] }],
       result: null,
       message: null,
       hits: this.props.hits ? this.props.hits : [],

@@ -70,20 +70,20 @@ class GameBoard extends React.Component {
     })
   }
 
-  determineOpponentShots = () => {
-    console.log(this.state.opponentHits);
-    console.log(this.state.opponentMisses);
+  // determineOpponentShots = () => {
+  //   console.log(this.state.opponentHits);
+  //   console.log(this.state.opponentMisses);
 
-    if (this.state.opponentHits && this.state.opponentMisses) {
-      return [...this.state.opponenetHits, ...this.state.opponenetMisses]
-    } else if (this.state.opponentHits) {
-      return this.state.opponentHits
-    } else if (this.state.opponentMisses) {
-      return this.state.opponenetMisses
-    } else {
-      return []
-    }
-  }
+  //   if (this.state.opponentHits && this.state.opponentMisses) {
+  //     return [...this.state.opponenetHits, ...this.state.opponenetMisses]
+  //   } else if (this.state.opponentHits) {
+  //     return this.state.opponentHits
+  //   } else if (this.state.opponentMisses) {
+  //     return this.state.opponenetMisses
+  //   } else {
+  //     return []
+  //   }
+  // }
 
   clearError = () => {
     this.setState({ error: null, })
@@ -127,7 +127,15 @@ class GameBoard extends React.Component {
         opponentShipsReady: true
       })
     });
-  }
+
+    socket.on('win', data => {
+      if(data.winner === this.state.playerNum){
+        alert('You won!')
+      }else{
+        alert('You lost')
+      }
+    })
+  };
 
   render() {
     let gameStarted = (this.state.shipsReady && this.state.opponentShipsReady);
