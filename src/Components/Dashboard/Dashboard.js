@@ -72,7 +72,7 @@ export default class Dashboard extends Component {
           <p>{this.state.userStats.losses} times</p>
 
           <h2>Win Ratio</h2>
-          <p>{Math.floor(this.state.userStats.wins / (this.state.userStats.wins + this.state.userStats.losses)) * 100 + '%'}</p>
+          <p>{Math.floor(this.state.userStats.wins / (this.state.userStats.wins + this.state.userStats.losses) * 100) + '%'}</p>
         </div>
 
 
