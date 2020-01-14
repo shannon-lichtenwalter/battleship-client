@@ -19,15 +19,27 @@ class OpponentGrid extends React.Component {
 
   static contextType = BattleShipContext;
 
-    handleSelectTarget = (value) => {
+  componentDidMount = () => {
+    this.props.socket.on('response', res => {
+      console.log(res);
+      if(this.context.playerNum === res.playerNum){
+        this.checkForHits(res.result, res.ship);
+        this.checkForMisses(res.result);
+      }
+    })
+  }
+
+  handleSelectTarget = (value) => {
     this.setState({
       selected: value,
       message: null,
     })
   }
-//changes the message displayed to the user if a hit was made
+
+
+  //changes the message displayed to the user if a hit was made
   checkForHits = (result, ship) => {
-    if(result === 'hit'){
+    if (result === 'hit') {
       this.setState({
         result: 'hit',
         message: `Direct Hit on the ${ship}!`,
@@ -36,49 +48,31 @@ class OpponentGrid extends React.Component {
       })
     }
   }
-//changes the message displayed to the user if a miss was made
+  //changes the message displayed to the user if a miss was made
   checkForMisses = (result) => {
-    if(result !== 'hit'){
+    if (result !== 'hit') {
       this.setState({
         result: 'miss',
         message: 'Missed the target!',
         misses: [...this.state.misses, this.state.selected],
         selected: null,
       })
+    }
   }
-}
-//this function makes sure a user has selected a target. If so, post request is 
-//made to the database to determine if it was a hit or a miss on the opponents' ships.
-//with the response from the database we call check for Hits and check for Misses which will update
-//what the user sees based on a hit or a miss.
+  //this function makes sure a user has selected a target. If so, post request is 
+  //made to the database to determine if it was a hit or a miss on the opponents' ships.
+  //with the response from the database we call check for Hits and check for Misses which will update
+  //what the user sees based on a hit or a miss.
 
   handleFire = (event) => {
     event.preventDefault();
-    if(this.state.selected === null){
+    if (this.state.selected === null) {
       this.setState({
         message: 'Must Choose a Target'
       })
-    }else {
-      // gameMovesApiService.fireAtTarget(this.state.selected, this.context.gameId, this.context.playerNum)
-      // .then(res => {
-      //   this.checkForHits(res.result, res.ship);
-      //   this.checkForMisses(res.result);
-      // }).catch((e) => this.context.setError(e));
-
-
-      this.props.socket.emit('fire', {target: this.state.selected, gameId: this.context.gameId, playerNum: this.context.playerNum, roomId: this.props.room})
-
-
-      this.props.socket.on('response', res => {
-        console.log(res);
-        // this.props.changeTurn();
-        this.checkForHits(res.result, res.ship);
-        this.checkForMisses(res.result);
-      })
-
+    } else {
+      this.props.socket.emit('fire', { target: this.state.selected, gameId: this.context.gameId, playerNum: this.context.playerNum, roomId: this.props.room })
     }
-
-    
   }
 
   findMyIndex = (letter, num) => {
@@ -156,15 +150,15 @@ class OpponentGrid extends React.Component {
   render() {
 
 
-    let buttonDisableBool = (this.props.userTurn) ? 
-    <div>
-      <h3>Select your target</h3>
-      <p>You have selected: {this.state.selected}</p>
-      <form onSubmit={(event)=> this.handleFire(event)}>
-        <button type='submit'>Fire!</button>
-      </form>
-    </div>
-    : null;
+    let buttonDisableBool = (this.props.userTurn) ?
+      <div>
+        <h3>Select your target</h3>
+        <p>You have selected: {this.state.selected}</p>
+        <form onSubmit={(event) => this.handleFire(event)}>
+          <button type='submit'>Fire!</button>
+        </form>
+      </div>
+      : null;
 
     return (
       <div className='OpponentContainer'>

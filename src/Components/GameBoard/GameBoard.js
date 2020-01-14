@@ -139,12 +139,11 @@ class GameBoard extends React.Component {
   };
 
   render() {
-    let gameStarted = (this.state.shipsReady && this.state.opponentShipsReady);
-    let opponentGrid = this.state.shipsReady ? 
-      <OpponentGrid 
+    let opponentGrid = this.state.shipsReady && this.state.socket ? 
+        <OpponentGrid 
         socket={this.state.socket} room={this.state.room} hits={this.state.userHits} misses={this.state.userMisses} 
         changeTurn={this.changeTurn} userTurn = {this.state.userTurn} 
-        gameStart={this.state.shipsReady && this.state.opponentShipsReady} /> 
+        gameStart={this.state.shipsReady && this.state.opponentShipsReady} />
       : null;
 
     return (
