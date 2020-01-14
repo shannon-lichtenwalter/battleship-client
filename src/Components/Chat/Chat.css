@@ -1,0 +1,38 @@
+.chat-username {
+    margin:20px;
+    margin-right: 10px;
+}
+
+.chat-me {
+    color: blue;
+}
+
+.chat-opponent {
+    color: red;
+}
+
+.chat-message {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    word-break: break-all;
+}
+
+.chat-li {
+    display: flex;
+    flex-direction: row;
+}
+
+#chat-window {
+    padding: 20px;
+    border: solid 1px black;
+    margin: 0;
+    overflow: auto;
+    height: 500px;
+}
+
+#chat {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    border: solid 1px black;
+}

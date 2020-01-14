@@ -10,7 +10,7 @@ export default class Gameroom extends Component {
     return (
       <div>
         <Gameboard gameData={this.props.gameData} /> 
-        <p>Chat</p>
+        
 
         <button>
           <Link to='/dashboard'>
