@@ -4,7 +4,7 @@
 }
 
 .chat-me {
-    color: blue;
+    color: rgb(57, 206, 252);
 }
 
 .chat-opponent {
@@ -28,6 +28,7 @@
     margin: 0;
     overflow: auto;
     height: 500px;
+    background-color: rgb(2, 9, 20);
 }
 
 #chat {
@@ -35,4 +36,15 @@
     margin: 0 auto;
     padding: 10px;
     border: solid 1px black;
+    background-color: white;
+}
+
+#chatInput {
+    border: solid 1px black;
+    width: 70%;
+    height: 50px;
+}
+
+#chat-label {
+    color: black;
 }

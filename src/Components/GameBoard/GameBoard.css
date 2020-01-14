@@ -13,3 +13,11 @@
 .errorMessage {
   color: red;
 }
+
+.grid-box {
+  display: flex;
+}
+
+.grid {
+  width: 50%;
+}

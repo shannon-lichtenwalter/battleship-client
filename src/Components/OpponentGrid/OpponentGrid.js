@@ -171,7 +171,7 @@ class OpponentGrid extends React.Component {
       : null;
 
     return (
-      <div className='OpponentContainer'>
+      <div className='OpponentContainer grid'>
         <div className='OpponentGrid'>
           {this.handleRenderGrid()}
         </div>

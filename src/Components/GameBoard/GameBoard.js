@@ -151,20 +151,14 @@ class GameBoard extends React.Component {
         <>
           {this.state.error && <p className='errorMessage'>{this.state.error}</p>}
           <h2>Your Ships</h2>
-          {this.state.socket && <UserGrid
-            socket={this.state.socket} userShips={this.state.userShips} opponentHits={this.state.opponentHits}
-            opponentMisses={this.state.opponentMisses} resumedGame={this.state.resumedGame} changeTurn={this.changeTurn} 
-            setShipsReady={this.setShipsReady} room={this.state.room} shipsReady={this.state.shipsReady} />}
-
-          {/* <h2>Opponent Ships</h2>
-          <OpponentGrid 
-          socket={this.state.socket} room={this.state.room} hits={this.state.userHits} misses={this.state.userMisses} 
-          changeTurn={this.changeTurn} userTurn = {this.state.userTurn} 
-          gameStart={this.state.shipsReady && this.state.opponentShipsReady} /> */}
-          {opponentGrid}
-
-
-
+          <div className='grid-box'>
+            {this.state.socket && <UserGrid
+              socket={this.state.socket} userShips={this.state.userShips} opponentHits={this.state.opponentHits}
+              opponentMisses={this.state.opponentMisses} resumedGame={this.state.resumedGame} changeTurn={this.changeTurn} 
+              setShipsReady={this.setShipsReady} room={this.state.room} shipsReady={this.state.shipsReady} />}
+            {opponentGrid}
+          </div>
+          
           {this.state.socket && <Chat socket={this.state.socket} room={this.state.room}/>}
         </>
       </BattleShipContext.Provider>

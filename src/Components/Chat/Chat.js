@@ -4,7 +4,7 @@ import './Chat.css'
 
 export default class Chat extends React.Component {
     state = {
-        messages: []
+        messages: [{username: 'heesu', message:'Aedan you fool!'}]
     }
 
     componentDidMount = () => {
@@ -50,7 +50,7 @@ export default class Chat extends React.Component {
                     this.handleChatMessage(event.target.chatInput.value);
                     event.target.chatInput.value = '';
                 }}>
-                    <label htmlFor='chatInput'>Chat Input</label>
+                    <label htmlFor='chatInput' id='chat-label'>Chat Input</label>
                     <input type='text' placeholder='Type your message here.' id='chatInput' />
                 </form>
             </div>

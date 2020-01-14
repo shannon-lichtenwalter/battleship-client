@@ -10,32 +10,27 @@ class Gameroom extends Component {
 
   render() {
     return (
-      <div>
 
+
+
+
+
+
+
+
+      <div className='gameroom'>
         <Banner />
+        <Gameboard gameData={this.props.gameData} />
 
-        <Gameboard gameData={this.props.gameData} /> 
-        
 
-        <button>
-          <Link to='/dashboard'>
-            Exit
-          </Link>
-        </button>
-
-        
-        <div className='gameroom'>
-          <Gameboard gameData={this.props.gameData} /> 
-          <h3>Chat</h3>
-
-          <Button onClick={() => {
-              this.props.history.push('/dashboard')
-            }}> Exit
+        <Button onClick={() => {
+          this.props.history.push('/dashboard')
+        }}> Exit
           </Button>
 
-          <Footer />
-        </div>
+        <Footer />
       </div>
+
     );
   };
 };

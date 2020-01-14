@@ -442,7 +442,7 @@ class UserGrid extends React.Component {
     render() {
 
         return (
-            <div className='UserContainer'>
+            <div className='UserContainer grid'>
                 <div className='UserGrid'>
                     {this.handleRenderGrid()}
 

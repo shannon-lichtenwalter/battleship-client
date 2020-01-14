@@ -25,6 +25,14 @@
   padding: 10px;
 }
 
+.activeGames >li {
+  font-weight: bold;
+}
+
+h2 > span.username {
+  color: rgb(57, 206, 252);
+
+}
 
 @media screen and (min-width: 900px) {
   .activeGames {
@@ -49,12 +57,4 @@
   .startGames h4 {
     font-size: 1.6rem;
   }
-
-.activeGames >li {
-  font-weight: bold;
-}
-
-h2 > span.username {
-  color: rgb(16, 43, 86, 0.6);
-
 }
