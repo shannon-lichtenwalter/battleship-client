@@ -42,6 +42,8 @@ class UsernameChange extends Component {
       </div>
     )
   }
-}
+};
 
 export default withRouter(UsernameChange);
+
+

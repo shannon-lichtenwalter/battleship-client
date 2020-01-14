@@ -11,7 +11,6 @@ class Login extends Component {
     onLoginSuccess: () => { }
   }
 
-
   state = { error: null }
 
   firstInput = React.createRef()

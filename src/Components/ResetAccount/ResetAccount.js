@@ -27,3 +27,5 @@ class ResetAccount extends Component {
 }
 
 export default withRouter(ResetAccount);
+
+

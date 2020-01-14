@@ -44,8 +44,8 @@ class Setting extends Component {
       </div>
     );
   };
-  
 };
 
 export default withRouter(Setting);
+
 

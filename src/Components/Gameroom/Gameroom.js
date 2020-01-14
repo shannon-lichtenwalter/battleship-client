@@ -22,7 +22,8 @@ class Gameroom extends Component {
       </div>
     );
   };
-  
 };
 
 export default withRouter(Gameroom);
+
+

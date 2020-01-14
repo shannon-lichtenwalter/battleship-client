@@ -37,8 +37,8 @@ const loadGamesApiService = {
             : res.json()
         )
     },
-
   };
 
-
 export default loadGamesApiService;
+
+

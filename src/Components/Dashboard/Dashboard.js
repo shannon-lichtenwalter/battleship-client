@@ -4,7 +4,6 @@ import ActiveGameListItem from '../ActiveGameListItem/ActiveGameListItem';
 import LoadGameApiService from '../../Services/load-game-api-service';
 import Header from '../Header/Header';
 import Button from '../Button/Button';
-
 import './Dashboard.css';
 
 export default class Dashboard extends Component {
@@ -32,7 +31,6 @@ export default class Dashboard extends Component {
     .catch((e) => this.setError(e));
     //fetch for the active games and save them to state.
   }
-  
 
   render() {
     return (
@@ -41,6 +39,7 @@ export default class Dashboard extends Component {
         <h2 className='dashboardWelcome'>Welcome back, User</h2>
         {this.state.error && <p>{this.state.error}</p>}
         <div className='startGames'>
+        
         <h3>Play BattleShip</h3>          
           <Button onClick={()=> this.props.setGameData(null)}>
             <Link to='/gameroom'>
@@ -48,6 +47,7 @@ export default class Dashboard extends Component {
             </Link>
           </Button>
         <h4>Return to an Active Game:</h4>
+        
         <ul className='activeGames'>
           {this.state.activeGames && this.state.activeGames.map((game, index) => {
           return <ActiveGameListItem key={index} setGameData={this.props.setGameData} game={game} userId={this.state.userId}/> 
@@ -55,8 +55,6 @@ export default class Dashboard extends Component {
         </ul>
         </div>
 
-        
-        
         <div className='stats'>
           <h2>Stats</h2>
           <h3>Win</h3>
@@ -72,13 +70,12 @@ export default class Dashboard extends Component {
           <p># / #</p>
         </div>
 
-
-
         <footer>
           Copyright © since 2020
         </footer>
       </div>
     );
   };
-  
 };
+
+

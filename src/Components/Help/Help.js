@@ -40,7 +40,8 @@ class Help extends Component {
       </div>
     );
   };
-  
 };
 
 export default withRouter(Help);
+
+

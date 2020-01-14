@@ -25,3 +25,5 @@ class DeleteAccount extends Component {
 }
 
 export default withRouter(DeleteAccount);
+
+
