@@ -1,6 +1,6 @@
 import React from 'react';
 import Cell from '../Cell/Cell';
-import gameMovesApiService from '../../Services/game-moves-api-service';
+//import gameMovesApiService from '../../Services/game-moves-api-service';
 import BattleShipContext from '../../Contexts/battleship-context';
 import './OpponentGrid.css';
 
@@ -82,10 +82,7 @@ class OpponentGrid extends React.Component {
         this.checkForMisses(res.result);
         //this.props.changeTurn();
       })
-
     }
-
-    
   }
 
   findMyIndex = (letter, num) => {
