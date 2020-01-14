@@ -11,13 +11,6 @@ class Gameroom extends Component {
   render() {
     return (
 
-
-
-
-
-
-
-
       <div className='gameroom'>
         <Banner />
         <Gameboard gameData={this.props.gameData} />

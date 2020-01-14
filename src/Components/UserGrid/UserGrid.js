@@ -450,7 +450,7 @@ class UserGrid extends React.Component {
                 {this.state.message && <p>{this.state.message}</p>}
                 <span className='ErrorSpan'><p>{this.messageCreator()}</p></span>
                 <h2>{this.handleSetShips()} </h2>
-                <h3>{this.displayBoats()}</h3>
+                {/* <h3>{this.displayBoats()}</h3> */}
             </div>
         )
     }

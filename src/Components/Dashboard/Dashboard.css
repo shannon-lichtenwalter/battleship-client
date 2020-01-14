@@ -1,5 +1,13 @@
 .stats {
-  margin-top: 5rem;
+  margin: 0 auto;
+  width:50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-box {
+  width: 33%;
+  text-align: center;
 }
 
 .d-button {
@@ -45,7 +53,7 @@ h2 > span.username {
     width: 60%;
   }
 
-  .startGames h3 {
+  .dash-h3 {
     font-size: 3rem;
   }
 

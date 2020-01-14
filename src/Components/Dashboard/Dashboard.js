@@ -74,8 +74,33 @@ class Dashboard extends Component {
 
         {this.state.error && <p>{this.state.error}</p>}
         
+        
+        <h3 className='dash-h3'>Stats</h3>
+
+        <div className='stats'>
+
+          <div className='stat-box'>
+            <h3 className='stat-title'>Win</h3>
+            <p className='stat-para'>{this.state.userStats.wins} times</p>
+          </div>
+
+          <div className='stat-box'>
+            <h3 className='stat-title'>Lose</h3>
+            <p className='stat-para'>{this.state.userStats.losses} times</p>
+          </div>
+
+          <div className='stat-box'>
+            <h3 className='stat-title'>Win Ratio</h3>
+            <p className='stat-para'>{(this.state.userStats.wins + this.state.userStats.losses === 0) 
+            ? '0%' 
+            : Math.floor(this.state.userStats.wins / (this.state.userStats.wins + this.state.userStats.losses) * 100) + '%'}
+            </p>
+          </div>
+        
+        </div>
+
         <div className='startGames'>
-        <h3>Play BattleShip</h3>          
+        <h3 className='dash-h3'>Play BattleShip</h3>          
           <button onClick={()=> this.props.setGameData(null)}>
             <Link to='/gameroom'>
               Start a New Game
@@ -95,21 +120,7 @@ class Dashboard extends Component {
 
         </div>
 
-        <div className='stats'>
-          <h2>Stats</h2>
-
-          <h2>Win</h2>
-          <p>{this.state.userStats.wins} times</p>
-
-          <h2>Lose</h2>
-          <p>{this.state.userStats.losses} times</p>
-
-          <h2>Win Ratio</h2>
-          <p>{(this.state.userStats.wins + this.state.userStats.losses === 0) 
-            ? '0%' 
-            : Math.floor(this.state.userStats.wins / (this.state.userStats.wins + this.state.userStats.losses) * 100) + '%'}</p>
-
-        </div>
+        
 
         <Footer />
       </div>
