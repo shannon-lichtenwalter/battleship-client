@@ -52,6 +52,7 @@
   margin: 0 auto;
   padding: 10px;
   border-radius: 1rem;
+  background-color: rgb(30, 52, 90);
 }
 
 .activeGames >li {

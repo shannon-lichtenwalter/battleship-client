@@ -23,6 +23,7 @@ li {
   width: 90%;
   margin: 0 auto;
   border-radius: 1rem;
+  background-color: rgb(30, 52, 90);
 }
 
 @media screen and (min-width: 900px) {
