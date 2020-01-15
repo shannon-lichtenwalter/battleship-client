@@ -45,7 +45,7 @@ class GameBoard extends React.Component {
     shipsReady: this.props.gameData && this.props.gameData.userShips ? true : false,
     socket: null,
     error: null,
-    winnerSet:true,
+    winnerSet:false,
   }
 
   //can we move this to a separate context provider file?
@@ -126,9 +126,9 @@ class GameBoard extends React.Component {
     });
 
     socket.on('win', () => {
-      for(let countTillOne=0; countTillOne < 1; countTillOne++){
-              this.setState({winnerSet:true})
-      }
+      this.setState({
+        winnerSet:true
+      })
     })
   }
 
