@@ -98,11 +98,19 @@ class GameBoard extends React.Component {
     let room = this.state.gameId;
     if(this.state.winnerSet){
       return (
+<<<<<<< HEAD
         <Button>
           <Link to= {{pathname:'/result', resultProps:{'player': player, 'game':room}}}>
             See Your Results!
           </Link>
         </Button>
+=======
+          <Link to= {{pathname:'/result', resultProps:{'player': player, 'game':room}}}>
+            <button type='button'>
+              See Your Results!
+            </button>
+          </Link>      
+>>>>>>> master
       )
     }else {
       return null;
@@ -111,17 +119,26 @@ class GameBoard extends React.Component {
 
   render() {
     //let gameStarted = (this.state.shipsReady && this.state.opponentShipsReady);
-    let opponentGrid = (this.state.shipsReady && this.state.opponentShipsReady && this.state.socket)? 
-      <OpponentGrid 
-        socket={this.state.socket} room={this.state.room} hits={this.state.userHits} misses={this.state.userMisses} 
-        changeTurn={this.changeTurn} userTurn = {this.state.userTurn} gameId={this.state.gameId} playerNum ={this.state.playerNum}
+    let opponentGrid = (this.state.shipsReady && this.state.opponentShipsReady && this.state.socket)
+    ? <OpponentGrid 
+        socket={this.state.socket} 
+        room={this.state.room} 
+        hits={this.state.userHits} 
+        misses={this.state.userMisses} 
+        changeTurn={this.changeTurn} 
+        userTurn = {this.state.userTurn} 
+        gameId={this.state.gameId} 
+        playerNum ={this.state.playerNum}
         gameStart={this.state.shipsReady && this.state.opponentShipsReady} /> 
       : <p> Waiting For Both Players to Set Their Ships ! </p>;
     return (
         <>
           {this.state.error && <p className='errorMessage'>Uh oh! Something went wrong: {this.state.error}</p>}
           <h2>Your Ships</h2>
+<<<<<<< HEAD
       
+=======
+>>>>>>> master
           <div className='grid-box'>
             {this.state.socket && <UserGrid
               socket={this.state.socket} 
@@ -138,7 +155,11 @@ class GameBoard extends React.Component {
               error= {this.state.error}
               setError= {this.setError}
               clearError= {this.clearError} />}
+<<<<<<< HEAD
             {opponentGrid}
+=======
+              {opponentGrid}
+>>>>>>> master
           </div>
           {this.resultsDisplay()}  
           {this.state.socket && <Chat 
