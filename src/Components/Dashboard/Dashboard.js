@@ -77,7 +77,7 @@ class Dashboard extends Component {
       <div className='dashboard'>
         <Header />
         <h2 className='dashboardWelcome'>Welcome back, <span className='username'>{this.state.userStats.username}</span></h2>
-        {this.state.error && <p>{this.state.error}</p>}
+        {this.state.error && <p>Uh oh! Something went wrong: {this.state.error}</p>}
         <h3 className='dash-h3'>Stats</h3>
         <div className='stats'>
           <div className='stat-box'>

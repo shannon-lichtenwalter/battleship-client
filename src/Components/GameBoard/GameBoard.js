@@ -94,7 +94,7 @@ class GameBoard extends React.Component {
   render() {
     return (
         <>
-          {this.state.error && <p className='errorMessage'>{this.state.error}</p>}
+          {this.state.error && <p className='errorMessage'>Uh oh! Something went wrong: {this.state.error}</p>}
           <h2>Your Ships</h2>
           <div className='grid-box'>
             {this.state.socket && <UserGrid
@@ -112,6 +112,7 @@ class GameBoard extends React.Component {
               error= {this.state.error}
               setError= {this.setError}
               clearError= {this.clearError} />}
+              
             {this.state.shipsReady && this.state.socket && <OpponentGrid  
               socket={this.state.socket} 
               room={this.state.room} 

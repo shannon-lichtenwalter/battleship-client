@@ -33,7 +33,6 @@ class UserGrid extends React.Component {
 
   componentDidMount = () => {
     this.props.socket.on('response', data => {
-      console.log(data.result);
       this.props.changeTurn();
       if (this.props.playerNum !== data.playerNum) {
         let message = null;
@@ -148,8 +147,8 @@ class UserGrid extends React.Component {
     }
   };
 
-  //This function is called by render simply as a visual tool for the user to see which cells they have selected so far
-  //for the respective boats. We may not need this later on, but is helpful to see which cells are representing the boat so far.
+  //This function is not currently being called- we can refactor it to
+  //display the user's ships to them or we can remove.
   displayBoats = () => {
     return this.state.playerShips.map((ship, index) => {
       return <li key={index}>{ship.name} : {ship.spaces.length !== 0 ? ship.spaces.join(', ') : 'ship not built yet'}</li>
@@ -452,7 +451,6 @@ class UserGrid extends React.Component {
         {this.state.message && <p>{this.state.message}</p>}
         <span className='ErrorSpan'><p>{this.messageCreator()}</p></span>
         <h2>{this.handleSetShips()} </h2>
-        {/* <h3>{this.displayBoats()}</h3> */}
       </div>
     )
   }
