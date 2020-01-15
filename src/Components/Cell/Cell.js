@@ -6,20 +6,7 @@ class Cell extends React.Component {
   static defaultProps = {
     selected: null,
     idNumber: -2,
-    shipTiles: [],
-    allShipTiles: [],
-  }
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      x: this.props.x,
-      y: this.props.y,
-      occupied: null,
-      hasBeenShot: null,
-      index: this.findMyIndex,
-      isShipTile: false,
-    }
+    shipTileValues: [],
   }
 
   //determineClassName is used to help with styling for the individual cells
@@ -37,7 +24,7 @@ class Cell extends React.Component {
         className += ' miss'
       }
 
-    if (this.props.shipTileValues) {
+    if (this.props.shipTileValues.length > 0) {
       if (this.props.shipTileValues.includes(this.props.id)) {
         className += ' ship'
         if (this.props.opponentShots && this.props.opponentShots.includes(this.props.id)) {
@@ -51,12 +38,6 @@ class Cell extends React.Component {
       className += ' selected'
     }
     return className;
-  }
-
-  checkForShipTile = () => {
-    if ((this.props.allShipTiles) && (this.props.allShipTiles.indexOf(this.props.currentId) !== (-1))) {
-      this.setState({ isShipTile: true })
-    }
   }
 
   //This function checks to see if a cell is a label or has already been hit 
@@ -78,7 +59,6 @@ class Cell extends React.Component {
   }
 
   handleClick = () => {
-    this.checkForShipTile()
     let click = this.canCellBeClicked();
     if (click) {
       this.props.handleSelectTarget(this.props.id, this.props.idNumber)

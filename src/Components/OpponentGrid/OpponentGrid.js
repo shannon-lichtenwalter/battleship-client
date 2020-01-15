@@ -72,45 +72,6 @@ class OpponentGrid extends React.Component {
     }
   }
 
-  findMyIndex = (letter, num) => {
-    let temp = 0;
-    switch (letter) {
-      case ('A'):
-        temp = num
-        break;
-      case ('B'):
-        temp = num + 10
-        break;
-      case ('C'):
-        temp = num + 20
-        break;
-      case ('D'):
-        temp = num + 30
-        break;
-      case ('E'):
-        temp = num + 40
-        break;
-      case ('F'):
-        temp = num + 50
-        break;
-      case ('G'):
-        temp = num + 60
-        break;
-      case ('H'):
-        temp = num + 70
-        break;
-      case ('I'):
-        temp = num + 80
-        break;
-      case ('J'):
-        temp = num + 90
-        break;
-      default:
-        temp = num
-    }
-    return temp
-  };
-
   //handleRenderGrid instantiates the rows and columns of the gameboard grid with the x and y variables.
   //it maps over the letters (x) and for each letter returns a 'column' div. When mapping we account for the top 
   //row of the grid being the letters and the far left column being the number labels. 
@@ -134,9 +95,6 @@ class OpponentGrid extends React.Component {
             return <Cell 
               key={letter + num}
               id={letter + num}
-              idNumber={this.findMyIndex(letter, num)}
-              x={num}
-              y={letter}
               handleSelectTarget={this.handleSelectTarget}
               selected={this.state.selected}
               hits={this.state.hits}

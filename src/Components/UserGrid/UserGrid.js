@@ -31,23 +31,7 @@ class UserGrid extends React.Component {
     }
   };
 
-  componentDidMount = () => {
-    this.props.socket.on('response', data => {
-      this.props.changeTurn();
-      if (this.props.playerNum !== data.playerNum) {
-        let message = null;
-        if (data.result === 'miss') {
-          message = `${data.playerNum} missed!`
-        } else {
-          message = `${data.playerNum} ${data.result} your ${data.ship}`
-        }
-        this.setState({
-          message,
-          opponentShots: [...this.state.opponentShots, data.target]
-        })
-      }
-    })
-  };
+
 
   //This function is called by the render. It will look at the counter value to determine
   // if the user still needs to set their ship locations or if all the ship values have been set.
@@ -426,8 +410,6 @@ class UserGrid extends React.Component {
               key={letter + num}
               id={letter + num}
               idNumber={this.findMyIndex(letter, num)}
-              x={num}
-              y={letter}
               handleSelectTarget={this.handleSelectTarget}
               shipTiles={this.state.shipOccupied}
               allShipTiles={this.state.allShipTilesOccupied}
@@ -440,8 +422,28 @@ class UserGrid extends React.Component {
     })
   };
 
-  render() {
+  //componentDidMount will set a listener for the response from the websocket.
+  //if the currentuser is not the user who fired the shot then they will get
+  // a message displaying if they have been hit by the opponent or not.
+  componentDidMount = () => {
+    this.props.socket.on('response', data => {
+      this.props.changeTurn();
+      if (this.props.playerNum !== data.playerNum) {
+        let message = null;
+        if (data.result === 'miss') {
+          message = `${data.playerNum} missed!`
+        } else {
+          message = `${data.playerNum} ${data.result} your ${data.ship}`
+        }
+        this.setState({
+          message,
+          opponentShots: [...this.state.opponentShots, data.target]
+        })
+      }
+    })
+  };
 
+  render() {
     return (
       <div className='UserContainer grid'>
         <div className='UserGrid'>
