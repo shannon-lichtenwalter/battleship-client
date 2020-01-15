@@ -68,15 +68,12 @@ class Dashboard extends Component {
   render() {
     return (
       <div className='dashboard'>
-
         <Header />
-        <h2 className='dashboardWelcome'>Welcome back, <span className='username'>{this.state.userStats.username}</span></h2>
 
+        <h2 className='dashboardWelcome'>Welcome back, <span className='username'>{this.state.userStats.username}</span></h2>
         {this.state.error && <p>{this.state.error}</p>}
         
-        
         <h3 className='dash-h3'>Stats</h3>
-
         <div className='stats'>
 
           <div className='stat-box'>
@@ -101,11 +98,12 @@ class Dashboard extends Component {
 
         <div className='startGames'>
         <h3 className='dash-h3'>Play BattleShip</h3>          
-          <button onClick={()=> this.props.setGameData(null)}>
+          <Button onClick={()=> this.props.setGameData(null)}>
             <Link to='/gameroom'>
               Start a New Game
             </Link>
-          </button>
+          </Button>
+        
         <h4>Return to an Active Game:</h4>
         <ul className='activeGames'>
           {this.state.myTurnGames.length !== 0 && <h4>Your Turn!</h4>}
@@ -117,10 +115,7 @@ class Dashboard extends Component {
           return <ActiveGameListItem key={index} setGameData={this.props.setGameData} game={game} userId={this.state.userId}/> 
           })}
         </ul>
-
         </div>
-
-        
 
         <Footer />
       </div>
