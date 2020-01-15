@@ -7,7 +7,6 @@ import Button from '../Button/Button';
 import './Gameroom.css';
 
 class Gameroom extends Component {
-
   render() {
     return (
 
