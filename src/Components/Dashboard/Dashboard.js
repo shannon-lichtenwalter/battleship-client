@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import ActiveGameListItem from '../ActiveGameListItem/ActiveGameListItem';
 import LoadGameApiService from '../../Services/load-game-api-service';
 import Header from '../Header/Header';
@@ -21,6 +22,13 @@ class Dashboard extends Component {
     this.setState({
       error: err.error
     })
+  }
+
+  handleNewGame = () => {
+    this.props.resetDefaultGameData();
+    setTimeout(() => {
+      this.props.history.push('/gameroom')
+  }, 200);
   }
 
     //In component did mount we are fetching for the active games and saving them to state.
@@ -91,24 +99,11 @@ class Dashboard extends Component {
 
         <div className='startGames'>
           <h3 className='dash-h3'>Play BattleShip</h3>          
-          <button onClick={()=> this.props.setGameData({
-            gameData: {
-              currentUser: null,
-              gameId: null,
-              opponentHits: [],
-              opponentMisses: [],
-              opponentShips: null,
-              room_id: null,
-              turn: null,
-              userHits: [],
-              userMisses: [],
-              userShips: [],
-              resumedGame: false,
-              shipsReady: false,
-          }})}>
-              <Link to='/gameroom'>
+          <button onClick={()=> this.handleNewGame()}>
+            start a new game
+              {/* <Link to='/gameroom'>
                 Start a New Game
-              </Link>
+              </Link> */}
             </button>
           <h4>Return to an Active Game:</h4>
           <ul className='activeGames'>
@@ -138,6 +133,6 @@ class Dashboard extends Component {
   };
 };
 
-export default Dashboard;
+export default withRouter(Dashboard);
 
 

@@ -45,6 +45,25 @@ export default class App extends Component {
     })
   }
 
+  resetDefaultGameData = () => {
+    this.setState({
+      gameData: {
+        currentUser: null,
+        gameId: null,
+        opponentHits: [],
+        opponentMisses: [],
+        opponentShips: null,
+        room_id: null,
+        turn: null,
+        userHits: [],
+        userMisses: [],
+        userShips: [],
+        resumedGame: null,
+        shipsReady: null,
+      }
+    })
+  }
+
   render() {
     return (
       <main>
@@ -72,7 +91,9 @@ export default class App extends Component {
           <PrivateOnlyRoute
             exact
             path={'/dashboard'}
-            component={() => <DashboardRoute setGameData={this.setGameData} />}
+            component={() => <DashboardRoute 
+              setGameData={this.setGameData}
+              resetDefaultGameData= {this.resetDefaultGameData} />}
           />
           <PrivateOnlyRoute
             exact
@@ -120,5 +141,3 @@ export default class App extends Component {
     );
   }
 };
-
-

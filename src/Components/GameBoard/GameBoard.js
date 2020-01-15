@@ -15,6 +15,7 @@ class GameBoard extends React.Component {
     userMisses: this.props.gameData.userMisses,
     opponentHits: this.props.gameData.opponentHits,
     opponentMisses: this.props.gameData.opponentMisses,
+    opponentShots: [...this.props.gameData.opponentHits, ...this.props.gameData.opponentMisses],
     userTurn: this.props.gameData.turn,
     gameId: this.props.gameData.gameId,
     playerNum: this.props.gameData.currentUser,
