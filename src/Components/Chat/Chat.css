@@ -25,14 +25,14 @@
 #chat-window {
     padding: 20px;
     border: solid 1px black;
-    margin: 0;
+    margin: 0 auto;
     overflow: auto;
-    height: 500px;
+    height: 400px;
     background-color: rgb(2, 9, 20);
 }
 
 #chat {
-    width: 50%;
+    width: 83%;
     margin: 0 auto;
     padding: 10px;
     border: solid 1px black;
@@ -47,4 +47,10 @@
 
 #chat-label {
     color: black;
+}
+
+@media screen and (min-width: 1025px) {
+    #chat {
+        width: 60%;
+    }
 }
