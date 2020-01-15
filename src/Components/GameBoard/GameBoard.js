@@ -9,39 +9,19 @@ import TokenService from '../../Services/token-service';
 import Chat from '../Chat/Chat';
 
 class GameBoard extends React.Component {
-  /*
-  
-    export object = {
-        hits
-        misses
-        our Ships
-    };
-
-    import object = {
-        our hits 
-        our misses
-        opponents hits/misses
-        our ships
-        whose turn
-    };
-  */
-
-  /*
-  Add opponents hits/misses to state
-  */
   state = {
-    userShips: this.props.gameData ? this.props.gameData.userShips : [],
-    userHits: this.props.gameData ? this.props.gameData.userHits : [],
-    userMisses: this.props.gameData ? this.props.gameData.userMisses : [],
-    opponentHits: this.props.gameData ? this.props.gameData.opponentHits : [],
-    opponentMisses: this.props.gameData ? this.props.gameData.opponentMisses : [],
-    userTurn: this.props.gameData ? this.props.gameData.turn : null,
-    gameId: this.props.gameData ? this.props.gameData.gameId : null,
-    playerNum: this.props.gameData ? this.props.gameData.currentUser : null,
-    room: this.props.gameData ? this.props.gameData.room_id : null,
-    resumedGame: this.props.gameData ? true : false,
-    opponentShipsReady: this.props.gameData ? this.props.gameData.opponentShips : null,
-    shipsReady: this.props.gameData && this.props.gameData.userShips ? true : false,
+    userShips: this.props.gameData.userShips,
+    userHits: this.props.gameData.userHits,
+    userMisses: this.props.gameData.userMisses,
+    opponentHits: this.props.gameData.opponentHits,
+    opponentMisses: this.props.gameData.opponentMisses,
+    userTurn: this.props.gameData.turn,
+    gameId: this.props.gameData.gameId,
+    playerNum: this.props.gameData.currentUser,
+    room: this.props.gameData.room_id,
+    resumedGame: this.props.gameData.resumedGame,
+    opponentShipsReady: this.props.gameData.opponentShips,
+    shipsReady: this.props.gameData.shipsReady,
     socket: null,
     error: null
   }
@@ -124,19 +104,19 @@ class GameBoard extends React.Component {
     });
 
     socket.on('win', data => {
-      if(data.winner === this.state.playerNum){
+      if (data.winner === this.state.playerNum) {
         alert('You won!')
-      }else{
+      } else {
         alert('You lost')
       }
     })
   };
 
   render() {
-    let opponentGrid = this.state.shipsReady && this.state.socket ? 
-        <OpponentGrid 
-        socket={this.state.socket} room={this.state.room} hits={this.state.userHits} misses={this.state.userMisses} 
-        changeTurn={this.changeTurn} userTurn = {this.state.userTurn} 
+    let opponentGrid = this.state.shipsReady && this.state.socket ?
+      <OpponentGrid
+        socket={this.state.socket} room={this.state.room} hits={this.state.userHits} misses={this.state.userMisses}
+        changeTurn={this.changeTurn} userTurn={this.state.userTurn}
         gameStart={this.state.shipsReady && this.state.opponentShipsReady} />
       : null;
 
@@ -154,12 +134,12 @@ class GameBoard extends React.Component {
           <div className='grid-box'>
             {this.state.socket && <UserGrid
               socket={this.state.socket} userShips={this.state.userShips} opponentHits={this.state.opponentHits}
-              opponentMisses={this.state.opponentMisses} resumedGame={this.state.resumedGame} changeTurn={this.changeTurn} 
+              opponentMisses={this.state.opponentMisses} resumedGame={this.state.resumedGame} changeTurn={this.changeTurn}
               setShipsReady={this.setShipsReady} room={this.state.room} shipsReady={this.state.shipsReady} />}
             {opponentGrid}
           </div>
-          
-          {this.state.socket && <Chat socket={this.state.socket} room={this.state.room}/>}
+
+          {this.state.socket && <Chat socket={this.state.socket} room={this.state.room} />}
         </>
       </BattleShipContext.Provider>
     )

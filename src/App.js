@@ -23,87 +23,100 @@ import Gameroom from './Components/Gameroom/Gameroom';
 
 export default class App extends Component {
   state = {
-    gameData: null,
+    gameData: {
+      currentUser: null,
+      gameId: null,
+      opponentHits: [],
+      opponentMisses: [],
+      opponentShips: null,
+      room_id: null,
+      turn: null,
+      userHits: [],
+      userMisses: [],
+      userShips: [],
+      resumedGame: null,
+      shipsReady: null,
+    }
   }
 
   setGameData = (gameData) => {
-      this.setState({
+    this.setState({
       gameData
     })
   }
 
   render() {
     return (
-        <main>
-          <Switch>
-            <Route
-              exact
-              path={'/'}
-              component={LandingRoute}
-            />
-            <PublicOnlyRoute
-              exact
-              path={'/signup'}
-              component={SignupRoute}
-            />
-            <PublicOnlyRoute
-              exact
-              path={'/login'}
-              component={LoginRoute}
-            />
-            <PrivateOnlyRoute
-              exact
-              path={'/help'}
-              component={HelpRoute}
-            />
-            <PrivateOnlyRoute
-              exact
-              path={'/dashboard'}
-              component={() => <DashboardRoute setGameData={this.setGameData}/>}
-            />
-            <PrivateOnlyRoute
-              exact
-              path={'/setting'}
-              component={SettingRoute}
-            />
-            <PrivateOnlyRoute
-              exact
-              path={'/result'}
-              component={ResultRoute}
-            />
-            <PrivateOnlyRoute
-              exact
-              path={'/gameroom'}
-              component={() => <Gameroom
-                gameData={this.state.gameData}
-                />}
-            />
-            <PrivateOnlyRoute
-              exact
-              path={'/deleteAccount'}
-              component={DeleteAccountRoute}
-            />
-            <PrivateOnlyRoute
-              exact
-              path={'/ResetAccount'}
-              component={ResetAccountRoute}
-            />
-            <PrivateOnlyRoute
-              exact
-              path={'/passwordChange'}
-              component={PasswordChangeRoute}
-            />
-            <PrivateOnlyRoute
-              exact
-              path={'/UsernameChange'}
-              component={UsernameChangeRoute}
-            />
-            
-            <Route
-              component={NotFoundRoute}
-            />
-          </Switch>
-        </main>
+      <main>
+        <Switch>
+          <Route
+            exact
+            path={'/'}
+            component={LandingRoute}
+          />
+          <PublicOnlyRoute
+            exact
+            path={'/signup'}
+            component={SignupRoute}
+          />
+          <PublicOnlyRoute
+            exact
+            path={'/login'}
+            component={LoginRoute}
+          />
+          <PrivateOnlyRoute
+            exact
+            path={'/help'}
+            component={HelpRoute}
+          />
+          <PrivateOnlyRoute
+            exact
+            path={'/dashboard'}
+            component={() => <DashboardRoute setGameData={this.setGameData} />}
+          />
+          <PrivateOnlyRoute
+            exact
+            path={'/setting'}
+            component={SettingRoute}
+          />
+          <PrivateOnlyRoute
+            exact
+            path={'/result'}
+            component={ResultRoute}
+          />
+          <PrivateOnlyRoute
+            exact
+            path={'/gameroom'}
+            component={() => <Gameroom
+              gameData={this.state.gameData}
+            />}
+          />
+          <PrivateOnlyRoute
+            exact
+            path={'/deleteAccount'}
+            component={DeleteAccountRoute}
+          />
+          <PrivateOnlyRoute
+            exact
+            path={'/ResetAccount'}
+            component={ResetAccountRoute}
+          />
+          <PrivateOnlyRoute
+            exact
+            path={'/passwordChange'}
+            component={PasswordChangeRoute}
+          />
+          <PrivateOnlyRoute
+            exact
+            path={'/UsernameChange'}
+            component={UsernameChangeRoute}
+          />
+
+          <Route
+            component={NotFoundRoute}
+          />
+        </Switch>
+      </main>
     );
   }
 };

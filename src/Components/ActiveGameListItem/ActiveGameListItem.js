@@ -43,24 +43,27 @@ class ActiveGameListItem extends React.Component {
                 let storeData = {};
 
                 if (gameData.currentUser === 'player1') {
-                    storeData.userShips = gameData.player1_ships;
-                    storeData.userHits = gameData.player1_hits;
-                    storeData.userMisses = gameData.player1_misses;
-                    storeData.opponentHits = gameData.player2_hits;
-                    storeData.opponentMisses = gameData.player2_misses;
+                    storeData.userShips = gameData.player1_ships ? gameData.player1_ships : [];
+                    storeData.shipsReady = gameData.player1_ships ? true : false;
+                    storeData.userHits = gameData.player1_hits ? gameData.player1_hits : [];
+                    storeData.userMisses = gameData.player1_misses ? gameData.player1_misses : [];
+                    storeData.opponentHits = gameData.player2_hits ? gameData.player2_hits : [];
+                    storeData.opponentMisses = gameData.player2_misses ? gameData.player2_misses : [];
                     storeData.opponentShips = gameData.player2_ships;
                 } else {
-                    storeData.userShips = gameData.player2_ships;
-                    storeData.userHits = gameData.player2_hits;
-                    storeData.userMisses = gameData.player2_misses;
-                    storeData.opponentHits = gameData.player1_hits;
-                    storeData.opponentMisses = gameData.player1_misses;
+                    storeData.userShips = gameData.player2_ships ? gameData.player2_ships : [];
+                    storeData.shipsReady = gameData.player2_ships ? true : false;
+                    storeData.userHits = gameData.player2_hits ? gameData.player2_hits : [];
+                    storeData.userMisses = gameData.player2_misses ? gameData.player2_misses : [];
+                    storeData.opponentHits = gameData.player1_hits ? gameData.player1_hits : [];
+                    storeData.opponentMisses = gameData.player1_misses ? gameData.player1_misses : [];
                     storeData.opponentShips = gameData.player1_ships;
                 }
                 storeData.currentUser = gameData.currentUser;
                 storeData.turn = gameData.currentUser === gameData.turn;
                 storeData.gameId = gameData.id;
                 storeData.room_id = this.props.game.room_id;
+                storeData.resumedGame = true;
                 this.props.setGameData(storeData)
             }).then(() => {
                 setTimeout(() => {

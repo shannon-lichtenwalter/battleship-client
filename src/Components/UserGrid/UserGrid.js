@@ -13,7 +13,7 @@ class UserGrid extends React.Component {
             currentId: '',
             message: null,
             boat: [],
-            counter: this.props.resumedGame && this.props.userShips ? 5 : 0,
+            counter: this.props.resumedGame && this.props.userShips.length > 0 ? 5 : 0,
             playerShips: this.props.userShips && this.props.userShips.length !== 0 ? this.props.userShips : [{ 'name': 'aircraftCarrier', 'length': 5, 'spaces': [] },
             { 'name': 'battleship', 'length': 4, 'spaces': [] },
             { 'name': 'cruiser', 'length': 3, 'spaces': [] },
@@ -21,6 +21,7 @@ class UserGrid extends React.Component {
             { 'name': 'defender', 'length': 2, 'spaces': [] }],
             shipOccupied: [],
             allShipTilesOccupied: [],
+            shipTileValues: [],
             currentShipAlignment: null,
             shipTileLaid: false,
             opponentShots: [],
@@ -86,6 +87,7 @@ class UserGrid extends React.Component {
                         { 'name': 'defender', 'length': 2, 'spaces': [] }],
                         shipOccupied: [],
                         allShipTilesOccupied: [],
+                        shipTileValues: [],
                         currentShipAlignment: null,
                         shipTileLaid: false,
                         opponentShots: [],
@@ -98,10 +100,12 @@ class UserGrid extends React.Component {
             This ship is ${this.state.playerShips[this.state.counter].length} spaces long`
         } else return `All Ships Have Been Set`
     };
-
+//this function takes the array from boat and sorts it in ascending order to determine if 
+//the user has skipped spaces when setting their boats
     checkBoatValidity = () => {
         let temp = []
         let temp2 = []
+        let temp3 = []
         let status = true;
         for (let i = 0; i < this.state.boat.length; i++) {
             temp.push(this.state.boat[i].idNum)
@@ -117,6 +121,8 @@ class UserGrid extends React.Component {
         if (!status) {
             temp2 = this.state.allShipTilesOccupied
             temp2.splice(-temp.length, temp.length)
+            temp3 = this.state.shipTileValues
+            temp3.splice(-temp.length, temp.length)
         }
 
         return status
@@ -175,6 +181,7 @@ class UserGrid extends React.Component {
                         shipOccupied: [idNum],
                         shipTileLaid: true,
                         allShipTilesOccupied: [idNum],
+                        shipTileValues: [value],
                         placementFail: false,
                     }, () => this.handleCheckBoatLength())
                 }
@@ -183,6 +190,7 @@ class UserGrid extends React.Component {
                         boat: [{ value, idNum }],
                         shipOccupied: [idNum],
                         allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                        shipTileValues: [...this.state.shipTileValues, value],
                         placementFail: false,
                     }, () => this.handleCheckBoatLength())
                 }
@@ -209,7 +217,8 @@ class UserGrid extends React.Component {
                                     boat: [...this.state.boat, { value, idNum }],
                                     shipOccupied: [...this.state.shipOccupied, idNum],
                                     currentShipAlignment: 'horizontal',
-                                    allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum]
+                                    allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                                    shipTileValues: [...this.state.shipTileValues, value],
                                 }, () => this.handleCheckBoatLength())
                             } //this.state.currentShipAlignment !== 'horizontal'
                         } else
@@ -223,7 +232,8 @@ class UserGrid extends React.Component {
                                         boat: [...this.state.boat, { value, idNum }],
                                         shipOccupied: [...this.state.shipOccupied, idNum],
                                         currentShipAlignment: 'horizontal',
-                                        allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum]
+                                        allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                                        shipTileValues: [...this.state.shipTileValues, value]
                                     }, () => this.handleCheckBoatLength())
                                 }
                             } else
@@ -237,7 +247,8 @@ class UserGrid extends React.Component {
                                             boat: [...this.state.boat, { value, idNum }],
                                             shipOccupied: [...this.state.shipOccupied, idNum],
                                             currentShipAlignment: 'horizontal',
-                                            allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum]
+                                            allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                                            shipTileValues: [...this.state.shipTileValues, value]
                                         }, () => this.handleCheckBoatLength())
                                     }
                                 } else
@@ -251,7 +262,8 @@ class UserGrid extends React.Component {
                                                 boat: [...this.state.boat, { value, idNum }],
                                                 shipOccupied: [...this.state.shipOccupied, idNum],
                                                 currentShipAlignment: 'horizontal',
-                                                allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum]
+                                                allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                                                shipTileValues: [...this.state.shipTileValues, value]
                                             }, () => this.handleCheckBoatLength())
                                         }
                                     }
@@ -264,7 +276,8 @@ class UserGrid extends React.Component {
                                 boat: [...this.state.boat, { value, idNum }],
                                 shipOccupied: [...this.state.shipOccupied, idNum],
                                 currentShipAlignment: 'vertical',
-                                allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum]
+                                allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                                shipTileValues: [...this.state.shipTileValues, value]
                             }, () => this.handleCheckBoatLength())
                         } else
                             if ((lastIdNum === firstIdNum + 20 || lastIdNum === firstIdNum - 20) &&
@@ -276,7 +289,8 @@ class UserGrid extends React.Component {
                                     boat: [...this.state.boat, { value, idNum }],
                                     shipOccupied: [...this.state.shipOccupied, idNum],
                                     currentShipAlignment: 'vertical',
-                                    allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum]
+                                    allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                                    shipTileValues: [...this.state.shipTileValues, value]
                                 }, () => this.handleCheckBoatLength())
                             } else
                                 if ((lastIdNum === firstIdNum + 30 || lastIdNum === firstIdNum - 30) &&
@@ -288,7 +302,8 @@ class UserGrid extends React.Component {
                                         boat: [...this.state.boat, { value, idNum }],
                                         shipOccupied: [...this.state.shipOccupied, idNum],
                                         currentShipAlignment: 'vertical',
-                                        allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum]
+                                        allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                                        shipTileValues: [...this.state.shipTileValues, value]
                                     }, () => this.handleCheckBoatLength())
                                 } else
                                     if ((lastIdNum === firstIdNum + 40 || lastIdNum === firstIdNum - 40) &&
@@ -300,31 +315,38 @@ class UserGrid extends React.Component {
                                             boat: [...this.state.boat, { value, idNum }],
                                             shipOccupied: [...this.state.shipOccupied, idNum],
                                             currentShipAlignment: 'vertical',
-                                            allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum]
+                                            allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                                            shipTileValues: [...this.state.shipTileValues, value]
                                         }, () => this.handleCheckBoatLength())
                                     }
                     }
                 }
             }
         } else {
-
+    // this else condition is to allow the user to unclick the tile when setting their ship
             let tempAllTilesOccupied = this.state.allShipTilesOccupied
+            let tempAllTileValues = this.state.shipTileValues
             let tempShipOccupied = this.state.shipOccupied
             let tempBoat = this.state.boat
             let indexOfIdInAllTiles = tempAllTilesOccupied.indexOf(idNum)
             let indexOfIdInShipOccupied = tempShipOccupied.indexOf(idNum)
+            let indexOfValueInAllTileValues = tempAllTileValues.indexOf(value)
             tempAllTilesOccupied.splice(indexOfIdInAllTiles, 1)
+            tempAllTileValues.splice(indexOfValueInAllTileValues, 1)
             tempShipOccupied.splice(indexOfIdInShipOccupied, 1)
             tempBoat.splice(indexFound, 1)
             if (this.state.boat.length > 1) {
                 this.setState({
                     allShipTilesOccupied: tempAllTilesOccupied,
+                    shipTileValues: tempAllTileValues,
                     shipOccupied: tempShipOccupied,
                     boat: tempBoat
                 })
             } else {
+                //this set state will set currentShipAlignment to null if the length of the boat is 0 or 1.
                 this.setState({
                     allShipTilesOccupied: tempAllTilesOccupied,
+                    shipTileValues: tempAllTileValues,
                     shipOccupied: tempShipOccupied,
                     boat: tempBoat,
                     currentShipAlignment: null,
@@ -425,6 +447,7 @@ class UserGrid extends React.Component {
                             shipTiles={this.state.shipOccupied}
                             currentId={this.state.currentId}
                             allShipTiles={this.state.allShipTilesOccupied}
+                            shipTileValues={this.state.shipTileValues}
                             ref="c"
                             opponentShots={this.state.opponentShots}
                             playerShips={this.state.playerShips}
