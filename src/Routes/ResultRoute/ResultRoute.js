@@ -11,3 +11,4 @@ export default class ResultRoute extends Component {
   }
 }
 
+

@@ -1,0 +1,50 @@
+.chat-username {
+    margin:20px;
+    margin-right: 10px;
+}
+
+.chat-me {
+    color: rgb(57, 206, 252);
+}
+
+.chat-opponent {
+    color: red;
+}
+
+.chat-message {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    word-break: break-all;
+}
+
+.chat-li {
+    display: flex;
+    flex-direction: row;
+}
+
+#chat-window {
+    padding: 20px;
+    border: solid 1px black;
+    margin: 0;
+    overflow: auto;
+    height: 500px;
+    background-color: rgb(2, 9, 20);
+}
+
+#chat {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    border: solid 1px black;
+    background-color: white;
+}
+
+#chatInput {
+    border: solid 1px black;
+    width: 70%;
+    height: 50px;
+}
+
+#chat-label {
+    color: black;
+}

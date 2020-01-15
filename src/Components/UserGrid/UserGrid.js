@@ -25,33 +25,37 @@ class UserGrid extends React.Component {
             shipTileLaid: false,
             opponentShots: [],
             opponentHits: this.props.opponentHits,
-            opponentMisses:this.props.opponentMisses,
+            opponentMisses: this.props.opponentMisses,
             shipsReady: this.props.shipsReady,
-            placementFail:false,
+            placementFail: false,
             resumedGame: this.props.resumedGame,
         }
-    }
-
+    };
 
     static contextType = BattleShipContext;
-
 
     //{result: "hit", ship: "defender", playerNum: "player1", target: "J7"}
     componentDidMount = () => {
         //this.refs.c.checkForShipTile()
         this.props.socket.on('response', data => {
-           
+
             this.props.changeTurn();
             if (this.context.playerNum !== data.playerNum) {
+                let message = null;
+                if (data.result === 'missed') {
+                    message = `${data.playerNum} missed!`
+                } else {
+                    message = `${data.playerNum} ${data.result} your ${data.ship}`
+                }
                 this.setState({
-                    message: `${data.playerNum} ${data.result} your ${data.ship}`,
+                    message,
                     opponentShots: [...this.state.opponentShots, data.target]
                 })
 
                 //switch turns
             }
         })
-    }
+    };
 
     //This function is called by the render. It will look at the counter value to determine
     // if the user still needs to set their ship locations or if all the ship values have been set.
@@ -59,12 +63,9 @@ class UserGrid extends React.Component {
     //after a boat has been completely built. If all the boats have been build, then an API call is made to update the
     //player's ships location in the database.
 
-
     handleSetShips = () => {
         if (this.state.counter === 5 && !this.props.shipsReady) {
             //once all the ships are set, the data is sent to the database to be stored
-
-
 
             gameMovesApiService.setShips(this.state.playerShips, this.context.gameId, this.context.playerNum)
                 .then(() => {
@@ -91,13 +92,12 @@ class UserGrid extends React.Component {
                         shipsReady: false,
                         placementFail: false,
                     })
-                }); 
+                });
         } else if (this.state.counter <= 4) {
             return `Please select cells for ${this.state.playerShips[this.state.counter].name}.
             This ship is ${this.state.playerShips[this.state.counter].length} spaces long`
         } else return `All Ships Have Been Set`
-
-    }
+    };
 
     checkBoatValidity = () => {
         let temp = []
@@ -107,10 +107,10 @@ class UserGrid extends React.Component {
             temp.push(this.state.boat[i].idNum)
         }
         temp.sort(function (a, b) { return a - b })
-        
+
         for (let i = 0; i < temp.length - 1; i++) {
             if ((((temp[i + 1]) - temp[i]) !== 1) && (((temp[i + 1]) - temp[i]) !== 10)) {
-                
+
                 status = false;
             }
         }
@@ -118,9 +118,9 @@ class UserGrid extends React.Component {
             temp2 = this.state.allShipTilesOccupied
             temp2.splice(-temp.length, temp.length)
         }
-        
+
         return status
-    }
+    };
 
     //this function is used as a callback function after updating the boat values in state. this will allow us to check and see if the
     //boat is finished being built. if so it will update the playerShips in state with the values. It will also reset the boat back to empty and will 
@@ -134,7 +134,7 @@ class UserGrid extends React.Component {
             if (status) {
                 let currentShips = this.state.playerShips;
                 let boatValues = this.state.boat.map(boat => boat.value);
-                
+
                 currentShips[this.state.counter].spaces = boatValues
                 this.setState({
                     playerShips: currentShips,
@@ -152,7 +152,7 @@ class UserGrid extends React.Component {
                 })
             }
         }
-    }
+    };
 
     //This function is called by render simply as a visual tool for the user to see which cells they have selected so far
     //for the respective boats. We may not need this later on, but is helpful to see which cells are representing the boat so far.
@@ -196,8 +196,8 @@ class UserGrid extends React.Component {
                     let validVRangeLow = (-50) + firstIdNum < 0 ? 0 : (-50) + firstIdNum;
                     let firstDigit = this.state.boat.length > 0 ? this.state.boat[0].value.charAt(0) : value.charAt(0)
                     let firstCurrentDigit = value.charAt(0)
-                    
                     if (lastIdNum <= validHRangeHigh && lastIdNum > validHRangeLow) {
+
                         if (((lastIdNum === firstIdNum + 1) || (lastIdNum === firstIdNum - 1)) &&
                             this.state.allShipTilesOccupied.indexOf(lastIdNum) === (-1) &&
                             (Math.max(...this.state.shipOccupied) - lastIdNum < 5) &&
@@ -307,7 +307,7 @@ class UserGrid extends React.Component {
                 }
             }
         } else {
-            
+
             let tempAllTilesOccupied = this.state.allShipTilesOccupied
             let tempShipOccupied = this.state.shipOccupied
             let tempBoat = this.state.boat
@@ -332,12 +332,10 @@ class UserGrid extends React.Component {
             }
         }
         //this.refs.c.checkForShipTile()
-    }
+    };
 
     handleSelectTarget = (value, idNum) => {
-        //console.log('J10 VALUE : ' + value)
-        //console.log('J10 idNUM: ' + idNum)
-        if(this.context.error) {
+        if (this.context.error) {
             this.context.clearError();
         }
         if (!this.state.shipsReady) {
@@ -351,7 +349,7 @@ class UserGrid extends React.Component {
             })
             //this.handleCheckValue(value, idNum);
         }
-    }
+    };
 
     findMyIndex = (letter, num) => {
         let temp = 0;
@@ -389,9 +387,8 @@ class UserGrid extends React.Component {
             default:
                 temp = num
         }
-
         return temp
-    }
+    };
 
     messageCreator = () => {
         if (this.state.placementFail) {
@@ -399,7 +396,7 @@ class UserGrid extends React.Component {
         } else {
             return null
         }
-    }
+    };
 
     handleRenderGrid = () => {
         //setting the rows and columns of the gameboard grid
@@ -440,12 +437,12 @@ class UserGrid extends React.Component {
                 </div>
             )
         })
-    }
+    };
 
     render() {
 
         return (
-            <div className='UserContainer'>
+            <div className='UserContainer grid'>
                 <div className='UserGrid'>
                     {this.handleRenderGrid()}
 
@@ -453,11 +450,12 @@ class UserGrid extends React.Component {
                 {this.state.message && <p>{this.state.message}</p>}
                 <span className='ErrorSpan'><p>{this.messageCreator()}</p></span>
                 <h2>{this.handleSetShips()} </h2>
-                <h3>{this.displayBoats()}</h3>
+                {/* <h3>{this.displayBoats()}</h3> */}
             </div>
-
         )
     }
-}
+};
 
 export default UserGrid;
+
+

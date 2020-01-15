@@ -40,7 +40,7 @@ const gameMovesApiService = {
         target,
         gameId,
         playerNum
-    })
+      })
     })
       .then(res =>
         (!res.ok)
@@ -48,6 +48,8 @@ const gameMovesApiService = {
           : res.json()
       )
   }
-}
+};
 
 export default gameMovesApiService;
+
+

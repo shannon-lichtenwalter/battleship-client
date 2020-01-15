@@ -1,6 +1,8 @@
 
+
+//'https://capstone3-battleship-server.herokuapp.com' ||
 const config = {
-    API_ENDPOINT:  'http://localhost:8000', //'https://capstone3-battleship-server.herokuapp.com' ||
+    API_ENDPOINT:  'http://localhost:8000',
 }
 
 export default config;

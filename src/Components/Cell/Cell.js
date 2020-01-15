@@ -114,7 +114,6 @@ class Cell extends React.Component {
   }
 
   canCellBeClicked = () => {
-    //console.log('here');
     if (this.props.hits && this.props.hits.includes(this.props.id)) {
       return false;
     }
@@ -163,3 +162,5 @@ class Cell extends React.Component {
 }
 
 export default Cell;
+
+
