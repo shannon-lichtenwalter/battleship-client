@@ -1,11 +1,3 @@
-/* .column{
-  display: inline-block;
-} */
-
-/* .grid {
-  display: flex;
-} */
-
 .message {
   color: red;
 }
@@ -14,10 +6,28 @@
   color: red;
 }
 
-.grid-box {
-  display: flex;
+p {
+  font-size: 1.2rem;
 }
 
 .grid {
-  width: 50%;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 2rem !important;
+}
+
+@media screen and (min-width: 1025px) {
+  .grid-box {
+    display: flex;
+  }
+
+  .grid {
+    width: 50%;
+    margin: 0 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+  
 }

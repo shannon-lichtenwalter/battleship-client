@@ -159,7 +159,6 @@ class OpponentGrid extends React.Component {
 
   render() {
 
-
     let buttonDisableBool = (this.props.userTurn) ?
       <div>
         <h3>Select your target</h3>

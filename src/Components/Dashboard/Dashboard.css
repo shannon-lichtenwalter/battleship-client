@@ -6,16 +6,16 @@
 }
 
 .stat-box {
-  width: 33%;
+  width: 20%;
   text-align: center;
 }
 
-.stat-box h3 {
-  font-size: 1.5rem;
+.stat-box h4 {
+  font-size: 1.4rem;
 }
 
 .stat-box p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .d-button {
@@ -36,7 +36,7 @@
 
 .activeGames {
   border: 0.1rem solid white; 
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   padding: 10px;
 }
@@ -57,11 +57,12 @@ h2 > span.username {
 
 @media screen and (min-width: 1025px) {
   .activeGames {
-    width: 60%;
+    width: 65%;
   }
 
   .dash-h3 {
     font-size: 3rem;
+    font-style: oblique;
   }
 
   .dashboardWelcome {
@@ -73,11 +74,11 @@ h2 > span.username {
     font-size: 1.6rem;
   }
 
-  .stat-box h3 {
-    font-size: 2rem;
+  .stat-box h4 {
+    font-size: 1.7rem;
   }
 
   .stat-box p {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 }
