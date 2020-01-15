@@ -2,6 +2,7 @@ import React from 'react';
 import UserGrid from '../UserGrid/UserGrid';
 import io from 'socket.io-client';
 import config from '../../config';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import OpponentGrid from '../OpponentGrid/OpponentGrid';
 import BattleShipContext from '../../Contexts/battleship-context';
 import './GameBoard.css';
@@ -43,7 +44,8 @@ class GameBoard extends React.Component {
     opponentShipsReady: this.props.gameData ? this.props.gameData.opponentShips : null,
     shipsReady: this.props.gameData && this.props.gameData.userShips ? true : false,
     socket: null,
-    error: null
+    error: null,
+    winnerSet:true,
   }
 
   //can we move this to a separate context provider file?
@@ -123,22 +125,37 @@ class GameBoard extends React.Component {
       })
     });
 
-    socket.on('win', data => {
-      if(data.winner === this.state.playerNum){
-        alert('You won!')
-      }else{
-        alert('You lost')
+    socket.on('win', () => {
+      for(let countTillOne=0; countTillOne < 1; countTillOne++){
+              this.setState({winnerSet:true})
       }
     })
-  };
+  }
+
+  resultsDisplay=()=>{
+    let player= this.state.playerNum;
+    let room = this.state.gameId;
+    if(this.state.winnerSet){
+      return (
+           <Link to= {{pathname:'/result', resultProps:{'player': player, 'game':room}}}>
+              <button type='button'>
+               See Your Results!
+              </button>
+           </Link>      
+      )
+    }else {
+      return null;
+    }
+  }
 
   render() {
-    let opponentGrid = this.state.shipsReady && this.state.socket ? 
-        <OpponentGrid 
+    //let gameStarted = (this.state.shipsReady && this.state.opponentShipsReady);
+    let opponentGrid = (this.state.shipsReady && this.state.opponentShipsReady && this.state.socket)? 
+      <OpponentGrid 
         socket={this.state.socket} room={this.state.room} hits={this.state.userHits} misses={this.state.userMisses} 
         changeTurn={this.changeTurn} userTurn = {this.state.userTurn} 
-        gameStart={this.state.shipsReady && this.state.opponentShipsReady} />
-      : null;
+        gameStart={this.state.shipsReady && this.state.opponentShipsReady} /> 
+      : <p> Waiting For Both Players to Set Their Ships ! </p>;
 
     return (
       <BattleShipContext.Provider value={{
@@ -151,6 +168,7 @@ class GameBoard extends React.Component {
         <>
           {this.state.error && <p className='errorMessage'>{this.state.error}</p>}
           <h2>Your Ships</h2>
+       
           <div className='grid-box'>
             {this.state.socket && <UserGrid
               socket={this.state.socket} userShips={this.state.userShips} opponentHits={this.state.opponentHits}
@@ -158,7 +176,7 @@ class GameBoard extends React.Component {
               setShipsReady={this.setShipsReady} room={this.state.room} shipsReady={this.state.shipsReady} />}
             {opponentGrid}
           </div>
-          
+          {this.resultsDisplay()}  
           {this.state.socket && <Chat socket={this.state.socket} room={this.state.room}/>}
         </>
       </BattleShipContext.Provider>

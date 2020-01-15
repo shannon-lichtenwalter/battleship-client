@@ -5,7 +5,7 @@ export default class ResultRoute extends Component {
   render() {
     return (
       <section>
-        <Result />
+        <Result player={this.props.location.resultProps} game={this.props.location.resultProps}/>
       </section>
     )
   }
