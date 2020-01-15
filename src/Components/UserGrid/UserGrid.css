@@ -9,7 +9,7 @@
 }
 
 .UserContainer{
-    border: 2px solid white;
+    border: 0.1rem solid white;
     display: flex;
     flex-direction: column;
     justify-content: center;

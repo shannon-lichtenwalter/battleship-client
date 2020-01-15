@@ -17,11 +17,14 @@ class Help extends Component {
           <div className='helpIB'>
             <h2>Instructions</h2>
             <ul>
-              <li>1. How to Play</li>
-              <li>2. How to Play</li>
-              <li>3. How to Play</li>
-              <li>4. How to Play</li>
-              <li>5. How to Play</li>
+              <li>1. If you want to start a new game, then select "Start a New Game". <br />
+                  Or if you want to play passive with random person, then select "Resume Game?".</li>
+              <li>2. Go into the "Gameroom" with friend.</li>
+              <li>3. Select your battleships to play game. <br />
+                  Follow instructions on the "Gameboard".
+              </li>
+              <li>4. Hit and Fire opponent's battleships.</li>
+              <li>5. Enjoy your battleship game! :)</li>
             </ul>
           </div>
 

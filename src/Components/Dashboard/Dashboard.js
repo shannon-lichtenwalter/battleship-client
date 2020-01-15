@@ -97,7 +97,7 @@ class Dashboard extends Component {
         </div>
 
         <div className='startGames'>
-        <h3 className='dash-h3'>Play BattleShip</h3>          
+        <h3 className='dash-h3'>Play Battleship</h3>          
           <Button onClick={()=> this.props.setGameData(null)}>
             <Link to='/gameroom'>
               Start a New Game

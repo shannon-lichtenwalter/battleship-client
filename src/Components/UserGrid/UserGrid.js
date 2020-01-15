@@ -445,7 +445,6 @@ class UserGrid extends React.Component {
             <div className='UserContainer grid'>
                 <div className='UserGrid'>
                     {this.handleRenderGrid()}
-
                 </div>
                 {this.state.message && <p>{this.state.message}</p>}
                 <span className='ErrorSpan'><p>{this.messageCreator()}</p></span>

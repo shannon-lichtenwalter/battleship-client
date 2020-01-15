@@ -22,17 +22,18 @@ li {
   margin-bottom: 2rem !important;
   width: 90%;
   margin: 0 auto;
+  border-radius: 1rem;
 }
 
 @media screen and (min-width: 900px) {
   .helpIB {
-    width: 70%;
+    width: 80%;
   }
 }
 
 @media screen and (min-width: 1025px) {
   .helpIB {
-    width: 60%;
+    width: 65%;
   }
 }
 

@@ -1,7 +1,6 @@
 .banner {
   background-image: url('../../Img/deep-ocean.jpg');
   background-position: right top;
-  color: white;
   display: flex;
   justify-content: center;
   top: 0;
@@ -13,13 +12,15 @@
 }
 
 .banner h1 {
-  -webkit-text-stroke: 0.7px rgb(192, 124, 34);
+  -webkit-text-stroke: 0.7px rgb(238, 166, 73);
+  color: white;
+  font-family: 'Black Ops One', cursive;
   /* text-shadow: 0 5px 10px 0 rgba(191, 163, 127, 0.3); */
 }
 
 @media screen and (min-width: 700px) {
   .banner {
-    background-position: left top;
+    background-position: right top;
   }
 }
 
@@ -31,5 +32,6 @@
 
   .banner h1 {
     margin-left: 1rem;
+    margin: 0.4rem;
   }
 }
