@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../Button/Button';
 import UserGrid from '../UserGrid/UserGrid';
 import io from 'socket.io-client';
 import config from '../../config';
@@ -97,11 +98,11 @@ class GameBoard extends React.Component {
     let room = this.state.gameId;
     if(this.state.winnerSet){
       return (
+        <Button>
           <Link to= {{pathname:'/result', resultProps:{'player': player, 'game':room}}}>
-              <button type='button'>
-              See Your Results!
-              </button>
-          </Link>      
+            See Your Results!
+          </Link>
+        </Button>
       )
     }else {
       return null;

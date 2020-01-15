@@ -176,6 +176,7 @@ class Result extends Component {
           }}> Exit
         </Button>
 
+
         <Footer />
       </div>
     );
