@@ -175,7 +175,7 @@ class UserGrid extends React.Component {
           let firstDigit = this.state.boat.length > 0 ? this.state.boat[0].value.charAt(0) : value.charAt(0)
           let firstCurrentDigit = value.charAt(0)
 
-          if (lastIdNum < validHRangeHigh && lastIdNum > validHRangeLow) {
+          if (lastIdNum <= validHRangeHigh && lastIdNum > validHRangeLow) {
             if (((lastIdNum === firstIdNum + 1) || (lastIdNum === firstIdNum - 1)) &&
               this.state.allShipTilesOccupied.indexOf(lastIdNum) === (-1) &&
               (Math.max(...this.state.shipOccupied) - lastIdNum < 5) &&
@@ -220,6 +220,7 @@ class UserGrid extends React.Component {
                       allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
                       shipTileValues: [...this.state.shipTileValues, value]
                     }, () => this.handleCheckBoatLength())
+
                   }
                 } else
                   if ((lastIdNum === firstIdNum + 4 || lastIdNum === firstIdNum - 4) &&

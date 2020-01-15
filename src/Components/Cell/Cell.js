@@ -53,6 +53,9 @@ class Cell extends React.Component {
     else if (this.props.label) {
       return false;
     }
+    else if(this.props.allShipTiles.length===17){
+      return false;
+    }
     else {
       return true;
     }

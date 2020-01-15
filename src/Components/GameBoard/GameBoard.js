@@ -2,6 +2,7 @@ import React from 'react';
 import UserGrid from '../UserGrid/UserGrid';
 import io from 'socket.io-client';
 import config from '../../config';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import OpponentGrid from '../OpponentGrid/OpponentGrid';
 import './GameBoard.css';
 import TokenService from '../../Services/token-service';
@@ -22,7 +23,8 @@ class GameBoard extends React.Component {
     shipsReady: this.props.gameData.shipsReady,
     shipTileValues: this.props.gameData.shipTileValues,
     socket: null,
-    error: null
+    error: null,
+    winnerSet:false,
   }
 
   setError = (err) => {
@@ -82,20 +84,43 @@ class GameBoard extends React.Component {
       })
     });
 
-    socket.on('win', data => {
-      if (data.winner === this.state.playerNum) {
-        alert('You won!')
-      } else {
-        alert('You lost')
-      }
+
+    socket.on('win', () => {
+      this.setState({
+        winnerSet:true
+      })
     })
-  };
+  }
+
+  resultsDisplay=()=>{
+    let player= this.state.playerNum;
+    let room = this.state.gameId;
+    if(this.state.winnerSet){
+      return (
+           <Link to= {{pathname:'/result', resultProps:{'player': player, 'game':room}}}>
+              <button type='button'>
+               See Your Results!
+              </button>
+           </Link>      
+      )
+    }else {
+      return null;
+    }
+  }
 
   render() {
+    //let gameStarted = (this.state.shipsReady && this.state.opponentShipsReady);
+    let opponentGrid = (this.state.shipsReady && this.state.opponentShipsReady && this.state.socket)? 
+      <OpponentGrid 
+        socket={this.state.socket} room={this.state.room} hits={this.state.userHits} misses={this.state.userMisses} 
+        changeTurn={this.changeTurn} userTurn = {this.state.userTurn} gameId={this.state.gameId} playerNum ={this.state.playerNum}
+        gameStart={this.state.shipsReady && this.state.opponentShipsReady} /> 
+      : <p> Waiting For Both Players to Set Their Ships ! </p>;
     return (
         <>
           {this.state.error && <p className='errorMessage'>Uh oh! Something went wrong: {this.state.error}</p>}
           <h2>Your Ships</h2>
+       
           <div className='grid-box'>
             {this.state.socket && <UserGrid
               socket={this.state.socket} 
@@ -112,19 +137,12 @@ class GameBoard extends React.Component {
               error= {this.state.error}
               setError= {this.setError}
               clearError= {this.clearError} />}
-              
-            {this.state.shipsReady && this.state.socket && <OpponentGrid  
-              socket={this.state.socket} 
-              room={this.state.room} 
-              hits={this.state.userHits} 
-              misses={this.state.userMisses}
-              userTurn={this.state.userTurn}
-              gameId={this.state.gameId}
-              playerNum ={this.state.playerNum}/>}
+             {opponentGrid}
           </div>
+          {this.resultsDisplay()}  
           {this.state.socket && <Chat 
             socket={this.state.socket} 
-            room={this.state.room} />}
+            room={this.state.room}/>}
         </>
     )
   };
