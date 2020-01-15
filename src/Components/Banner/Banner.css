@@ -14,7 +14,6 @@
 .banner h1 {
   -webkit-text-stroke: 0.7px rgb(238, 166, 73);
   color: white;
-  font-family: 'Black Ops One', cursive;
   /* text-shadow: 0 5px 10px 0 rgba(191, 163, 127, 0.3); */
 }
 
@@ -32,6 +31,5 @@
 
   .banner h1 {
     margin-left: 1rem;
-    margin: 0.4rem;
   }
 }
