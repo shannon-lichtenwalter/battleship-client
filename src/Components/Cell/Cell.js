@@ -20,71 +20,25 @@ class Cell extends React.Component {
       index: this.findMyIndex,
       isShipTile: false,
     }
-    //this.findMyIndex = this.findMyIndex.bind(this)
   }
 
-  // componentDidMount(){
-  //   if ((this.props.shipTiles) && (this.props.shipTiles.indexOf(this.props.currentId)!==(-1))){
-  //     this.setState({shipTile:true})
-  //   }
-  //   this.checkForShipTile()
-  // }
-
-  // updateShipTile=(value, selected)=>{
-  //   console.log(value)
-  //   console.log(selected)
-  //   //console.log(this.state.x + this.state.y)
-  //   if(value === selected){
-  //     this.setState({shipTile : true})
-  //   }
-  // }
-
+  //determineClassName is used to help with styling for the individual cells
+  //based on if the cell is a ship, if it has been hit, or missed.
+  //the the hits and miss props will only be passed in from the opponent grid.
+  //the shipTileValues and opponentShots props will only be passed in from the user grid.
+  //selected prop will only be passed down from opponent grid when selecting which cell
+  //to fire upon.
   determineClassName = () => {
-    //console.log(this.props.selected)
-    //console.log(this.props.id)
     let className = 'cell';
+
     if (this.props.hits && this.props.hits.includes(this.props.id)) {
       className += ' hit'
-    } else
-      if (this.props.misses && this.props.misses.includes(this.props.id)) {
+    } else if (this.props.misses && this.props.misses.includes(this.props.id)) {
         className += ' miss'
       }
 
-    // the following is determining classNames for cells of resumedGames only.
-    if (this.props.resumedGame) {
-      let shipSpaces = [];
-      this.props.playerShips.map(ship => {
-        return ship.spaces.map(space => shipSpaces.push(space))
-      })
-      if (shipSpaces.includes(this.props.id)) {
-        className += ' ship'
-        if (this.props.opponentHits) {
-          if (this.props.opponentHits.includes(this.props.id)) {
-            className += '-shot'
-          }
-        }
-        if (this.props.opponentShots) {
-          if (this.props.opponentShots.includes(this.props.id)) {
-            className += '-shot'
-          }
-        }
-      } else {
-        if (this.props.opponentMisses) {
-          if (this.props.opponentMisses.includes(this.props.id)) {
-            className += ' shot'
-          }
-        }
-        
-        if(this.props.opponentShots) {
-          if (this.props.opponentShots.includes(this.props.id)) {
-            className += ' shot'
-          }
-        }
-      }
-    }
-    //the following is the logic for classNames for new games
-    if (this.props.allShipTiles.length > 0) {
-      if (this.props.allShipTiles.indexOf(this.props.idNumber) !== (-1)) {
+    if (this.props.shipTileValues) {
+      if (this.props.shipTileValues.includes(this.props.id)) {
         className += ' ship'
         if (this.props.opponentShots && this.props.opponentShots.includes(this.props.id)) {
           className += '-shot'
@@ -92,27 +46,22 @@ class Cell extends React.Component {
       } else if (this.props.opponentShots && this.props.opponentShots.includes(this.props.id)) {
         className += ' shot'
       }
-
     }
-
     else if (this.props.selected === this.props.id) {
       className += ' selected'
-      //console.log(this.props.shipTiles)
     }
-
     return className;
   }
 
   checkForShipTile = () => {
-    console.log(this.props.allShipTiles)
-    console.log(this.props.currentId)
-
     if ((this.props.allShipTiles) && (this.props.allShipTiles.indexOf(this.props.currentId) !== (-1))) {
       this.setState({ isShipTile: true })
     }
-    //this.render()
   }
 
+  //This function checks to see if a cell is a label or has already been hit 
+  //or missed on the opponentGrid. Cells that are labels or have already 
+  //been hit or missed will not be clickable again.
   canCellBeClicked = () => {
     if (this.props.hits && this.props.hits.includes(this.props.id)) {
       return false;
@@ -130,25 +79,16 @@ class Cell extends React.Component {
 
   handleClick = () => {
     this.checkForShipTile()
-    //console.log('yes');
     let click = this.canCellBeClicked();
     if (click) {
-      //this.checkForShipTile()
       this.props.handleSelectTarget(this.props.id, this.props.idNumber)
     }
-    //this.checkForShipTile()
   }
 
   render() {
-    //console.log(this.props.id)
     return (
-      //Adding in an id of label for the cells that are not part of the 
-      //gameplay but are the labels for the board.
-      <div id=
-        {this.props.label
-          ? 'label'
-          : ''}
-        //style={this.state.shipTile ? { 'backgroundColor': 'blue' } : null}
+      <div 
+        id={this.props.label ? 'label' : ''}
         className={this.determineClassName()}
         onClick={() => this.handleClick()}
       >

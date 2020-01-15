@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-//import Header from './Components/Header/Header';
 
-/* import route js files */
-//import GameroomRoute from './Routes/GameroomRoute/GameroomRoute';
 import HelpRoute from './Routes/HelpRoute/HelpRoute';
 import LandingRoute from './Routes/LandingRoute/LandingRoute';
 import LoginRoute from './Routes/LoginRoute/LoginRoute';
@@ -34,6 +31,7 @@ export default class App extends Component {
       userHits: [],
       userMisses: [],
       userShips: [],
+      shipTileValues: [],
       resumedGame: null,
       shipsReady: null,
     }
@@ -58,11 +56,14 @@ export default class App extends Component {
         userHits: [],
         userMisses: [],
         userShips: [],
+        shipTileValues: [],
         resumedGame: null,
         shipsReady: null,
       }
     })
   }
+
+
 
   render() {
     return (

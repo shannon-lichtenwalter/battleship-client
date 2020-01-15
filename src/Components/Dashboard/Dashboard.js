@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import ActiveGameListItem from '../ActiveGameListItem/ActiveGameListItem';
 import LoadGameApiService from '../../Services/load-game-api-service';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import Button from '../Button/Button';
 import './Dashboard.css';
 
 class Dashboard extends Component {
@@ -24,6 +22,9 @@ class Dashboard extends Component {
     })
   }
 
+  //handleNewGame will reset the state of App to return to the default data.
+  //It will then redirect to the gameroom. We have set a timeout to give the state
+  //A chance to update prior to redirecting to the gameroom.
   handleNewGame = () => {
     this.props.resetDefaultGameData();
     setTimeout(() => {
@@ -100,11 +101,8 @@ class Dashboard extends Component {
         <div className='startGames'>
           <h3 className='dash-h3'>Play BattleShip</h3>          
           <button onClick={()=> this.handleNewGame()}>
-            start a new game
-              {/* <Link to='/gameroom'>
-                Start a New Game
-              </Link> */}
-            </button>
+            Start a New Game
+          </button>
           <h4>Return to an Active Game:</h4>
           <ul className='activeGames'>
             {this.state.myTurnGames.length !== 0 && <h4>Your Turn!</h4>}
@@ -114,6 +112,7 @@ class Dashboard extends Component {
               setGameData={this.props.setGameData} 
               game={game} 
               userId={this.state.userId}
+              setError= {this.setError}
               /> 
             })}
             {this.state.opponentTurnGames.length !== 0 && <h4>Waiting For Opponent...</h4>}
@@ -123,6 +122,7 @@ class Dashboard extends Component {
               setGameData={this.props.setGameData} 
               game={game} 
               userId={this.state.userId}
+              setError= {this.setError}
               /> 
             })}
           </ul>
