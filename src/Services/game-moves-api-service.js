@@ -3,8 +3,6 @@ import TokenService from './token-service';
 
 const gameMovesApiService = {
   // this function is used to store the users ships' location in the database.
-  //we need to also send the gameId of the current game so that the locations of the players' ships
-  // are stored for that game only.
   setShips(shipData, gameId, playerNum) {
     return fetch(`${config.API_ENDPOINT}/api/ships`, {
       method: 'POST',
