@@ -37,22 +37,19 @@ class OpponentGrid extends React.Component {
   //changes the message displayed to the user if a hit/miss was made
   checkForHitOrMiss = (result, ship, sunk) => {
     if (result === 'hit') {
+      let message = `Direct Hit on the ${ship}!`
+      
       if(sunk){
-        this.setState({
-          result: 'hit',
-          message: `You sunk the ${ship}!`,
-          hits: [...this.state.hits, this.state.selected],
-          selected: null,
-        })
-      }else{
+          message= `You sunk the ${ship}!`;
+      };
+
       this.setState({
         result: 'hit',
-        message: `Direct Hit on the ${ship}!`,
+        message,
         hits: [...this.state.hits, this.state.selected],
         selected: null,
       })
-      }
-    }else {
+      } else {
       this.setState({
         result: 'miss',
         message: 'Missed the Target!',
