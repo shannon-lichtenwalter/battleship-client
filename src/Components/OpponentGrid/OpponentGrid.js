@@ -22,7 +22,7 @@ class OpponentGrid extends React.Component {
   componentDidMount = () => {
     this.props.socket.on('response', res => {
       if(this.props.playerNum === res.playerNum){
-        this.checkForHitOrMiss(res.result, res.ship);
+        this.checkForHitOrMiss(res.result, res.ship, res.sunk);
       }
     })
   }
@@ -35,14 +35,23 @@ class OpponentGrid extends React.Component {
   }
 
   //changes the message displayed to the user if a hit/miss was made
-  checkForHitOrMiss = (result, ship) => {
+  checkForHitOrMiss = (result, ship, sunk) => {
     if (result === 'hit') {
+      if(sunk){
+        this.setState({
+          result: 'hit',
+          message: `You sunk the ${ship}!`,
+          hits: [...this.state.hits, this.state.selected],
+          selected: null,
+        })
+      }else{
       this.setState({
         result: 'hit',
         message: `Direct Hit on the ${ship}!`,
         hits: [...this.state.hits, this.state.selected],
         selected: null,
       })
+      }
     }else {
       this.setState({
         result: 'miss',
