@@ -16,7 +16,7 @@
 }
 
 .column {
-    width: 9.5%;
+    width: 9.2%;
     font-size: 1rem;
 }
 
@@ -28,7 +28,7 @@
 
 @media screen and (min-width: 1025px) {
     .column {
-        width: 12%;
+        width: 20%;
     }
 
     .UserContainer h2 {
