@@ -434,7 +434,11 @@ class UserGrid extends React.Component {
         if (data.result === 'miss') {
           message = `${data.playerNum} missed!`
         } else {
-          message = `${data.playerNum} ${data.result} your ${data.ship}`
+          if(data.sunk){
+            message = `${data.playerNum} sunk your ${data.ship}!`
+          }else{
+            message = `${data.playerNum} ${data.result} your ${data.ship}`
+          }
         }
         this.setState({
           message,
