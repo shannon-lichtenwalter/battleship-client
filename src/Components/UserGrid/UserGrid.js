@@ -238,7 +238,7 @@ class UserGrid extends React.Component {
                       }, () => this.handleCheckBoatLength())
                     }
                   }
-          } else if (lastIdNum < validVRangeHigh && lastIdNum > validVRangeLow) {
+          } else if (lastIdNum <= validVRangeHigh && lastIdNum > validVRangeLow) {
             if (((lastIdNum === firstIdNum + 10) || (lastIdNum === firstIdNum - 10)) &&
               this.state.allShipTilesOccupied.indexOf(lastIdNum) === (-1) &&
               (Math.max(...this.state.shipOccupied) - lastIdNum < 50) &&
