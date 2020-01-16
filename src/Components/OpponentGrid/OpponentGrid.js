@@ -107,7 +107,7 @@ class OpponentGrid extends React.Component {
 
   render() {
     let buttonDisableBool = (this.props.userTurn) ?
-      <div>
+      <div className='target'> 
         <h3>Select your target</h3>
         <p>You have selected: {this.state.selected}</p>
         <form onSubmit={(event) => this.handleFire(event)}>

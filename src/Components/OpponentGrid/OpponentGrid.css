@@ -1,12 +1,27 @@
 .OpponentContainer {
   border: 0.1rem solid white;
-  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 3rem;
 }
 
 .OpponentGrid {
   display: flex;
+  flex-direction: row;
+}
+
+.OpponentContainer h2 {
+  font-size: 2.2rem;
+  margin-top: 5rem;
+}
+
+.target h3 {
+  font-size: 2rem;
+  margin-top: 5rem;
+}
+
+@media screen and (min-width: 1025px) {
+  .OpponentContainer h2 {
+    margin-top: 8rem;
+    font-size: 2.5rem;
+  }
 }
