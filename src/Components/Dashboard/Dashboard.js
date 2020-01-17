@@ -29,25 +29,64 @@ class Dashboard extends Component {
     this.props.resetDefaultGameData();
     setTimeout(() => {
       this.props.history.push('/gameroom')
-  }, 200);
+    }, 200);
   }
 
-    //In component did mount we are fetching for the active games and saving them to state.
-    //additionally, we are sorting the active games based on if it is the current user's turn or not.
-    //the second fetch call is to retrieve all stats for the logged in user.
-  componentDidMount(){
+  // updateGames = (activeGames, myTurnGames, opponentTurnGames) => {
+  //   this.setState({
+  //     activeGames,
+  //     myTurnGames,
+  //     opponentTurnGames
+  //   })
+  // }
+
+  // deletingActiveGame = (gameId) => {
+  //   let activeGames = [...this.state.activeGames];
+  //   let myTurnGames = [...this.state.myTurnGames];
+  //   let opponentTurnGames = [...this.state.opponentTurnGames];
+
+  //   let resultActive = [];
+  //   let resultMyTurn = [];
+  //   let resultOpponentTurn = [];
+
+  //   activeGames.map(game => {
+  //     if (game.id !== gameId) {
+  //       resultActive.push(game)
+  //     };
+  //   });
+
+  //   myTurnGames.map(game => {
+  //     if (game.id !== gameId) {
+  //       resultMyTurn.push(game)
+  //     };
+  //   });
+
+  //   opponentTurnGames.map(game => {
+  //     if (game.id !== gameId) {
+  //       resultOpponentTurn.push(game)
+  //     };
+  //   });
+  //   console.log(resultOpponentTurn, resultMyTurn, resultActive)
+
+  //   this.updateGames(resultActive, resultMyTurn, resultOpponentTurn)
+  // }
+
+  //In component did mount we are fetching for the active games and saving them to state.
+  //additionally, we are sorting the active games based on if it is the current user's turn or not.
+  //the second fetch call is to retrieve all stats for the logged in user.
+  componentDidMount() {
     LoadGameApiService.getAllActiveGames()
       .then(res => {
         this.setState({
           activeGames: res.result,
           userId: res.userId
-      })
-      return res
+        })
+        return res
       }).then(res => {
         let myTurnGames = [];
         let opponentTurnGames = [];
         res.result.map(game => {
-          if(res.userId === game.player1 && game.turn === 'player1') {
+          if (res.userId === game.player1 && game.turn === 'player1') {
             return myTurnGames.push(game)
           }
           else if (res.userId === game.player2 && game.turn === 'player2') {
@@ -63,16 +102,30 @@ class Dashboard extends Component {
         })
       })
       .catch((e) => this.setError(e));
-    
+
     LoadGameApiService.getAllUserStats()
-    .then(res => {
-      this.setState({
-        userStats: res
+      .then(res => {
+        this.setState({
+          userStats: res
+        })
       })
-    })
   }
 
   render() {
+    let opponentTurnGames = null;
+    if (this.state.opponentTurnGames) {
+      opponentTurnGames = this.state.opponentTurnGames.map((game, index) => {
+        return <ActiveGameListItem
+          key={index}
+          setGameData={this.props.setGameData}
+          game={game}
+          userId={this.state.userId}
+          setError={this.setError}
+          deletingActiveGame={this.deletingActiveGame}
+        />
+      })
+    }
+
     return (
       <div className='dashboard'>
         <Header />
@@ -91,40 +144,43 @@ class Dashboard extends Component {
           <div className='stat-box'>
             <h3 className='stat-title'>Win Ratio</h3>
             <p className='stat-para'>
-              {(this.state.userStats.wins + this.state.userStats.losses === 0) 
-              ? '0%' 
-              : Math.floor(this.state.userStats.wins / (this.state.userStats.wins + this.state.userStats.losses) * 100) + '%'}
+              {(this.state.userStats.wins + this.state.userStats.losses === 0)
+                ? '0%'
+                : Math.floor(this.state.userStats.wins / (this.state.userStats.wins + this.state.userStats.losses) * 100) + '%'}
             </p>
           </div>
         </div>
 
         <div className='startGames'>
-          <h3 className='dash-h3'>Play BattleShip</h3>          
-          <button onClick={()=> this.handleNewGame()}>
+          <h3 className='dash-h3'>Play BattleShip</h3>
+          <button onClick={() => this.handleNewGame()}>
             Start a New Game
           </button>
           <h4>Return to an Active Game:</h4>
           <ul className='activeGames'>
             {this.state.myTurnGames.length !== 0 && <h4>Your Turn!</h4>}
             {this.state.myTurnGames && this.state.myTurnGames.map((game, index) => {
-            return <ActiveGameListItem 
-              key={index} 
-              setGameData={this.props.setGameData} 
-              game={game} 
-              userId={this.state.userId}
-              setError= {this.setError}
-              /> 
+              return <ActiveGameListItem
+                key={index}
+                setGameData={this.props.setGameData}
+                game={game}
+                userId={this.state.userId}
+                setError={this.setError}
+                deletingActiveGame={this.deletingActiveGame}
+              />
             })}
             {this.state.opponentTurnGames.length !== 0 && <h4>Waiting For Opponent...</h4>}
-            {this.state.opponentTurnGames && this.state.opponentTurnGames.map((game, index) => {
+            {opponentTurnGames}
+            {/* {this.state.opponentTurnGames && this.state.opponentTurnGames.map((game, index) => {
             return <ActiveGameListItem 
               key={index} 
               setGameData={this.props.setGameData} 
               game={game} 
               userId={this.state.userId}
               setError= {this.setError}
+              deletingActiveGame = {this.deletingActiveGame}
               /> 
-            })}
+            })} */}
           </ul>
         </div>
         <Footer />

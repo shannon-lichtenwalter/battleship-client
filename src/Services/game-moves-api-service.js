@@ -22,6 +22,8 @@ const gameMovesApiService = {
           : res.json()
       )
   },
+
+  
 };
 
 export default gameMovesApiService;
