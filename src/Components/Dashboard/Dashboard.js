@@ -32,44 +32,44 @@ class Dashboard extends Component {
     }, 200);
   }
 
-  // updateGames = (activeGames, myTurnGames, opponentTurnGames) => {
-  //   this.setState({
-  //     activeGames,
-  //     myTurnGames,
-  //     opponentTurnGames
-  //   })
-  // }
+  updateGames = (activeGames, myTurnGames, opponentTurnGames) => {
+    this.setState({
+      activeGames,
+      myTurnGames,
+      opponentTurnGames
+    })
+  }
 
-  // deletingActiveGame = (gameId) => {
-  //   let activeGames = [...this.state.activeGames];
-  //   let myTurnGames = [...this.state.myTurnGames];
-  //   let opponentTurnGames = [...this.state.opponentTurnGames];
+  deletingActiveGame = (gameId) => {
+    let activeGames = [...this.state.activeGames];
+    let myTurnGames = [...this.state.myTurnGames];
+    let opponentTurnGames = [...this.state.opponentTurnGames];
 
-  //   let resultActive = [];
-  //   let resultMyTurn = [];
-  //   let resultOpponentTurn = [];
+    let resultActive = [];
+    let resultMyTurn = [];
+    let resultOpponentTurn = [];
 
-  //   activeGames.map(game => {
-  //     if (game.id !== gameId) {
-  //       resultActive.push(game)
-  //     };
-  //   });
+    activeGames.map(game => {
+      if (game.id !== gameId) {
+        resultActive.push(game)
+      };
+    });
 
-  //   myTurnGames.map(game => {
-  //     if (game.id !== gameId) {
-  //       resultMyTurn.push(game)
-  //     };
-  //   });
+    myTurnGames.map(game => {
+      if (game.id !== gameId) {
+        resultMyTurn.push(game)
+      };
+    });
 
-  //   opponentTurnGames.map(game => {
-  //     if (game.id !== gameId) {
-  //       resultOpponentTurn.push(game)
-  //     };
-  //   });
-  //   console.log(resultOpponentTurn, resultMyTurn, resultActive)
+    opponentTurnGames.map(game => {
+      if (game.id !== gameId) {
+        resultOpponentTurn.push(game)
+      };
+    });
+    console.log(resultOpponentTurn, resultMyTurn, resultActive)
 
-  //   this.updateGames(resultActive, resultMyTurn, resultOpponentTurn)
-  // }
+    this.updateGames(resultActive, resultMyTurn, resultOpponentTurn)
+  }
 
   //In component did mount we are fetching for the active games and saving them to state.
   //additionally, we are sorting the active games based on if it is the current user's turn or not.
@@ -112,19 +112,6 @@ class Dashboard extends Component {
   }
 
   render() {
-    let opponentTurnGames = null;
-    if (this.state.opponentTurnGames) {
-      opponentTurnGames = this.state.opponentTurnGames.map((game, index) => {
-        return <ActiveGameListItem
-          key={index}
-          setGameData={this.props.setGameData}
-          game={game}
-          userId={this.state.userId}
-          setError={this.setError}
-          deletingActiveGame={this.deletingActiveGame}
-        />
-      })
-    }
 
     return (
       <div className='dashboard'>
@@ -170,8 +157,7 @@ class Dashboard extends Component {
               />
             })}
             {this.state.opponentTurnGames.length !== 0 && <h4>Waiting For Opponent...</h4>}
-            {opponentTurnGames}
-            {/* {this.state.opponentTurnGames && this.state.opponentTurnGames.map((game, index) => {
+            {this.state.opponentTurnGames && this.state.opponentTurnGames.map((game, index) => {
             return <ActiveGameListItem 
               key={index} 
               setGameData={this.props.setGameData} 
@@ -180,7 +166,7 @@ class Dashboard extends Component {
               setError= {this.setError}
               deletingActiveGame = {this.deletingActiveGame}
               /> 
-            })} */}
+            })}
           </ul>
         </div>
         <Footer />

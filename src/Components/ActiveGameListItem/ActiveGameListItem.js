@@ -6,28 +6,27 @@ import './ActiveGameListItem.css';
 
 class ActiveGameListItem extends React.Component {
   state = {
-    game_status: this.props.game.game_status,
-    gameId: this.props.game.id,
-    player1: this.props.game.player1,
-    player2: this.props.game.player2,
-    room_id: this.props.game.room_id,
-    turn: this.props.game.turn,
-    player1_username: this.props.game.player1_username,
-    player2_username: this.props.game.player2_username,
-    userId: this.props.userId,
-    currentUserPlayer: Number(this.props.userId) === Number(this.props.game.player1) ? 'player1' : 'player2',
+    // game_status: this.props.game.game_status,
+    // gameId: this.props.game.id,
+    // player1: this.props.game.player1,
+    // player2: this.props.game.player2,
+    // room_id: this.props.game.room_id,
+    // turn: this.props.game.turn,
+    // player1_username: this.props.game.player1_username,
+    // player2_username: this.props.game.player2_username,
+    // userId: this.props.userId,
+    // currentUserPlayer: Number(this.props.userId) === Number(this.props.game.player1) ? 'player1' : 'player2',
     quitting: false,
     error: null,
   }
 
   determineTurn = () => {
-    let currentUser;
+    let currentUser= Number(this.props.userId) === Number(this.props.game.player1) ? 'player1' : 'player2'
     let opponent;
-    if (this.state.currentUserPlayer === 'player1') {
+    if (currentUser === 'player1') {
       currentUser = 'player1'
       opponent = this.props.game.player2_username
     } else {
-      currentUser = 'player2'
       opponent = this.props.game.player1_username
     }
     if (this.props.game.turn === currentUser) {
@@ -40,7 +39,8 @@ class ActiveGameListItem extends React.Component {
   //This function retrieves all game data for an active game. It sets the state of App with the data
   //depending on if the current user is player1 or player2. Then it routes the user to the gameroom.
   handleResumeGame = () => {
-    return loadGamesApiService.resumeActiveGame(this.props.game.id, this.state.currentUserPlayer)
+    let currentUserPlayer = Number(this.props.userId) === Number(this.props.game.player1) ? 'player1' : 'player2'
+    return loadGamesApiService.resumeActiveGame(this.props.game.id, currentUserPlayer)
       .then(res => {
         let gameData = res;
         let storeData = {};
@@ -84,17 +84,17 @@ class ActiveGameListItem extends React.Component {
   }
 
   handleQuitGame = () => {
-    let playerNum = this.state.currentUserPlayer //param
-    let gameId = this.state.gameId; //param
+    let playerNum = Number(this.props.userId) === Number(this.props.game.player1) ? 'player1' : 'player2' //param
+    let gameId = this.props.game.id; //param
     let opponentNum = null; //reqbody
     let opponentId = null; //reqbody
     
     if(playerNum === 'player1'){
       opponentNum = 'player2';
-      opponentId = this.state.player2
+      opponentId = this.props.game.player2;
     } else{
       opponentNum = 'player1';
-      opponentId = this.state.player1
+      opponentId = this.props.game.player1;
     }
 
     let opponentData = {
@@ -103,11 +103,12 @@ class ActiveGameListItem extends React.Component {
     }
 
     loadGamesApiService.quitActiveGame(gameId, playerNum, opponentData).then(res =>{
-      this.props.history.push('/dashboard')
-      // this.props.deletingActiveGame(gameId);
-      // this.setState({
-      //   quitting:false
-      // })
+      //this.props.history.push('/dashboard')
+      this.setState({
+        quitting:false
+      })
+      this.props.deletingActiveGame(gameId);
+      
     })
     .catch((e) => {
       this.setState({
@@ -125,15 +126,15 @@ class ActiveGameListItem extends React.Component {
   render() {
     return (
       <div className='activeGameListItem'>
-        <li>{this.state.player1_username} versus {this.state.player2_username}</li>
+        <li>{this.props.game.player1_username} versus {this.props.game.player2_username}</li>
         <ul className='activeGameDetails'>
           <li>GameRoom: #{this.props.game.room_id}</li>
-          <li>Turn: {this.state.userId && this.determineTurn()}</li>
+          <li>Turn: {this.props.userId && this.determineTurn()}</li>
           <li>
             <Button onClick={this.handleResumeGame}>
               Resume Game?
             </Button>
-            {!this.state.player2 
+            {!this.props.game.player2 
               ? <p>Waiting for opponent...</p> 
               : <Button onClick={()=> this.setState({quitting:true})}>
                 Quit Game?
