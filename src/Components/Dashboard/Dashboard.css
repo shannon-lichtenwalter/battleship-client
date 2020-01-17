@@ -1,8 +1,12 @@
 .stats {
   margin: 0 auto;
-  width: 50%;
+  width: 90%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  border-radius: 1rem;
+  background-color: rgb(30, 52, 90);
+  border: 0.1rem solid white; 
+  padding-top: 1rem;
 }
 
 .stat-box {
@@ -64,14 +68,20 @@ h2 > span.username {
 }
 
 @media screen and (min-width: 900px) {
-  .activeGames {
-    width: 80%;
+  .activeGames,
+  .stats {
+    width: 75%;
   }
+
 }
 
 @media screen and (min-width: 1025px) {
   .activeGames {
     width: 65%;
+  }
+
+  .stats {
+    width: 50%;
   }
 
   .dash-h3 {
