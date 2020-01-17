@@ -9,7 +9,6 @@ export default class Chat extends React.Component {
 
     componentDidMount = () => {
         this.props.socket.on('chat-message', data => {
-
             this.setState({
                 messages: [...this.state.messages, {username: data.username, message: data.message}]
             })
@@ -25,7 +24,6 @@ export default class Chat extends React.Component {
         })
     }
 
-
     render() {
 
         let chatHistory = this.state.messages.map((message, index) => {
@@ -36,9 +34,6 @@ export default class Chat extends React.Component {
                 </li>
             )
         })
-
-
-
 
         return (
             <div id='chat'>
@@ -54,12 +49,9 @@ export default class Chat extends React.Component {
                     <input type='text' placeholder='Type your message here.' id='chatInput' />
                 </form>
             </div>
-
         );
     }
 }
-
-
 
 
 

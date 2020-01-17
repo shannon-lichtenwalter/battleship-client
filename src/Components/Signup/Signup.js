@@ -35,7 +35,6 @@ class Signup extends Component {
   };
 
   componentDidMount() {
-    //console.log(this.firstInput)
     this.firstInput.current.focus()
   };
 

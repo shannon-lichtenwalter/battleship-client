@@ -6,10 +6,30 @@
   color: red;
 }
 
-.grid-box {
-  display: flex;
+p {
+  font-size: 1.2rem;
 }
 
 .grid {
-  width: 50%;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 1025px) {
+  .grid-box {
+    display: flex;
+    justify-content: center;
+  }
+
+  .grid {
+    width: 45%;
+    margin: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+  
 }

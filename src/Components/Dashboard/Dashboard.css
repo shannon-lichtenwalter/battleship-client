@@ -1,13 +1,33 @@
 .stats {
   margin: 0 auto;
-  width:50%;
+  width: 90%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  border-radius: 1rem;
+  background-color: rgb(30, 52, 90);
+  border: 0.1rem solid white; 
+  padding-top: 1rem;
 }
 
 .stat-box {
-  width: 33%;
+  width: 30%;
   text-align: center;
+}
+
+.stat-box h4 {
+  font-size: 1.4rem;
+  display: inline;
+}
+
+.stat-box p {
+  font-size: 1.4rem;
+}
+
+.startGames a {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 1.5rem;
 }
 
 .d-button {
@@ -15,10 +35,14 @@
 }
 
 .dashboardWelcome {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   text-align: left;
   margin-left: 1rem;
-  margin-top: 7rem;
+  margin-top: 8.3rem;
+}
+
+.dash-h3 {
+  font-style: oblique;
 }
 
 .activeGames, .activeGameDetails {
@@ -28,9 +52,11 @@
 
 .activeGames {
   border: 0.1rem solid white; 
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   padding: 10px;
+  border-radius: 1rem;
+  background-color: rgb(30, 52, 90);
 }
 
 .activeGames >li {
@@ -39,18 +65,23 @@
 
 h2 > span.username {
   color: rgb(57, 206, 252);
-
 }
 
 @media screen and (min-width: 900px) {
-  .activeGames {
-    width: 70%;
+  .activeGames,
+  .stats {
+    width: 75%;
   }
+
 }
 
 @media screen and (min-width: 1025px) {
   .activeGames {
-    width: 60%;
+    width: 65%;
+  }
+
+  .stats {
+    width: 50%;
   }
 
   .dash-h3 {
@@ -59,10 +90,18 @@ h2 > span.username {
 
   .dashboardWelcome {
     font-size: 1.6rem;
-    margin-top: 7.5rem;
+    margin-top: 8.8rem;
   }
 
   .startGames h4 {
+    font-size: 1.6rem;
+  }
+
+  .stat-box h4 {
+    font-size: 1.6rem;
+  }
+
+  .stat-box p {
     font-size: 1.6rem;
   }
 }

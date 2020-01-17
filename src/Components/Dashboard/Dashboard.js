@@ -76,20 +76,22 @@ class Dashboard extends Component {
     return (
       <div className='dashboard'>
         <Header />
+
         <h2 className='dashboardWelcome'>Welcome back, <span className='username'>{this.state.userStats.username}</span></h2>
         {this.state.error && <p>Uh oh! Something went wrong: {this.state.error}</p>}
         <h3 className='dash-h3'>Stats</h3>
+        
         <div className='stats'>
           <div className='stat-box'>
-            <h3 className='stat-title'>Win</h3>
+            <h4 className='stat-title'>Win</h4>
             <p className='stat-para'>{this.state.userStats.wins} times</p>
           </div>
           <div className='stat-box'>
-            <h3 className='stat-title'>Lose</h3>
+            <h4 className='stat-title'>Lose</h4>
             <p className='stat-para'>{this.state.userStats.losses} times</p>
           </div>
           <div className='stat-box'>
-            <h3 className='stat-title'>Win Ratio</h3>
+            <h4 className='stat-title'>Win Ratio</h4>
             <p className='stat-para'>
               {(this.state.userStats.wins + this.state.userStats.losses === 0) 
               ? '0%' 

@@ -1,9 +1,9 @@
 .cell {
-  height: 2rem;
-  width: 2rem;
+  width: 90%;
+  height: 10%;
   background-color:blue ;
   margin: 2px;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 #label {
@@ -34,3 +34,10 @@
   background-color: red;
 }
 
+@media screen and (min-width: 1025px) {
+  .cell {
+    height: 12%;
+    width: 97%;
+    font-size: 1.2rem;
+  }
+}
