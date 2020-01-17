@@ -1,6 +1,6 @@
 # Project Name: Battleship
 
-## Created by Aedan Warfield, Sean Cooper, Shannon Lichtenwalter, and Heesu Kang
+Created by Aedan Warfield, Sean Cooper, Shannon Lichtenwalter, and Heesu Kang
 
 -----------------------
 
