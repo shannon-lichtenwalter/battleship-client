@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import Signup from './Signup';
 import { BrowserRouter } from 'react-router-dom';
 
-describe('Login Form Component', () => {
+describe('Signup Component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render
       (<BrowserRouter> 
-          <Signup /> 
+        <Signup /> 
       </BrowserRouter>, div);
     ReactDOM.unmountComponentAtNode(div);
   });

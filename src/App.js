@@ -35,13 +35,13 @@ export default class App extends Component {
       resumedGame: null,
       shipsReady: null,
     }
-  }
+  };
 
   setGameData = (gameData) => {
     this.setState({
       gameData
     })
-  }
+  };
 
   resetDefaultGameData = () => {
     this.setState({
@@ -61,9 +61,7 @@ export default class App extends Component {
         shipsReady: null,
       }
     })
-  }
-
-
+  };
 
   render() {
     return (
@@ -133,7 +131,6 @@ export default class App extends Component {
             path={'/UsernameChange'}
             component={UsernameChangeRoute}
           />
-
           <Route
             component={NotFoundRoute}
           />
@@ -142,3 +139,5 @@ export default class App extends Component {
     );
   }
 };
+
+
