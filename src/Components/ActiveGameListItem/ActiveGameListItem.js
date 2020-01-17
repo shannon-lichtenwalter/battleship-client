@@ -1,6 +1,6 @@
 import React from 'react';
 import loadGamesApiService from '../../Services/load-game-api-service';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import Button from '../Button/Button';
 import './ActiveGameListItem.css';
 
