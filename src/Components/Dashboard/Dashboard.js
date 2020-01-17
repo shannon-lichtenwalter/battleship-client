@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import ActiveGameListItem from '../ActiveGameListItem/ActiveGameListItem';
 import LoadGameApiService from '../../Services/load-game-api-service';
 import Header from '../Header/Header';
