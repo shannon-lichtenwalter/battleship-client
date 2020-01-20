@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+//import { BrowserRouter as Link } from "react-router-dom";
+import {withRouter} from 'react-router-dom';
 import Button from '../Button/Button';
 import Footer from '../Footer/Footer';
 import './Result.css';
 import LoadGameApiService from '../../Services/load-game-api-service'
 
-export default class Result extends Component {
+class Result extends Component {
 
- static defaultProps = {
-   player:null,
-   game:null
- }
- 
+  static defaultProps = {
+  player:null,
+  game:null
+  }
+
   constructor(props){
     super(props);
     this.state={
@@ -64,7 +65,7 @@ export default class Result extends Component {
     let player1MissArrayLength = this.state.player1_misses.length
     let player2HitArrayLength = this.state.player2_hits.length
     let player2MissArrayLength = this.state.player2_misses.length
-    if(this.state.player=='player1'){
+    if(this.state.player === 'player1'){
       if(player2HitArrayLength > player2HitArrayLength){
         let totalShots = player1HitArrayLength + player1MissArrayLength
         let hitRatio = player1HitArrayLength / totalShots
@@ -143,7 +144,6 @@ export default class Result extends Component {
   }
   }
 
-
   render() {
     return (
       <div className='result'>
@@ -161,28 +161,28 @@ export default class Result extends Component {
           {this.state.totalShots}
         </div>
 
-        <Button>
-          <Link to='/rematch'>
-            Rematch
-          </Link>
+        <Button onClick={() => {
+          this.props.history.push('/rematch')
+          }}> Rematch
         </Button>
 
-        <Button>
-          <Link to='/newgame'>
-            New Game
-          </Link>
+        <Button onClick={() => {
+          this.props.history.push('/newgame')
+          }}> New Game
         </Button>
 
-        <Button>
-          <Link to='/dashboard'>
-            Exit
-          </Link>
+        <Button onClick={() => {
+          this.props.history.push('/dashboard')
+          }}> Exit
         </Button>
+
 
         <Footer />
       </div>
     );
   };
 };
+
+export default withRouter(Result);
 
 

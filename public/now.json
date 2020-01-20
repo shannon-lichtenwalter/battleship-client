@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "alias": "capstone3-battleship",
+  "alias": "battleship",
   "name": "battleship",
   "routes": [
     {
