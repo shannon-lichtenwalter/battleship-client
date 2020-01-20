@@ -67,7 +67,7 @@ class Result extends Component {
     let player2HitArrayLength = this.state.player2_hits.length
     let player2MissArrayLength = this.state.player2_misses.length
     if(this.state.player === 'player1'){
-      if(player2HitArrayLength > player2HitArrayLength){
+      if(player1HitArrayLength > player2HitArrayLength){
         let totalShots = player1HitArrayLength + player1MissArrayLength
         let hitRatio = player1HitArrayLength / totalShots
         let missed = player1MissArrayLength
