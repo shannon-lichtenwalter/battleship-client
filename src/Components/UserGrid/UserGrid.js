@@ -40,29 +40,29 @@ class UserGrid extends React.Component {
         of opponent shots is updated in state, and a 'hit' or 'miss' message is displayed based on the response
         from the server.
     */
-    componentDidMount = () => {
-        if(this.props.socket){
-        this.props.socket.on('response', data => {
-          if(data){  
-          this.props.changeTurn();
-            if (this.context.playerNum !== data.playerNum) {
-                let message = null;
-                if (data.result === 'missed') {
-                    message = `${data.playerNum} missed!`
-                } else {
-                    message = `${data.playerNum} ${data.result} your ${data.ship}`
-                }
-                // On response (indicating a shot was fired from the other side), 'message' in state is updated
-                // as well as the array containing 'opponentShots'
-                this.setState({
-                    message,
-                    opponentShots: [...this.state.opponentShots, data.target]
-                })
-            }
-          }
-        })
-    }
-    };
+//     componentDidMount = () => {
+//         if(this.props.socket){
+//         this.props.socket.on('response', data => {
+//           if(data){  
+//           this.props.changeTurn();
+//             if (this.context.playerNum !== data.playerNum) {
+//                 let message = null;
+//                 if (data.result === 'missed') {
+//                     message = `${data.playerNum} missed!`
+//                 } else {
+//                     message = `${data.playerNum} ${data.result} your ${data.ship}`
+//                 }
+//                 // On response (indicating a shot was fired from the other side), 'message' in state is updated
+//                 // as well as the array containing 'opponentShots'
+//                 this.setState({
+//                     message,
+//                     opponentShots: [...this.state.opponentShots, data.target]
+//                 })
+//             }
+//           }
+//         })
+//     }
+//     };
 
     /*
         The following function 'handleSetShips' is called from within the render function. It will look at the 
@@ -108,8 +108,11 @@ class UserGrid extends React.Component {
         } else if (this.state.counter <= 4) {
             return `Please select cells for ${this.state.playerShips[this.state.counter].name}.
             This ship is ${this.state.playerShips[this.state.counter].length} spaces long`
-        } else return `All Ships Have Been Set`     // In the event all ships have been set, return string
-    };
+
+
+    } else return `Your Fleet is Ready for Battle...`
+  };
+
 
     /*
         The following function is called from within the 'handleCheckBoatLength' function when the 'boat'
@@ -492,6 +495,7 @@ class UserGrid extends React.Component {
     /*
         Display placement error message, if applicable
 
+
         @return - String message displaying placement error, or null
     */
     messageCreator = () => {
@@ -499,6 +503,30 @@ class UserGrid extends React.Component {
             return 'Please try placing your ship again. Previous placement was invalid'
         } else {
           return null
+
+  //componentDidMount will set a listener for the response from the websocket.
+  //if the currentuser is not the user who fired the shot then they will get
+  // a message displaying if they have been hit by the opponent or not.
+  componentDidMount = () => {
+    this.props.socket.on('response', data => {
+      this.props.changeTurn();
+      let ship = null;
+      if(data.ship === 'aircraftCarrier'){
+        ship = 'Aircraft Carrier'
+      }else if (data.ship !== null) {
+        ship = data.ship.charAt(0).toUpperCase() + data.ship.slice(1)
+      }
+
+      if (this.props.playerNum !== data.playerNum) {
+        let message = null;
+        if (data.result === 'miss') {
+          message = `${this.props.opponentUsername} missed!`
+        } else {
+          if(data.sunk){
+            message = `${this.props.opponentUsername} sunk your ${ship}!`
+          }else{
+            message = `${this.props.opponentUsername} ${data.result} your ${ship}`
+
           }
         }
 
@@ -555,24 +583,20 @@ class UserGrid extends React.Component {
         }
     }
 
-    /*
-        All React classes need a render method!
 
-        @return - HTML representing layout of the UserGrid component
-    */
-    render() {
-        return (
-            <div className='UserContainer grid'>
-                <div className='UserGrid'>
-                    {this.handleRenderGrid()}
-                </div>
-                {this.state.message && <p>{this.state.message}</p>}
-                <span className='ErrorSpan'><p>{this.messageCreator()}</p></span>
-                <h2>{this.handleSetShips()} </h2>
-                {/* <h3>{this.displayBoats()}</h3> */}
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className='UserContainer grid'>
+        <div className='UserGrid'>
+          {this.handleRenderGrid()}
+        </div>
+        <span className='ErrorSpan'><p>{this.messageCreator()}</p></span>
+        <h2>{this.handleSetShips()} </h2>
+        {this.state.message && <p>{this.state.message}</p>}
+      </div>
+    )
+  }
+
 };
 
 export default UserGrid;

@@ -23,6 +23,8 @@ class GameBoard extends React.Component {
     opponentShipsReady: this.props.gameData.opponentShips,
     shipsReady: this.props.gameData.shipsReady,
     shipTileValues: this.props.gameData.shipTileValues,
+    playerUsername: this.props.gameData.playerUsername,
+    opponentUsername: this.props.gameData.opponentUsername,
     socket: null,
     error: null,
     winnerSet:false,
@@ -121,12 +123,14 @@ class GameBoard extends React.Component {
         userTurn = {this.state.userTurn} 
         gameId={this.state.gameId} 
         playerNum ={this.state.playerNum}
-        gameStart={this.state.shipsReady && this.state.opponentShipsReady} /> 
+        gameStart={this.state.shipsReady && this.state.opponentShipsReady}
+        playerUsername= {this.state.playerUsername}
+        opponentUsername= {this.state.opponentUsername} /> 
       : <p> Waiting For Both Players to Set Their Ships ! </p>;
     return (
         <>
           {this.state.error && <p className='errorMessage'>Uh oh! Something went wrong: {this.state.error}</p>}
-          <h2>Your Ships</h2>
+          <h2>{this.state.playerUsername + ' versus ' + this.state.opponentUsername}</h2>
           <div className='grid-box'>
             {this.state.socket && <UserGrid
               socket={this.state.socket} 
@@ -142,7 +146,9 @@ class GameBoard extends React.Component {
               playerNum ={this.state.playerNum}
               error= {this.state.error}
               setError= {this.setError}
-              clearError= {this.clearError} />}
+              clearError= {this.clearError}
+              playerUsername= {this.state.playerUsername}
+              opponentUsername= {this.state.opponentUsername} />}
               {opponentGrid}
           </div>
           {this.resultsDisplay()}  

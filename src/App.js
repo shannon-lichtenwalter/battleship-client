@@ -34,6 +34,8 @@ export default class App extends Component {
       shipTileValues: [],
       resumedGame: null,
       shipsReady: null,
+      playerUsername: null,
+      opponentUsername: null,
     }
   };
 
@@ -59,6 +61,8 @@ export default class App extends Component {
         shipTileValues: [],
         resumedGame: null,
         shipsReady: null,
+        playerUsername: null,
+        opponentUsername: null,
       }
     })
   };
