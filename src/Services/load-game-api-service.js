@@ -45,6 +45,23 @@ const loadGamesApiService = {
           'authorization': `bearer ${TokenService.getAuthToken()}`
         },
       })
+        .then(res => 
+          (!res.ok)
+            ? res.json().then(e => Promise.reject(e))
+            : res.json()
+        )
+    },
+    
+// quit active game
+    quitActiveGame(gameId, playerNum, opponentData){
+      return fetch(`${config.API_ENDPOINT}/api/games/activegame/${gameId}/${playerNum}`, {
+        method: 'PATCH',
+        headers: {
+          'content-type': 'application/json',
+          'authorization': `bearer ${TokenService.getAuthToken()}`
+        },
+        body: JSON.stringify(opponentData)
+      })
         .then(res =>
           (!res.ok)
             ? res.json().then(e => Promise.reject(e))

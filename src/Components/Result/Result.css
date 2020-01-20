@@ -26,4 +26,51 @@
     width: 50%;
     text-align: left;
     padding-left: 5px;
+  margin-top: 8rem;
+}
+
+.resultList h4,
+.resultList p {
+  font-size: 1.4rem;
+}
+
+.resultList {
+  border: 0.1rem solid white;
+  margin-bottom: 2rem !important;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 1rem;
+  background-color: rgb(30, 52, 90);
+}
+
+.result h1 {
+  margin-bottom: 2rem;
+}
+
+.resultbtn {
+  display: inline;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 760px) {
+  .resultbtn {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .resultList {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .resultList {
+    width: 65%;
+  }
+
+  .resultList h4,
+  .resultList p {
+    font-size: 1.6rem;
+  }
 }

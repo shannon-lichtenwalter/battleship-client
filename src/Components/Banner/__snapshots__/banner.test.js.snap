@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner Component Displays the headline 'BATTLESHIP' 1`] = `
+<div
+  className="banner"
+>
+  <h1>
+    BATTLESHIP
+  </h1>
+</div>
+`;

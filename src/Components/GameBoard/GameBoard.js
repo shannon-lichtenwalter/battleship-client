@@ -25,11 +25,13 @@ class GameBoard extends React.Component {
     opponentShipsReady: this.props.gameData.opponentShips,
     shipsReady: this.props.gameData.shipsReady,
     shipTileValues: this.props.gameData.shipTileValues,
+    playerUsername: this.props.gameData.playerUsername,
+    opponentUsername: this.props.gameData.opponentUsername,
     socket: null,
     error: null,
     winnerSet: false,
-    playerUsername: '', 
-    opponentUsername:''
+    playerUsername: '',
+    opponentUsername: ''
   }
 
   setError = (err) => {
@@ -98,8 +100,8 @@ class GameBoard extends React.Component {
 
     socket.on('usernames', (data) => {
       this.setState({
-        playerUsername:data.usernames.player,
-        opponentUsername:data.usernames.opponent
+        playerUsername: data.usernames.player,
+        opponentUsername: data.usernames.opponent
       })
     });
   }
@@ -108,7 +110,7 @@ class GameBoard extends React.Component {
     let player = this.state.playerNum;
     let gameId = this.state.gameId;
 
-    
+
 
     this.props.setResults(player, 2, 'my username', 'my opponents username');
     // this.props.setResults(player, gameId, this.state.playerUsername, this.state.opponentUsername);
@@ -136,7 +138,9 @@ class GameBoard extends React.Component {
         playerNum={this.state.playerNum}
         error={this.state.error}
         setError={this.setError}
-        clearError={this.clearError} />
+        clearError={this.clearError}
+        playerUsername={this.state.playerUsername}
+        opponentUsername={this.state.opponentUsername} />
       : null;
 
     let opponentGrid = (this.state.shipsReady && this.state.opponentShipsReady && this.state.socket)
@@ -149,7 +153,9 @@ class GameBoard extends React.Component {
         userTurn={this.state.userTurn}
         gameId={this.state.gameId}
         playerNum={this.state.playerNum}
-        gameStart={this.state.shipsReady && this.state.opponentShipsReady} />
+        gameStart={this.state.shipsReady && this.state.opponentShipsReady}
+        playerUsername={this.state.playerUsername}
+        opponentUsername={this.state.opponentUsername} />
       : <p> Waiting For Both Players to Set Their Ships ! </p>;
 
 
@@ -170,7 +176,7 @@ class GameBoard extends React.Component {
         <Banner />
         {errorMessage}
 
-        <h2>Your Ships</h2>
+        <h2>{this.state.playerUsername + ' versus ' + this.state.opponentUsername}</h2>
 
         <div className='grid-box'>
           {userGrid}

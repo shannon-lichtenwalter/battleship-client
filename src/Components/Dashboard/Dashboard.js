@@ -4,6 +4,7 @@ import ActiveGameListItem from '../ActiveGameListItem/ActiveGameListItem';
 import LoadGameApiService from '../../Services/load-game-api-service';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import Button from '../Button/Button.js';
 import './Dashboard.css';
 
 class Dashboard extends Component {
@@ -30,6 +31,56 @@ class Dashboard extends Component {
     setTimeout(() => {
       this.props.history.push('/gameroom')
     }, 200);
+  }
+
+  //this function is used after a game is deleted to update the component state
+  updateGames = (activeGames, myTurnGames, opponentTurnGames, userStats) => {
+    this.setState({
+      activeGames,
+      myTurnGames,
+      opponentTurnGames,
+      userStats
+    })
+  }
+
+  //This function updates the state by removing the deleted games from
+  // activeGames and from either myTurnGames or opponentTurnGames in state.
+  //it also updates the userStats to reflect the additional loss due to forfeit.
+  //the function calls updateGames which updates the state with the changes.
+  deletingActiveGame = (gameId) => {
+    let activeGames = [...this.state.activeGames];
+    let myTurnGames = [...this.state.myTurnGames];
+    let opponentTurnGames = [...this.state.opponentTurnGames];
+    let userStats = {...this.state.userStats};
+    
+    userStats.losses = userStats.losses + 1;
+
+    let resultActive = [];
+    let resultMyTurn = [];
+    let resultOpponentTurn = [];
+
+    activeGames.map(game => {
+      if (game.id !== gameId) {
+        resultActive.push(game)
+      };
+      return null
+    });
+
+    myTurnGames.map(game => {
+      if (game.id !== gameId) {
+        resultMyTurn.push(game)
+      };
+      return null
+    });
+
+    opponentTurnGames.map(game => {
+      if (game.id !== gameId) {
+        resultOpponentTurn.push(game)
+      };
+      return null
+    });
+
+    this.updateGames(resultActive, resultMyTurn, resultOpponentTurn, userStats)
   }
 
   //In component did mount we are fetching for the active games and saving them to state.
@@ -73,6 +124,7 @@ class Dashboard extends Component {
   }
 
   render() {
+
     return (
       <div className='dashboard'>
         <Header />
@@ -86,10 +138,12 @@ class Dashboard extends Component {
             <h4 className='stat-title'>Wins</h4>
             <p className='stat-para'>{this.state.userStats.wins}</p>
           </div>
+
           <div className='stat-box'>
             <h4 className='stat-title'>Losses</h4>
             <p className='stat-para'>{this.state.userStats.losses}</p>
           </div>
+
           <div className='stat-box'>
             <h4 className='stat-title'>Win Ratio</h4>
             <p className='stat-para'>
@@ -101,10 +155,13 @@ class Dashboard extends Component {
         </div>
 
         <div className='startGames'>
-          <h3 className='dash-h3'>Play BattleShip</h3>
-          <button onClick={() => this.handleNewGame()}>
+
+          <h3 className='dash-h3'>Play Battleship</h3>          
+          <Button onClick={()=> this.handleNewGame()}>
+
             Start a New Game
-          </button>
+          </Button>
+          
           <h4>Return to an Active Game:</h4>
           <ul className='activeGames'>
             {this.state.myTurnGames.length !== 0 && <h4>Your Turn!</h4>}
@@ -115,21 +172,24 @@ class Dashboard extends Component {
                 game={game}
                 userId={this.state.userId}
                 setError={this.setError}
+                deletingActiveGame={this.deletingActiveGame}
               />
             })}
             {this.state.opponentTurnGames.length !== 0 && <h4>Waiting For Opponent...</h4>}
             {this.state.opponentTurnGames && this.state.opponentTurnGames.map((game, index) => {
-              return <ActiveGameListItem
-                key={index}
-                setGameData={this.props.setGameData}
-                game={game}
-                userId={this.state.userId}
-                setError={this.setError}
-              />
+            return <ActiveGameListItem 
+              key={index} 
+              setGameData={this.props.setGameData} 
+              game={game} 
+              userId={this.state.userId}
+              setError= {this.setError}
+              deletingActiveGame = {this.deletingActiveGame}
+              /> 
             })}
           </ul>
         </div>
         <Footer />
+
       </div>
     );
   };

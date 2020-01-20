@@ -8,12 +8,14 @@ export default class Chat extends React.Component {
     }
 
     componentDidMount = () => {
+        if(this.props.socket){
         this.props.socket.on('chat-message', data => {
             this.setState({
                 messages: [...this.state.messages, {username: data.username, message: data.message}]
             })
             
         })
+    }
     }
 
     handleChatMessage = (message) => {
