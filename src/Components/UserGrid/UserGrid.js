@@ -5,31 +5,31 @@ import gameMovesApiService from '../../Services/game-moves-api-service';
 
 class UserGrid extends React.Component {
 
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
 
-    this.state = {
-      selected: '',
-      currentId: '',
-      message: null,
-      boat: [],
-      counter: this.props.resumedGame && this.props.userShips.length > 0 ? 5 : 0,
-      playerShips: this.props.userShips && this.props.userShips.length !== 0 ? this.props.userShips : [{ 'name': 'aircraftCarrier', 'length': 5, 'spaces': [] },
-      { 'name': 'battleship', 'length': 4, 'spaces': [] },
-      { 'name': 'cruiser', 'length': 3, 'spaces': [] },
-      { 'name': 'submarine', 'length': 3, 'spaces': [] },
-      { 'name': 'defender', 'length': 2, 'spaces': [] }],
-      shipOccupied: [],
-      allShipTilesOccupied: [],
-      shipTileValues: this.props.shipTileValues,
-      currentShipAlignment: null,
-      shipTileLaid: false,
-      opponentShots: this.props.opponentShots,
-      shipsReady: this.props.shipsReady,
-      placementFail: false,
-      resumedGame: this.props.resumedGame,
-    }
-  };
+        this.state = {
+            selected: '',
+            currentId: '',
+            message: null,
+            boat: [],
+            counter: this.props.resumedGame && this.props.userShips.length > 0 ? 5 : 0,
+            playerShips: this.props.userShips && this.props.userShips.length !== 0 ? this.props.userShips : [{ 'name': 'aircraftCarrier', 'length': 5, 'spaces': [] },
+            { 'name': 'battleship', 'length': 4, 'spaces': [] },
+            { 'name': 'cruiser', 'length': 3, 'spaces': [] },
+            { 'name': 'submarine', 'length': 3, 'spaces': [] },
+            { 'name': 'defender', 'length': 2, 'spaces': [] }],
+            shipOccupied: [],
+            allShipTilesOccupied: [],
+            shipTileValues: this.props.shipTileValues,
+            currentShipAlignment: null,
+            shipTileLaid: false,
+            opponentShots: this.props.opponentShots,
+            shipsReady: this.props.shipsReady,
+            placementFail: false,
+            resumedGame: this.props.resumedGame,
+        }
+    };
 
 
     /*
@@ -40,29 +40,39 @@ class UserGrid extends React.Component {
         of opponent shots is updated in state, and a 'hit' or 'miss' message is displayed based on the response
         from the server.
     */
-//     componentDidMount = () => {
-//         if(this.props.socket){
-//         this.props.socket.on('response', data => {
-//           if(data){  
-//           this.props.changeTurn();
-//             if (this.context.playerNum !== data.playerNum) {
-//                 let message = null;
-//                 if (data.result === 'missed') {
-//                     message = `${data.playerNum} missed!`
-//                 } else {
-//                     message = `${data.playerNum} ${data.result} your ${data.ship}`
-//                 }
-//                 // On response (indicating a shot was fired from the other side), 'message' in state is updated
-//                 // as well as the array containing 'opponentShots'
-//                 this.setState({
-//                     message,
-//                     opponentShots: [...this.state.opponentShots, data.target]
-//                 })
-//             }
-//           }
-//         })
-//     }
-//     };
+    componentDidMount = () => {
+        if (this.props.socket) {
+            this.props.socket.on('response', data => {
+                if (data) {
+                    this.props.changeTurn();
+                    let ship = null;
+                    if (data.ship === 'aircraftCarrier') {
+                        ship = 'Aircraft Carrier'
+                    } else if (data.ship !== null) {
+                        ship = data.ship.charAt(0).toUpperCase() + data.ship.slice(1)
+                    }
+
+                    if (this.props.playerNum !== data.playerNum) {
+                        let message = null;
+                        if (data.result === 'miss') {
+                            message = `${this.props.opponentUsername} missed!`
+                        } else {
+                            if (data.sunk) {
+                                message = `${this.props.opponentUsername} sunk your ${ship}!`
+                            } else {
+                                message = `${this.props.opponentUsername} ${data.result} your ${ship}`
+
+                            }
+                        }
+                        this.setState({
+                            message,
+                            opponentShots: [...this.state.opponentShots, data.target]
+                        })
+                    }
+                }
+            })
+        }
+    };
 
     /*
         The following function 'handleSetShips' is called from within the render function. It will look at the 
@@ -97,7 +107,7 @@ class UserGrid extends React.Component {
                         { 'name': 'defender', 'length': 2, 'spaces': [] }],
                         shipOccupied: [],
                         allShipTilesOccupied: [],
-                        shipTileValues:[],
+                        shipTileValues: [],
                         currentShipAlignment: null,
                         shipTileLaid: false,
                         opponentShots: [],
@@ -110,8 +120,8 @@ class UserGrid extends React.Component {
             This ship is ${this.state.playerShips[this.state.counter].length} spaces long`
 
 
-    } else return `Your Fleet is Ready for Battle...`
-  };
+        } else return `Your Fleet is Ready for Battle...`
+    };
 
 
     /*
@@ -139,7 +149,7 @@ class UserGrid extends React.Component {
             if ((((temp[i + 1]) - temp[i]) !== 1) && (((temp[i + 1]) - temp[i]) !== 10)) {
                 status = false;     // Status set to 'false' indicates that the boat is invalid.
             }
-        } 
+        }
         if (!status) {   // If the boat is invalid, cell data must be purged from array containing ship tiles
             temp2 = this.state.allShipTilesOccupied
             temp2.splice(-temp.length, temp.length)
@@ -161,7 +171,7 @@ class UserGrid extends React.Component {
             if (status) {                                // If current boat is valid..
                 let currentShips = this.state.playerShips;
                 let boatValues = this.state.boat.map(boat => boat.value);
-                currentShips[this.state.counter].spaces = boatValues 
+                currentShips[this.state.counter].spaces = boatValues
                 // Sets 'playerShips' in state to newly updated current ship values, increases boat
                 //    counter, and sets the alignment to null to get ready for the next ship
                 this.setState({
@@ -182,7 +192,7 @@ class UserGrid extends React.Component {
         }
     };
 
-    
+
     /*
         This function is called by render as a visual tool for the user to see which cells they have
         selected for each boat. Display is based on values within 'playerShips' in componenet state.
@@ -212,7 +222,7 @@ class UserGrid extends React.Component {
     handleCheckValue = (value, idNum) => {
         // The following lines are used to see whether or not the tile you are selecting is found within
         //    your current boat. If found, its index (or id) is returned, otherwise -1 is returned
-        let tempBoat = this.state.boat                  
+        let tempBoat = this.state.boat
         let indexFound = tempBoat.map(function (e) {
             return e.idNum;
         }).indexOf(idNum)
@@ -327,7 +337,7 @@ class UserGrid extends React.Component {
                                             }, () => this.handleCheckBoatLength())
                                         }
                                     }
-                    //  The following checks to see if when laying ship tiles vertically, we are in valid range 
+                        //  The following checks to see if when laying ship tiles vertically, we are in valid range 
                     } else if (lastIdNum <= validVRangeHigh && lastIdNum > validVRangeLow) {
                         // Are we directly above or below the boat origin?
                         if (((lastIdNum === firstIdNum + 10) || (lastIdNum === firstIdNum - 10)) &&
@@ -386,9 +396,9 @@ class UserGrid extends React.Component {
                     }
                 }
             }
-        // The following block of code allows users to unselect ship tiles for the current boat if they change
-        //     their mind, or are 'up against a wall' and find themselves unable to place their final ship tile
-        //     due to another boat being in the way. 
+            // The following block of code allows users to unselect ship tiles for the current boat if they change
+            //     their mind, or are 'up against a wall' and find themselves unable to place their final ship tile
+            //     due to another boat being in the way. 
         } else {
             let tempAllTilesOccupied = this.state.allShipTilesOccupied
             let tempAllTileValues = this.state.shipTileValues
@@ -411,17 +421,17 @@ class UserGrid extends React.Component {
                 })
                 // If the length of the boat is 1, we are setting 'currentShipAlignment' to null, so the user can
                 //    change direction of ship placement.
-      } else {
-        this.setState({
-          allShipTilesOccupied: tempAllTilesOccupied,
-          shipTileValues: tempAllTileValues,
-          shipOccupied: tempShipOccupied,
-          boat: tempBoat,
-          currentShipAlignment: null,
-        })
-      }
-    }
-  };
+            } else {
+                this.setState({
+                    allShipTilesOccupied: tempAllTilesOccupied,
+                    shipTileValues: tempAllTileValues,
+                    shipOccupied: tempShipOccupied,
+                    boat: tempBoat,
+                    currentShipAlignment: null,
+                })
+            }
+        }
+    };
 
     /*
         Passed as a callback to the cell component, the following function checks to see whether any cell
@@ -502,33 +512,12 @@ class UserGrid extends React.Component {
         if (this.state.placementFail) {
             return 'Please try placing your ship again. Previous placement was invalid'
         } else {
-          return null
-
-  //componentDidMount will set a listener for the response from the websocket.
-  //if the currentuser is not the user who fired the shot then they will get
-  // a message displaying if they have been hit by the opponent or not.
-  componentDidMount = () => {
-    this.props.socket.on('response', data => {
-      this.props.changeTurn();
-      let ship = null;
-      if(data.ship === 'aircraftCarrier'){
-        ship = 'Aircraft Carrier'
-      }else if (data.ship !== null) {
-        ship = data.ship.charAt(0).toUpperCase() + data.ship.slice(1)
-      }
-
-      if (this.props.playerNum !== data.playerNum) {
-        let message = null;
-        if (data.result === 'miss') {
-          message = `${this.props.opponentUsername} missed!`
-        } else {
-          if(data.sunk){
-            message = `${this.props.opponentUsername} sunk your ${ship}!`
-          }else{
-            message = `${this.props.opponentUsername} ${data.result} your ${ship}`
-
-          }
+            return null
         }
+    }
+
+    
+    
 
     /*
         Function called from render to display the UserGrid, the component which the user's ships
@@ -577,25 +566,25 @@ class UserGrid extends React.Component {
     /*
         The following function closes socket listener when the component unmounts
     */
-    componentWillUnmount(){
-        if(this.props.socket){
+    componentWillUnmount() {
+        if (this.props.socket) {
             this.props.socket.close()
         }
     }
 
 
-  render() {
-    return (
-      <div className='UserContainer grid'>
-        <div className='UserGrid'>
-          {this.handleRenderGrid()}
-        </div>
-        <span className='ErrorSpan'><p>{this.messageCreator()}</p></span>
-        <h2>{this.handleSetShips()} </h2>
-        {this.state.message && <p>{this.state.message}</p>}
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div className='UserContainer grid'>
+                <div className='UserGrid'>
+                    {this.handleRenderGrid()}
+                </div>
+                <span className='ErrorSpan'><p>{this.messageCreator()}</p></span>
+                <h2>{this.handleSetShips()} </h2>
+                {this.state.message && <p>{this.state.message}</p>}
+            </div>
+        )
+    }
 
 };
 

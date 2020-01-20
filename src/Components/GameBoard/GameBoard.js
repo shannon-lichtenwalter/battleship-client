@@ -30,8 +30,8 @@ class GameBoard extends React.Component {
     socket: null,
     error: null,
     winnerSet: false,
-    playerUsername: '',
-    opponentUsername: ''
+    // playerUsername: '',
+    // opponentUsername: ''
   }
 
   setError = (err) => {
