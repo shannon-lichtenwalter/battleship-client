@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chat component Displays a chat window when rendered 1`] = `
+<div
+  id="chat"
+>
+  <ul
+    id="chat-window"
+  />
+  <form
+    id="chat-form"
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="chatInput"
+      id="chat-label"
+    >
+      Chat Input
+    </label>
+    <input
+      id="chatInput"
+      placeholder="Type your message here."
+      type="text"
+    />
+  </form>
+</div>
+`;
