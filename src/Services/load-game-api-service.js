@@ -3,12 +3,8 @@ import TokenService from './token-service';
 
 
 const loadGamesApiService = {
-  //in the future you should just have to send the authorization header
-  //and then the backend can access the userId from the jwt token.
-  //currently the endpoint is /1 because I am hardcoding to get userid 1's active games.
-
+  //retrieves the active games for the currently logged in user.
   getAllActiveGames(){
-    //only to games endpoint when sending auth header.
       return fetch(`${config.API_ENDPOINT}/api/games`, {
         method: 'GET',
         headers: {
@@ -22,7 +18,7 @@ const loadGamesApiService = {
             : res.json()
         )
     },
-
+//retrieves the data for a resumed game
     resumeActiveGame(gameId, playerNum){
       return fetch(`${config.API_ENDPOINT}/api/games/activegame/${gameId}/${playerNum}`, {
         method: 'GET',
@@ -30,6 +26,23 @@ const loadGamesApiService = {
           'content-type': 'application/json',
           'authorization': `bearer ${TokenService.getAuthToken()}`
         },
+      })
+        .then(res => 
+          (!res.ok)
+            ? res.json().then(e => Promise.reject(e))
+            : res.json()
+        )
+    },
+    
+// quit active game
+    quitActiveGame(gameId, playerNum, opponentData){
+      return fetch(`${config.API_ENDPOINT}/api/games/activegame/${gameId}/${playerNum}`, {
+        method: 'PATCH',
+        headers: {
+          'content-type': 'application/json',
+          'authorization': `bearer ${TokenService.getAuthToken()}`
+        },
+        body: JSON.stringify(opponentData)
       })
         .then(res =>
           (!res.ok)
@@ -54,7 +67,7 @@ const loadGamesApiService = {
               : res.json()
           )
       },
-
+//retreives all of the game stats for the logged in user.
     getAllUserStats(){
       return fetch(`${config.API_ENDPOINT}/api/games/stats`, {
         method: 'GET',
