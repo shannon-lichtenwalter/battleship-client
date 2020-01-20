@@ -19,8 +19,19 @@
 .landing h1 {
   color: white;
   font-size: 2.5rem;
-  /* letter-spacing: 3rem; */
-  font-family: 'Merienda One', cursive;
+  font-family: 'Candal', sans-serif;
+  text-shadow: 0 1px 0 #ccc,
+              0 2px 0 #c9c9c9,
+              0 3px 0 rgb(124, 123, 123),
+              0 4px 0 #2e2e2e,
+              0 5px 0 rgb(143, 142, 142),
+              0 6px 1px rgba(0,0,0,.1),
+              0 0 5px rgba(0,0,0,.1),
+              0 1px 3px rgba(0,0,0,.3),
+              0 3px 5px rgba(0,0,0,.2),
+              0 5px 10px rgba(0,0,0,.25),
+              0 10px 10px rgba(0,0,0,.2),
+              0 20px 20px rgba(0,0,0,.15);
 }
 
 .landing p{
@@ -49,7 +60,7 @@
 .arrow-nav {
   display: block;
   position: relative;
-  top: 8rem;
+  top: 10rem;
 }
 
 #app-info {
@@ -57,7 +68,6 @@
   margin: 5rem auto;
   background-color: rgb(211, 211, 211, 0.5);
   padding: 15px;
-  border-radius:
 }
 
 #app-info > p{

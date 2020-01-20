@@ -1,54 +1,33 @@
 import React from 'react';
+import Button from '../Button/Button';
 import UserGrid from '../UserGrid/UserGrid';
 import io from 'socket.io-client';
 import config from '../../config';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 import OpponentGrid from '../OpponentGrid/OpponentGrid';
-import BattleShipContext from '../../Contexts/battleship-context';
 import './GameBoard.css';
 import TokenService from '../../Services/token-service';
 import Chat from '../Chat/Chat';
 
 class GameBoard extends React.Component {
-  /*
-  
-    export object = {
-        hits
-        misses
-        our Ships
-    };
-
-    import object = {
-        our hits 
-        our misses
-        opponents hits/misses
-        our ships
-        whose turn
-    };
-  */
-
-  /*
-  Add opponents hits/misses to state
-  */
   state = {
-    userShips: this.props.gameData ? this.props.gameData.userShips : [],
-    userHits: this.props.gameData ? this.props.gameData.userHits : [],
-    userMisses: this.props.gameData ? this.props.gameData.userMisses : [],
-    opponentHits: this.props.gameData ? this.props.gameData.opponentHits : [],
-    opponentMisses: this.props.gameData ? this.props.gameData.opponentMisses : [],
-    userTurn: this.props.gameData ? this.props.gameData.turn : null,
-    gameId: this.props.gameData ? this.props.gameData.gameId : null,
-    playerNum: this.props.gameData ? this.props.gameData.currentUser : null,
-    room: this.props.gameData ? this.props.gameData.room_id : null,
-    resumedGame: this.props.gameData ? true : false,
-    opponentShipsReady: this.props.gameData ? this.props.gameData.opponentShips : null,
-    shipsReady: this.props.gameData && this.props.gameData.userShips ? true : false,
+    userShips: this.props.gameData.userShips,
+    userHits: this.props.gameData.userHits,
+    userMisses: this.props.gameData.userMisses,
+    opponentShots: [...this.props.gameData.opponentHits, ...this.props.gameData.opponentMisses],
+    userTurn: this.props.gameData.turn,
+    gameId: this.props.gameData.gameId,
+    playerNum: this.props.gameData.currentUser,
+    room: this.props.gameData.room_id,
+    resumedGame: this.props.gameData.resumedGame,
+    opponentShipsReady: this.props.gameData.opponentShips,
+    shipsReady: this.props.gameData.shipsReady,
+    shipTileValues: this.props.gameData.shipTileValues,
     socket: null,
     error: null,
     winnerSet:false,
   }
 
-  //can we move this to a separate context provider file?
   setError = (err) => {
     this.setState({
       error: err.error
@@ -56,7 +35,6 @@ class GameBoard extends React.Component {
   }
 
   setShipsReady = () => {
-    console.log('setting ships ready')
     this.setState({
       shipsReady: true
     })
@@ -68,29 +46,11 @@ class GameBoard extends React.Component {
     })
   }
 
-  // determineOpponentShots = () => {
-  //   console.log(this.state.opponentHits);
-  //   console.log(this.state.opponentMisses);
-
-  //   if (this.state.opponentHits && this.state.opponentMisses) {
-  //     return [...this.state.opponenetHits, ...this.state.opponenetMisses]
-  //   } else if (this.state.opponentHits) {
-  //     return this.state.opponentHits
-  //   } else if (this.state.opponentMisses) {
-  //     return this.state.opponenetMisses
-  //   } else {
-  //     return []
-  //   }
-  // }
-
   clearError = () => {
     this.setState({ error: null, })
   }
 
   componentDidMount = () => {
-    //fetch game data based on game id. set the state with the game data and pass
-    //down as props to userGrid (needs ships for the user and opponent hits) and opponentGrid
-    //(needs user's hits and misses to re-mark the board)
     const socket = io(config.API_ENDPOINT, {
       transportOptions: {
         polling: {
@@ -125,6 +85,7 @@ class GameBoard extends React.Component {
       })
     });
 
+
     socket.on('win', () => {
       this.setState({
         winnerSet:true
@@ -137,11 +98,11 @@ class GameBoard extends React.Component {
     let room = this.state.gameId;
     if(this.state.winnerSet){
       return (
-           <Link to= {{pathname:'/result', resultProps:{'player': player, 'game':room}}}>
-              <button type='button'>
-               See Your Results!
-              </button>
-           </Link>      
+        <Button>
+          <Link to= {{pathname:'/result', resultProps:{'player': player, 'game':room}}}>
+            See Your Results!
+          </Link>
+        </Button>
       )
     }else {
       return null;
@@ -150,36 +111,45 @@ class GameBoard extends React.Component {
 
   render() {
     //let gameStarted = (this.state.shipsReady && this.state.opponentShipsReady);
-    let opponentGrid = (this.state.shipsReady && this.state.opponentShipsReady && this.state.socket)? 
-      <OpponentGrid 
-        socket={this.state.socket} room={this.state.room} hits={this.state.userHits} misses={this.state.userMisses} 
-        changeTurn={this.changeTurn} userTurn = {this.state.userTurn} 
+    let opponentGrid = (this.state.shipsReady && this.state.opponentShipsReady && this.state.socket)
+    ? <OpponentGrid 
+        socket={this.state.socket} 
+        room={this.state.room} 
+        hits={this.state.userHits} 
+        misses={this.state.userMisses} 
+        changeTurn={this.changeTurn} 
+        userTurn = {this.state.userTurn} 
+        gameId={this.state.gameId} 
+        playerNum ={this.state.playerNum}
         gameStart={this.state.shipsReady && this.state.opponentShipsReady} /> 
       : <p> Waiting For Both Players to Set Their Ships ! </p>;
-
     return (
-      <BattleShipContext.Provider value={{
-        gameId: this.state.gameId,
-        playerNum: this.state.playerNum,
-        error: this.state.error,
-        setError: this.setError,
-        clearError: this.clearError
-      }}>
         <>
-          {this.state.error && <p className='errorMessage'>{this.state.error}</p>}
+          {this.state.error && <p className='errorMessage'>Uh oh! Something went wrong: {this.state.error}</p>}
           <h2>Your Ships</h2>
-       
           <div className='grid-box'>
             {this.state.socket && <UserGrid
-              socket={this.state.socket} userShips={this.state.userShips} opponentHits={this.state.opponentHits}
-              opponentMisses={this.state.opponentMisses} resumedGame={this.state.resumedGame} changeTurn={this.changeTurn} 
-              setShipsReady={this.setShipsReady} room={this.state.room} shipsReady={this.state.shipsReady} />}
-            {opponentGrid}
+              socket={this.state.socket} 
+              userShips={this.state.userShips} 
+              opponentShots={this.state.opponentShots} 
+              resumedGame={this.state.resumedGame} 
+              changeTurn={this.changeTurn}
+              setShipsReady={this.setShipsReady} 
+              room={this.state.room} 
+              shipsReady={this.state.shipsReady}
+              shipTileValues={this.state.shipTileValues}
+              gameId={this.state.gameId}
+              playerNum ={this.state.playerNum}
+              error= {this.state.error}
+              setError= {this.setError}
+              clearError= {this.clearError} />}
+              {opponentGrid}
           </div>
           {this.resultsDisplay()}  
-          {this.state.socket && <Chat socket={this.state.socket} room={this.state.room}/>}
+          {this.state.socket && <Chat 
+            socket={this.state.socket} 
+            room={this.state.room}/>}
         </>
-      </BattleShipContext.Provider>
     )
   };
 };

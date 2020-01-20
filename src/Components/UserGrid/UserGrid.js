@@ -2,37 +2,77 @@ import React from 'react';
 import Cell from '../Cell/Cell';
 import './UserGrid.css';
 import gameMovesApiService from '../../Services/game-moves-api-service';
-import BattleShipContext from '../../Contexts/battleship-context';
 
 class UserGrid extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      selected: '',
+      currentId: '',
+      message: null,
+      boat: [],
+      counter: this.props.resumedGame && this.props.userShips.length > 0 ? 5 : 0,
+      playerShips: this.props.userShips && this.props.userShips.length !== 0 ? this.props.userShips : [{ 'name': 'aircraftCarrier', 'length': 5, 'spaces': [] },
+      { 'name': 'battleship', 'length': 4, 'spaces': [] },
+      { 'name': 'cruiser', 'length': 3, 'spaces': [] },
+      { 'name': 'submarine', 'length': 3, 'spaces': [] },
+      { 'name': 'defender', 'length': 2, 'spaces': [] }],
+      shipOccupied: [],
+      allShipTilesOccupied: [],
+      shipTileValues: this.props.shipTileValues,
+      currentShipAlignment: null,
+      shipTileLaid: false,
+      opponentShots: this.props.opponentShots,
+      shipsReady: this.props.shipsReady,
+      placementFail: false,
+      resumedGame: this.props.resumedGame,
+    }
+  };
+
+  static contextType = BattleShipContext;
+
+
+  //This function is called by the render. It will look at the counter value to determine
+  // if the user still needs to set their ship locations or if all the ship values have been set.
+  //counter was added to state in order to access the different ships, counter is incremeneted in a later function
+  //after a boat has been completely built. If all the boats have been build, then an API call is made to update the
+  //player's ships location in the database.
+
+  handleSetShips = () => {
+    if (this.state.counter === 5 && !this.props.shipsReady) {
+      gameMovesApiService.setShips(this.state.playerShips, this.props.gameId, this.props.playerNum)
+        .then(() => {
+          this.props.setShipsReady();
+          this.props.socket.emit('ships_ready', this.props.room);
+        })
+        .catch((e) => {
+          this.props.setError(e);
+          this.setState({
             selected: '',
             currentId: '',
-            message: null,
             boat: [],
-            counter: this.props.resumedGame && this.props.userShips ? 5 : 0,
-            playerShips: this.props.userShips && this.props.userShips.length !== 0 ? this.props.userShips : [{ 'name': 'aircraftCarrier', 'length': 5, 'spaces': [] },
+            counter: 0,
+            playerShips: [{ 'name': 'aircraftCarrier', 'length': 5, 'spaces': [] },
             { 'name': 'battleship', 'length': 4, 'spaces': [] },
             { 'name': 'cruiser', 'length': 3, 'spaces': [] },
             { 'name': 'submarine', 'length': 3, 'spaces': [] },
             { 'name': 'defender', 'length': 2, 'spaces': [] }],
             shipOccupied: [],
             allShipTilesOccupied: [],
+            shipTileValues: [],
             currentShipAlignment: null,
             shipTileLaid: false,
             opponentShots: [],
-            opponentHits: this.props.opponentHits,
-            opponentMisses: this.props.opponentMisses,
-            shipsReady: this.props.shipsReady,
+            shipsReady: false,
             placementFail: false,
             resumedGame: this.props.resumedGame,
-        }
-    };
-
-    static contextType = BattleShipContext;
+        })
+    })
+  }
+}
+  
 
     /*
         The following React lifecycle method is invoked immediately after the 'UserGrid' component is 
@@ -393,17 +433,17 @@ class UserGrid extends React.Component {
                 })
                 // If the length of the boat is 1, we are setting 'currentShipAlignment' to null, so the user can
                 //    change direction of ship placement.
-            } else { 
-                this.setState({
-                    allShipTilesOccupied: tempAllTilesOccupied,
-                    shipOccupied: tempShipOccupied,
-                    boat: tempBoat,
-                    currentShipAlignment: null,
-                })
-            }
-        }
-        //this.refs.c.checkForShipTile()
-    };
+      } else {
+        this.setState({
+          allShipTilesOccupied: tempAllTilesOccupied,
+          shipTileValues: tempAllTileValues,
+          shipOccupied: tempShipOccupied,
+          boat: tempBoat,
+          currentShipAlignment: null,
+        })
+      }
+    }
+  };
 
     /*
         Passed as a callback to the cell component, the following function checks to see whether any cell
@@ -483,7 +523,11 @@ class UserGrid extends React.Component {
         if (this.state.placementFail) {
             return 'Please try placing your ship again. Previous placement was invalid'
         } else {
-            return null
+          if(data.sunk){
+            message = `${data.playerNum} sunk your ${data.ship}!`
+          }else{
+            message = `${data.playerNum} ${data.result} your ${data.ship}`
+          }
         }
     };
 
@@ -531,7 +575,9 @@ class UserGrid extends React.Component {
             )
         })
     };
-
+    /*
+        The following function closes socket listener when the component unmounts
+    */
     componentWillUnmount(){
         if(this.props.socket){
             this.props.socket.close()
