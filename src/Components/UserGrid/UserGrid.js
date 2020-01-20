@@ -138,8 +138,9 @@ class UserGrid extends React.Component {
         @return status - Whether boat was a valid build or invalid
     */
     checkBoatValidity = () => {
-        let temp = []
-        let temp2 = []
+        let temp = [];
+        let temp2 = [];
+        let temp3 = [];
         let status = true;
         for (let i = 0; i < this.state.boat.length; i++) { // Array 'temp' needed to store all
             temp.push(this.state.boat[i].idNum)
@@ -151,8 +152,12 @@ class UserGrid extends React.Component {
             }
         }
         if (!status) {   // If the boat is invalid, cell data must be purged from array containing ship tiles
+
             temp2 = this.state.allShipTilesOccupied
             temp2.splice(-temp.length, temp.length)
+
+            temp3 = this.state.shipTileValues
+            temp3.splice(-temp.length, temp.length)
         }
         return status
     };
@@ -540,7 +545,7 @@ class UserGrid extends React.Component {
                             // these cells will be the most left coulumn and will have the numbers listed in each cell.
                             return <Cell key={letter} id={letter} label={true} />
                         }
-                        return <Cell 
+                        return <Cell
                             key={letter + num}
                             id={letter + num}
                             idNumber={this.findMyIndex(letter, num)}
