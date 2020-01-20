@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 //import { BrowserRouter as Link } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
 import Button from '../Button/Button';
-import Footer from '../Footer/Footer';
 import './Result.css';
 import LoadGameApiService from '../../Services/load-game-api-service';
 import Header from '../Header/Header';
@@ -49,16 +48,17 @@ class Result extends Component {
       const game = this.props.results.game;
       LoadGameApiService.getResults(game)
         .then((res) => {
-          console.log(res[0])
-          console.log(res[0].player1_hits)
-          console.log(res[0].player1_misses)
-          console.log(res[0].player2_hits)
-          console.log(res[0].player2_misses)
+
+          let p1Hits = JSON.parse(res[0].player1_hits);
+          let p1Misses = JSON.parse(res[0].player1_misses);
+          let p2Hits = JSON.parse(res[0].player2_hits);
+          let p2Misses = JSON.parse(res[0].player2_misses);
+
           this.setState({
-            player1_hits: JSON.parse(res[0].player1_hits),
-            player1_misses: JSON.parse(res[0].player1_misses),
-            player2_hits: JSON.parse(res[0].player2_hits),
-            player2_misses: JSON.parse(res[0].player2_misses),
+            player1_hits: p1Hits ? p1Hits: [],
+            player1_misses: p1Misses ? p1Misses: [],
+            player2_hits: p2Hits ? p2Hits: [],
+            player2_misses: p2Misses ? p2Misses: [],
             player: player
           })
           this.updateResults()
@@ -81,8 +81,8 @@ class Result extends Component {
         //    total hits on the enemy, total misses on the enemy, and total shots fired in order to render
         //    the correct results. 
         this.setState({
-          winner: 'Player 1',
-          loser: 'Player 2',
+          winner: this.props.results.playerUsername,
+          loser: this.props.results.opponentUsername,
           hRatio: hitRatio,
           totalHits: player1HitArrayLength,
           totalMisses: missed,
@@ -93,8 +93,8 @@ class Result extends Component {
         let hitRatio = player1HitArrayLength / totalShots
         let missed = player1MissArrayLength
         this.setState({
-          winner: 'Player 2',
-          loser: 'Player 1',
+          winner: this.props.results.opponentUsername,
+          loser: this.props.results.playerUsername,
           hRatio: hitRatio,
           totalHits: player1HitArrayLength,
           totalMisses: missed,
@@ -122,8 +122,8 @@ class Result extends Component {
         let hitRatio = player2HitArrayLength / totalShots
         let missed = player2MissArrayLength
         this.setState({
-          winner: 'Player 2',
-          loser: 'Player 1',
+          winner: this.props.results.playerUsername,
+          loser: this.props.results.opponentUsername,
           hRatio: hitRatio,
           totalHits: player2HitArrayLength,
           totalMisses: missed,
@@ -135,8 +135,8 @@ class Result extends Component {
         let hitRatio = player2HitArrayLength / totalShots
         let missed = player2MissArrayLength
         this.setState({
-          winner: 'Player 1',
-          loser: 'Player 2',
+          winner: this.props.results.opponentUsername,
+          loser: this.props.results.playerUsername,
           hRatio: hitRatio,
           totalHits: player2HitArrayLength,
           totalMisses: missed,
@@ -171,6 +171,9 @@ class Result extends Component {
 
         <h1>Result</h1>
         <ul className='results-ul'>
+
+          {this.props.results ? <h2>{`${this.props.results.playerUsername} vs ${this.props.results.opponentUsername}`}</h2> : null}
+
           <li><span className='results-left'>Winner: </span>
             <span className='results-right'>{this.state.winner}</span></li>
 

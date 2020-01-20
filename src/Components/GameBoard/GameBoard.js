@@ -112,8 +112,8 @@ class GameBoard extends React.Component {
 
 
 
-    this.props.setResults(player, 2, 'my username', 'my opponents username');
-    // this.props.setResults(player, gameId, this.state.playerUsername, this.state.opponentUsername);
+    // this.props.setResults(player, 2, 'my username', 'my opponents username');
+    this.props.setResults(player, gameId, this.state.playerUsername, this.state.opponentUsername);
     this.props.history.push('/result');
   }
 
