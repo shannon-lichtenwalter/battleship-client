@@ -156,17 +156,17 @@ class Result extends Component {
           <div className='resultList'>
             <div className='result-box'>
               <h4 className='result-title'>Who Win</h4>
-              <p className='result-para'>{this.state.winner} -</p>
+              <p className='result-para'>{this.state.winner}</p>
             </div>
 
             <div className='result-box'>
               <h4 className='result-title'>Who Lose</h4>
-              <p className='result-para'>{this.state.loser} -</p>
+              <p className='result-para'>{this.state.loser}</p>
             </div>
 
             <div className='result-box'>
               <h4 className='result-title'>Hit Ratio</h4>
-              <p className='result-para'>{this.state.hRatio} -</p>
+              <p className='result-para'>{this.state.hRatio}</p>
             </div>
 
             <div className='result-box'>

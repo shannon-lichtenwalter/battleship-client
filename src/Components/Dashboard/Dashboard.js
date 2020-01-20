@@ -104,7 +104,7 @@ class Dashboard extends Component {
         </div>
 
         <div className='startGames'>
-          <h3 className='dash-h3'>Play BattleShip</h3>          
+          <h3 className='dash-h3'>Play Battleship</h3>          
           <Button onClick={()=> this.handleNewGame()}>
             Start a New Game
           </Button>
