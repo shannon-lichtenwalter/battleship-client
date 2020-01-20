@@ -516,8 +516,8 @@ class UserGrid extends React.Component {
         }
     }
 
-    
-    
+
+
 
     /*
         Function called from render to display the UserGrid, the component which the user's ships
@@ -540,22 +540,16 @@ class UserGrid extends React.Component {
                             // these cells will be the most left coulumn and will have the numbers listed in each cell.
                             return <Cell key={letter} id={letter} label={true} />
                         }
-                        return <Cell key={letter + num}
+                        return <Cell 
+                            key={letter + num}
                             id={letter + num}
                             idNumber={this.findMyIndex(letter, num)}
-                            x={num}
-                            y={letter}
                             handleSelectTarget={this.handleSelectTarget}
-                            selected={this.state.selected}
                             shipTiles={this.state.shipOccupied}
-                            currentId={this.state.currentId}
                             allShipTiles={this.state.allShipTilesOccupied}
-                            ref="c"
+                            shipTileValues={this.state.shipTileValues}
                             opponentShots={this.state.opponentShots}
-                            playerShips={this.state.playerShips}
-                            resumedGame={this.state.resumedGame}
-                            opponentHits={this.state.opponentHits}
-                            opponentMisses={this.state.opponentMisses}
+
                         />
                     })
                     }
