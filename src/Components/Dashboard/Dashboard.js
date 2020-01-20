@@ -4,6 +4,7 @@ import ActiveGameListItem from '../ActiveGameListItem/ActiveGameListItem';
 import LoadGameApiService from '../../Services/load-game-api-service';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import Button from '../Button/Button.js';
 import './Dashboard.css';
 
 class Dashboard extends Component {
@@ -29,7 +30,7 @@ class Dashboard extends Component {
     this.props.resetDefaultGameData();
     setTimeout(() => {
       this.props.history.push('/gameroom')
-  }, 200);
+    }, 200);
   }
 
     //In component did mount we are fetching for the active games and saving them to state.
@@ -86,10 +87,12 @@ class Dashboard extends Component {
             <h4 className='stat-title'>Win</h4>
             <p className='stat-para'>{this.state.userStats.wins} times</p>
           </div>
+
           <div className='stat-box'>
             <h4 className='stat-title'>Lose</h4>
             <p className='stat-para'>{this.state.userStats.losses} times</p>
           </div>
+
           <div className='stat-box'>
             <h4 className='stat-title'>Win Ratio</h4>
             <p className='stat-para'>
@@ -102,9 +105,10 @@ class Dashboard extends Component {
 
         <div className='startGames'>
           <h3 className='dash-h3'>Play BattleShip</h3>          
-          <button onClick={()=> this.handleNewGame()}>
+          <Button onClick={()=> this.handleNewGame()}>
             Start a New Game
-          </button>
+          </Button>
+          
           <h4>Return to an Active Game:</h4>
           <ul className='activeGames'>
             {this.state.myTurnGames.length !== 0 && <h4>Your Turn!</h4>}
@@ -130,6 +134,7 @@ class Dashboard extends Component {
           </ul>
         </div>
         <Footer />
+
       </div>
     );
   };

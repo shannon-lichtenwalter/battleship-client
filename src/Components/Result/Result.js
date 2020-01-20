@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom';
 import Button from '../Button/Button';
 import Footer from '../Footer/Footer';
 import './Result.css';
+import Banner from '../Banner/Banner';
 import LoadGameApiService from '../../Services/load-game-api-service'
 
 class Result extends Component {
@@ -141,43 +142,61 @@ class Result extends Component {
           totalShots: totalShots
         })
       }
-  }
+    }
   }
 
   render() {
     return (
-      <div className='result'>
-        <h1>Result</h1>
-        <div className='result-p'>
-          <p>Hit Ratio</p>
-          {this.state.hRatio}
-          <p>Who Win</p>
-          {this.state.winner}
-          <p>Who Lose</p>
-          {this.state.loser}
-          <p>Missed</p>
-          {this.state.missed}
-          <p>Shots Fired</p>
-          {this.state.totalShots}
+      <div>
+        <Banner />
+
+        <div className='result'>
+          <h1>Result</h1>
+          
+          <div className='resultList'>
+            <div className='result-box'>
+              <h4 className='result-title'>Who Win</h4>
+              <p className='result-para'>{this.state.winner} -</p>
+            </div>
+
+            <div className='result-box'>
+              <h4 className='result-title'>Who Lose</h4>
+              <p className='result-para'>{this.state.loser} -</p>
+            </div>
+
+            <div className='result-box'>
+              <h4 className='result-title'>Hit Ratio</h4>
+              <p className='result-para'>{this.state.hRatio} -</p>
+            </div>
+
+            <div className='result-box'>
+              <h4 className='result-title'>Missed</h4>
+              <p className='result-para'>{this.state.missed} times</p>
+            </div>
+
+            <div className='result-box'>
+              <h4 className='result-title'>Shots Fired</h4>
+              <p className='result-para'>{this.state.totalShots} times</p>
+            </div>
+          </div>
+
+          <Button className='resultbtn' onClick={() => {
+            this.props.history.push('/rematch')
+            }}> Rematch
+          </Button>
+
+          <Button className='resultbtn' onClick={() => {
+            this.props.history.push('/newgame')
+            }}> New Game
+          </Button>
+
+          <Button className='resultbtn' onClick={() => {
+            this.props.history.push('/dashboard')
+            }}> Exit
+          </Button>
+
+          <Footer />
         </div>
-
-        <Button onClick={() => {
-          this.props.history.push('/rematch')
-          }}> Rematch
-        </Button>
-
-        <Button onClick={() => {
-          this.props.history.push('/newgame')
-          }}> New Game
-        </Button>
-
-        <Button onClick={() => {
-          this.props.history.push('/dashboard')
-          }}> Exit
-        </Button>
-
-
-        <Footer />
       </div>
     );
   };
