@@ -43,9 +43,10 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className='login'>
         <Banner />
         
+        <h1>Login</h1>
         <form className='loginform' onSubmit={event => this.handleSubmit(event)}>
           <div>
             <Label htmlFor='login-username-input'>Username<Required /></Label>

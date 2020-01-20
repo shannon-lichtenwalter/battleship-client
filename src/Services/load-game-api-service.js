@@ -18,6 +18,24 @@ const loadGamesApiService = {
             : res.json()
         )
     },
+
+
+    getGameHistory(){
+      return fetch(`${config.API_ENDPOINT}/api/games/prev`, {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+          'authorization': `bearer ${TokenService.getAuthToken()}`
+        },
+      })
+        .then(res =>
+          (!res.ok)
+            ? res.json().then(e => Promise.reject(e))
+            : res.json()
+        )
+    },
+
+
 //retrieves the data for a resumed game
     resumeActiveGame(gameId, playerNum){
       return fetch(`${config.API_ENDPOINT}/api/games/activegame/${gameId}/${playerNum}`, {
@@ -52,7 +70,6 @@ const loadGamesApiService = {
     },
 
     getResults(gameId){
-      console.log(gameId)
       //only to games endpoint when sending auth header.
         return fetch(`${config.API_ENDPOINT}/api/games/results/${gameId}`, {
           method: 'GET',

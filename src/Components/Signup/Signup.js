@@ -14,7 +14,7 @@ class Signup extends Component {
   state = { error: null };
   firstInput = React.createRef();
 
-  handleSubmit = ev => {
+  handleSubmit = (ev) => {
     ev.preventDefault()
     const { username, password, email } = ev.target
 
@@ -27,7 +27,7 @@ class Signup extends Component {
         email.value = ''
         username.value = ''
         password.value = ''
-        this.props.onRegistrationSuccess()
+        this.props.history.push('/login');
       })
       .catch(res => {
         this.setState({ error: res.error })
@@ -41,8 +41,9 @@ class Signup extends Component {
   render() {
     const { error } = this.state;
     return (
-      <div>
+      <section className='signup'>
         <Banner />
+        <h1>Sign up</h1>
         
         <form className='signupform' onSubmit={this.handleSubmit}>
           <div role='alert'>
@@ -93,7 +94,7 @@ class Signup extends Component {
           </div>
         
         </form>
-      </div>
+      </section>
     );
   };
   

@@ -132,16 +132,16 @@ class Dashboard extends Component {
         <h2 className='dashboardWelcome'>Welcome back, <span className='username'>{this.state.userStats.username}</span></h2>
         {this.state.error && <p>Uh oh! Something went wrong: {this.state.error}</p>}
         <h3 className='dash-h3'>Stats</h3>
-        
+
         <div className='stats'>
           <div className='stat-box'>
-            <h4 className='stat-title'>Win</h4>
-            <p className='stat-para'>{this.state.userStats.wins} times</p>
+            <h4 className='stat-title'>Wins</h4>
+            <p className='stat-para'>{this.state.userStats.wins}</p>
           </div>
 
           <div className='stat-box'>
-            <h4 className='stat-title'>Lose</h4>
-            <p className='stat-para'>{this.state.userStats.losses} times</p>
+            <h4 className='stat-title'>Losses</h4>
+            <p className='stat-para'>{this.state.userStats.losses}</p>
           </div>
 
           <div className='stat-box'>

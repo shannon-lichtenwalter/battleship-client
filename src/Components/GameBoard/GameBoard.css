@@ -16,6 +16,10 @@ p {
   margin-bottom: 2rem;
 }
 
+.gameroom {
+  margin-top: 8rem;
+}
+
 @media screen and (min-width: 1025px) {
   .grid-box {
     display: flex;
