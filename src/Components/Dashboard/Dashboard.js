@@ -32,18 +32,27 @@ class Dashboard extends Component {
     }, 200);
   }
 
-  updateGames = (activeGames, myTurnGames, opponentTurnGames) => {
+  //this function is used after a game is deleted to update the component state
+  updateGames = (activeGames, myTurnGames, opponentTurnGames, userStats) => {
     this.setState({
       activeGames,
       myTurnGames,
-      opponentTurnGames
+      opponentTurnGames,
+      userStats
     })
   }
 
+  //This function updates the state by removing the deleted games from
+  // activeGames and from either myTurnGames or opponentTurnGames in state.
+  //it also updates the userStats to reflect the additional loss due to forfeit.
+  //the function calls updateGames which updates the state with the changes.
   deletingActiveGame = (gameId) => {
     let activeGames = [...this.state.activeGames];
     let myTurnGames = [...this.state.myTurnGames];
     let opponentTurnGames = [...this.state.opponentTurnGames];
+    let userStats = {...this.state.userStats};
+    
+    userStats.losses = userStats.losses + 1;
 
     let resultActive = [];
     let resultMyTurn = [];
@@ -53,22 +62,24 @@ class Dashboard extends Component {
       if (game.id !== gameId) {
         resultActive.push(game)
       };
+      return null
     });
 
     myTurnGames.map(game => {
       if (game.id !== gameId) {
         resultMyTurn.push(game)
       };
+      return null
     });
 
     opponentTurnGames.map(game => {
       if (game.id !== gameId) {
         resultOpponentTurn.push(game)
       };
+      return null
     });
-    console.log(resultOpponentTurn, resultMyTurn, resultActive)
 
-    this.updateGames(resultActive, resultMyTurn, resultOpponentTurn)
+    this.updateGames(resultActive, resultMyTurn, resultOpponentTurn, userStats)
   }
 
   //In component did mount we are fetching for the active games and saving them to state.

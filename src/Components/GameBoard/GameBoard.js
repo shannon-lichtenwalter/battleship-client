@@ -2,7 +2,7 @@ import React from 'react';
 import UserGrid from '../UserGrid/UserGrid';
 import io from 'socket.io-client';
 import config from '../../config';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import OpponentGrid from '../OpponentGrid/OpponentGrid';
 import './GameBoard.css';
 import TokenService from '../../Services/token-service';

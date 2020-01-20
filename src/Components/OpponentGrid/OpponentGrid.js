@@ -70,6 +70,7 @@ class OpponentGrid extends React.Component {
         message: 'Must Choose a Target'
       })
     } else {
+      console.log('firing!')
       this.props.socket.emit('fire', { 
         target: this.state.selected, 
         gameId: this.props.gameId, 
