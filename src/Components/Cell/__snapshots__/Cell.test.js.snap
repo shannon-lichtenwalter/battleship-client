@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell component Cannot be clicked if currently a label 1`] = `
+<Cell
+  id="A"
+  idNumber={-2}
+  label={true}
+  selected={null}
+  shipTileValues={Array []}
+>
+  <div
+    className="cell"
+    id="label"
+    onClick={[Function]}
+  >
+    A
+  </div>
+</Cell>
+`;
+
+exports[`Cell component Displays a cell tile when rendered 1`] = `
+<div
+  className="cell"
+  id=""
+  onClick={[Function]}
+/>
+`;

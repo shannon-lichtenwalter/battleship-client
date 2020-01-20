@@ -12,102 +12,91 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
       key="0"
     >
       <Cell
-        allShipTiles={Array []}
         id={0}
         idNumber={-2}
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
-        allShipTiles={Array []}
         id="A"
         idNumber={-2}
         key="A"
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
-        allShipTiles={Array []}
         id="B"
         idNumber={-2}
         key="B"
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
-        allShipTiles={Array []}
         id="C"
         idNumber={-2}
         key="C"
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
-        allShipTiles={Array []}
         id="D"
         idNumber={-2}
         key="D"
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
-        allShipTiles={Array []}
         id="E"
         idNumber={-2}
         key="E"
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
-        allShipTiles={Array []}
         id="F"
         idNumber={-2}
         key="F"
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
-        allShipTiles={Array []}
         id="G"
         idNumber={-2}
         key="G"
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
-        allShipTiles={Array []}
         id="H"
         idNumber={-2}
         key="H"
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
-        allShipTiles={Array []}
         id="I"
         idNumber={-2}
         key="I"
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
-        allShipTiles={Array []}
         id="J"
         idNumber={-2}
         key="J"
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
     </div>
     <div
@@ -115,12 +104,11 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
       key="1"
     >
       <Cell
-        allShipTiles={Array []}
         id={1}
         idNumber={-2}
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
         allShipTiles={Array []}
@@ -129,7 +117,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="A1"
         idNumber={1}
         key="A1"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -160,6 +147,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={1}
         y="A"
@@ -171,7 +159,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="B1"
         idNumber={11}
         key="B1"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -202,6 +189,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={1}
         y="B"
@@ -213,7 +201,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="C1"
         idNumber={21}
         key="C1"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -244,6 +231,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={1}
         y="C"
@@ -255,7 +243,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="D1"
         idNumber={31}
         key="D1"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -286,6 +273,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={1}
         y="D"
@@ -297,7 +285,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="E1"
         idNumber={41}
         key="E1"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -328,6 +315,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={1}
         y="E"
@@ -339,7 +327,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="F1"
         idNumber={51}
         key="F1"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -370,6 +357,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={1}
         y="F"
@@ -381,7 +369,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="G1"
         idNumber={61}
         key="G1"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -412,6 +399,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={1}
         y="G"
@@ -423,7 +411,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="H1"
         idNumber={71}
         key="H1"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -454,6 +441,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={1}
         y="H"
@@ -465,7 +453,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="I1"
         idNumber={81}
         key="I1"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -496,6 +483,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={1}
         y="I"
@@ -507,7 +495,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="J1"
         idNumber={91}
         key="J1"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -538,6 +525,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={1}
         y="J"
@@ -548,12 +536,11 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
       key="2"
     >
       <Cell
-        allShipTiles={Array []}
         id={2}
         idNumber={-2}
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
         allShipTiles={Array []}
@@ -562,7 +549,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="A2"
         idNumber={2}
         key="A2"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -593,6 +579,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={2}
         y="A"
@@ -604,7 +591,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="B2"
         idNumber={12}
         key="B2"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -635,6 +621,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={2}
         y="B"
@@ -646,7 +633,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="C2"
         idNumber={22}
         key="C2"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -677,6 +663,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={2}
         y="C"
@@ -688,7 +675,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="D2"
         idNumber={32}
         key="D2"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -719,6 +705,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={2}
         y="D"
@@ -730,7 +717,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="E2"
         idNumber={42}
         key="E2"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -761,6 +747,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={2}
         y="E"
@@ -772,7 +759,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="F2"
         idNumber={52}
         key="F2"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -803,6 +789,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={2}
         y="F"
@@ -814,7 +801,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="G2"
         idNumber={62}
         key="G2"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -845,6 +831,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={2}
         y="G"
@@ -856,7 +843,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="H2"
         idNumber={72}
         key="H2"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -887,6 +873,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={2}
         y="H"
@@ -898,7 +885,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="I2"
         idNumber={82}
         key="I2"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -929,6 +915,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={2}
         y="I"
@@ -940,7 +927,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="J2"
         idNumber={92}
         key="J2"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -971,6 +957,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={2}
         y="J"
@@ -981,12 +968,11 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
       key="3"
     >
       <Cell
-        allShipTiles={Array []}
         id={3}
         idNumber={-2}
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
         allShipTiles={Array []}
@@ -995,7 +981,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="A3"
         idNumber={3}
         key="A3"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1026,6 +1011,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={3}
         y="A"
@@ -1037,7 +1023,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="B3"
         idNumber={13}
         key="B3"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1068,6 +1053,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={3}
         y="B"
@@ -1079,7 +1065,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="C3"
         idNumber={23}
         key="C3"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1110,6 +1095,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={3}
         y="C"
@@ -1121,7 +1107,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="D3"
         idNumber={33}
         key="D3"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1152,6 +1137,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={3}
         y="D"
@@ -1163,7 +1149,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="E3"
         idNumber={43}
         key="E3"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1194,6 +1179,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={3}
         y="E"
@@ -1205,7 +1191,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="F3"
         idNumber={53}
         key="F3"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1236,6 +1221,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={3}
         y="F"
@@ -1247,7 +1233,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="G3"
         idNumber={63}
         key="G3"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1278,6 +1263,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={3}
         y="G"
@@ -1289,7 +1275,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="H3"
         idNumber={73}
         key="H3"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1320,6 +1305,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={3}
         y="H"
@@ -1331,7 +1317,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="I3"
         idNumber={83}
         key="I3"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1362,6 +1347,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={3}
         y="I"
@@ -1373,7 +1359,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="J3"
         idNumber={93}
         key="J3"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1404,6 +1389,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={3}
         y="J"
@@ -1414,12 +1400,11 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
       key="4"
     >
       <Cell
-        allShipTiles={Array []}
         id={4}
         idNumber={-2}
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
         allShipTiles={Array []}
@@ -1428,7 +1413,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="A4"
         idNumber={4}
         key="A4"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1459,6 +1443,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={4}
         y="A"
@@ -1470,7 +1455,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="B4"
         idNumber={14}
         key="B4"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1501,6 +1485,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={4}
         y="B"
@@ -1512,7 +1497,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="C4"
         idNumber={24}
         key="C4"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1543,6 +1527,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={4}
         y="C"
@@ -1554,7 +1539,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="D4"
         idNumber={34}
         key="D4"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1585,6 +1569,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={4}
         y="D"
@@ -1596,7 +1581,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="E4"
         idNumber={44}
         key="E4"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1627,6 +1611,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={4}
         y="E"
@@ -1638,7 +1623,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="F4"
         idNumber={54}
         key="F4"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1669,6 +1653,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={4}
         y="F"
@@ -1680,7 +1665,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="G4"
         idNumber={64}
         key="G4"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1711,6 +1695,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={4}
         y="G"
@@ -1722,7 +1707,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="H4"
         idNumber={74}
         key="H4"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1753,6 +1737,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={4}
         y="H"
@@ -1764,7 +1749,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="I4"
         idNumber={84}
         key="I4"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1795,6 +1779,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={4}
         y="I"
@@ -1806,7 +1791,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="J4"
         idNumber={94}
         key="J4"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1837,6 +1821,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={4}
         y="J"
@@ -1847,12 +1832,11 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
       key="5"
     >
       <Cell
-        allShipTiles={Array []}
         id={5}
         idNumber={-2}
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
         allShipTiles={Array []}
@@ -1861,7 +1845,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="A5"
         idNumber={5}
         key="A5"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1892,6 +1875,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={5}
         y="A"
@@ -1903,7 +1887,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="B5"
         idNumber={15}
         key="B5"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1934,6 +1917,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={5}
         y="B"
@@ -1945,7 +1929,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="C5"
         idNumber={25}
         key="C5"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -1976,6 +1959,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={5}
         y="C"
@@ -1987,7 +1971,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="D5"
         idNumber={35}
         key="D5"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2018,6 +2001,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={5}
         y="D"
@@ -2029,7 +2013,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="E5"
         idNumber={45}
         key="E5"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2060,6 +2043,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={5}
         y="E"
@@ -2071,7 +2055,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="F5"
         idNumber={55}
         key="F5"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2102,6 +2085,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={5}
         y="F"
@@ -2113,7 +2097,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="G5"
         idNumber={65}
         key="G5"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2144,6 +2127,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={5}
         y="G"
@@ -2155,7 +2139,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="H5"
         idNumber={75}
         key="H5"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2186,6 +2169,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={5}
         y="H"
@@ -2197,7 +2181,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="I5"
         idNumber={85}
         key="I5"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2228,6 +2211,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={5}
         y="I"
@@ -2239,7 +2223,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="J5"
         idNumber={95}
         key="J5"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2270,6 +2253,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={5}
         y="J"
@@ -2280,12 +2264,11 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
       key="6"
     >
       <Cell
-        allShipTiles={Array []}
         id={6}
         idNumber={-2}
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
         allShipTiles={Array []}
@@ -2294,7 +2277,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="A6"
         idNumber={6}
         key="A6"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2325,6 +2307,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={6}
         y="A"
@@ -2336,7 +2319,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="B6"
         idNumber={16}
         key="B6"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2367,6 +2349,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={6}
         y="B"
@@ -2378,7 +2361,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="C6"
         idNumber={26}
         key="C6"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2409,6 +2391,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={6}
         y="C"
@@ -2420,7 +2403,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="D6"
         idNumber={36}
         key="D6"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2451,6 +2433,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={6}
         y="D"
@@ -2462,7 +2445,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="E6"
         idNumber={46}
         key="E6"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2493,6 +2475,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={6}
         y="E"
@@ -2504,7 +2487,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="F6"
         idNumber={56}
         key="F6"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2535,6 +2517,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={6}
         y="F"
@@ -2546,7 +2529,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="G6"
         idNumber={66}
         key="G6"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2577,6 +2559,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={6}
         y="G"
@@ -2588,7 +2571,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="H6"
         idNumber={76}
         key="H6"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2619,6 +2601,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={6}
         y="H"
@@ -2630,7 +2613,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="I6"
         idNumber={86}
         key="I6"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2661,6 +2643,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={6}
         y="I"
@@ -2672,7 +2655,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="J6"
         idNumber={96}
         key="J6"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2703,6 +2685,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={6}
         y="J"
@@ -2713,12 +2696,11 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
       key="7"
     >
       <Cell
-        allShipTiles={Array []}
         id={7}
         idNumber={-2}
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
         allShipTiles={Array []}
@@ -2727,7 +2709,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="A7"
         idNumber={7}
         key="A7"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2758,6 +2739,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={7}
         y="A"
@@ -2769,7 +2751,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="B7"
         idNumber={17}
         key="B7"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2800,6 +2781,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={7}
         y="B"
@@ -2811,7 +2793,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="C7"
         idNumber={27}
         key="C7"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2842,6 +2823,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={7}
         y="C"
@@ -2853,7 +2835,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="D7"
         idNumber={37}
         key="D7"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2884,6 +2865,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={7}
         y="D"
@@ -2895,7 +2877,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="E7"
         idNumber={47}
         key="E7"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2926,6 +2907,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={7}
         y="E"
@@ -2937,7 +2919,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="F7"
         idNumber={57}
         key="F7"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -2968,6 +2949,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={7}
         y="F"
@@ -2979,7 +2961,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="G7"
         idNumber={67}
         key="G7"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3010,6 +2991,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={7}
         y="G"
@@ -3021,7 +3003,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="H7"
         idNumber={77}
         key="H7"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3052,6 +3033,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={7}
         y="H"
@@ -3063,7 +3045,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="I7"
         idNumber={87}
         key="I7"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3094,6 +3075,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={7}
         y="I"
@@ -3105,7 +3087,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="J7"
         idNumber={97}
         key="J7"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3136,6 +3117,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={7}
         y="J"
@@ -3146,12 +3128,11 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
       key="8"
     >
       <Cell
-        allShipTiles={Array []}
         id={8}
         idNumber={-2}
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
         allShipTiles={Array []}
@@ -3160,7 +3141,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="A8"
         idNumber={8}
         key="A8"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3191,6 +3171,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={8}
         y="A"
@@ -3202,7 +3183,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="B8"
         idNumber={18}
         key="B8"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3233,6 +3213,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={8}
         y="B"
@@ -3244,7 +3225,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="C8"
         idNumber={28}
         key="C8"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3275,6 +3255,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={8}
         y="C"
@@ -3286,7 +3267,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="D8"
         idNumber={38}
         key="D8"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3317,6 +3297,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={8}
         y="D"
@@ -3328,7 +3309,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="E8"
         idNumber={48}
         key="E8"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3359,6 +3339,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={8}
         y="E"
@@ -3370,7 +3351,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="F8"
         idNumber={58}
         key="F8"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3401,6 +3381,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={8}
         y="F"
@@ -3412,7 +3393,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="G8"
         idNumber={68}
         key="G8"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3443,6 +3423,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={8}
         y="G"
@@ -3454,7 +3435,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="H8"
         idNumber={78}
         key="H8"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3485,6 +3465,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={8}
         y="H"
@@ -3496,7 +3477,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="I8"
         idNumber={88}
         key="I8"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3527,6 +3507,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={8}
         y="I"
@@ -3538,7 +3519,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="J8"
         idNumber={98}
         key="J8"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3569,6 +3549,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={8}
         y="J"
@@ -3579,12 +3560,11 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
       key="9"
     >
       <Cell
-        allShipTiles={Array []}
         id={9}
         idNumber={-2}
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
         allShipTiles={Array []}
@@ -3593,7 +3573,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="A9"
         idNumber={9}
         key="A9"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3624,6 +3603,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={9}
         y="A"
@@ -3635,7 +3615,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="B9"
         idNumber={19}
         key="B9"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3666,6 +3645,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={9}
         y="B"
@@ -3677,7 +3657,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="C9"
         idNumber={29}
         key="C9"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3708,6 +3687,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={9}
         y="C"
@@ -3719,7 +3699,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="D9"
         idNumber={39}
         key="D9"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3750,6 +3729,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={9}
         y="D"
@@ -3761,7 +3741,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="E9"
         idNumber={49}
         key="E9"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3792,6 +3771,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={9}
         y="E"
@@ -3803,7 +3783,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="F9"
         idNumber={59}
         key="F9"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3834,6 +3813,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={9}
         y="F"
@@ -3845,7 +3825,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="G9"
         idNumber={69}
         key="G9"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3876,6 +3855,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={9}
         y="G"
@@ -3887,7 +3867,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="H9"
         idNumber={79}
         key="H9"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3918,6 +3897,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={9}
         y="H"
@@ -3929,7 +3909,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="I9"
         idNumber={89}
         key="I9"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -3960,6 +3939,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={9}
         y="I"
@@ -3971,7 +3951,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="J9"
         idNumber={99}
         key="J9"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -4002,6 +3981,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={9}
         y="J"
@@ -4012,12 +3992,11 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
       key="10"
     >
       <Cell
-        allShipTiles={Array []}
         id={10}
         idNumber={-2}
         label={true}
         selected={null}
-        shipTiles={Array []}
+        shipTileValues={Array []}
       />
       <Cell
         allShipTiles={Array []}
@@ -4026,7 +4005,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="A10"
         idNumber={10}
         key="A10"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -4057,6 +4035,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={10}
         y="A"
@@ -4068,7 +4047,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="B10"
         idNumber={20}
         key="B10"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -4099,6 +4077,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={10}
         y="B"
@@ -4110,7 +4089,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="C10"
         idNumber={30}
         key="C10"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -4141,6 +4119,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={10}
         y="C"
@@ -4152,7 +4131,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="D10"
         idNumber={40}
         key="D10"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -4183,6 +4161,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={10}
         y="D"
@@ -4194,7 +4173,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="E10"
         idNumber={50}
         key="E10"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -4225,6 +4203,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={10}
         y="E"
@@ -4236,7 +4215,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="F10"
         idNumber={60}
         key="F10"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -4267,6 +4245,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={10}
         y="F"
@@ -4278,7 +4257,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="G10"
         idNumber={70}
         key="G10"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -4309,6 +4287,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={10}
         y="G"
@@ -4320,7 +4299,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="H10"
         idNumber={80}
         key="H10"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -4351,6 +4329,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={10}
         y="H"
@@ -4362,7 +4341,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="I10"
         idNumber={90}
         key="I10"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -4393,6 +4371,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={10}
         y="I"
@@ -4404,7 +4383,6 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
         id="J10"
         idNumber={100}
         key="J10"
-        opponentShots={Array []}
         playerShips={
           Array [
             Object {
@@ -4435,6 +4413,7 @@ exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = 
           ]
         }
         selected=""
+        shipTileValues={Array []}
         shipTiles={Array []}
         x={10}
         y="J"
@@ -4467,12 +4446,11 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
         key="0"
       >
         <Cell
-          allShipTiles={Array []}
           id={0}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -4483,13 +4461,12 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="A"
           idNumber={-2}
           key="A"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -4500,13 +4477,12 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="B"
           idNumber={-2}
           key="B"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -4517,13 +4493,12 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="C"
           idNumber={-2}
           key="C"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -4534,13 +4509,12 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="D"
           idNumber={-2}
           key="D"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -4551,13 +4525,12 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="E"
           idNumber={-2}
           key="E"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -4568,13 +4541,12 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="F"
           idNumber={-2}
           key="F"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -4585,13 +4557,12 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="G"
           idNumber={-2}
           key="G"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -4602,13 +4573,12 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="H"
           idNumber={-2}
           key="H"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -4619,13 +4589,12 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="I"
           idNumber={-2}
           key="I"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -4636,13 +4605,12 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="J"
           idNumber={-2}
           key="J"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -4658,12 +4626,11 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
         key="1"
       >
         <Cell
-          allShipTiles={Array []}
           id={1}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -4684,7 +4651,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="A1"
           idNumber={1}
           key="A1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -4715,6 +4681,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -4724,7 +4691,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           y="A"
         >
           <div
-            className="cell ship"
+            className="cell selected"
             id=""
             onClick={[Function]}
           >
@@ -4742,7 +4709,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="B1"
           idNumber={11}
           key="B1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -4773,6 +4739,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -4800,7 +4767,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="C1"
           idNumber={21}
           key="C1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -4831,6 +4797,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -4858,7 +4825,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="D1"
           idNumber={31}
           key="D1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -4889,6 +4855,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -4916,7 +4883,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="E1"
           idNumber={41}
           key="E1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -4947,6 +4913,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -4974,7 +4941,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="F1"
           idNumber={51}
           key="F1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5005,6 +4971,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -5032,7 +4999,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="G1"
           idNumber={61}
           key="G1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5063,6 +5029,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -5090,7 +5057,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="H1"
           idNumber={71}
           key="H1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5121,6 +5087,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -5148,7 +5115,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="I1"
           idNumber={81}
           key="I1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5179,6 +5145,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -5206,7 +5173,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="J1"
           idNumber={91}
           key="J1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5237,6 +5203,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -5259,12 +5226,11 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
         key="2"
       >
         <Cell
-          allShipTiles={Array []}
           id={2}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -5285,7 +5251,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="A2"
           idNumber={2}
           key="A2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5316,6 +5281,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -5343,7 +5309,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="B2"
           idNumber={12}
           key="B2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5374,6 +5339,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -5401,7 +5367,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="C2"
           idNumber={22}
           key="C2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5432,6 +5397,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -5459,7 +5425,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="D2"
           idNumber={32}
           key="D2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5490,6 +5455,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -5517,7 +5483,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="E2"
           idNumber={42}
           key="E2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5548,6 +5513,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -5575,7 +5541,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="F2"
           idNumber={52}
           key="F2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5606,6 +5571,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -5633,7 +5599,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="G2"
           idNumber={62}
           key="G2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5664,6 +5629,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -5691,7 +5657,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="H2"
           idNumber={72}
           key="H2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5722,6 +5687,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -5749,7 +5715,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="I2"
           idNumber={82}
           key="I2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5780,6 +5745,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -5807,7 +5773,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="J2"
           idNumber={92}
           key="J2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5838,6 +5803,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -5860,12 +5826,11 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
         key="3"
       >
         <Cell
-          allShipTiles={Array []}
           id={3}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -5886,7 +5851,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="A3"
           idNumber={3}
           key="A3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5917,6 +5881,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -5944,7 +5909,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="B3"
           idNumber={13}
           key="B3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -5975,6 +5939,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6002,7 +5967,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="C3"
           idNumber={23}
           key="C3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6033,6 +5997,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6060,7 +6025,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="D3"
           idNumber={33}
           key="D3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6091,6 +6055,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6118,7 +6083,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="E3"
           idNumber={43}
           key="E3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6149,6 +6113,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6176,7 +6141,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="F3"
           idNumber={53}
           key="F3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6207,6 +6171,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6234,7 +6199,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="G3"
           idNumber={63}
           key="G3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6265,6 +6229,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6292,7 +6257,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="H3"
           idNumber={73}
           key="H3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6323,6 +6287,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6350,7 +6315,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="I3"
           idNumber={83}
           key="I3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6381,6 +6345,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6408,7 +6373,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="J3"
           idNumber={93}
           key="J3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6439,6 +6403,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6461,12 +6426,11 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
         key="4"
       >
         <Cell
-          allShipTiles={Array []}
           id={4}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -6487,7 +6451,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="A4"
           idNumber={4}
           key="A4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6518,6 +6481,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6545,7 +6509,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="B4"
           idNumber={14}
           key="B4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6576,6 +6539,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6603,7 +6567,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="C4"
           idNumber={24}
           key="C4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6634,6 +6597,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6661,7 +6625,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="D4"
           idNumber={34}
           key="D4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6692,6 +6655,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6719,7 +6683,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="E4"
           idNumber={44}
           key="E4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6750,6 +6713,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6777,7 +6741,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="F4"
           idNumber={54}
           key="F4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6808,6 +6771,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6835,7 +6799,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="G4"
           idNumber={64}
           key="G4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6866,6 +6829,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6893,7 +6857,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="H4"
           idNumber={74}
           key="H4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6924,6 +6887,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -6951,7 +6915,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="I4"
           idNumber={84}
           key="I4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -6982,6 +6945,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7009,7 +6973,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="J4"
           idNumber={94}
           key="J4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -7040,6 +7003,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7062,12 +7026,11 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
         key="5"
       >
         <Cell
-          allShipTiles={Array []}
           id={5}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -7088,7 +7051,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="A5"
           idNumber={5}
           key="A5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -7119,6 +7081,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7146,7 +7109,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="B5"
           idNumber={15}
           key="B5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -7177,6 +7139,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7204,7 +7167,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="C5"
           idNumber={25}
           key="C5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -7235,6 +7197,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7262,7 +7225,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="D5"
           idNumber={35}
           key="D5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -7293,6 +7255,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7320,7 +7283,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="E5"
           idNumber={45}
           key="E5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -7351,6 +7313,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7378,7 +7341,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="F5"
           idNumber={55}
           key="F5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -7409,6 +7371,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7436,7 +7399,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="G5"
           idNumber={65}
           key="G5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -7467,6 +7429,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7494,7 +7457,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="H5"
           idNumber={75}
           key="H5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -7525,6 +7487,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7552,7 +7515,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="I5"
           idNumber={85}
           key="I5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -7583,6 +7545,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7610,7 +7573,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="J5"
           idNumber={95}
           key="J5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -7641,6 +7603,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7663,12 +7626,11 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
         key="6"
       >
         <Cell
-          allShipTiles={Array []}
           id={6}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -7689,7 +7651,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="A6"
           idNumber={6}
           key="A6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -7720,6 +7681,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7747,7 +7709,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="B6"
           idNumber={16}
           key="B6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -7778,6 +7739,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7805,7 +7767,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="C6"
           idNumber={26}
           key="C6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -7836,6 +7797,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7863,7 +7825,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="D6"
           idNumber={36}
           key="D6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -7894,6 +7855,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7921,7 +7883,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="E6"
           idNumber={46}
           key="E6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -7952,6 +7913,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -7979,7 +7941,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="F6"
           idNumber={56}
           key="F6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8010,6 +7971,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -8037,7 +7999,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="G6"
           idNumber={66}
           key="G6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8068,6 +8029,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -8095,7 +8057,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="H6"
           idNumber={76}
           key="H6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8126,6 +8087,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -8153,7 +8115,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="I6"
           idNumber={86}
           key="I6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8184,6 +8145,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -8211,7 +8173,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="J6"
           idNumber={96}
           key="J6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8242,6 +8203,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -8264,12 +8226,11 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
         key="7"
       >
         <Cell
-          allShipTiles={Array []}
           id={7}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -8290,7 +8251,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="A7"
           idNumber={7}
           key="A7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8321,6 +8281,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -8348,7 +8309,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="B7"
           idNumber={17}
           key="B7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8379,6 +8339,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -8406,7 +8367,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="C7"
           idNumber={27}
           key="C7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8437,6 +8397,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -8464,7 +8425,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="D7"
           idNumber={37}
           key="D7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8495,6 +8455,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -8522,7 +8483,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="E7"
           idNumber={47}
           key="E7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8553,6 +8513,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -8580,7 +8541,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="F7"
           idNumber={57}
           key="F7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8611,6 +8571,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -8638,7 +8599,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="G7"
           idNumber={67}
           key="G7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8669,6 +8629,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -8696,7 +8657,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="H7"
           idNumber={77}
           key="H7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8727,6 +8687,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -8754,7 +8715,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="I7"
           idNumber={87}
           key="I7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8785,6 +8745,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -8812,7 +8773,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="J7"
           idNumber={97}
           key="J7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8843,6 +8803,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -8865,12 +8826,11 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
         key="8"
       >
         <Cell
-          allShipTiles={Array []}
           id={8}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -8891,7 +8851,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="A8"
           idNumber={8}
           key="A8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8922,6 +8881,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -8949,7 +8909,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="B8"
           idNumber={18}
           key="B8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -8980,6 +8939,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9007,7 +8967,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="C8"
           idNumber={28}
           key="C8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9038,6 +8997,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9065,7 +9025,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="D8"
           idNumber={38}
           key="D8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9096,6 +9055,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9123,7 +9083,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="E8"
           idNumber={48}
           key="E8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9154,6 +9113,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9181,7 +9141,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="F8"
           idNumber={58}
           key="F8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9212,6 +9171,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9239,7 +9199,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="G8"
           idNumber={68}
           key="G8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9270,6 +9229,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9297,7 +9257,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="H8"
           idNumber={78}
           key="H8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9328,6 +9287,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9355,7 +9315,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="I8"
           idNumber={88}
           key="I8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9386,6 +9345,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9413,7 +9373,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="J8"
           idNumber={98}
           key="J8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9444,6 +9403,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9466,12 +9426,11 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
         key="9"
       >
         <Cell
-          allShipTiles={Array []}
           id={9}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -9492,7 +9451,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="A9"
           idNumber={9}
           key="A9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9523,6 +9481,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9550,7 +9509,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="B9"
           idNumber={19}
           key="B9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9581,6 +9539,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9608,7 +9567,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="C9"
           idNumber={29}
           key="C9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9639,6 +9597,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9666,7 +9625,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="D9"
           idNumber={39}
           key="D9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9697,6 +9655,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9724,7 +9683,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="E9"
           idNumber={49}
           key="E9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9755,6 +9713,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9782,7 +9741,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="F9"
           idNumber={59}
           key="F9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9813,6 +9771,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9840,7 +9799,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="G9"
           idNumber={69}
           key="G9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9871,6 +9829,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9898,7 +9857,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="H9"
           idNumber={79}
           key="H9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9929,6 +9887,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -9956,7 +9915,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="I9"
           idNumber={89}
           key="I9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -9987,6 +9945,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -10014,7 +9973,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="J9"
           idNumber={99}
           key="J9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -10045,6 +10003,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -10067,12 +10026,11 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
         key="10"
       >
         <Cell
-          allShipTiles={Array []}
           id={10}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -10093,7 +10051,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="A10"
           idNumber={10}
           key="A10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -10124,6 +10081,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -10151,7 +10109,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="B10"
           idNumber={20}
           key="B10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -10182,6 +10139,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -10209,7 +10167,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="C10"
           idNumber={30}
           key="C10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -10240,6 +10197,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -10267,7 +10225,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="D10"
           idNumber={40}
           key="D10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -10298,6 +10255,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -10325,7 +10283,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="E10"
           idNumber={50}
           key="E10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -10356,6 +10313,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -10383,7 +10341,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="F10"
           idNumber={60}
           key="F10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -10414,6 +10371,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -10441,7 +10399,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="G10"
           idNumber={70}
           key="G10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -10472,6 +10429,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -10499,7 +10457,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="H10"
           idNumber={80}
           key="H10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -10530,6 +10487,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -10557,7 +10515,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="I10"
           idNumber={90}
           key="I10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -10588,6 +10545,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -10615,7 +10573,6 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
           id="J10"
           idNumber={100}
           key="J10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -10646,6 +10603,7 @@ exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile 
             ]
           }
           selected="A1"
+          shipTileValues={Array []}
           shipTiles={
             Array [
               1,
@@ -10691,12 +10649,11 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
         key="0"
       >
         <Cell
-          allShipTiles={Array []}
           id={0}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -10707,13 +10664,12 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="A"
           idNumber={-2}
           key="A"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -10724,13 +10680,12 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="B"
           idNumber={-2}
           key="B"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -10741,13 +10696,12 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="C"
           idNumber={-2}
           key="C"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -10758,13 +10712,12 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="D"
           idNumber={-2}
           key="D"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -10775,13 +10728,12 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="E"
           idNumber={-2}
           key="E"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -10792,13 +10744,12 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="F"
           idNumber={-2}
           key="F"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -10809,13 +10760,12 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="G"
           idNumber={-2}
           key="G"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -10826,13 +10776,12 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="H"
           idNumber={-2}
           key="H"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -10843,13 +10792,12 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="I"
           idNumber={-2}
           key="I"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -10860,13 +10808,12 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           </div>
         </Cell>
         <Cell
-          allShipTiles={Array []}
           id="J"
           idNumber={-2}
           key="J"
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -10882,12 +10829,11 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
         key="1"
       >
         <Cell
-          allShipTiles={Array []}
           id={1}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -10904,7 +10850,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="A1"
           idNumber={1}
           key="A1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -10935,6 +10880,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={1}
           y="A"
@@ -10954,7 +10900,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="B1"
           idNumber={11}
           key="B1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -10985,6 +10930,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={1}
           y="B"
@@ -11004,7 +10950,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="C1"
           idNumber={21}
           key="C1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11035,6 +10980,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={1}
           y="C"
@@ -11054,7 +11000,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="D1"
           idNumber={31}
           key="D1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11085,6 +11030,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={1}
           y="D"
@@ -11104,7 +11050,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="E1"
           idNumber={41}
           key="E1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11135,6 +11080,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={1}
           y="E"
@@ -11154,7 +11100,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="F1"
           idNumber={51}
           key="F1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11185,6 +11130,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={1}
           y="F"
@@ -11204,7 +11150,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="G1"
           idNumber={61}
           key="G1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11235,6 +11180,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={1}
           y="G"
@@ -11254,7 +11200,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="H1"
           idNumber={71}
           key="H1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11285,6 +11230,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={1}
           y="H"
@@ -11304,7 +11250,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="I1"
           idNumber={81}
           key="I1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11335,6 +11280,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={1}
           y="I"
@@ -11354,7 +11300,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="J1"
           idNumber={91}
           key="J1"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11385,6 +11330,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={1}
           y="J"
@@ -11403,12 +11349,11 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
         key="2"
       >
         <Cell
-          allShipTiles={Array []}
           id={2}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -11425,7 +11370,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="A2"
           idNumber={2}
           key="A2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11456,6 +11400,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={2}
           y="A"
@@ -11475,7 +11420,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="B2"
           idNumber={12}
           key="B2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11506,6 +11450,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={2}
           y="B"
@@ -11525,7 +11470,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="C2"
           idNumber={22}
           key="C2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11556,6 +11500,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={2}
           y="C"
@@ -11575,7 +11520,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="D2"
           idNumber={32}
           key="D2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11606,6 +11550,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={2}
           y="D"
@@ -11625,7 +11570,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="E2"
           idNumber={42}
           key="E2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11656,6 +11600,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={2}
           y="E"
@@ -11675,7 +11620,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="F2"
           idNumber={52}
           key="F2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11706,6 +11650,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={2}
           y="F"
@@ -11725,7 +11670,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="G2"
           idNumber={62}
           key="G2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11756,6 +11700,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={2}
           y="G"
@@ -11775,7 +11720,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="H2"
           idNumber={72}
           key="H2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11806,6 +11750,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={2}
           y="H"
@@ -11825,7 +11770,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="I2"
           idNumber={82}
           key="I2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11856,6 +11800,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={2}
           y="I"
@@ -11875,7 +11820,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="J2"
           idNumber={92}
           key="J2"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11906,6 +11850,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={2}
           y="J"
@@ -11924,12 +11869,11 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
         key="3"
       >
         <Cell
-          allShipTiles={Array []}
           id={3}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -11946,7 +11890,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="A3"
           idNumber={3}
           key="A3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -11977,6 +11920,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={3}
           y="A"
@@ -11996,7 +11940,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="B3"
           idNumber={13}
           key="B3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12027,6 +11970,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={3}
           y="B"
@@ -12046,7 +11990,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="C3"
           idNumber={23}
           key="C3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12077,6 +12020,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={3}
           y="C"
@@ -12096,7 +12040,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="D3"
           idNumber={33}
           key="D3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12127,6 +12070,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={3}
           y="D"
@@ -12146,7 +12090,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="E3"
           idNumber={43}
           key="E3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12177,6 +12120,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={3}
           y="E"
@@ -12196,7 +12140,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="F3"
           idNumber={53}
           key="F3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12227,6 +12170,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={3}
           y="F"
@@ -12246,7 +12190,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="G3"
           idNumber={63}
           key="G3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12277,6 +12220,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={3}
           y="G"
@@ -12296,7 +12240,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="H3"
           idNumber={73}
           key="H3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12327,6 +12270,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={3}
           y="H"
@@ -12346,7 +12290,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="I3"
           idNumber={83}
           key="I3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12377,6 +12320,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={3}
           y="I"
@@ -12396,7 +12340,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="J3"
           idNumber={93}
           key="J3"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12427,6 +12370,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={3}
           y="J"
@@ -12445,12 +12389,11 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
         key="4"
       >
         <Cell
-          allShipTiles={Array []}
           id={4}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -12467,7 +12410,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="A4"
           idNumber={4}
           key="A4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12498,6 +12440,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={4}
           y="A"
@@ -12517,7 +12460,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="B4"
           idNumber={14}
           key="B4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12548,6 +12490,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={4}
           y="B"
@@ -12567,7 +12510,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="C4"
           idNumber={24}
           key="C4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12598,6 +12540,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={4}
           y="C"
@@ -12617,7 +12560,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="D4"
           idNumber={34}
           key="D4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12648,6 +12590,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={4}
           y="D"
@@ -12667,7 +12610,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="E4"
           idNumber={44}
           key="E4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12698,6 +12640,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={4}
           y="E"
@@ -12717,7 +12660,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="F4"
           idNumber={54}
           key="F4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12748,6 +12690,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={4}
           y="F"
@@ -12767,7 +12710,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="G4"
           idNumber={64}
           key="G4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12798,6 +12740,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={4}
           y="G"
@@ -12817,7 +12760,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="H4"
           idNumber={74}
           key="H4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12848,6 +12790,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={4}
           y="H"
@@ -12867,7 +12810,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="I4"
           idNumber={84}
           key="I4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12898,6 +12840,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={4}
           y="I"
@@ -12917,7 +12860,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="J4"
           idNumber={94}
           key="J4"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -12948,6 +12890,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={4}
           y="J"
@@ -12966,12 +12909,11 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
         key="5"
       >
         <Cell
-          allShipTiles={Array []}
           id={5}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -12988,7 +12930,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="A5"
           idNumber={5}
           key="A5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13019,6 +12960,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={5}
           y="A"
@@ -13038,7 +12980,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="B5"
           idNumber={15}
           key="B5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13069,6 +13010,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={5}
           y="B"
@@ -13088,7 +13030,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="C5"
           idNumber={25}
           key="C5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13119,6 +13060,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={5}
           y="C"
@@ -13138,7 +13080,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="D5"
           idNumber={35}
           key="D5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13169,6 +13110,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={5}
           y="D"
@@ -13188,7 +13130,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="E5"
           idNumber={45}
           key="E5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13219,6 +13160,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={5}
           y="E"
@@ -13238,7 +13180,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="F5"
           idNumber={55}
           key="F5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13269,6 +13210,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={5}
           y="F"
@@ -13288,7 +13230,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="G5"
           idNumber={65}
           key="G5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13319,6 +13260,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={5}
           y="G"
@@ -13338,7 +13280,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="H5"
           idNumber={75}
           key="H5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13369,6 +13310,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={5}
           y="H"
@@ -13388,7 +13330,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="I5"
           idNumber={85}
           key="I5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13419,6 +13360,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={5}
           y="I"
@@ -13438,7 +13380,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="J5"
           idNumber={95}
           key="J5"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13469,6 +13410,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={5}
           y="J"
@@ -13487,12 +13429,11 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
         key="6"
       >
         <Cell
-          allShipTiles={Array []}
           id={6}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -13509,7 +13450,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="A6"
           idNumber={6}
           key="A6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13540,6 +13480,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={6}
           y="A"
@@ -13559,7 +13500,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="B6"
           idNumber={16}
           key="B6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13590,6 +13530,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={6}
           y="B"
@@ -13609,7 +13550,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="C6"
           idNumber={26}
           key="C6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13640,6 +13580,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={6}
           y="C"
@@ -13659,7 +13600,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="D6"
           idNumber={36}
           key="D6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13690,6 +13630,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={6}
           y="D"
@@ -13709,7 +13650,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="E6"
           idNumber={46}
           key="E6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13740,6 +13680,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={6}
           y="E"
@@ -13759,7 +13700,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="F6"
           idNumber={56}
           key="F6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13790,6 +13730,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={6}
           y="F"
@@ -13809,7 +13750,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="G6"
           idNumber={66}
           key="G6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13840,6 +13780,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={6}
           y="G"
@@ -13859,7 +13800,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="H6"
           idNumber={76}
           key="H6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13890,6 +13830,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={6}
           y="H"
@@ -13909,7 +13850,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="I6"
           idNumber={86}
           key="I6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13940,6 +13880,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={6}
           y="I"
@@ -13959,7 +13900,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="J6"
           idNumber={96}
           key="J6"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -13990,6 +13930,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={6}
           y="J"
@@ -14008,12 +13949,11 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
         key="7"
       >
         <Cell
-          allShipTiles={Array []}
           id={7}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -14030,7 +13970,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="A7"
           idNumber={7}
           key="A7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14061,6 +14000,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={7}
           y="A"
@@ -14080,7 +14020,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="B7"
           idNumber={17}
           key="B7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14111,6 +14050,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={7}
           y="B"
@@ -14130,7 +14070,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="C7"
           idNumber={27}
           key="C7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14161,6 +14100,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={7}
           y="C"
@@ -14180,7 +14120,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="D7"
           idNumber={37}
           key="D7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14211,6 +14150,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={7}
           y="D"
@@ -14230,7 +14170,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="E7"
           idNumber={47}
           key="E7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14261,6 +14200,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={7}
           y="E"
@@ -14280,7 +14220,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="F7"
           idNumber={57}
           key="F7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14311,6 +14250,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={7}
           y="F"
@@ -14330,7 +14270,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="G7"
           idNumber={67}
           key="G7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14361,6 +14300,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={7}
           y="G"
@@ -14380,7 +14320,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="H7"
           idNumber={77}
           key="H7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14411,6 +14350,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={7}
           y="H"
@@ -14430,7 +14370,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="I7"
           idNumber={87}
           key="I7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14461,6 +14400,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={7}
           y="I"
@@ -14480,7 +14420,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="J7"
           idNumber={97}
           key="J7"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14511,6 +14450,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={7}
           y="J"
@@ -14529,12 +14469,11 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
         key="8"
       >
         <Cell
-          allShipTiles={Array []}
           id={8}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -14551,7 +14490,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="A8"
           idNumber={8}
           key="A8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14582,6 +14520,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={8}
           y="A"
@@ -14601,7 +14540,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="B8"
           idNumber={18}
           key="B8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14632,6 +14570,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={8}
           y="B"
@@ -14651,7 +14590,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="C8"
           idNumber={28}
           key="C8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14682,6 +14620,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={8}
           y="C"
@@ -14701,7 +14640,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="D8"
           idNumber={38}
           key="D8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14732,6 +14670,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={8}
           y="D"
@@ -14751,7 +14690,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="E8"
           idNumber={48}
           key="E8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14782,6 +14720,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={8}
           y="E"
@@ -14801,7 +14740,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="F8"
           idNumber={58}
           key="F8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14832,6 +14770,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={8}
           y="F"
@@ -14851,7 +14790,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="G8"
           idNumber={68}
           key="G8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14882,6 +14820,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={8}
           y="G"
@@ -14901,7 +14840,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="H8"
           idNumber={78}
           key="H8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14932,6 +14870,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={8}
           y="H"
@@ -14951,7 +14890,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="I8"
           idNumber={88}
           key="I8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -14982,6 +14920,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={8}
           y="I"
@@ -15001,7 +14940,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="J8"
           idNumber={98}
           key="J8"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15032,6 +14970,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={8}
           y="J"
@@ -15050,12 +14989,11 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
         key="9"
       >
         <Cell
-          allShipTiles={Array []}
           id={9}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -15072,7 +15010,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="A9"
           idNumber={9}
           key="A9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15103,6 +15040,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={9}
           y="A"
@@ -15122,7 +15060,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="B9"
           idNumber={19}
           key="B9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15153,6 +15090,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={9}
           y="B"
@@ -15172,7 +15110,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="C9"
           idNumber={29}
           key="C9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15203,6 +15140,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={9}
           y="C"
@@ -15222,7 +15160,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="D9"
           idNumber={39}
           key="D9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15253,6 +15190,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={9}
           y="D"
@@ -15272,7 +15210,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="E9"
           idNumber={49}
           key="E9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15303,6 +15240,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={9}
           y="E"
@@ -15322,7 +15260,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="F9"
           idNumber={59}
           key="F9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15353,6 +15290,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={9}
           y="F"
@@ -15372,7 +15310,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="G9"
           idNumber={69}
           key="G9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15403,6 +15340,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={9}
           y="G"
@@ -15422,7 +15360,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="H9"
           idNumber={79}
           key="H9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15453,6 +15390,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={9}
           y="H"
@@ -15472,7 +15410,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="I9"
           idNumber={89}
           key="I9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15503,6 +15440,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={9}
           y="I"
@@ -15522,7 +15460,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="J9"
           idNumber={99}
           key="J9"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15553,6 +15490,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={9}
           y="J"
@@ -15571,12 +15509,11 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
         key="10"
       >
         <Cell
-          allShipTiles={Array []}
           id={10}
           idNumber={-2}
           label={true}
           selected={null}
-          shipTiles={Array []}
+          shipTileValues={Array []}
         >
           <div
             className="cell"
@@ -15593,7 +15530,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="A10"
           idNumber={10}
           key="A10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15624,6 +15560,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={10}
           y="A"
@@ -15643,7 +15580,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="B10"
           idNumber={20}
           key="B10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15674,6 +15610,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={10}
           y="B"
@@ -15693,7 +15630,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="C10"
           idNumber={30}
           key="C10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15724,6 +15660,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={10}
           y="C"
@@ -15743,7 +15680,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="D10"
           idNumber={40}
           key="D10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15774,6 +15710,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={10}
           y="D"
@@ -15793,7 +15730,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="E10"
           idNumber={50}
           key="E10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15824,6 +15760,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={10}
           y="E"
@@ -15843,7 +15780,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="F10"
           idNumber={60}
           key="F10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15874,6 +15810,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={10}
           y="F"
@@ -15893,7 +15830,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="G10"
           idNumber={70}
           key="G10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15924,6 +15860,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={10}
           y="G"
@@ -15943,7 +15880,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="H10"
           idNumber={80}
           key="H10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -15974,6 +15910,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={10}
           y="H"
@@ -15993,7 +15930,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="I10"
           idNumber={90}
           key="I10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -16024,6 +15960,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={10}
           y="I"
@@ -16043,7 +15980,6 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
           id="J10"
           idNumber={100}
           key="J10"
-          opponentShots={Array []}
           playerShips={
             Array [
               Object {
@@ -16074,6 +16010,7 @@ exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the 
             ]
           }
           selected=""
+          shipTileValues={Array []}
           shipTiles={Array []}
           x={10}
           y="J"

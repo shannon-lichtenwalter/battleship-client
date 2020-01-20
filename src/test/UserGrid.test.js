@@ -1,17 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import UserGrid from '../Components/UserGrid/UserGrid'
-import config from '../config'
-import io from 'socket.io-client'
-import TokenService from '../Services/token-service'
-import WS from 'jest-websocket-mock'
 import { shallow } from 'enzyme'
 import { mount } from 'enzyme'
 import toJson from 'enzyme-to-json'
-import renderer from 'react-test-renderer'
-import Cell from '../Components/Cell/Cell'
 
-describe(`UserGrid Component`, () => {
+describe.only(`UserGrid Component`, () => {
     it(`Renders without errors`, () => {
         const div = document.createElement('div');
         ReactDOM.render(<UserGrid /> , div)

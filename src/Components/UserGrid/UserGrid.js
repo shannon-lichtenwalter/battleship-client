@@ -31,48 +31,6 @@ class UserGrid extends React.Component {
     }
   };
 
-  static contextType = BattleShipContext;
-
-
-  //This function is called by the render. It will look at the counter value to determine
-  // if the user still needs to set their ship locations or if all the ship values have been set.
-  //counter was added to state in order to access the different ships, counter is incremeneted in a later function
-  //after a boat has been completely built. If all the boats have been build, then an API call is made to update the
-  //player's ships location in the database.
-
-  handleSetShips = () => {
-    if (this.state.counter === 5 && !this.props.shipsReady) {
-      gameMovesApiService.setShips(this.state.playerShips, this.props.gameId, this.props.playerNum)
-        .then(() => {
-          this.props.setShipsReady();
-          this.props.socket.emit('ships_ready', this.props.room);
-        })
-        .catch((e) => {
-          this.props.setError(e);
-          this.setState({
-            selected: '',
-            currentId: '',
-            boat: [],
-            counter: 0,
-            playerShips: [{ 'name': 'aircraftCarrier', 'length': 5, 'spaces': [] },
-            { 'name': 'battleship', 'length': 4, 'spaces': [] },
-            { 'name': 'cruiser', 'length': 3, 'spaces': [] },
-            { 'name': 'submarine', 'length': 3, 'spaces': [] },
-            { 'name': 'defender', 'length': 2, 'spaces': [] }],
-            shipOccupied: [],
-            allShipTilesOccupied: [],
-            shipTileValues: [],
-            currentShipAlignment: null,
-            shipTileLaid: false,
-            opponentShots: [],
-            shipsReady: false,
-            placementFail: false,
-            resumedGame: this.props.resumedGame,
-        })
-    })
-  }
-}
-  
 
     /*
         The following React lifecycle method is invoked immediately after the 'UserGrid' component is 
@@ -85,7 +43,8 @@ class UserGrid extends React.Component {
     componentDidMount = () => {
         if(this.props.socket){
         this.props.socket.on('response', data => {
-            this.props.changeTurn();
+          if(data){  
+          this.props.changeTurn();
             if (this.context.playerNum !== data.playerNum) {
                 let message = null;
                 if (data.result === 'missed') {
@@ -100,6 +59,7 @@ class UserGrid extends React.Component {
                     opponentShots: [...this.state.opponentShots, data.target]
                 })
             }
+          }
         })
     }
     };
@@ -137,6 +97,7 @@ class UserGrid extends React.Component {
                         { 'name': 'defender', 'length': 2, 'spaces': [] }],
                         shipOccupied: [],
                         allShipTilesOccupied: [],
+                        shipTileValues:[],
                         currentShipAlignment: null,
                         shipTileLaid: false,
                         opponentShots: [],
@@ -262,6 +223,7 @@ class UserGrid extends React.Component {
                         shipOccupied: [idNum],              // Array containing index of each cell (tile) in current boat
                         shipTileLaid: true,                 // Boolean, false if no ship tiles laid
                         allShipTilesOccupied: [idNum],      // Array containing index of each ship tile in total
+                        shipTileValues: [value],            // Array containing alphanumeric cell indices of all ships
                         placementFail: false,               // Boolean if boat placement failed
                     }, () => this.handleCheckBoatLength())
                 }
@@ -271,6 +233,7 @@ class UserGrid extends React.Component {
                         boat: [{ value, idNum }],
                         shipOccupied: [idNum],
                         allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                        shipTileValues: [...this.state.shipTileValues, value],
                         placementFail: false,
                     }, () => this.handleCheckBoatLength()) // Callback to see whether tile filled boat reqs
                 }
@@ -311,7 +274,8 @@ class UserGrid extends React.Component {
                                     boat: [...this.state.boat, { value, idNum }],
                                     shipOccupied: [...this.state.shipOccupied, idNum],
                                     currentShipAlignment: 'horizontal',
-                                    allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum]
+                                    allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                                    shipTileValues: [...this.state.shipTileValues, value],
                                 }, () => this.handleCheckBoatLength())
                             }
                         } else // If the cell selected is two cells away from the boat origin
@@ -325,7 +289,8 @@ class UserGrid extends React.Component {
                                         boat: [...this.state.boat, { value, idNum }],
                                         shipOccupied: [...this.state.shipOccupied, idNum],
                                         currentShipAlignment: 'horizontal',
-                                        allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum]
+                                        allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                                        shipTileValues: [...this.state.shipTileValues, value],
                                     }, () => this.handleCheckBoatLength())
                                 }
                             } else // If the cell selected is 3 cells away from the boat origin
@@ -339,7 +304,8 @@ class UserGrid extends React.Component {
                                             boat: [...this.state.boat, { value, idNum }],
                                             shipOccupied: [...this.state.shipOccupied, idNum],
                                             currentShipAlignment: 'horizontal',
-                                            allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum]
+                                            allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                                            shipTileValues: [...this.state.shipTileValues, value],
                                         }, () => this.handleCheckBoatLength())
                                     }
                                 } else // If the cell selectedis 4 cells away from the boat origin
@@ -353,7 +319,8 @@ class UserGrid extends React.Component {
                                                 boat: [...this.state.boat, { value, idNum }],
                                                 shipOccupied: [...this.state.shipOccupied, idNum],
                                                 currentShipAlignment: 'horizontal',
-                                                allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum]
+                                                allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                                                shipTileValues: [...this.state.shipTileValues, value],
                                             }, () => this.handleCheckBoatLength())
                                         }
                                     }
@@ -370,7 +337,8 @@ class UserGrid extends React.Component {
                                 boat: [...this.state.boat, { value, idNum }],
                                 shipOccupied: [...this.state.shipOccupied, idNum],
                                 currentShipAlignment: 'vertical',
-                                allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum]
+                                allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                                shipTileValues: [...this.state.shipTileValues, value]
                             }, () => this.handleCheckBoatLength())
                         } else // If two cells above, or below boat origin
                             if ((lastIdNum === firstIdNum + 20 || lastIdNum === firstIdNum - 20) &&
@@ -382,7 +350,8 @@ class UserGrid extends React.Component {
                                     boat: [...this.state.boat, { value, idNum }],
                                     shipOccupied: [...this.state.shipOccupied, idNum],
                                     currentShipAlignment: 'vertical',
-                                    allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum]
+                                    allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                                    shipTileValues: [...this.state.shipTileValues, value]
                                 }, () => this.handleCheckBoatLength())
                             } else // If three cells above, or below boat origin
                                 if ((lastIdNum === firstIdNum + 30 || lastIdNum === firstIdNum - 30) &&
@@ -394,7 +363,8 @@ class UserGrid extends React.Component {
                                         boat: [...this.state.boat, { value, idNum }],
                                         shipOccupied: [...this.state.shipOccupied, idNum],
                                         currentShipAlignment: 'vertical',
-                                        allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum]
+                                        allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                                        shipTileValues: [...this.state.shipTileValues, value]
                                     }, () => this.handleCheckBoatLength())
                                 } else // If four cells above, or below boat origin
                                     if ((lastIdNum === firstIdNum + 40 || lastIdNum === firstIdNum - 40) &&
@@ -406,7 +376,8 @@ class UserGrid extends React.Component {
                                             boat: [...this.state.boat, { value, idNum }],
                                             shipOccupied: [...this.state.shipOccupied, idNum],
                                             currentShipAlignment: 'vertical',
-                                            allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum]
+                                            allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+                                            shipTileValues: [...this.state.shipTileValues, value]
                                         }, () => this.handleCheckBoatLength())
                                     }
                     }
@@ -417,17 +388,21 @@ class UserGrid extends React.Component {
         //     due to another boat being in the way. 
         } else {
             let tempAllTilesOccupied = this.state.allShipTilesOccupied
+            let tempAllTileValues = this.state.shipTileValues
             let tempShipOccupied = this.state.shipOccupied
             let tempBoat = this.state.boat
             let indexOfIdInAllTiles = tempAllTilesOccupied.indexOf(idNum)
             let indexOfIdInShipOccupied = tempShipOccupied.indexOf(idNum)
+            let indexOfValueInAllTileValues = tempAllTileValues.indexOf(value)
             // Location of tile selected is found from relevant arrays in state, and purged via splice array method
             tempAllTilesOccupied.splice(indexOfIdInAllTiles, 1)
+            tempAllTileValues.splice(indexOfValueInAllTileValues, 1)
             tempShipOccupied.splice(indexOfIdInShipOccupied, 1)
             tempBoat.splice(indexFound, 1)
             if (this.state.boat.length > 1) {
                 this.setState({
                     allShipTilesOccupied: tempAllTilesOccupied,
+                    shipTileValues: tempAllTileValues,
                     shipOccupied: tempShipOccupied,
                     boat: tempBoat
                 })
@@ -523,13 +498,9 @@ class UserGrid extends React.Component {
         if (this.state.placementFail) {
             return 'Please try placing your ship again. Previous placement was invalid'
         } else {
-          if(data.sunk){
-            message = `${data.playerNum} sunk your ${data.ship}!`
-          }else{
-            message = `${data.playerNum} ${data.result} your ${data.ship}`
+          return null
           }
         }
-    };
 
     /*
         Function called from render to display the UserGrid, the component which the user's ships
