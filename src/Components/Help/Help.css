@@ -14,6 +14,7 @@
 li {
   font-size: 1.3rem;
   display: block;
+  padding: 0 1rem;
 }
 
 .helpIB {
@@ -28,7 +29,11 @@ li {
 
 @media screen and (min-width: 900px) {
   .helpIB {
-    width: 80%;
+    width: 75%;
+  }
+
+  li {
+    padding: 0;
   }
 }
 
