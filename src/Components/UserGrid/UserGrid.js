@@ -71,7 +71,7 @@ class UserGrid extends React.Component {
     } else if (this.state.counter <= 4) {
       return `Please select cells for ${this.state.playerShips[this.state.counter].name}.
             This ship is ${this.state.playerShips[this.state.counter].length} spaces long`
-    } else return `All Ships Have Been Set`
+    } else return `Your Fleet is Ready for Battle...`
   };
 
   //this function takes the array from boat and sorts it in ascending order to determine if 
@@ -429,15 +429,22 @@ class UserGrid extends React.Component {
   componentDidMount = () => {
     this.props.socket.on('response', data => {
       this.props.changeTurn();
+      let ship = null;
+      if(data.ship === 'aircraftCarrier'){
+        ship = 'Aircraft Carrier'
+      }else if (data.ship !== null) {
+        ship = data.ship.charAt(0).toUpperCase() + data.ship.slice(1)
+      }
+
       if (this.props.playerNum !== data.playerNum) {
         let message = null;
         if (data.result === 'miss') {
-          message = `${data.playerNum} missed!`
+          message = `${this.props.opponentUsername} missed!`
         } else {
           if(data.sunk){
-            message = `${data.playerNum} sunk your ${data.ship}!`
+            message = `${this.props.opponentUsername} sunk your ${ship}!`
           }else{
-            message = `${data.playerNum} ${data.result} your ${data.ship}`
+            message = `${this.props.opponentUsername} ${data.result} your ${ship}`
           }
         }
         this.setState({
@@ -454,9 +461,9 @@ class UserGrid extends React.Component {
         <div className='UserGrid'>
           {this.handleRenderGrid()}
         </div>
-        {this.state.message && <p>{this.state.message}</p>}
         <span className='ErrorSpan'><p>{this.messageCreator()}</p></span>
         <h2>{this.handleSetShips()} </h2>
+        {this.state.message && <p>{this.state.message}</p>}
       </div>
     )
   }

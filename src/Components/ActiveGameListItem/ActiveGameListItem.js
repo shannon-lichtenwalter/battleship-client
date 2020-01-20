@@ -6,16 +6,6 @@ import './ActiveGameListItem.css';
 
 class ActiveGameListItem extends React.Component {
   state = {
-    // game_status: this.props.game.game_status,
-    // gameId: this.props.game.id,
-    // player1: this.props.game.player1,
-    // player2: this.props.game.player2,
-    // room_id: this.props.game.room_id,
-    // turn: this.props.game.turn,
-    // player1_username: this.props.game.player1_username,
-    // player2_username: this.props.game.player2_username,
-    // userId: this.props.userId,
-    // currentUserPlayer: Number(this.props.userId) === Number(this.props.game.player1) ? 'player1' : 'player2',
     quitting: false,
     error: null,
   }
@@ -53,6 +43,8 @@ class ActiveGameListItem extends React.Component {
           storeData.opponentHits = gameData.player2_hits ? gameData.player2_hits : [];
           storeData.opponentMisses = gameData.player2_misses ? gameData.player2_misses : [];
           storeData.opponentShips = gameData.player2_ships;
+          storeData.playerUsername = this.props.game.player1_username;
+          storeData.opponentUsername = this.props.game.player2_username
         } else {
           storeData.userShips = gameData.player2_ships ? gameData.player2_ships : [];
           storeData.shipsReady = gameData.player2_ships ? true : false;
@@ -61,6 +53,8 @@ class ActiveGameListItem extends React.Component {
           storeData.opponentHits = gameData.player1_hits ? gameData.player1_hits : [];
           storeData.opponentMisses = gameData.player1_misses ? gameData.player1_misses : [];
           storeData.opponentShips = gameData.player1_ships;
+          storeData.playerUsername = this.props.game.player2_username;
+          storeData.opponentUsername = this.props.game.player1_username
         }
         storeData.currentUser = gameData.currentUser;
         storeData.turn = gameData.currentUser === gameData.turn;
@@ -83,11 +77,14 @@ class ActiveGameListItem extends React.Component {
       .catch((e) => this.setState({error:e.error}));
   }
 
+  //handleQuitGame will make a PATCH call to the server to update
+  // that the game has been forfeited and that the user who submitted the
+  //forfeit request will be counted as the loser
   handleQuitGame = () => {
     let playerNum = Number(this.props.userId) === Number(this.props.game.player1) ? 'player1' : 'player2' //param
-    let gameId = this.props.game.id; //param
-    let opponentNum = null; //reqbody
-    let opponentId = null; //reqbody
+    let gameId = this.props.game.id;
+    let opponentNum = null;
+    let opponentId = null;
     
     if(playerNum === 'player1'){
       opponentNum = 'player2';
@@ -103,7 +100,6 @@ class ActiveGameListItem extends React.Component {
     }
 
     loadGamesApiService.quitActiveGame(gameId, playerNum, opponentData).then(res =>{
-      //this.props.history.push('/dashboard')
       this.setState({
         quitting:false
       })
@@ -116,10 +112,6 @@ class ActiveGameListItem extends React.Component {
         error: e.error
       })
     });
-    //mark opponent as win need opponent playernum
-    //increment opponent score need opponent id
-    //increment current user loss need current id
-    //mark game as forfeit need game id
   }
 
 

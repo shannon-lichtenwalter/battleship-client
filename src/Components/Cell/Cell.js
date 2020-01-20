@@ -75,7 +75,7 @@ class Cell extends React.Component {
         className={this.determineClassName()}
         onClick={() => this.handleClick()}
       >
-        {this.props.id}
+        {this.props.label ? this.props.id : ''}
       </div>
     )
   }
