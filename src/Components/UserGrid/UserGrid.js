@@ -88,13 +88,13 @@ class UserGrid extends React.Component {
         if (this.state.counter === 5 && !this.props.shipsReady) {
             // The following uses the 'gameMovesApiService' to notify backend that our ships are set, and
             //     sends ship placement data. Current game ID as well as player number is taken from context 
-            gameMovesApiService.setShips(this.state.playerShips, this.context.gameId, this.context.playerNum)
+            gameMovesApiService.setShips(this.state.playerShips, this.props.gameId, this.props.playerNum)
                 .then(() => {
                     this.props.setShipsReady();
                     this.props.socket.emit('ships_ready', this.props.room);
                 }) // In the event of an error setting ships, all data is reset
                 .catch((e) => {
-                    this.context.setError(e);
+                    this.props.setError(e);
                     this.setState({
                         selected: '',
                         currentId: '',
@@ -439,8 +439,8 @@ class UserGrid extends React.Component {
         the currently selected cell
     */
     handleSelectTarget = (value, idNum) => {
-        if (this.context.error) {
-            this.context.clearError();
+        if (this.props.error) {
+            this.props.clearError();
         }
         if (!this.state.shipsReady) {
             this.handleCheckValue(value, idNum);
