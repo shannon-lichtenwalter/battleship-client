@@ -104,9 +104,6 @@ class Cell extends React.Component {
   }
 
   checkForShipTile = () => {
-    console.log(this.props.allShipTiles)
-    console.log(this.props.currentId)
-
     if ((this.props.allShipTiles) && (this.props.allShipTiles.indexOf(this.props.currentId) !== (-1))) {
       this.setState({ isShipTile: true })
     }
