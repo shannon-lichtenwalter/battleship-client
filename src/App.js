@@ -2,21 +2,22 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
-import HelpRoute from './Routes/HelpRoute/HelpRoute';
-import LandingRoute from './Routes/LandingRoute/LandingRoute';
-import LoginRoute from './Routes/LoginRoute/LoginRoute';
+import Help from './Components/Help/Help';
+import Landing from './Components/Landing/Landing';
+import Login from './Components/Login/Login';
 import PrivateOnlyRoute from './Components/PrivateOnlyRoute/PrivateOnlyRoute';
 import PublicOnlyRoute from './Components/PublicOnlyRoute/PublicOnlyRoute';
-import ResultRoute from './Routes/ResultRoute/ResultRoute';
-import SettingRoute from './Routes/SettingRoute/SettingRoute';
-import SignupRoute from './Routes/SignupRoute/SignupRoute';
-import DashboardRoute from './Routes/DashboardRoute/DashboardRoute';
+import Signup from './Components/Signup/Signup';
+import Dashboard from './Components/Dashboard/Dashboard';
+import GameHistory from './Components/GameHistory/GameHistory';
+import GameBoard from './Components/GameBoard/GameBoard';
+import Result from './Components/Result/Result';
+
+
+
 import NotFoundRoute from './Routes/NotFoundRoute/NotFoundRoute';
-import DeleteAccountRoute from './Routes/DeleteAccountRoute/DeleteAccountRoute';
-import PasswordChangeRoute from './Routes/PasswordChangeRoute/PasswordChangeRoute';
-import ResetAccountRoute from './Routes/ResetAccountRoute/ResetAccountRoute';
-import UsernameChangeRoute from './Routes/UsernameChangeRoute/UsernameChangeRoute';
-import Gameroom from './Components/Gameroom/Gameroom';
+
+
 
 export default class App extends Component {
   state = {
@@ -34,7 +35,8 @@ export default class App extends Component {
       shipTileValues: [],
       resumedGame: null,
       shipsReady: null,
-    }
+    },
+    resultData: null
   };
 
   setGameData = (gameData) => {
@@ -63,6 +65,17 @@ export default class App extends Component {
     })
   };
 
+  setResultData = (player, gameId, playerUsername, opponentUsername) => {
+    this.setState({
+      resultData: {
+        player: player,
+        game: gameId,
+        playerUsername,
+        opponentUsername
+      }
+    });
+  }
+
   render() {
     return (
       <main>
@@ -70,66 +83,60 @@ export default class App extends Component {
           <Route
             exact
             path={'/'}
-            component={LandingRoute}
+            component={Landing}
           />
+
           <PublicOnlyRoute
             exact
             path={'/signup'}
-            component={SignupRoute}
+            component={Signup}
           />
+
           <PublicOnlyRoute
             exact
             path={'/login'}
-            component={LoginRoute}
+            component={Login}
           />
+
           <PrivateOnlyRoute
             exact
             path={'/help'}
-            component={HelpRoute}
+            component={Help}
           />
+
           <PrivateOnlyRoute
             exact
             path={'/dashboard'}
-            component={() => <DashboardRoute 
+            component={() => <Dashboard
               setGameData={this.setGameData}
-              resetDefaultGameData= {this.resetDefaultGameData} />}
+              resetDefaultGameData={this.resetDefaultGameData} />}
           />
-          <PrivateOnlyRoute
-            exact
-            path={'/setting'}
-            component={SettingRoute}
-          />
+
           <PrivateOnlyRoute
             exact
             path={'/result'}
-            component={ResultRoute}
+            component={() => <Result
+              results={this.state.resultData}
+            />
+            }
           />
+
           <PrivateOnlyRoute
             exact
             path={'/gameroom'}
-            component={() => <Gameroom
+            component={() => <GameBoard
               gameData={this.state.gameData}
+              setResults={this.setResultData}
             />}
           />
+
           <PrivateOnlyRoute
             exact
-            path={'/deleteAccount'}
-            component={DeleteAccountRoute}
-          />
-          <PrivateOnlyRoute
-            exact
-            path={'/ResetAccount'}
-            component={ResetAccountRoute}
-          />
-          <PrivateOnlyRoute
-            exact
-            path={'/passwordChange'}
-            component={PasswordChangeRoute}
-          />
-          <PrivateOnlyRoute
-            exact
-            path={'/UsernameChange'}
-            component={UsernameChangeRoute}
+            path={'/history'}
+            component={() => <GameHistory
+              setResults={this.setResultData}
+            />
+            }
           />
           <Route
             component={NotFoundRoute}

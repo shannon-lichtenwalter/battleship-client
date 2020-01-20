@@ -4,6 +4,7 @@ import Button from '../Button/Button';
 import Footer from '../Footer/Footer';
 import Banner from '../Banner/Banner';
 import './Help.css';
+import Header from '../Header/Header';
 
 class Help extends Component {
 
@@ -11,6 +12,7 @@ class Help extends Component {
     return (
       <div>
         <Banner />
+        <Header />
         
         <div className='help'>
           <h1>Help</h1>
@@ -39,8 +41,8 @@ class Help extends Component {
           </div>
 
           <Button onClick={() => {
-            this.props.history.push('/dashboard')
-          }}> Exit
+            this.props.history.goBack();
+          }}> Back
           </Button>
 
           <Footer />

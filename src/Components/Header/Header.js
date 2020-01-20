@@ -8,22 +8,36 @@ import './Header.css'
 class Header extends Component {
 
   render() {
+
+    let firstButton = null;
+
+    if (this.props.location.pathname !== '/dashboard') {
+      firstButton = <Button onClick={() => {
+        this.props.history.push('/dashboard')
+      }}> Dashboard
+          </Button>
+    } else {
+      firstButton = <Button onClick={() => {
+        this.props.history.push('/history')
+      }}> History
+          </Button>
+    }
+
+
+
     return (
       <div>
         <Banner />
-        
+
         <header>
-          <Button onClick={() => {
-            this.props.history.push('/setting')
-          }}> Setting
-          </Button>
+          {firstButton}
 
           <Button onClick={() => {
             this.props.history.push('/help')
           }}> Help
           </Button>
 
-          <Button onClick={( ) => {
+          <Button onClick={() => {
             TokenService.clearAuthToken()
             this.props.history.push('/login')
           }}>

@@ -1,0 +1,33 @@
+.game-history-list {
+    border: 0.1rem solid white; 
+    width: 65%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 1rem;
+    background-color: rgb(30, 52, 90);
+}
+
+.gameHistory {
+    margin-top: 8rem;
+}
+
+.game-history-li {
+    display: flex;
+    /* border-bottom: 1px solid white; */
+}
+
+
+
+.game-history-region {
+    width: 50%;
+    /* text-align: left; */
+    /* border:1px solid red; */
+}
+
+.player-Win {
+    color: green;
+}
+
+.player-Loss {
+    color: red;
+}
