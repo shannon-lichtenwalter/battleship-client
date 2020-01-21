@@ -41,5 +41,9 @@ li {
   .helpIB {
     width: 65%;
   }
+
+  Footer {
+    margin-bottom: 2rem;
+  }
 }
 

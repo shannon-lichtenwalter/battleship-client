@@ -47,4 +47,8 @@ Button {
   .results-ul {
     width: 65%;
   }
+
+  .results-ul li {
+    font-size: 1.5rem;
+  }
 }

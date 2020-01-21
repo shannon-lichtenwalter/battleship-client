@@ -103,4 +103,8 @@ h2 > span.username {
   .stat-box p {
     font-size: 1.6rem;
   }
+
+  Footer {
+    margin-bottom: 2rem;
+  }
 }
