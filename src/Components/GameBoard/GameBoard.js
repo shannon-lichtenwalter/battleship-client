@@ -30,8 +30,7 @@ class GameBoard extends React.Component {
     socket: null,
     error: null,
     winnerSet: false,
-    // playerUsername: '',
-    // opponentUsername: ''
+    whoWon: null
   }
 
   setError = (err) => {
@@ -43,6 +42,12 @@ class GameBoard extends React.Component {
   setShipsReady = () => {
     this.setState({
       shipsReady: true
+    })
+  }
+
+  setOpponentShipsReady = () => {
+    this.setState({
+      opponentShipsReady: true
     })
   }
 
@@ -92,9 +97,10 @@ class GameBoard extends React.Component {
     });
 
 
-    socket.on('win', () => {
+    socket.on('win', (data) => {
       this.setState({
-        winnerSet: true
+        winnerSet: true,
+        whoWon:data.winner
       })
     });
 
@@ -104,16 +110,27 @@ class GameBoard extends React.Component {
         opponentUsername: data.usernames.opponent
       })
     });
+
+    socket.on('error-message', (e) => {
+      this.setState({
+        error: e.error
+      })
+    });
+
+    socket.on('closed', () => {
+      this.setState({
+        error: 'You have idled for too long, please navigate back to this match from dashboard if you wish to continue.'
+      })
+    })
   }
 
   handleResults = () => {
     let player = this.state.playerNum;
     let gameId = this.state.gameId;
-
-
+    let playerWinBool = this.state.whoWon === this.state.playerNum ? true: false; 
 
     // this.props.setResults(player, 2, 'my username', 'my opponents username');
-    this.props.setResults(player, gameId, this.state.playerUsername, this.state.opponentUsername);
+    this.props.setResults(player, gameId, this.state.playerUsername, this.state.opponentUsername, playerWinBool);
     this.props.history.push('/result');
   }
 
@@ -122,6 +139,11 @@ class GameBoard extends React.Component {
     let errorMessage = this.state.error
       ? <p className='errorMessage'>Uh oh! Something went wrong: {this.state.error}</p>
       : null;
+
+    let versusHeader = this.state.playerUsername && this.state.opponentUsername
+      ? <h2>{this.state.playerUsername + ' versus ' + this.state.opponentUsername}</h2>
+      : <h2>Waiting for Opponent...</h2>;
+
 
     let userGrid = this.state.socket
       ? <UserGrid
@@ -140,7 +162,9 @@ class GameBoard extends React.Component {
         setError={this.setError}
         clearError={this.clearError}
         playerUsername={this.state.playerUsername}
-        opponentUsername={this.state.opponentUsername} />
+        opponentUsername={this.state.opponentUsername} 
+        opponentShipsReady={this.state.opponentShipsReady}
+        setOpponentShipsReady={this.setOpponentShipsReady}/>
       : null;
 
     let opponentGrid = (this.state.shipsReady && this.state.opponentShipsReady && this.state.socket)
@@ -155,8 +179,13 @@ class GameBoard extends React.Component {
         playerNum={this.state.playerNum}
         gameStart={this.state.shipsReady && this.state.opponentShipsReady}
         playerUsername={this.state.playerUsername}
-        opponentUsername={this.state.opponentUsername} />
-      : <p> Waiting For Both Players to Set Their Ships ! </p>;
+        opponentUsername={this.state.opponentUsername} 
+        winnerSet={this.state.winnerSet}/>
+      : null;
+
+
+    let waitingOnOpponent = (this.state.shipsReady && !this.state.opponentShipsReady)
+      ? <p> Waiting For Both Players to Set Their Ships ! </p> : null;
 
 
     let resultButton = this.state.winnerSet ?
@@ -171,20 +200,21 @@ class GameBoard extends React.Component {
       : null;
 
 
+
+  
     return (
       <div className='gameroom'>
         <Banner />
         {errorMessage}
 
-        <h2>{this.state.playerUsername + ' versus ' + this.state.opponentUsername}</h2>
+        {versusHeader}
 
         <div className='grid-box'>
           {userGrid}
           {opponentGrid}
         </div>
+        {waitingOnOpponent}
 
-        {/* This is only for testing purposes */}
-        <Button onClick={() => this.handleResults()}>See Your Results!</Button>
         {resultButton}
         {chat}
 

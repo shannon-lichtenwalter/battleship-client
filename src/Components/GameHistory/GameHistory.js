@@ -21,7 +21,6 @@ class GameHistory extends React.Component {
     componentDidMount = () => {
         LoadGameApiService.getGameHistory()
             .then(data => {
-                console.log(data);
                 this.setState({
                     history: data
                 })
@@ -30,8 +29,8 @@ class GameHistory extends React.Component {
 
 
 
-    handleInspect = (player, gameId, playerUsername, opponentUsername) => {
-        this.props.setResults(player, gameId, playerUsername, opponentUsername);
+    handleInspect = (player, gameId, playerUsername, opponentUsername, playerWin) => {
+        this.props.setResults(player, gameId, playerUsername, opponentUsername, playerWin);
         this.props.history.push('/result');
     }
 
@@ -70,7 +69,7 @@ class GameHistory extends React.Component {
                             <p>{winnerUsername} won by {winReason}</p>
                         </div>
                         <div className='game-history-region'>
-                            <Button onClick={() => this.handleInspect(playerString, game.game_id, playerUsername, opponentUsername)}>Inspect</Button>
+                            <Button onClick={() => this.handleInspect(playerString, game.game_id, playerUsername, opponentUsername, winBool)}>Inspect</Button>
                         </div>
                     </li>
                 );

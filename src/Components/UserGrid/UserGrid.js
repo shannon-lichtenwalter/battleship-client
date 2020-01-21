@@ -44,6 +44,7 @@ class UserGrid extends React.Component {
         if (this.props.socket) {
             this.props.socket.on('response', data => {
                 if (data) {
+
                     this.props.changeTurn();
                     let ship = null;
                     if (data.ship === 'aircraftCarrier') {
@@ -68,6 +69,9 @@ class UserGrid extends React.Component {
                             message,
                             opponentShots: [...this.state.opponentShots, data.target]
                         })
+                    }
+                    if(!this.props.opponentShipsReady) {
+                        this.props.setOpponentShipsReady();
                     }
                 }
             })

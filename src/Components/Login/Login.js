@@ -14,40 +14,50 @@ class Login extends Component {
 
   state = { error: null }
 
+  resetError = () => {
+    this.setState({
+      error:null
+    })
+  }
+
   firstInput = React.createRef()
 
   handleSubmit = ev => {
-    ev.preventDefault()
-    const { username, password } = ev.target
+    ev.preventDefault();
+    const { username, password } = ev.target;
+    
+    let user = username.value.split(' ').join('');
 
-    this.setState({ error: null })
     AuthApiService.postLogin({
-      username: username.value,
+      username: user,
       password: password.value,
     })
       .then(res => {
-        username.value = ''
-        password.value = ''
-        TokenService.saveAuthToken(res.authToken)
+        username.value = '';
+        password.value = '';
+        TokenService.saveAuthToken(res.authToken);
       
-        this.props.history.push('/dashboard')
+        this.props.history.push('/dashboard');
       })
       .catch(res => {
         this.setState({ error: res.error })
-      })
+      });
   }
 
   componentDidMount() {
-    this.firstInput.current.focus()
+    this.firstInput.current.focus();
   }
 
   render() {
+    let errorMessage = this.state.error ? <p className='errorMessage'>{this.state.error}</p>: null;
+
     return (
       <div className='login'>
         <Banner />
         
         <h1>Login</h1>
-        <form className='loginform' onSubmit={event => this.handleSubmit(event)}>
+        
+        <form className='loginform' onSubmit={event => this.handleSubmit(event)} onChange={() => this.resetError()}>
           <div>
             <Label htmlFor='login-username-input'>Username<Required /></Label>
             <Input
@@ -67,7 +77,7 @@ class Login extends Component {
               required
             />
           </div>
-
+          {errorMessage}
           <div className='loginbtn'>
             <Button type='submit'>Login</Button>
             {' '}
