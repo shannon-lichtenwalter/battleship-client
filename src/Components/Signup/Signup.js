@@ -11,13 +11,13 @@ class Signup extends Component {
   static defaultProps = {
     onRegistrationSuccess: () => { }
   };
-  
+
   state = { error: null };
   firstInput = React.createRef();
 
   handleSubmit = (ev) => {
     ev.preventDefault()
-    const { username, password, email } = ev.target
+    const { username, password } = ev.target
 
     let user = username.value;
     let pass = password.value;
@@ -25,27 +25,25 @@ class Signup extends Component {
     AuthApiService.postUser({
       username: user,
       password: pass,
-      email: email.value
     })
       .then(() => {
 
-        email.value = ''
         username.value = ''
         password.value = ''
 
         AuthApiService.postLogin({
-          username:user,
-          password:pass
+          username: user,
+          password: pass
         })
-        .then((res) => {
+          .then((res) => {
 
-          TokenService.saveAuthToken(res.authToken);
+            TokenService.saveAuthToken(res.authToken);
 
-          this.props.history.push('/dashboard');
+            this.props.history.push('/dashboard');
 
-        })
-        .catch(() => this.props.history.push('/login'))
-        
+          })
+          .catch(() => this.props.history.push('/login'))
+
       })
       .catch(res => {
         this.setState({ error: res.error })
@@ -58,28 +56,18 @@ class Signup extends Component {
   };
 
   render() {
-    let errorMessage = this.state.error ? <p className='errorMessage' aria-live='polite'>{this.state.error}</p>: null;
+    let errorMessage = this.state.error ? <p className='errorMessage' aria-live='polite'>{this.state.error}</p> : null;
     return (
       <section className='signup'>
         <Banner />
         <h1>Sign up</h1>
-        
-        <form className='signupform' onSubmit={this.handleSubmit}>
 
-          <div>
-            <Label htmlFor='signup-email-input'>Enter your Email<Required /></Label>
-            <Input
-              ref={this.firstInput}
-              id='signup-email-input'
-              name='email'
-              required
-              aria-required
-            />
-          </div>
+        <form className='signupform' onSubmit={this.handleSubmit}>
 
           <div>
             <Label htmlFor='signup-username-input'>Choose a username<Required /></Label>
             <Input
+              ref={this.firstInput}
               id='signup-username-input'
               name='username'
               required
@@ -111,12 +99,12 @@ class Signup extends Component {
           <div className='btnLink'>
             <Link to='/login'>Already have an account?</Link>
           </div>
-        
+
         </form>
       </section>
     );
   };
-  
+
 };
 
 export default withRouter(Signup);
