@@ -157,9 +157,9 @@
     }
 }
 
-@media screen and (min-width: 1030px) {
+@media screen and (min-width: 1600px) {
     .UserGrid {
-        width: 39.54rem;
+        width: 39.56rem;
     }
 
     .UserContainer h2 {
