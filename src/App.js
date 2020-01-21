@@ -12,12 +12,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import GameHistory from './Components/GameHistory/GameHistory';
 import GameBoard from './Components/GameBoard/GameBoard';
 import Result from './Components/Result/Result';
-
-
-
 import NotFoundRoute from './Routes/NotFoundRoute/NotFoundRoute';
-
-
 
 export default class App extends Component {
   state = {

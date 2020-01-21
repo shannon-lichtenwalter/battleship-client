@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Button from '../Button/Button';
 import Footer from '../Footer/Footer';
-import Banner from '../Banner/Banner';
 import './Help.css';
 import Header from '../Header/Header';
 
@@ -11,7 +10,6 @@ class Help extends Component {
   render() {
     return (
       <div>
-        <Banner />
         <Header />
         
         <div className='help'>

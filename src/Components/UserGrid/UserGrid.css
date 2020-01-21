@@ -16,23 +16,134 @@
 }
 
 .column {
-    width: 9.2%;
+    width: 9.03%;
     font-size: 1rem;
 }
 
-@media screen and (min-width: 750px) {
-    .column {
-        width: 10%;
+@media screen and (min-width: 350px) {
+    .UserGrid {
+        width: 20.08rem;
+    }
+}
+
+@media screen and (min-width: 370px) {
+    .UserGrid {
+        width: 20.65rem;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .UserGrid {
+        width: 20.9rem;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    .UserGrid {
+        width: 22.3rem;
+    }
+}
+
+@media screen and (min-width: 414px) {
+    .UserGrid {
+        width: 23.1rem;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    .UserGrid {
+        width: 25.2rem;
+        
+    }
+
+    .UserContainer h2 {
+        margin-top: 6rem;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .UserGrid {
+        width: 24.02rem;
+    }
+
+    .UserContainer h2 {
+        margin-top: 7rem;
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .UserGrid {
+        width: 26.55rem;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .UserGrid {
+        width: 29.02rem;
+    }
+
+    .UserContainer h2 {
+        margin-top: 8rem;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .UserGrid {
+        width: 31.6rem;
+    }
+
+    .UserContainer h2 {
+        margin-top: 8.3rem;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .UserGrid {
+        width: 33.13rem;
+    }
+
+    .UserContainer h2 {
+        margin-top: 11rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .UserGrid {
+        width: 36.4rem;
+    }
+
+    .UserContainer h2 {
+        margin-top: 14rem;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .UserGrid {
+        width: 40.29rem;
+    }
+
+    .UserContainer h2 {
+        margin-top: 16rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .UserGrid {
+        width: 48rem;
+    }
+
+    .UserContainer h2 {
+        margin-top: 20rem;
     }
 }
 
 @media screen and (min-width: 1025px) {
-    .column {
-        width: 20%;
+    .UserContainer h2 {
+        margin-top: 12rem;
     }
 
-    .UserContainer h2 {
-        margin-top: 10rem;
+    .UserGrid {
+        width: 30.1rem;
     }
 
 }

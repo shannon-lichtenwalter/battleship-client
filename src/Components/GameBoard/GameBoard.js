@@ -91,7 +91,6 @@ class GameBoard extends React.Component {
       })
     });
 
-
     socket.on('win', () => {
       this.setState({
         winnerSet: true
@@ -109,8 +108,6 @@ class GameBoard extends React.Component {
   handleResults = () => {
     let player = this.state.playerNum;
     let gameId = this.state.gameId;
-
-
 
     this.props.setResults(player, 2, 'my username', 'my opponents username');
     // this.props.setResults(player, gameId, this.state.playerUsername, this.state.opponentUsername);
@@ -158,18 +155,15 @@ class GameBoard extends React.Component {
         opponentUsername={this.state.opponentUsername} />
       : <p> Waiting For Both Players to Set Their Ships ! </p>;
 
-
     let resultButton = this.state.winnerSet ?
-      <Button onClick={() => this.handleResults()}>See Your Results!</Button>
+      <Button onClick={() => this.handleResults()}>See Your Results !</Button>
       : null;
-
 
     let chat = this.state.socket
       ? <Chat
         socket={this.state.socket}
         room={this.state.room} />
       : null;
-
 
     return (
       <div className='gameroom'>

@@ -19,9 +19,128 @@
   margin-top: 5rem;
 }
 
+@media screen and (min-width: 350px) {
+  .OpponentGrid {
+      width: 20.08rem;
+  }
+}
+
+@media screen and (min-width: 370px) {
+  .OpponentGrid {
+      width: 20.65rem;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .OpponentGrid {
+      width: 20.85rem;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .OpponentGrid {
+    width: 22.3rem;
+  }
+}
+
+@media screen and (min-width: 414px) {
+  .OpponentGrid {
+    width: 23.1rem;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .OpponentGrid {
+    width: 25.2rem;
+  }
+
+  .OpponentGrid h2 {
+    margin-top: 6rem;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .OpponentGrid {
+    width: 24.02rem;
+  }
+
+  .OpponentContainer h2 {
+    margin-top: 7rem;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .OpponentGrid {
+    width: 26.55rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .OpponentGrid {
+    width: 29.02rem;
+  }
+
+  .OpponentContainer h2 {
+    margin-top: 8rem;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .OpponentGrid {
+    width: 31.6rem;
+  }
+
+  .OpponentContainer h2 {
+    margin-top: 8.3rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .OpponentGrid {
+    width: 33.13rem;
+  }
+
+  .OpponentContainer h2 {
+    margin-top: 11rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .OpponentGrid {
+    width: 36.4rem;
+  }
+
+  .OpponentContainer h2 {
+    margin-top: 14rem;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .OpponentGrid {
+    widows: 40.29rem;
+  }
+
+  .OpponentContainer h2 {
+    margin-top: 16rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .OpponentGrid {
+    width: 48rem;
+  }
+
+  .OpponentContainer h2 {
+    margin-top: 20rem;
+  }
+}
+
 @media screen and (min-width: 1025px) {
   .OpponentContainer h2 {
-    margin-top: 10rem;
-    font-size: 2.5rem;
+    margin-top: 12rem;
+  }
+
+  .OpponentGrid {
+    width: 30.1rem;
   }
 }

@@ -188,8 +188,13 @@ class Result extends Component {
         </ul>
 
         <Button onClick={() => {
-          this.props.history.push('/newgame')
+          this.props.history.push('/gameroom')
         }}> New Game
+        </Button>
+
+        <Button onClick={() => 
+          this.props.history.push('/dashboard')
+        }> Exit
         </Button>
 
         <Footer />
