@@ -24,4 +24,6 @@ describe('GameBoard component', () => {
     ReactDOM.render(<GameBoard gameData={gameData}/>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
-})
+});
+
+

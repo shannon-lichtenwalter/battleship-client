@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-//import { BrowserRouter as Link } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
 import Button from '../Button/Button';
 import Footer from '../Footer/Footer';
 import './Result.css';
 import LoadGameApiService from '../../Services/load-game-api-service';
 import Header from '../Header/Header';
-
 
 class Result extends Component {
 
@@ -168,7 +166,6 @@ class Result extends Component {
       <div className='result'>
         <Header />
 
-
         <h1>Result</h1>
         <ul className='results-ul'>
           <li><span className='results-left'>Winner: </span>
@@ -188,73 +185,14 @@ class Result extends Component {
             
           <li><span className='results-left'>Shots Missed: </span>
             <span className='results-right'>{this.state.totalMisses}</span></li>
-
-
-
-
-
         </ul>
-
 
         <Button onClick={() => {
           this.props.history.push('/newgame')
         }}> New Game
         </Button>
 
-        <Button onClick={() => {
-          this.props.history.push('/dashboard')
-        }}> Exit
-        </Button>
-      {/* <div>
-        <Banner />
-
-        <div className='result'>
-          <h1>Result</h1>
-          
-          <div className='resultList'>
-            <div className='result-box'>
-              <h4 className='result-title'>Who Win</h4>
-              <p className='result-para'>{this.state.winner}</p>
-            </div>
-
-            <div className='result-box'>
-              <h4 className='result-title'>Who Lose</h4>
-              <p className='result-para'>{this.state.loser}</p>
-            </div>
-
-            <div className='result-box'>
-              <h4 className='result-title'>Hit Ratio</h4>
-              <p className='result-para'>{this.state.hRatio}</p>
-            </div>
-
-            <div className='result-box'>
-              <h4 className='result-title'>Missed</h4>
-              <p className='result-para'>{this.state.missed} times</p>
-            </div>
-
-            <div className='result-box'>
-              <h4 className='result-title'>Shots Fired</h4>
-              <p className='result-para'>{this.state.totalShots} times</p>
-            </div>
-          </div>
-
-          <Button className='resultbtn' onClick={() => {
-            this.props.history.push('/rematch')
-            }}> Rematch
-          </Button>
-
-          <Button className='resultbtn' onClick={() => {
-            this.props.history.push('/newgame')
-            }}> New Game
-          </Button>
-
-          <Button className='resultbtn' onClick={() => {
-            this.props.history.push('/dashboard')
-            }}> Exit
-          </Button>
-
-          <Footer />
-        </div> */}
+        <Footer />
       </div>
     );
   };

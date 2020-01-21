@@ -222,7 +222,6 @@ class UserGrid extends React.Component {
 
         @params value - value ( example - 'A1') of currently selected tile
         @params idNum - index of currently selected tile.
-
     */
     handleCheckValue = (value, idNum) => {
         // The following lines are used to see whether or not the tile you are selecting is found within
@@ -256,9 +255,9 @@ class UserGrid extends React.Component {
                     }, () => this.handleCheckBoatLength()) // Callback to see whether tile filled boat reqs
                 }
                 /*
-                     The following calls setState for ship cells other than the first cell. Ship arrangement
-                     is based on the first cell being placed. There is a valid max and min for both horizontal
-                     and vertical ship alignment 
+                    The following calls setState for ship cells other than the first cell. Ship arrangement
+                    is based on the first cell being placed. There is a valid max and min for both horizontal
+                    and vertical ship alignment 
                 */
                 else {
                     let lastIdNum = idNum;
@@ -509,8 +508,6 @@ class UserGrid extends React.Component {
 
     /*
         Display placement error message, if applicable
-
-
         @return - String message displaying placement error, or null
     */
     messageCreator = () => {
@@ -520,9 +517,6 @@ class UserGrid extends React.Component {
             return null
         }
     }
-
-
-
 
     /*
         Function called from render to display the UserGrid, the component which the user's ships
@@ -566,12 +560,12 @@ class UserGrid extends React.Component {
     /*
         The following function closes socket listener when the component unmounts
     */
+
     componentWillUnmount() {
         if (this.props.socket) {
             this.props.socket.close()
         }
-    }
-
+    };
 
     render() {
         return (

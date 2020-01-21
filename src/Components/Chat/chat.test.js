@@ -42,4 +42,6 @@ describe(`Chat component`, () => {
         expect(wrapper.state().messages[0]).toHaveLength(6)
     })
 
-})
+});
+
+

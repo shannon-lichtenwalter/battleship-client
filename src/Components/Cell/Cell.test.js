@@ -46,9 +46,9 @@ describe('Cell component', () => {
         const id = 'A1'
         const wrapper = mount(<Cell shipTileValue={shipTileValues} id={id}/>)
         expect(wrapper.find('Cell').hasClass('ship'))
-   })
+  })
 
-   it(`Changes class to 'shot' if current cell id is located in the 'opponentShots' array located
+  it(`Changes class to 'shot' if current cell id is located in the 'opponentShots' array located
       in the state of the UserGrid Component (inherently a ship cell)`, () => {
         const opponentShots = ['A1', 'A2', 'A3', 'A4']
         const id = 'A1'
@@ -64,5 +64,6 @@ describe('Cell component', () => {
     wrapper.find('Cell').simulate('click')
     expect(toJson(wrapper)).toMatchSnapshot()
   })
+});
 
-})
+

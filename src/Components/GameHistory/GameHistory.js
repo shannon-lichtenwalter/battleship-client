@@ -5,6 +5,7 @@ import './GameHistory.css';
 import Button from '../Button/Button';
 import Header from '../Header/Header';
 import './GameHistory.css';
+import Footer from '../Footer/Footer';
 
 class GameHistory extends React.Component {
     state = {
@@ -28,19 +29,11 @@ class GameHistory extends React.Component {
             })
     }
 
-
-
     handleInspect = (gameId, playerUsername, opponentUsername) => {
-
-
-
         // this.props.setResults(player, 2);
         this.props.setResults('player2', gameId, playerUsername, opponentUsername);
         this.props.history.push('/result');
     }
-
-
-
 
     render() {
         let completedGames = 'No game history availiable';
@@ -62,7 +55,6 @@ class GameHistory extends React.Component {
                 else if (game.game_status === 'expired') winReason = 'default';
                 else if (game.game_status === 'forfeited') winReason = 'forfeit';
 
-
                 return (
                     <li key={game.game_id} className='game-history-li'>
                         <div className='game-history-region'>
@@ -70,13 +62,13 @@ class GameHistory extends React.Component {
                             <p>{winnerUsername} won by {winReason}</p>
                         </div>
                         <div className='game-history-region'>
-                            <Button onClick={() => this.handleInspect(game.game_id, playerUsername, opponentUsername)}>Inspect</Button>
+                            <Button onClick={() => this.handleInspect(game.game_id, playerUsername, opponentUsername)}>
+                                Inspect
+                            </Button>
                         </div>
                     </li>
                 );
             })
-
-
         }
 
         return (
@@ -84,12 +76,17 @@ class GameHistory extends React.Component {
                 <Header />
                 {userWelcome}
                 <h2>Game History</h2>
+                
                 <ul className='game-history-list'>
                     {completedGames}
                 </ul>
+
+                <Footer />
             </div>
         );
     }
 }
 
 export default withRouter(GameHistory);
+
+
