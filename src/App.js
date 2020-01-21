@@ -70,13 +70,14 @@ export default class App extends Component {
     })
   };
 
-  setResultData = (player, gameId, playerUsername, opponentUsername) => {
+  setResultData = (player, gameId, playerUsername, opponentUsername, playerWin) => {
     this.setState({
       resultData: {
         player: player,
         game: gameId,
         playerUsername,
-        opponentUsername
+        opponentUsername,
+        playerWin
       }
     });
   }
