@@ -208,7 +208,7 @@ class GameBoard extends React.Component {
       <div className='gameroom'>
         <Header />
         {errorMessage}
-        {versusHeader}
+        {!this.state.error && versusHeader}
         <div className='grid-box'>
           {userGrid}
           {opponentGrid}
