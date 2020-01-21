@@ -175,8 +175,8 @@ class GameBoard extends React.Component {
       <div className='gameroom'>
         <Banner />
         {errorMessage}
-
-        <h2>{this.state.playerUsername + ' versus ' + this.state.opponentUsername}</h2>
+        <h2>{!this.state.opponentUsername && 'Looking for opponent...'}</h2>
+        <h2>{this.state.opponentUsername && (this.state.playerUsername + ' versus ' + this.state.opponentUsername)}</h2>
 
         <div className='grid-box'>
           {userGrid}

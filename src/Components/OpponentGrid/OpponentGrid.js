@@ -45,17 +45,17 @@ class OpponentGrid extends React.Component {
       ship = 'Aircraft Carrier'
     }
     if (result === 'hit') {
-      let message = `Direct Hit on ${this.props.opponentUsername}${this.props.opponentUsername.charAt(this.props.opponentUsername.length-1) === 's' 
-      ? '\'' 
-      : '\'s'} 
-      ${ship.charAt(0).toUpperCase() + ship.slice(1)}!`
-      
-      if(sunk){
-          message= `You sunk ${this.props.opponentUsername}${this.props.opponentUsername.charAt(this.props.opponentUsername.length-1) === 's' 
-          ? '\'' 
-          : '\'s'} 
-          ${ship.charAt(0).toUpperCase() + ship.slice(1)}!`;
-      };
+        let message = `Direct Hit on ${this.props.opponentUsername}${this.props.opponentUsername.charAt(this.props.opponentUsername.length-1) === 's' 
+        ? '\'' 
+        : '\'s'} 
+        ${ship.charAt(0).toUpperCase() + ship.slice(1)}!`
+        
+        if(sunk){
+            message= `You sunk ${this.props.opponentUsername}${this.props.opponentUsername.charAt(this.props.opponentUsername.length-1) === 's' 
+            ? '\'' 
+            : '\'s'} 
+            ${ship.charAt(0).toUpperCase() + ship.slice(1)}!`;
+        };
 
       this.setState({
         result: 'hit',

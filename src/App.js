@@ -12,6 +12,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import GameHistory from './Components/GameHistory/GameHistory';
 import GameBoard from './Components/GameBoard/GameBoard';
 import Result from './Components/Result/Result';
+import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary';
 
 
 
@@ -107,41 +108,42 @@ export default class App extends Component {
             path={'/help'}
             component={Help}
           />
-
-          <PrivateOnlyRoute
-            exact
-            path={'/dashboard'}
-            component={() => <Dashboard
-              setGameData={this.setGameData}
-              resetDefaultGameData={this.resetDefaultGameData} />}
-          />
-
-          <PrivateOnlyRoute
-            exact
-            path={'/result'}
-            component={() => <Result
-              results={this.state.resultData}
+          <ErrorBoundary>
+            <PrivateOnlyRoute
+              exact
+              path={'/dashboard'}
+              component={() => <Dashboard
+                setGameData={this.setGameData}
+                resetDefaultGameData={this.resetDefaultGameData} />}
             />
-            }
-          />
 
-          <PrivateOnlyRoute
-            exact
-            path={'/gameroom'}
-            component={() => <GameBoard
-              gameData={this.state.gameData}
-              setResults={this.setResultData}
-            />}
-          />
-
-          <PrivateOnlyRoute
-            exact
-            path={'/history'}
-            component={() => <GameHistory
-              setResults={this.setResultData}
+            <PrivateOnlyRoute
+              exact
+              path={'/result'}
+              component={() => <Result
+                results={this.state.resultData}
+              />
+              }
             />
-            }
-          />
+
+            <PrivateOnlyRoute
+              exact
+              path={'/gameroom'}
+              component={() => <GameBoard
+                gameData={this.state.gameData}
+                setResults={this.setResultData}
+              />}
+            />
+
+            <PrivateOnlyRoute
+              exact
+              path={'/history'}
+              component={() => <GameHistory
+                setResults={this.setResultData}
+              />
+              }
+            />
+          </ErrorBoundary>
           <Route
             component={NotFoundRoute}
           />
