@@ -14,10 +14,8 @@ class Landing extends Component {
         <header className='landing'>
           <h1>BATTLESHIP</h1>
             <nav className='arrow-nav' aria-label='click to view app info'>
-              <a href='#app-info'>
-                <div className='arrow'> 
-                </div>
-              </a>
+              <div className='arrow' onClick={()=> window.scrollTo(0,document.body.scrollHeight)}>
+              </div>
             </nav>
         </header>
 

@@ -165,7 +165,7 @@ class Dashboard extends Component {
           
           <h4>Return to an Active Game:</h4>
           <ul className='activeGames'>
-            {this.state.myTurnGames.length !== 0 && <h4>Your Turn!</h4>}
+            <li>{this.state.myTurnGames.length !== 0 && <h4>Your Turn!</h4>}</li>
             {this.state.myTurnGames && this.state.myTurnGames.map((game, index) => {
               return <ActiveGameListItem
                 key={index}
@@ -176,7 +176,7 @@ class Dashboard extends Component {
                 deletingActiveGame={this.deletingActiveGame}
               />
             })}
-            {this.state.opponentTurnGames.length !== 0 && <h4>Waiting For Opponent...</h4>}
+            <li>{this.state.opponentTurnGames.length !== 0 && <h4>Waiting For Opponent...</h4>}</li>
             {this.state.opponentTurnGames && this.state.opponentTurnGames.map((game, index) => {
             return <ActiveGameListItem 
               key={index} 

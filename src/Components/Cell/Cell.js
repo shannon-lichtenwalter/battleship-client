@@ -37,6 +37,9 @@ class Cell extends React.Component {
     else if (this.props.selected === this.props.id) {
       className += ' selected'
     }
+    else if(this.props.label){
+      className+= ' label'
+    }
     return className;
   }
 
@@ -71,7 +74,6 @@ class Cell extends React.Component {
   render() {
     return (
       <div 
-        id={this.props.label ? 'label' : ''}
         className={this.determineClassName()}
         onClick={() => this.handleClick()}
         
