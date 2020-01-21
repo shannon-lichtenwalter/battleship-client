@@ -19,6 +19,12 @@
   margin-top: 5rem;
 }
 
+.shipCounter{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
 @media screen and (min-width: 1025px) {
   .OpponentContainer h2 {
     margin-top: 8rem;

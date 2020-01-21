@@ -27,10 +27,25 @@ class GameBoard extends React.Component {
     shipTileValues: this.props.gameData.shipTileValues,
     playerUsername: this.props.gameData.playerUsername,
     opponentUsername: this.props.gameData.opponentUsername,
+    shipsCounter: {
+      'aircraftCarrier': { hit: 0, length: 5 },
+      'battleship': { hit: 0, length: 4 },
+      'cruiser': { hit: 0, length: 3 },
+      'submarine': { hit: 0, length: 3 },
+      'defender': { hit: 0, length: 2 }
+    },
     socket: null,
     error: null,
     winnerSet: false,
     whoWon: null
+  }
+
+  updateShipsCounter = (shipName) => {
+    let shipsCounter = {...this.state.shipsCounter};
+    shipsCounter[shipName].hit = shipsCounter[shipName].hit + 1;
+    this.setState({
+      shipsCounter
+    })
   }
 
   setError = (err) => {
@@ -62,7 +77,7 @@ class GameBoard extends React.Component {
   }
 
   componentDidMount = () => {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     document.title = 'Gameboard'
     const socket = io(config.API_ENDPOINT, {
       transportOptions: {
@@ -102,7 +117,7 @@ class GameBoard extends React.Component {
     socket.on('win', (data) => {
       this.setState({
         winnerSet: true,
-        whoWon:data.winner
+        whoWon: data.winner
       })
     });
 
@@ -129,7 +144,7 @@ class GameBoard extends React.Component {
   handleResults = () => {
     let player = this.state.playerNum;
     let gameId = this.state.gameId;
-    let playerWinBool = this.state.whoWon === this.state.playerNum ? true: false; 
+    let playerWinBool = this.state.whoWon === this.state.playerNum ? true : false;
 
     // this.props.setResults(player, 2, 'my username', 'my opponents username');
     this.props.setResults(player, gameId, this.state.playerUsername, this.state.opponentUsername, playerWinBool);
@@ -164,9 +179,10 @@ class GameBoard extends React.Component {
         setError={this.setError}
         clearError={this.clearError}
         playerUsername={this.state.playerUsername}
-        opponentUsername={this.state.opponentUsername} 
+        opponentUsername={this.state.opponentUsername}
         opponentShipsReady={this.state.opponentShipsReady}
-        setOpponentShipsReady={this.setOpponentShipsReady}/>
+        setOpponentShipsReady={this.setOpponentShipsReady}
+      />
       : null;
 
     let opponentGrid = (this.state.shipsReady && this.state.opponentShipsReady && this.state.socket)
@@ -181,8 +197,10 @@ class GameBoard extends React.Component {
         playerNum={this.state.playerNum}
         gameStart={this.state.shipsReady && this.state.opponentShipsReady}
         playerUsername={this.state.playerUsername}
-        opponentUsername={this.state.opponentUsername} 
-        winnerSet={this.state.winnerSet}/>
+        opponentUsername={this.state.opponentUsername}
+        winnerSet={this.state.winnerSet}
+        shipsCounter={this.state.shipsCounter}
+        updateShipsCounter={this.updateShipsCounter} />
       : null;
 
 
@@ -203,7 +221,7 @@ class GameBoard extends React.Component {
 
 
 
-  
+
     return (
       <div className='gameroom'>
         <Header />
