@@ -115,13 +115,23 @@
   }
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 834px) {
   .OpponentGrid {
-    widows: 40.29rem;
+    width: 39.64rem;
   }
 
   .OpponentContainer h2 {
     margin-top: 16rem;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .OpponentGrid {
+    widows: 40.3rem;
+  }
+
+  .OpponentContainer h2 {
+    margin-top: 17rem;
   }
 }
 
@@ -142,5 +152,15 @@
 
   .OpponentGrid {
     width: 35.51rem;
+  }
+}
+
+@media screen and (min-width: 1030px) {
+  .OpponentGrid {
+    width: 39.54rem;
+  }
+
+  .OpponentContainer h2 {
+    margin-top: 15rem;
   }
 }
