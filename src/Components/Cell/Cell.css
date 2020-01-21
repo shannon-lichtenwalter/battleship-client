@@ -4,10 +4,12 @@
   background-color:blue ;
   margin: 2px;
   font-size: 1rem;
+  color: white;
+  font-weight:bolder;
 }
 
-#label {
-  background-color: rgb(43, 162, 236);
+.label {
+  background-color: rgb(43, 162, 236, 0.5);
 }
 
 .selected {

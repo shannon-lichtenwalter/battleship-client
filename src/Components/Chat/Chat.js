@@ -32,13 +32,13 @@ export default class Chat extends React.Component {
             return(
                 <li className='chat-li' key={index}>
                     <h4 className={message.username === 'Me' ? 'chat-username chat-me' : 'chat-username chat-opponent'}>{message.username}</h4>
-                    <p className='chat-message'>{message.message}</p>
+                    <p className='chat-message' aria-live='polite'>{message.message}</p>
                 </li>
             )
         })
 
         return (
-            <div id='chat'>
+            <div id='chat' aria-label='chat-box' aria-live='polite'>
                 <ul id='chat-window'>
                     {chatHistory}
                 </ul>
@@ -46,9 +46,11 @@ export default class Chat extends React.Component {
                     event.preventDefault();
                     this.handleChatMessage(event.target.chatInput.value);
                     event.target.chatInput.value = '';
-                }}>
-                    <label htmlFor='chatInput' id='chat-label'>Chat Input</label>
-                    <input type='text' placeholder='Type your message here.' id='chatInput' />
+                }}> <fieldset>
+                        <legend>Chat with Opponent</legend>
+                        <label htmlFor='chatInput' id='chat-label'>Type Message</label>
+                        <input type='text' placeholder='Type Here' id='chatInput' aria-label='type message to opponent here' />
+                    </fieldset>
                 </form>
             </div>
         );

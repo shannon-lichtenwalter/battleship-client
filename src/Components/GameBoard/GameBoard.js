@@ -8,7 +8,7 @@ import OpponentGrid from '../OpponentGrid/OpponentGrid';
 import './GameBoard.css';
 import TokenService from '../../Services/token-service';
 import Chat from '../Chat/Chat';
-import Banner from '../Banner/Banner';
+import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 class GameBoard extends React.Component {
@@ -62,6 +62,8 @@ class GameBoard extends React.Component {
   }
 
   componentDidMount = () => {
+    window.scrollTo(0,0);
+    document.title = 'Gameboard'
     const socket = io(config.API_ENDPOINT, {
       transportOptions: {
         polling: {
@@ -204,11 +206,9 @@ class GameBoard extends React.Component {
   
     return (
       <div className='gameroom'>
-        <Banner />
+        <Header />
         {errorMessage}
-
         {versusHeader}
-
         <div className='grid-box'>
           {userGrid}
           {opponentGrid}

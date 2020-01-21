@@ -53,18 +53,18 @@ class Signup extends Component {
   };
 
   componentDidMount() {
+    document.title = 'Sign Up Page'
     this.firstInput.current.focus()
   };
 
   render() {
-    let errorMessage = this.state.error ? <p className='errorMessage'>{this.state.error}</p>: null;
+    let errorMessage = this.state.error ? <p className='errorMessage' aria-live='polite'>{this.state.error}</p>: null;
     return (
       <section className='signup'>
         <Banner />
         <h1>Sign up</h1>
         
         <form className='signupform' onSubmit={this.handleSubmit}>
-          
 
           <div>
             <Label htmlFor='signup-email-input'>Enter your Email<Required /></Label>
@@ -73,6 +73,7 @@ class Signup extends Component {
               id='signup-email-input'
               name='email'
               required
+              aria-required
             />
           </div>
 
@@ -82,6 +83,7 @@ class Signup extends Component {
               id='signup-username-input'
               name='username'
               required
+              aria-required
             />
           </div>
 
@@ -92,6 +94,7 @@ class Signup extends Component {
               name='password'
               type='password'
               required
+              aria-required
             />
           </div>
           {errorMessage}

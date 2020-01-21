@@ -44,6 +44,7 @@
 }
 
 #chatInput {
+    text-align: center;
     border: 0.1rem solid rgb(59, 59, 59);
     background-color: black;
     color: white;

@@ -540,7 +540,7 @@ class UserGrid extends React.Component {
         let x = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
         return y.map((num, index) => {
             return (
-                <div key={index} className='column'>
+                <div key={index} className='column' aria-hidden="true">
                     <Cell
                         id={num}
                         label={true}
@@ -583,9 +583,11 @@ class UserGrid extends React.Component {
                 <div className='UserGrid'>
                     {this.handleRenderGrid()}
                 </div>
-                <span className='ErrorSpan'><p>{this.messageCreator()}</p></span>
+                <span className='ErrorSpan'>
+                    <p>{this.messageCreator()}</p>
+                </span>
                 <h2>{this.handleSetShips()} </h2>
-                {this.state.message && <p>{this.state.message}</p>}
+                {this.state.message && <p aria-live='assertive'>{this.state.message}</p>}
             </div>
         )
     }

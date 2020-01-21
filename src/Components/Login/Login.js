@@ -45,7 +45,8 @@ class Login extends Component {
   }
 
   componentDidMount() {
-    this.firstInput.current.focus();
+    document.title = 'Login Page'
+    this.firstInput.current.focus()
   }
 
   render() {
@@ -65,6 +66,7 @@ class Login extends Component {
               id='login-username-input'
               name='username'
               required
+              aria-required
             />
           </div>
 
@@ -75,6 +77,7 @@ class Login extends Component {
               name='password'
               type='password'
               required
+              aria-required
             />
           </div>
           {errorMessage}

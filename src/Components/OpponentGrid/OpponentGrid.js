@@ -45,17 +45,18 @@ class OpponentGrid extends React.Component {
       ship = 'Aircraft Carrier'
     }
     if (result === 'hit') {
-      let message = `Direct Hit on ${this.props.opponentUsername}${this.props.opponentUsername.charAt(this.props.opponentUsername.length - 1) === 's'
-        ? '\''
+        let message = `Direct Hit on ${this.props.opponentUsername}${this.props.opponentUsername.charAt(this.props.opponentUsername.length-1) === 's' 
+        ? '\'' 
         : '\'s'} 
-      ${ship.charAt(0).toUpperCase() + ship.slice(1)}!`
+        ${ship.charAt(0).toUpperCase() + ship.slice(1)}!`
+        
+        if(sunk){
+            message= `You sunk ${this.props.opponentUsername}${this.props.opponentUsername.charAt(this.props.opponentUsername.length-1) === 's' 
+            ? '\'' 
+            : '\'s'} 
+            ${ship.charAt(0).toUpperCase() + ship.slice(1)}!`;
+        };
 
-      if (sunk) {
-        message = `You sunk ${this.props.opponentUsername}${this.props.opponentUsername.charAt(this.props.opponentUsername.length - 1) === 's'
-          ? '\''
-          : '\'s'} 
-          ${ship.charAt(0).toUpperCase() + ship.slice(1)}!`;
-      };
 
       this.setState({
         result: 'hit',
@@ -105,11 +106,12 @@ class OpponentGrid extends React.Component {
     let x = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
     return y.map((num, index) => {
       return (
-        <div key={index} className='column'>
-          <Cell
-            id={num}
-            label={true}
-          />
+        <div key={index} className='column' aria-hidden="true">
+          <Cell 
+            id={num} 
+            label={true} 
+            />
+
           {x.map((letter, index) => {
             if (num === 0) {
               return <Cell
@@ -249,24 +251,23 @@ class OpponentGrid extends React.Component {
       buttonDisableBool = null;
     } else {
       buttonDisableBool = (this.props.userTurn) ?
-        <div className='target'>
+        <div className='target' aria-live='polite'>
           {this.handleRenderDropDown()}
           <form onSubmit={(event) => this.handleFire(event)}>
             <button type='submit'>Fire!</button>
           </form>
         </div>
-        : <p>Waiting for {this.props.opponentUsername}{this.props.opponentUsername.charAt(this.props.opponentUsername.length - 1) === 's'
+        : <p aria-live='polite'>Waiting for {this.props.opponentUsername}{this.props.opponentUsername.charAt(this.props.opponentUsername.length - 1) === 's'
           ? '\''
           : '\'s'} move</p>;
     }
-
 
     return (
       <div className='OpponentContainer grid'>
         <div className='OpponentGrid'>
           {this.handleRenderGrid()}
         </div>
-        <h2 className='message'>{this.state.message && this.state.message} </h2>
+        <h2 className='message' aria-live='assertive'>{this.state.message && this.state.message} </h2>
         {buttonDisableBool}
       </div>
     )
