@@ -57,6 +57,7 @@ class GameBoard extends React.Component {
   }
 
   componentDidMount = () => {
+    document.title = 'Gameboard'
     const socket = io(config.API_ENDPOINT, {
       transportOptions: {
         polling: {
@@ -176,7 +177,7 @@ class GameBoard extends React.Component {
         <Banner />
         {errorMessage}
         <h2>{!this.state.opponentUsername && 'Looking for opponent...'}</h2>
-        <h2>{this.state.opponentUsername && (this.state.playerUsername + ' versus ' + this.state.opponentUsername)}</h2>
+        <h2 aria-live='polite'>{this.state.opponentUsername && (this.state.playerUsername + ' versus ' + this.state.opponentUsername)}</h2>
 
         <div className='grid-box'>
           {userGrid}

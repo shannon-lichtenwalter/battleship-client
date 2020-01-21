@@ -104,7 +104,7 @@ class OpponentGrid extends React.Component {
     let x = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
     return y.map((num, index) => {
       return (
-        <div key={index} className='column'>
+        <div key={index} className='column' aria-hidden="true">
           <Cell 
             id={num} 
             label={true} 
@@ -244,13 +244,13 @@ class OpponentGrid extends React.Component {
 
   render() {
     let buttonDisableBool = (this.props.userTurn) ?
-      <div className='target'>
+      <div className='target'aria-live='polite'>
         {this.handleRenderDropDown()}
         <form onSubmit={(event) => this.handleFire(event)}>
           <button type='submit'>Fire!</button>
         </form>
       </div>
-      : <p>Waiting for {this.props.opponentUsername}{this.props.opponentUsername.charAt(this.props.opponentUsername.length-1) === 's' 
+      : <p aria-live='polite'>Waiting for {this.props.opponentUsername}{this.props.opponentUsername.charAt(this.props.opponentUsername.length-1) === 's' 
       ? '\'' 
       : '\'s'} move</p>;
 
@@ -259,7 +259,7 @@ class OpponentGrid extends React.Component {
         <div className='OpponentGrid'>
           {this.handleRenderGrid()}
         </div>
-        <h2 className='message'>{this.state.message && this.state.message} </h2>
+        <h2 className='message' aria-live='assertive'>{this.state.message && this.state.message} </h2>
         {buttonDisableBool}
       </div>
     )

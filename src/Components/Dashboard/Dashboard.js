@@ -87,6 +87,7 @@ class Dashboard extends Component {
   //additionally, we are sorting the active games based on if it is the current user's turn or not.
   //the second fetch call is to retrieve all stats for the logged in user.
   componentDidMount() {
+    document.title = 'Welcome to your Dashboard!'
     LoadGameApiService.getAllActiveGames()
       .then(res => {
         this.setState({

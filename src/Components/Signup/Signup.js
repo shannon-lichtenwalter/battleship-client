@@ -35,6 +35,7 @@ class Signup extends Component {
   };
 
   componentDidMount() {
+    document.title = 'Sign Up Page'
     this.firstInput.current.focus()
   };
 
@@ -47,7 +48,7 @@ class Signup extends Component {
         
         <form className='signupform' onSubmit={this.handleSubmit}>
           <div role='alert'>
-            { error && <p>{ error }</p>}
+            { error && <p aria-live='polite'>{ error }</p>}
           </div>
 
           <div>
@@ -57,6 +58,7 @@ class Signup extends Component {
               id='signup-email-input'
               name='email'
               required
+              aria-required
             />
           </div>
 
@@ -66,6 +68,7 @@ class Signup extends Component {
               id='signup-username-input'
               name='username'
               required
+              aria-required
             />
           </div>
 
@@ -76,6 +79,7 @@ class Signup extends Component {
               name='password'
               type='password'
               required
+              aria-required
             />
           </div>
 
