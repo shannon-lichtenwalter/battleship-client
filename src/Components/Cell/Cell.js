@@ -71,12 +71,20 @@ class Cell extends React.Component {
     }
   }
 
+  handleHover=() => {
+    
+  }
+
   render() {
     return (
       <div 
         className={this.determineClassName()}
         onClick={() => this.handleClick()}
+<<<<<<< HEAD
         
+=======
+        onMouseOver={() => this.handleHover()}
+>>>>>>> 4aa533ae7a7e7efa2bb0d686027d757fcbc0c043
       >
         {this.props.label ? this.props.id : ''}
       </div>
