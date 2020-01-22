@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import GameBoard from './GameBoard';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { shallow } from 'enzyme'
+
 
 describe('GameBoard component', () => {
   let gameData = {
@@ -21,7 +24,7 @@ describe('GameBoard component', () => {
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<GameBoard gameData={gameData}/>, div);
+    ReactDOM.render(<Router><GameBoard gameData={gameData}/></Router>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 })
