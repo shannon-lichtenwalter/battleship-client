@@ -23,7 +23,6 @@ class OpponentGrid extends React.Component {
   //who fired the shot.
   componentDidMount = () => {
     this.props.socket.on('response', res => {
-      console.log(res);
       if (this.props.playerNum === res.playerNum) {
         this.checkForHitOrMiss(res.result, res.ship, res.sunk, res.target);
       }

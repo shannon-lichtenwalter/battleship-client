@@ -29,8 +29,7 @@ class ActiveGameListItem extends React.Component {
   //This function retrieves all game data for an active game. It sets the state of App with the data
   //depending on if the current user is player1 or player2. Then it routes the user to the gameroom.
   handleResumeGame = () => {
-    let currentUserPlayer = Number(this.props.userId) === Number(this.props.game.player1) ? 'player1' : 'player2'
-    return loadGamesApiService.resumeActiveGame(this.props.game.id, currentUserPlayer)
+    return loadGamesApiService.resumeActiveGame(this.props.game.id)
       .then(res => {
         let gameData = res;
         let storeData = {};
@@ -82,25 +81,9 @@ class ActiveGameListItem extends React.Component {
   // that the game has been forfeited and that the user who submitted the
   //forfeit request will be counted as the loser
   handleQuitGame = () => {
-    let playerNum = Number(this.props.userId) === Number(this.props.game.player1) ? 'player1' : 'player2' //param
     let gameId = this.props.game.id;
-    let opponentNum = null;
-    let opponentId = null;
-    
-    if(playerNum === 'player1'){
-      opponentNum = 'player2';
-      opponentId = this.props.game.player2;
-    } else{
-      opponentNum = 'player1';
-      opponentId = this.props.game.player1;
-    }
 
-    let opponentData = {
-      opponentNum,
-      opponentId
-    }
-
-    loadGamesApiService.quitActiveGame(gameId, playerNum, opponentData).then(res =>{
+    loadGamesApiService.quitActiveGame(gameId).then(res =>{
       this.setState({
         quitting:false
       })

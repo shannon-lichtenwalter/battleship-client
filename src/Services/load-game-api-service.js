@@ -37,8 +37,8 @@ const loadGamesApiService = {
 
 
 //retrieves the data for a resumed game
-    resumeActiveGame(gameId, playerNum){
-      return fetch(`${config.API_ENDPOINT}/api/games/activegame/${gameId}/${playerNum}`, {
+    resumeActiveGame(gameId){
+      return fetch(`${config.API_ENDPOINT}/api/games/activegame/${gameId}`, {
         method: 'GET',
         headers: {
           'content-type': 'application/json',
@@ -53,14 +53,13 @@ const loadGamesApiService = {
     },
     
 // quit active game
-    quitActiveGame(gameId, playerNum, opponentData){
-      return fetch(`${config.API_ENDPOINT}/api/games/activegame/${gameId}/${playerNum}`, {
+    quitActiveGame(gameId){
+      return fetch(`${config.API_ENDPOINT}/api/games/activegame/${gameId}`, {
         method: 'PATCH',
         headers: {
           'content-type': 'application/json',
           'authorization': `bearer ${TokenService.getAuthToken()}`
-        },
-        body: JSON.stringify(opponentData)
+        }
       })
         .then(res =>
           (!res.ok)

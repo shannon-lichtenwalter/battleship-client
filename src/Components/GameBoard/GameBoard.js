@@ -37,7 +37,6 @@ class GameBoard extends React.Component {
   updateShipsCounter = (shipName, target, sunk) => {
     let shipsCounter = {...this.state.shipsCounter};
     shipsCounter[shipName].hit = shipsCounter[shipName].hit + 1;
-
     shipsCounter[shipName].spaces = [...shipsCounter[shipName].spaces, target]
     if(sunk){
       shipsCounter[shipName].sunk = true;
