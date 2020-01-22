@@ -24,7 +24,7 @@ class OpponentGrid extends React.Component {
   componentDidMount = () => {
     this.props.socket.on('response', res => {
       if (this.props.playerNum === res.playerNum) {
-        this.checkForHitOrMiss(res.result, res.ship, res.sunk);
+        this.checkForHitOrMiss(res.result, res.ship, res.sunk, res.target);
       }
     })
   }
@@ -40,23 +40,25 @@ class OpponentGrid extends React.Component {
   }
 
   //changes the message displayed to the user if a hit/miss was made
-  checkForHitOrMiss = (result, ship, sunk) => {
-    if (ship === 'aircraftCarrier') {
-      ship = 'Aircraft Carrier'
+  checkForHitOrMiss = (result, ship, sunk, target) => {
+    let shipName = ship;
+    if (shipName === 'aircraftCarrier') {
+      shipName = 'Aircraft Carrier'
     }
     if (result === 'hit') {
-        let message = `Direct Hit on ${this.props.opponentUsername}${this.props.opponentUsername.charAt(this.props.opponentUsername.length-1) === 's' 
-        ? '\'' 
+      let message = `Direct Hit on ${this.props.opponentUsername}${this.props.opponentUsername.charAt(this.props.opponentUsername.length - 1) === 's'
+        ? '\''
         : '\'s'} 
-        ${ship.charAt(0).toUpperCase() + ship.slice(1)}!`
-        
-        if(sunk){
-            message= `You sunk ${this.props.opponentUsername}${this.props.opponentUsername.charAt(this.props.opponentUsername.length-1) === 's' 
-            ? '\'' 
-            : '\'s'} 
-            ${ship.charAt(0).toUpperCase() + ship.slice(1)}!`;
-        };
+        ${shipName.charAt(0).toUpperCase() + shipName.slice(1)}!`
 
+      if (sunk) {
+        message = `You sunk ${this.props.opponentUsername}${this.props.opponentUsername.charAt(this.props.opponentUsername.length - 1) === 's'
+          ? '\''
+          : '\'s'} 
+            ${shipName.charAt(0).toUpperCase() + shipName.slice(1)}!`;
+      };
+
+      this.props.updateShipsCounter(ship, target, sunk);
 
       this.setState({
         result: 'hit',
@@ -79,7 +81,7 @@ class OpponentGrid extends React.Component {
   };
 
   //this function makes sure a user has selected a target. If so, post request is 
-  //made to the database to determine if it was a hit or a miss on the opponents' ships.
+  //made to the database to determine if it was a hit or a miss on the opponents' ship.
   //with the response from the database we call check for Hits and check for Misses which will update
   //what the user sees based on a hit or a miss.
   handleFire = (event) => {
@@ -107,10 +109,10 @@ class OpponentGrid extends React.Component {
     return y.map((num, index) => {
       return (
         <div key={index} className='column' aria-hidden="true">
-          <Cell 
-            id={num} 
-            label={true} 
-            />
+          <Cell
+            id={num}
+            label={true}
+          />
 
           {x.map((letter, index) => {
             if (num === 0) {
@@ -125,7 +127,8 @@ class OpponentGrid extends React.Component {
               handleSelectTarget={this.handleSelectTarget}
               selected={this.state.selected}
               hits={this.state.hits}
-              misses={this.state.misses} />
+              misses={this.state.misses}
+              shipsCounter= {this.props.shipsCounter} />
           })}
         </div>
       )
@@ -245,6 +248,30 @@ class OpponentGrid extends React.Component {
     )
   }
 
+  //this function will render the visual to the user showing them their progress
+  //and how many of the opponent's ships have been hit
+  renderCounterList = () => {
+    let ships = this.props.shipsCounter;
+    let counter = [];
+    let shipName = null;
+    for (const key in ships) {
+      if (key === 'aircraftCarrier'){
+        shipName = 'Aircraft Carrier'
+      } else {
+        shipName = key.charAt(0).toUpperCase() + key.slice(1)
+      }
+
+      if (ships[key].hit / ships[key].length === 1) {
+        counter.push(`${shipName} : SUNK`)
+      } else {
+        counter.push(`${shipName} : ${ships[key].hit}/${ships[key].length}`)
+      }
+    }
+    return counter.map((ship, index) => {
+      return <li key={index}>{ship}</li>
+    })
+  }
+
   render() {
     let buttonDisableBool
     if (this.props.winnerSet) {
@@ -266,9 +293,19 @@ class OpponentGrid extends React.Component {
       <div className='OpponentContainer grid'>
         <div className='OpponentGrid'>
           {this.handleRenderGrid()}
+          
         </div>
+        
         <h2 className='message' aria-live='assertive'>{this.state.message && this.state.message} </h2>
+        <div className='progress'>
+          <h4>Progress >></h4>
+          <ul className='shipCounter'>
+            {this.renderCounterList()}
+          </ul>
+        </div>
         {buttonDisableBool}
+
+        
       </div>
     )
   }

@@ -28,6 +28,7 @@ class UserGrid extends React.Component {
             shipsReady: this.props.shipsReady,
             placementFail: false,
             resumedGame: this.props.resumedGame,
+            mySunkShipTileValues: [],
         }
     };
 
@@ -41,6 +42,27 @@ class UserGrid extends React.Component {
         from the server.
     */
     componentDidMount = () => {
+        //the following code checks to see if the user has any of their own ships sunk
+        let newValues = [...this.state.mySunkShipTileValues];
+        this.state.playerShips.map(ship => {
+            let counter = 0;
+            let shipTileValues = [];
+            this.state.opponentShots.map(shot => {
+                if (ship.spaces.includes(shot)) {
+                    counter++;
+                    shipTileValues.push(shot);
+                }
+                return null;
+            })
+            if (counter === ship.length) {
+                newValues = [...newValues, ...shipTileValues]
+            }
+            return null;
+        })
+        this.setState({
+            mySunkShipTileValues: newValues
+        })
+
         if (this.props.socket) {
             this.props.socket.on('response', data => {
                 if (data) {
@@ -60,6 +82,14 @@ class UserGrid extends React.Component {
                         } else {
                             if (data.sunk) {
                                 message = `${this.props.opponentUsername} sunk your ${ship}!`
+                                //the following code is utilized to update the state of userGrid to reflect that
+                                //a user's ship has been sunk
+                                let sunkenShip = this.state.playerShips.filter(ship => ship.name === data.ship);
+                                let values = sunkenShip[0].spaces;
+                                let newSunkValues = [...this.state.mySunkShipTileValues, ...values];
+                                this.setState({
+                                    mySunkShipTileValues: newSunkValues
+                                })
                             } else {
                                 message = `${this.props.opponentUsername} ${data.result} your ${ship}`
 
@@ -70,7 +100,7 @@ class UserGrid extends React.Component {
                             opponentShots: [...this.state.opponentShots, data.target]
                         })
                     }
-                    if(!this.props.opponentShipsReady) {
+                    if (!this.props.opponentShipsReady) {
                         this.props.setOpponentShipsReady();
                     }
                 }
@@ -560,7 +590,8 @@ class UserGrid extends React.Component {
                             shipTiles={this.state.shipOccupied}
                             allShipTiles={this.state.allShipTilesOccupied}
                             shipTileValues={this.state.shipTileValues}
-                            opponentShots={this.state.opponentShots} />
+                            opponentShots={this.state.opponentShots}
+                            mySunkShipTileValues={this.state.mySunkShipTileValues} />
                     })
                     }
                 </div>

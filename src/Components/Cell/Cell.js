@@ -20,26 +20,43 @@ class Cell extends React.Component {
 
     if (this.props.hits && this.props.hits.includes(this.props.id)) {
       className += ' hit'
-    } else if (this.props.misses && this.props.misses.includes(this.props.id)) {
-        className += ' miss'
-      }
-
-    if (this.props.shipTileValues.length > 0) {
-      if (this.props.shipTileValues.includes(this.props.id)) {
-        className += ' ship'
-        if (this.props.opponentShots && this.props.opponentShots.includes(this.props.id)) {
-          className += '-shot'
+    } 
+    else if (this.props.misses && this.props.misses.includes(this.props.id)) {
+      className += ' miss'
+    }    
+    if(this.props.shipsCounter){
+      let ships = this.props.shipsCounter;
+      for (const key in ships){
+        if(ships[key].sunk){
+          if(ships[key].spaces.includes(this.props.id)){
+            className = 'cell sunk'
+          }
         }
-      } else if (this.props.opponentShots && this.props.opponentShots.includes(this.props.id)) {
-        className += ' shot'
       }
     }
-    else if (this.props.selected === this.props.id) {
-      className += ' selected'
-    }
-    else if(this.props.label){
-      className+= ' label'
-    }
+
+    if(this.props.mySunkShipTileValues){
+      if(this.props.mySunkShipTileValues.includes(this.props.id)){
+        className += ' sunk';
+      } else {
+        if (this.props.shipTileValues.length > 0) {
+          if (this.props.shipTileValues.includes(this.props.id)) {
+            className += ' ship'
+            if (this.props.opponentShots && this.props.opponentShots.includes(this.props.id)) {
+              className += '-shot'
+            }
+          } else if (this.props.opponentShots && this.props.opponentShots.includes(this.props.id)) {
+            className += ' shot'
+          }
+        }
+      } 
+    } else if (this.props.selected === this.props.id) {
+          className += ' selected'
+        }
+        else if(this.props.label){
+          className+= ' label'
+        }
+    
     return className;
   }
 
