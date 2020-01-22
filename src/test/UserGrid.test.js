@@ -12,18 +12,18 @@ describe.only(`UserGrid Component`, () => {
         ReactDOM.unmountComponentAtNode(div)
     });
 
-    it(`Displays no ship tiles as selected by default`, () => {
+    it.skip(`Displays no ship tiles as selected by default`, () => {
         const wrapper = shallow(<UserGrid />)
         expect(toJson(wrapper)).toMatchSnapshot()
     });
 
-    it(`Selects only the cell selected (A1) for a ship tile on the first click`, () =>{
+    it.skip(`Selects only the cell selected (A1) for a ship tile on the first click`, () =>{
         const wrapper = mount(<UserGrid />)
         wrapper.find('Cell').at(12).simulate('click')
         expect(toJson(wrapper)).toMatchSnapshot()
     })
 
-    it(`Selects only valid tiles as ship tiles, and not the tiles reserved for labels`, () =>{
+    it.skip(`Selects only valid tiles as ship tiles, and not the tiles reserved for labels`, () =>{
         const wrapper = mount(<UserGrid />)
         wrapper.find('Cell').at(1).simulate('click')
         expect(toJson(wrapper)).toMatchSnapshot()

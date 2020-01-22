@@ -19,7 +19,7 @@ describe('OpponentGrid component', () => {
   
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<OpponentGrid socket={socket}/>, div);
+    ReactDOM.render(<OpponentGrid socket={socket} opponentUsername='test'/>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 })

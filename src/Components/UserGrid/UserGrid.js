@@ -47,13 +47,15 @@ class UserGrid extends React.Component {
         this.state.playerShips.map(ship => {
             let counter = 0;
             let shipTileValues = [];
-            this.state.opponentShots.map(shot => {
+            if(this.state.opponentShots){
+                this.state.opponentShots.map(shot => {
                 if (ship.spaces.includes(shot)) {
                     counter++;
                     shipTileValues.push(shot);
                 }
                 return null;
             })
+            }
             if (counter === ship.length) {
                 newValues = [...newValues, ...shipTileValues]
             }
