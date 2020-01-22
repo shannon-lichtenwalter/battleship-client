@@ -1,7 +1,7 @@
 .cell {
   width: 90%;
   height: 10%;
-  background-color:blue ;
+  background-color:#0144A8;
   margin: 2px;
   font-size: 1rem;
   color: white;
@@ -13,15 +13,19 @@
 }
 
 .selected {
-  background-color: red;
+  background-image: url('../../Img/target.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color:rgba(50, 187, 8, 0.8)
 }
 
 .hit {
-  background-color: lightgreen
+  background-color:#870103;
 }
 
 .miss {
-  background-color: black;
+  background-color: white;
 }
 
 .ship{
@@ -33,7 +37,17 @@
 }
 
 .ship-shot {
-  background-color: red;
+  background-color: #870103;
+}
+
+.sunk {
+  background-image:url('../../Img/x.png');
+  background-position: center;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-color: #870103;
+
+
 }
 
 @media screen and (min-width: 1025px) {

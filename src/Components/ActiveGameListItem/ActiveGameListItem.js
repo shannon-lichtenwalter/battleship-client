@@ -62,6 +62,7 @@ class ActiveGameListItem extends React.Component {
         storeData.room_id = this.props.game.room_id;
         storeData.resumedGame = true;
         storeData.shipTileValues = [];
+        storeData.shipsCounter = gameData.shipsCounter;
         storeData.userShips.map(ship => {
           if (ship.spaces) {
             storeData.shipTileValues = [...storeData.shipTileValues, ...ship.spaces]

@@ -27,22 +27,21 @@ class GameBoard extends React.Component {
     shipTileValues: this.props.gameData.shipTileValues,
     playerUsername: this.props.gameData.playerUsername,
     opponentUsername: this.props.gameData.opponentUsername,
-    shipsCounter: {
-      'aircraftCarrier': { hit: 0, length: 5 },
-      'battleship': { hit: 0, length: 4 },
-      'cruiser': { hit: 0, length: 3 },
-      'submarine': { hit: 0, length: 3 },
-      'defender': { hit: 0, length: 2 }
-    },
+    shipsCounter: this.props.gameData.shipsCounter,
     socket: null,
     error: null,
     winnerSet: false,
     whoWon: null
   }
 
-  updateShipsCounter = (shipName) => {
+  updateShipsCounter = (shipName, target, sunk) => {
     let shipsCounter = {...this.state.shipsCounter};
     shipsCounter[shipName].hit = shipsCounter[shipName].hit + 1;
+
+    shipsCounter[shipName].spaces = [...shipsCounter[shipName].spaces, target]
+    if(sunk){
+      shipsCounter[shipName].sunk = true;
+    }
     this.setState({
       shipsCounter
     })
@@ -138,8 +137,11 @@ class GameBoard extends React.Component {
       this.setState({
         error: 'You have idled for too long, please navigate back to this match from dashboard if you wish to continue.'
       })
-    })
+    });
+    
   }
+
+  
 
   handleResults = () => {
     let player = this.state.playerNum;

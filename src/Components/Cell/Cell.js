@@ -18,6 +18,18 @@ class Cell extends React.Component {
   determineClassName = () => {
     let className = 'cell';
 
+    if(this.props.shipsCounter){
+      let ships = this.props.shipsCounter;
+      for (const key in ships){
+        if(ships[key].sunk){
+          if(ships[key].spaces.includes(this.props.id)){
+            className += ' sunk'
+            break;
+          }
+        }
+      }
+    }
+
     if (this.props.hits && this.props.hits.includes(this.props.id)) {
       className += ' hit'
     } else if (this.props.misses && this.props.misses.includes(this.props.id)) {
