@@ -26,6 +26,10 @@
   margin-right: 20px;
 }
 
+.key p {
+  font-size: 1.1rem;
+}
+
 .helpIB ul {
   list-style-type: none;
   display: inline;
@@ -53,6 +57,12 @@ li {
   margin: 0 auto;
   border-radius: 1rem;
   background-color: rgb(30, 52, 90);
+}
+
+@media screen and (min-width: 768px) {
+  .key p {
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (min-width: 900px) {
