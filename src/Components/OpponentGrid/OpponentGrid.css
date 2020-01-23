@@ -1,203 +1,98 @@
-.OpponentContainer {
-  border: 0.1rem solid white;
-  flex-direction: column;
-  justify-content: center;
-}
 
-.OpponentGrid {
-  display: flex;
-  flex-direction: row;
-}
-
-.OpponentContainer h2 {
-  font-size: 2.2rem;
-  margin-top: 5rem;
-}
-
-.target h3 {
-  font-size: 2rem;
-  margin-top: 5rem;
-}
-
-.progress {
-  margin: 5px;
-  border: 1px solid white;
-  border-radius: 3px;
-  display: flex;
-  justify-content: center;
-  width: 95%;
-  margin-left:auto;
-  margin-right: auto;
-  padding: 10px;
-}
-.shipCounter{
-  list-style: none;
-  padding: 0px;
-  margin: 0px;
-  margin-left: 10px;
-  
-}
-
-.shipCounter > li{
-  text-align: left;
+.targetForm {
   font-size: 1rem;
   font-family: 'Roboto Condensed', sans-serif;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 5px;
+  padding: 0px;
+}
+
+.fireButton {
+  margin-top: 5px;
+  width: 60%;
+  padding: 5px;
+}
+
+.chooseTargetForm {
+  width: 100%;
+  padding: 0px;
+  border: 1px solid lightgrey;
+  border-radius:3px;
+}
+
+
+.selectedTarget {
+  margin: 5px;
+}
+
+.selectors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.selectors > select {
+  height: 25px;
+  width: 30%;
+}
+
+
+.OpponentContainer h2, .OpponentContainer p {
+  /* display: block; */
+  font-size: 1.3rem;
+  margin: 5px;
   
-  
 }
 
-@media screen and (min-width: 350px) {
-  .OpponentGrid {
-      width: 20.08rem;
+
+.target {
+  width: 100%;
+}
+
+
+
+
+@media screen and (min-width: 700px) {
+  .selectors {
+    flex-direction: row;
   }
-}
-
-@media screen and (min-width: 370px) {
-  .OpponentGrid {
-      width: 20.65rem;
+  .selectors > select {
+    width: 40%;
   }
-}
 
-@media screen and (min-width: 375px) {
-  .OpponentGrid {
-      width: 20.85rem;
-  }
-}
-
-@media screen and (min-width: 400px) {
-  .OpponentGrid {
-    width: 22.3rem;
-  }
-}
-
-@media screen and (min-width: 414px) {
-  .OpponentGrid {
-    width: 23.1rem;
-  }
-}
-
-@media screen and (min-width: 400px) {
-  .progress{
+  .fireButton {
     width: 80%;
   }
 }
 
-@media screen and (min-width: 450px) {
-  .OpponentGrid {
-    width: 25.2rem;
-  }
-
-  .OpponentGrid h2 {
-    margin-top: 6rem;
-  }
-}
-
-@media screen and (min-width: 500px) {
-  .OpponentGrid {
-    width: 24.02rem;
-  }
-
-  .OpponentContainer h2 {
-    margin-top: 7rem;
-  }
-
-  .progress{
-    width: 70%;
-  }
-}
-
-@media screen and (min-width: 550px) {
-  .OpponentGrid {
-    width: 26.55rem;
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .OpponentGrid {
-    width: 29.02rem;
-  }
-
-  .progress{
-    width: 60%;
-  }
-}
-
-@media screen and (min-width: 650px) {
-  .OpponentGrid {
-    width: 31.6rem;
-  }
-
-  .OpponentContainer h2 {
-    margin-top: 8.3rem;
-  }
-}
-
-@media screen and (min-width: 700px) {
-  .OpponentGrid {
-    width: 33.13rem;
-  }
-
-  .OpponentContainer h2 {
-    margin-top: 11rem;
-  }
-}
-
 @media screen and (min-width: 768px) {
-  .OpponentGrid {
-    width: 36.4rem;
-  }
-
-  .OpponentContainer h2 {
-    margin-top: 14rem;
-  }
+  
 }
 
-@media screen and (min-width: 834px) {
-  .OpponentGrid {
-    width: 39.64rem;
+@media screen and (min-width: 800px) {
+  .chooseTargetForm {
+    width: 90%;
   }
-
-  .OpponentContainer h2 {
-    margin-top: 16rem;
-  }
+  
 }
 
-@media screen and (min-width: 850px) {
-  .OpponentGrid {
-    widows: 40.3rem;
-  }
-
-  .OpponentContainer h2 {
-    margin-top: 17rem;
-  }
-}
 
 @media screen and (min-width: 1024px) {
-  .OpponentGrid {
-    width: 48rem;
+  .chooseTargetForm {
+    width: 80%;
+    font-size: 1.2rem;
   }
-
-  .OpponentContainer h2 {
-    margin-top: 20rem;
-  }
+  
 }
 
-@media screen and (min-width: 1025px) {
-  .OpponentContainer h2 {
-    margin-top: 13.5rem;
+@media screen and (min-width: 1800px) {
+  .chooseTargetForm {
+    width: 50%;
+    font-size: 1.2rem;
   }
-
-  .OpponentGrid {
-    width: 35.51rem;
-  }
+  
 }
 
-@media screen and (min-width: 1600px) {
-  .OpponentGrid {
-    width: 39.56rem;
-  }
-
-  .OpponentContainer h2 {
-    margin-top: 15rem;
-  }
-}

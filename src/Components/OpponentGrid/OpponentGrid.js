@@ -76,7 +76,7 @@ class OpponentGrid extends React.Component {
     } else {
       this.setState({
         result: 'miss',
-        message: 'Missed the Target!',
+        message: 'You Missed the Target!',
         misses: [...this.state.misses, this.state.selected],
         selected: null,
         letterDropdown: '',
@@ -213,11 +213,11 @@ class OpponentGrid extends React.Component {
     let letters = ['Alfa', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Golf', 'Hotel', 'India', 'Juliett'];
     let numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
     return (
-      <form>
-        <fieldset>
+      <form className='targetForm' onSubmit={(event) => this.handleFire(event)}>
+        <fieldset className='chooseTargetForm'>
           <legend>Take Aim</legend>
-          <div>
-            <label htmlFor='letter-dropdown'>Y Coordinate:</label>
+          <div className='selectors'>
+            <label htmlFor='letter-dropdown'>Y:</label>
             <select value={this.state.letterDropdown} id='letter-dropdown' onChange={() => this.setLetterSelectedFromDropDown()}>
               <option value={''}>Letter</option>
               {letters.map((letter, index) => {
@@ -234,9 +234,7 @@ class OpponentGrid extends React.Component {
                 return null
               })}
             </select>
-          </div>
-          <div>
-            <label htmlFor='number-dropdown'>X Coordinate:</label>
+            <label htmlFor='number-dropdown'>X:</label>
             <select value={this.state.numberDropdown} id='number-dropdown' onChange={() => this.setNumberSelectedFromDropDown()}>
               <option value={''}>Number</option>
               {this.state.letterDropdown && numbers.map((value, index) => {
@@ -247,34 +245,11 @@ class OpponentGrid extends React.Component {
               })}
             </select>
           </div>
-          <h4>You have selected target: {this.state.selected}</h4>
+          <h4 className='selectedTarget'>You have selected target: {this.state.selected}</h4>
+            <button type='submit' className='fireButton'>Fire!</button>
         </fieldset>
       </form>
     )
-  }
-
-  //this function will render the visual to the user showing them their progress
-  //and how many of the opponent's ships have been hit
-  renderCounterList = () => {
-    let ships = this.props.shipsCounter;
-    let counter = [];
-    let shipName = null;
-    for (const key in ships) {
-      if (key === 'aircraftCarrier'){
-        shipName = 'Aircraft Carrier'
-      } else {
-        shipName = key.charAt(0).toUpperCase() + key.slice(1)
-      }
-
-      if (ships[key].hit / ships[key].length === 1) {
-        counter.push(`${shipName} : SUNK`)
-      } else {
-        counter.push(`${shipName} : ${ships[key].hit}/${ships[key].length}`)
-      }
-    }
-    return counter.map((ship, index) => {
-      return <li key={index}>{ship}</li>
-    })
   }
 
   render() {
@@ -285,9 +260,6 @@ class OpponentGrid extends React.Component {
       buttonDisableBool = (this.props.userTurn) ?
         <div className='target' aria-live='polite'>
           {this.handleRenderDropDown()}
-          <form onSubmit={(event) => this.handleFire(event)}>
-            <Button type='submit'>Fire!</Button>
-          </form>
         </div>
         : <p aria-live='polite'>Waiting for {this.props.opponentUsername}{this.props.opponentUsername.charAt(this.props.opponentUsername.length - 1) === 's'
           ? '\''
@@ -296,20 +268,13 @@ class OpponentGrid extends React.Component {
 
     return (
       <div className='OpponentContainer grid'>
-        <div className='OpponentGrid'>
+        <h2>Opponent Ships</h2>
+        <div className='OpponentGrid gameGrid'>
           {this.handleRenderGrid()}
           
         </div>
-        
-        <h2 className='message' aria-live='assertive'>{this.state.message && this.state.message} </h2>
-        <div className='progress'>
-          <h4>Progress >></h4>
-          <ul className='shipCounter'>
-            {this.renderCounterList()}
-          </ul>
-        </div>
         {buttonDisableBool}
-
+        <h2 className='message' aria-live='assertive'>{this.state.message && this.state.message} </h2>
         
       </div>
     )

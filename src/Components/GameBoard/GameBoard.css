@@ -18,62 +18,98 @@ p {
 .grid {
   width: 90%;
   margin: 0 auto;
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid grey;
 }
 
 .gameroom {
-  margin-top: 10rem;
+  margin-top: 9rem;
 }
 
-@media screen and (min-width: 350px) {
-  .grid{
-    width: 90.2%;
-  }
+.versusHeader{
+  font-size: 1.5rem;
+  margin-bottom: 0px;
+}
+.versus {
+  color: grey;
 }
 
-@media screen and (min-width: 370px) {
-  .grid {
-    width: 90%;
-  }
+.opponentContainer, .userContainer {
+  margin: 20px;
 }
 
-@media screen and (min-width: 500px) {
-  .grid {
-    width: 78%;
-  }
+.progress {
+  /* margin: 10px; */
+  width: 100%;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+  border-radius: 3px;
+  margin-left:auto;
+  margin-right: auto;
+  margin-top: 5px;
+  padding: 0px;
+  /* padding: 10px; */
 }
 
-@media screen and (min-width: 550px) {
-  .grid {
-    width: 78%;
-  }
+.progress >h4 {
+  margin:5px;
+  text-decoration: underline;
+}
+.shipCounter{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
+
+.shipCounter > li{
+  /* display: inline-block; */
+  margin: 3px;
+  font-size: 1rem;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.shipCounter > li::before {
+  content: '  >>  ';
+  color: red;
 }
 
 @media screen and (min-width: 700px) {
   .grid {
-    width: 76%;
+    width: 45%;
+    border-bottom: none;
   }
-}
-
-@media screen and (min-width: 1024px) {
-  .grid {
-    width: 75%;
-  }
-}
-
-@media screen and (min-width: 1025px) {
   .grid-box {
+    display:flex;
+  }
+
+  .shipCounter > li{
+    display: inline-block;
+  }
+
+  .OpponentContainer.grid, .UserContainer.grid {
+    margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .OpponentContainer.grid {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
-  .grid {
-    width: 40%;
-    margin: 0 1rem;
-    margin-bottom: 2rem;
+  .UserContainer.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
   }
 
-  p {
-    font-size: 1.5rem;
+  .gameGrid {
+    margin: 0
   }
 }
+
