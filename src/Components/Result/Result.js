@@ -3,8 +3,8 @@ import { withRouter } from 'react-router-dom';
 import LoadGameApiService from '../../Services/load-game-api-service';
 import Button from '../Button/Button';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import './Result.css';
-
 
 class Result extends Component {
 
@@ -88,7 +88,6 @@ class Result extends Component {
       <div className='result'>
         <Header />
 
-
         <h1>Result</h1>
         <ul className='results-ul'>
 
@@ -111,13 +110,14 @@ class Result extends Component {
 
           <li><span className='results-left'>Shots Missed: </span>
             <span className='results-right'>{this.state.totalMisses}</span></li>
-
         </ul>
 
         <Button onClick={() => {
           this.props.history.push('/dashboard')
-        }}> Exit
+        }> Exit
         </Button>
+
+        <Footer />
       </div>
     );
   };

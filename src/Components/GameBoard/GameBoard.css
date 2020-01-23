@@ -22,7 +22,43 @@ p {
 }
 
 .gameroom {
-  margin-top: 8rem;
+  margin-top: 10rem;
+}
+
+@media screen and (min-width: 350px) {
+  .grid{
+    width: 90.2%;
+  }
+}
+
+@media screen and (min-width: 370px) {
+  .grid {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .grid {
+    width: 78%;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .grid {
+    width: 78%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .grid {
+    width: 76%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid {
+    width: 75%;
+  }
 }
 
 @media screen and (min-width: 1025px) {
@@ -32,7 +68,7 @@ p {
   }
 
   .grid {
-    width: 45%;
+    width: 40%;
     margin: 0 1rem;
     margin-bottom: 2rem;
   }
@@ -40,5 +76,4 @@ p {
   p {
     font-size: 1.5rem;
   }
-  
 }

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
@@ -9,11 +10,12 @@ describe(`Button Component`, () => {
         const div = document.createElement('div');
         ReactDOM.render(<Button /> , div)
         ReactDOM.unmountComponentAtNode(div)
-    }),
+    })
 
     it(`Displays a button`, () => {
         const wrapper = shallow(<Button />)
         expect(toJson(wrapper)).toMatchSnapshot()
     })
+});
 
-})
+

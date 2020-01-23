@@ -8,7 +8,6 @@ import './Header.css'
 class Header extends Component {
 
   render() {
-
     let firstButton = null;
 
     if (this.props.location.pathname !== '/dashboard') {
@@ -23,15 +22,13 @@ class Header extends Component {
           </Button>
     }
 
-
-
     return (
       <div>
         <Banner />
 
         <header className='main-header'>
           {firstButton}
-
+          
           <Button onClick={() => {
             this.props.history.push('/help')
           }}> Help
@@ -46,8 +43,8 @@ class Header extends Component {
         </header>
       </div>
     )
-  }
-}
+  };
+};
 
 export default withRouter(Header);
 

@@ -6,11 +6,7 @@ Server GitHub: https://github.com/thinkful-ei-heron/Group1-Capstone3-Server
 
 ## Summary
 
-
-
 ## Tutorial
-
-
 
 ## Technology Used
 

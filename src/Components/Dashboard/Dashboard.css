@@ -15,12 +15,12 @@
 }
 
 .stat-box h4 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   display: inline;
 }
 
 .stat-box p {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .startGames a {
@@ -80,7 +80,7 @@ h2 > span.username {
   }
 
   .stats {
-    width: 50%;
+    width: 40%;
   }
 
   .dash-h3 {
@@ -102,5 +102,9 @@ h2 > span.username {
 
   .stat-box p {
     font-size: 1.6rem;
+  }
+
+  Footer {
+    margin-bottom: 2rem;
   }
 }

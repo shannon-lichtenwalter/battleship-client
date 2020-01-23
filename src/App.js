@@ -13,12 +13,7 @@ import GameHistory from './Components/GameHistory/GameHistory';
 import GameBoard from './Components/GameBoard/GameBoard';
 import Result from './Components/Result/Result';
 import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary';
-
-
-
 import NotFoundRoute from './Routes/NotFoundRoute/NotFoundRoute';
-
-
 
 export default class App extends Component {
   state = {
@@ -34,6 +29,13 @@ export default class App extends Component {
       userMisses: [],
       userShips: [],
       shipTileValues: [],
+      shipsCounter: {
+        'aircraftCarrier': { hit: 0, length: 5, spaces:[], sunk:false },
+        'battleship': { hit: 0, length: 4, spaces:[], sunk: false, },
+        'cruiser': { hit: 0, length: 3, spaces:[], sunk: false, },
+        'submarine': { hit: 0, length: 3, spaces:[], sunk: false },
+        'defender': { hit: 0, length: 2, spaces:[], sunk: false }
+      },
       resumedGame: null,
       shipsReady: null,
       playerUsername: null,
@@ -62,6 +64,13 @@ export default class App extends Component {
         userMisses: [],
         userShips: [],
         shipTileValues: [],
+        shipsCounter: {
+          'aircraftCarrier': { hit: 0, length: 5, spaces:[], sunk:false },
+          'battleship': { hit: 0, length: 4, spaces:[], sunk: false, },
+          'cruiser': { hit: 0, length: 3, spaces:[], sunk: false, },
+          'submarine': { hit: 0, length: 3, spaces:[], sunk: false },
+          'defender': { hit: 0, length: 2, spaces:[], sunk: false }
+        },
         resumedGame: null,
         shipsReady: null,
         playerUsername: null,

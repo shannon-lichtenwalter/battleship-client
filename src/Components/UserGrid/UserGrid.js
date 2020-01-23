@@ -25,6 +25,7 @@ class UserGrid extends React.Component {
             numberDropdown: '',
             ghostShipTiles: [],
             message: null,
+            mySunkShipTileValues: [],
         }
     };
 
@@ -38,6 +39,29 @@ class UserGrid extends React.Component {
         from the server.
     */
     componentDidMount = () => {
+        //the following code checks to see if the user has any of their own ships sunk
+        let newValues = [...this.state.mySunkShipTileValues];
+        this.state.playerShips.map(ship => {
+            let counter = 0;
+            let shipTileValues = [];
+            if(this.state.opponentShots){
+                this.state.opponentShots.map(shot => {
+                if (ship.spaces.includes(shot)) {
+                    counter++;
+                    shipTileValues.push(shot);
+                }
+                return null;
+            })
+            }
+            if (counter === ship.length) {
+                newValues = [...newValues, ...shipTileValues]
+            }
+            return null;
+        })
+        this.setState({
+            mySunkShipTileValues: newValues
+        })
+
         if (this.props.socket) {
             this.props.socket.on('response', data => {
                 if (data) {
@@ -57,6 +81,14 @@ class UserGrid extends React.Component {
                         } else {
                             if (data.sunk) {
                                 message = `${this.props.opponentUsername} sunk your ${ship}!`
+                                //the following code is utilized to update the state of userGrid to reflect that
+                                //a user's ship has been sunk
+                                let sunkenShip = this.state.playerShips.filter(ship => ship.name === data.ship);
+                                let values = sunkenShip[0].spaces;
+                                let newSunkValues = [...this.state.mySunkShipTileValues, ...values];
+                                this.setState({
+                                    mySunkShipTileValues: newSunkValues
+                                })
                             } else {
                                 message = `${this.props.opponentUsername} ${data.result} your ${ship}`
 
@@ -391,6 +423,7 @@ class UserGrid extends React.Component {
                             handleSelectTarget={this.handleSelectTarget}
                             shipTileValues={this.state.shipTileValues}
                             opponentShots={this.state.opponentShots}
+                            mySunkShipTileValues={this.state.mySunkShipTileValues}
                             ghostShip={this.state.ghostShipTiles}
                         />
                     })
@@ -404,12 +437,12 @@ class UserGrid extends React.Component {
     /*
         The following function closes socket listener when the component unmounts
     */
+
     componentWillUnmount() {
         if (this.props.socket) {
             this.props.socket.close()
         }
-    }
-
+    };
 
     render() {
         let shipSetForm = this.props.shipsReady ? null : this.handleRenderDropDown();
