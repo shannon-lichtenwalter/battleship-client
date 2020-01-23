@@ -78,6 +78,7 @@ p {
 @media screen and (min-width: 700px) {
   .grid {
     width: 45%;
+    border-bottom: none;
   }
   .grid-box {
     display:flex;
@@ -92,10 +93,23 @@ p {
     margin-left: auto;
     margin-right: auto;
   }
-}
 
-@media screen and (min-width: 700px) {
-  .grid {
-    border-bottom: none;
+  .OpponentContainer.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .UserContainer.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  .gameGrid {
+    margin: 0
   }
 }
+

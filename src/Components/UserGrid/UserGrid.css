@@ -31,6 +31,10 @@
         height: 400px;
         width: 95%;
     }
+
+    .target {
+        width: 95%;
+      }
 }
 
 @media screen and (min-width: 500px) {
@@ -38,6 +42,10 @@
         height: 400px;
         width: 90%;
     }
+
+    .target {
+        width: 90%;
+      }
 }
 
 @media screen and (min-width: 600px) {
@@ -45,6 +53,10 @@
         height: 450px;
         width: 85%;
     }
+
+    .target {
+        width: 85%;
+      }
 }
 
 @media screen and (min-width: 700px) {
@@ -52,6 +64,10 @@
         height: 300px;
         width: 100%;
     }
+
+    .target {
+        width: 100%;
+      }
 
     .cell{
         height: 9%;
@@ -63,29 +79,54 @@
     .gameGrid {
         width: 95%;
     }
+
+    .target {
+        width: 95%;
+      }
 }
 
-@media screen and (min-width: 950px) {
-    .gameGrid {
-        /* height: 400px; */
-        /* width: 95%; */
-    }
-}
 
 @media screen and (min-width: 1050px) {
     .gameGrid {
         width: 85%;
     }
+
+    .target {
+        width: 85%;
+      }
 }
 
 @media screen and (min-width: 1300px) {
     .gameGrid {
         width: 70%;
     }
+
+    .target {
+        width: 70%;
+      }
 }
 
 @media screen and (min-width: 1420px) {
     .gameGrid {
         width: 60%;
     }
+
+    .target {
+        width: 60%;
+      }
+
+    .cell{
+        height: 9%;
+        width: 98%;
+    }
+}
+
+@media screen and (min-width: 1740px) {
+    .gameGrid {
+        width: 50%;
+    }
+
+    .target {
+        width: 50%;
+      }
 }
