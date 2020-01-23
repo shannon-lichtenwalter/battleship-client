@@ -158,8 +158,8 @@ class GameBoard extends React.Component {
       : null;
 
     let versusHeader = this.state.playerUsername && this.state.opponentUsername
-      ? <h2>{this.state.playerUsername + ' versus ' + this.state.opponentUsername}</h2>
-      : <h2>Waiting for Opponent...</h2>;
+      ? <h2 className='versusHeader'>{this.state.playerUsername} <span className='versus'> versus </span>{this.state.opponentUsername}</h2>
+      : <h2 className='versusHeader'>Waiting for Opponent...</h2>;
 
 
     let userGrid = this.state.socket

@@ -1,26 +1,98 @@
-.UserGrid{
+
+.gameGrid{
     display:flex;
     flex-direction: row;
-}
-
-.UserContainer h2{
-    display: block;
-    font-size: 1.5rem;
-    margin-top: 5rem;
-}
-
-.UserContainer{
-    align-items: center;
-    border: 0.1rem solid white;
-    flex-direction: column;
-    justify-content: center;
+    width: 100%;
+    height: 300px;
+    margin: auto;
 }
 
 .column {
+    margin:1px;
     width: 9.03%;
     font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+.column > div {
+    margin-top: 2px;
 }
 
+.UserContainer h2, .UserContainer p {
+    /* display: block; */
+    font-size: 1.3rem;
+    margin-top: 5px;
+}
+
+@media screen and (min-width: 400px) {
+    .gameGrid {
+        height: 400px;
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .gameGrid {
+        height: 400px;
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .gameGrid {
+        height: 450px;
+        width: 85%;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .gameGrid {
+        height: 350px;
+        width: 100%;
+    }
+
+    .cell{
+        height: 9%;
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .gameGrid {
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .gameGrid {
+        height: 420px;
+        width: 98%;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .gameGrid {
+        width: 85%;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .gameGrid {
+        width: 80%;
+    }
+}
+/* .UserContainer{
+    align-items: center; */
+    /* border: 0.1rem solid white; */
+    /* flex-direction: column;
+    justify-content: center;
+    display: flex;
+    height: 500px;
+} */
+
+/* 
 @media screen and (min-width: 350px) {
     .UserGrid {
         width: 20.08rem;
@@ -166,4 +238,4 @@
     .UserContainer h2 {
         margin-top: 15rem;
     }
-}
+} */

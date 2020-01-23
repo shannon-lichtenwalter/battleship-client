@@ -18,13 +18,37 @@ p {
 .grid {
   width: 90%;
   margin: 0 auto;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
+  border-bottom: 1px solid grey;
 }
 
 .gameroom {
-  margin-top: 10rem;
+  margin-top: 9rem;
 }
 
+.versusHeader{
+  font-size: 1.5rem;
+  margin-bottom: 0px;
+}
+.versus {
+  color: grey;
+}
+
+.opponentContainer, .userContainer {
+  margin: 20px;
+}
+@media screen and (min-width: 700px) {
+  .grid {
+    width: 45%;
+  }
+  .grid-box {
+    display:flex;
+    justify-content:center;
+  }
+}
+
+
+/* 
 @media screen and (min-width: 350px) {
   .grid{
     width: 90.2%;
@@ -76,4 +100,4 @@ p {
   p {
     font-size: 1.5rem;
   }
-}
+} */

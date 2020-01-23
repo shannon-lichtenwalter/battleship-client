@@ -1,4 +1,4 @@
-.OpponentContainer {
+/* .OpponentContainer {
   border: 0.1rem solid white;
   flex-direction: column;
   justify-content: center;
@@ -12,7 +12,7 @@
 .OpponentContainer h2 {
   font-size: 2.2rem;
   margin-top: 5rem;
-}
+} */
 
 .target h3 {
   font-size: 2rem;
@@ -29,6 +29,7 @@
   margin-left:auto;
   margin-right: auto;
   padding: 10px;
+  margin-top: 100px;
 }
 .shipCounter{
   list-style: none;
@@ -46,6 +47,13 @@
   
 }
 
+.OpponentContainer h2, .OpponentContainer p {
+  /* display: block; */
+  font-size: 1.3rem;
+  margin-top: 5px;;
+  
+}
+/* 
 @media screen and (min-width: 350px) {
   .OpponentGrid {
       width: 20.08rem;
@@ -74,7 +82,7 @@
   .OpponentGrid {
     width: 23.1rem;
   }
-}
+} */
 
 @media screen and (min-width: 400px) {
   .progress{
@@ -82,7 +90,7 @@
   }
 }
 
-@media screen and (min-width: 450px) {
+/* @media screen and (min-width: 450px) {
   .OpponentGrid {
     width: 25.2rem;
   }
@@ -90,32 +98,32 @@
   .OpponentGrid h2 {
     margin-top: 6rem;
   }
-}
+} */
 
 @media screen and (min-width: 500px) {
-  .OpponentGrid {
+  /* .OpponentGrid {
     width: 24.02rem;
   }
 
   .OpponentContainer h2 {
     margin-top: 7rem;
-  }
+  } */
 
   .progress{
     width: 70%;
   }
 }
 
-@media screen and (min-width: 550px) {
+/* @media screen and (min-width: 550px) {
   .OpponentGrid {
     width: 26.55rem;
   }
-}
+} */
 
 @media screen and (min-width: 600px) {
-  .OpponentGrid {
+  /* .OpponentGrid {
     width: 29.02rem;
-  }
+  } */
 
   .progress{
     width: 60%;
@@ -123,81 +131,81 @@
 }
 
 @media screen and (min-width: 650px) {
-  .OpponentGrid {
+  /* .OpponentGrid {
     width: 31.6rem;
   }
 
   .OpponentContainer h2 {
     margin-top: 8.3rem;
-  }
+  } */
 }
 
 @media screen and (min-width: 700px) {
-  .OpponentGrid {
+  /* .OpponentGrid {
     width: 33.13rem;
   }
 
   .OpponentContainer h2 {
     margin-top: 11rem;
-  }
+  } */
 }
 
 @media screen and (min-width: 768px) {
-  .OpponentGrid {
+  /* .OpponentGrid {
     width: 36.4rem;
   }
 
   .OpponentContainer h2 {
     margin-top: 14rem;
-  }
+  } */
 }
 
 @media screen and (min-width: 834px) {
-  .OpponentGrid {
+  /* .OpponentGrid {
     width: 39.64rem;
   }
 
   .OpponentContainer h2 {
     margin-top: 16rem;
-  }
+  } */
 }
 
 @media screen and (min-width: 850px) {
-  .OpponentGrid {
+  /* .OpponentGrid {
     widows: 40.3rem;
   }
 
   .OpponentContainer h2 {
     margin-top: 17rem;
-  }
+  } */
 }
 
 @media screen and (min-width: 1024px) {
-  .OpponentGrid {
+  /* .OpponentGrid {
     width: 48rem;
   }
 
   .OpponentContainer h2 {
     margin-top: 20rem;
-  }
+  } */
 }
 
 @media screen and (min-width: 1025px) {
-  .OpponentContainer h2 {
+  /* .OpponentContainer h2 {
     margin-top: 13.5rem;
   }
 
   .OpponentGrid {
     width: 35.51rem;
-  }
+  } */
 }
 
 @media screen and (min-width: 1600px) {
-  .OpponentGrid {
+  /* .OpponentGrid {
     width: 39.56rem;
   }
 
   .OpponentContainer h2 {
     margin-top: 15rem;
-  }
+  } */
 }

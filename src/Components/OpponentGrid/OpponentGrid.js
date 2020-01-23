@@ -291,7 +291,8 @@ class OpponentGrid extends React.Component {
 
     return (
       <div className='OpponentContainer grid'>
-        <div className='OpponentGrid'>
+        <h2>Opponent Ships</h2>
+        <div className='OpponentGrid gameGrid'>
           {this.handleRenderGrid()}
           
         </div>

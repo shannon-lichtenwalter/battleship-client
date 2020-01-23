@@ -607,13 +607,14 @@ class UserGrid extends React.Component {
     render() {
         return (
             <div className='UserContainer grid'>
-                <div className='UserGrid'>
+                <h2>Your Ships</h2>
+                <div className='UserGrid gameGrid'>
                     {this.handleRenderGrid()}
                 </div>
                 <span className='ErrorSpan'>
                     <p>{this.messageCreator()}</p>
                 </span>
-                <h2>{this.handleSetShips()} </h2>
+                {!this.state.message && <h2>{this.handleSetShips()} </h2>}
                 {this.state.message && <p aria-live='assertive'>{this.state.message}</p>}
             </div>
         )
