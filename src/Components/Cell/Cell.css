@@ -1,8 +1,7 @@
 .cell {
   width: 92.3%;
-  height: 10%;
+  height: 7%;
   background-color:#0144A8;
-  margin: 2px;
   font-size: 1rem;
   color: white;
   font-weight:bolder;
@@ -50,99 +49,19 @@
 
 }
 
-@media screen and (min-width: 350px) {
-  .cell{
-    width: 92.8%;
-  }
-}
-
-@media screen and (min-width: 370px) {
-  .cell{
-    width: 93.3%;
-  }
-}
 
 @media screen and (min-width: 400px) {
-  .cell {
-    width: 93.6%;
+  .gameGrid {
+    height: 400px;
+    width: 90%;
   }
 }
 
-@media screen and (min-width: 414px) {
-  .cell {
-    width: 94%;
-  }
-}
 
-@media screen and (min-width: 450px) {
-  .cell {
-    height: 10.7%;
-    width: 94.8%;
-  }
-}
 
-@media screen and (min-width: 500px) {
-  .cell {
-    width: 94%;
-    height: 11.3%;
-  }
-}
 
-@media screen and (min-width: 550px) {
-  .cell {
-    width: 94.7%;
-    height: 11.4%;
-  }
-}
 
-@media screen and (min-width: 600px) {
-  .cell {
-    width: 95.3%;
-    height: 12.5%;
-  }
-}
 
-@media screen and (min-width: 650px) {
-  .cell {
-    width: 95.7%;
-    height: 12.3%;
-  }
-}
-
-@media screen and (min-width: 700px) {
-  .cell {
-    width: 95.6%;
-    height: 14%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .cell {
-    height: 15.5%;
-    width: 96.2%;
-  }
-}
-
-@media screen and (min-width: 834px) {
-  .cell {
-    width: 96.5%;
-    height: 16%;
-  }
-}
-
-@media screen and (min-width: 850px) {
-  .cell {
-    width: 96.5%;
-    height: 17%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .cell {
-    width: 95.8%;
-    height: 19%;
-  }
-}
 
 
 .ghostship.ship {
@@ -155,15 +74,7 @@
 
 @media screen and (min-width: 1025px) {
   .cell {
-    width: 96.3%;
-    height: 14%;
     font-size: 1.2rem;
   }
 }
 
-@media screen and (min-width: 1030px) {
-  .cell {
-    width: 96.5%;
-    height: 15%;
-  }
-}

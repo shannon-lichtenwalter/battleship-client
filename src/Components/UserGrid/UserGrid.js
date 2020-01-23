@@ -448,11 +448,12 @@ class UserGrid extends React.Component {
         let shipSetForm = this.props.shipsReady ? null : this.handleRenderDropDown();
         return (
             <div className='UserContainer grid'>
-                <div className='UserGrid'>
+                <h2>Your Ships</h2>
+                <div className='UserGrid gameGrid'>
                     {shipSetForm}
                     {this.handleRenderGrid()}
                 </div>
-                <h2>{this.handleSetShips()} </h2>
+                {!this.state.message && <h2>{this.handleSetShips()} </h2>}
                 {this.state.message && <p aria-live='assertive'>{this.state.message}</p>}
             </div>
         )

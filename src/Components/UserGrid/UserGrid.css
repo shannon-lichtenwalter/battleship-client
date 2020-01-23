@@ -1,169 +1,85 @@
-.UserGrid{
+
+.gameGrid{
     display:flex;
     flex-direction: row;
-}
-
-.UserContainer h2{
-    display: block;
-    font-size: 1.5rem;
-    margin-top: 5rem;
-}
-
-.UserContainer{
-    align-items: center;
-    border: 0.1rem solid white;
-    flex-direction: column;
-    justify-content: center;
+    width: 100%;
+    height: 300px;
+    margin: auto;
 }
 
 .column {
+    margin:1px;
     width: 9.03%;
     font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+.column > div {
+    margin-top: 2px;
 }
 
-@media screen and (min-width: 350px) {
-    .UserGrid {
-        width: 20.08rem;
-    }
-}
-
-@media screen and (min-width: 370px) {
-    .UserGrid {
-        width: 20.65rem;
-    }
-}
-
-@media screen and (min-width: 375px) {
-    .UserGrid {
-        width: 20.9rem;
-    }
+.UserContainer h2, .UserContainer p {
+    /* display: block; */
+    font-size: 1.3rem;
+    margin: 5px;
 }
 
 @media screen and (min-width: 400px) {
-    .UserGrid {
-        width: 22.3rem;
-    }
-}
-
-@media screen and (min-width: 414px) {
-    .UserGrid {
-        width: 23.1rem;
-    }
-}
-
-@media screen and (min-width: 450px) {
-    .UserGrid {
-        width: 25.2rem;
-        
-    }
-
-    .UserContainer h2 {
-        margin-top: 6rem;
+    .gameGrid {
+        height: 400px;
+        width: 95%;
     }
 }
 
 @media screen and (min-width: 500px) {
-    .UserGrid {
-        width: 24.02rem;
-    }
-
-    .UserContainer h2 {
-        margin-top: 7rem;
-    }
-}
-
-@media screen and (min-width: 550px) {
-    .UserGrid {
-        width: 26.55rem;
+    .gameGrid {
+        height: 400px;
+        width: 90%;
     }
 }
 
 @media screen and (min-width: 600px) {
-    .UserGrid {
-        width: 29.02rem;
-    }
-
-    .UserContainer h2 {
-        margin-top: 8rem;
-    }
-}
-
-@media screen and (min-width: 650px) {
-    .UserGrid {
-        width: 31.6rem;
-    }
-
-    .UserContainer h2 {
-        margin-top: 8.3rem;
+    .gameGrid {
+        height: 450px;
+        width: 85%;
     }
 }
 
 @media screen and (min-width: 700px) {
-    .UserGrid {
-        width: 33.13rem;
+    .gameGrid {
+        height: 300px;
+        width: 100%;
     }
 
-    .UserContainer h2 {
-        margin-top: 11rem;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .UserGrid {
-        width: 36.4rem;
-    }
-
-    .UserContainer h2 {
-        margin-top: 14rem;
+    .cell{
+        height: 9%;
+        width: 95%;
     }
 }
 
-@media screen and (min-width: 834px) {
-    .UserGrid {
-        width: 39.64rem;
-    }
-
-    .UserContainer h2 {
-        margin-top: 16rem;
+@media screen and (min-width: 800px) {
+    .gameGrid {
+        width: 95%;
     }
 }
 
-@media screen and (min-width: 850px) {
-    .UserGrid {
-        width: 40.3rem;
-    }
-
-    .UserContainer h2 {
-        margin-top: 17rem;
+@media screen and (min-width: 950px) {
+    .gameGrid {
+        /* height: 400px; */
+        /* width: 95%; */
     }
 }
 
-@media screen and (min-width: 1024px) {
-    .UserGrid {
-        width: 48rem;
-    }
-
-    .UserContainer h2 {
-        margin-top: 20rem;
+@media screen and (min-width: 1050px) {
+    .gameGrid {
+        width: 85%;
     }
 }
 
-@media screen and (min-width: 1025px) {
-    .UserContainer h2 {
-        margin-top: 13.5rem;
-    }
-
-    .UserGrid {
-        width: 35.51rem;
-    }
-}
-
-@media screen and (min-width: 1600px) {
-    .UserGrid {
-        width: 39.56rem;
-    }
-
-    .UserContainer h2 {
-        margin-top: 15rem;
+@media screen and (min-width: 1300px) {
+    .gameGrid {
+        width: 80%;
     }
 }

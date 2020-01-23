@@ -148,6 +148,30 @@ class GameBoard extends React.Component {
     this.props.history.push('/result');
   }
 
+    //this function will render the visual to the user showing them their progress
+  //and how many of the opponent's ships have been hit
+  renderCounterList = () => {
+    let ships = this.state.shipsCounter;
+    let counter = [];
+    let shipName = null;
+    for (const key in ships) {
+      if (key === 'aircraftCarrier'){
+        shipName = 'Aircraft Carrier'
+      } else {
+        shipName = key.charAt(0).toUpperCase() + key.slice(1)
+      }
+
+      if (ships[key].hit / ships[key].length === 1) {
+        counter.push(`${shipName} : SUNK`)
+      } else {
+        counter.push(`${shipName} : ${ships[key].hit}/${ships[key].length}`)
+      }
+    }
+    return counter.map((ship, index) => {
+      return <li key={index}>{ship}</li>
+    })
+  }
+
   render() {
 
     let errorMessage = this.state.error
@@ -155,8 +179,8 @@ class GameBoard extends React.Component {
       : null;
 
     let versusHeader = this.state.playerUsername && this.state.opponentUsername
-      ? <h2>{this.state.playerUsername + ' versus ' + this.state.opponentUsername}</h2>
-      : <h2>Waiting for Opponent...</h2>;
+      ? <h2 className='versusHeader'>{this.state.playerUsername} <span className='versus'> versus </span>{this.state.opponentUsername}</h2>
+      : <h2 className='versusHeader'>Waiting for Opponent...</h2>;
 
     let userGrid = this.state.socket
       ? <UserGrid
@@ -218,7 +242,15 @@ class GameBoard extends React.Component {
 
         {errorMessage}
         {!this.state.error && versusHeader}
+        {!this.state.error &&  <>
         
+        <div className='progress'>
+          <h4>Progress >></h4>
+          <ul className='shipCounter'>
+            {this.renderCounterList()}
+          </ul>
+        </div>
+        </>}
         <div className='grid-box'>
           {userGrid}
           {opponentGrid}
