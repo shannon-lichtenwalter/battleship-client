@@ -36,6 +36,10 @@
   background-color: red;
 }
 
+.ghostship {
+  border: 3px solid rgb(54, 241, 54);
+}
+
 @media screen and (min-width: 1025px) {
   .cell {
     height: 12%;

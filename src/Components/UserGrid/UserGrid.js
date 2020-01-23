@@ -23,6 +23,7 @@ class UserGrid extends React.Component {
             allShipTilesOccupied: [],
             shipTileValues: this.props.shipTileValues,
             currentShipAlignment: null,
+            alignment: 'horizontal',
             shipTileLaid: false,
             opponentShots: this.props.opponentShots,
             shipsReady: this.props.shipsReady,
@@ -30,9 +31,10 @@ class UserGrid extends React.Component {
             resumedGame: this.props.resumedGame,
             letterDropdown: '',
             numberDropdown: '',
-            usingDropdown:false,
-            usingMouse:true,
-            tileSelectedFromDropdown:false,
+            usingDropdown: false,
+            usingMouse: true,
+            tileSelectedFromDropdown: false,
+            ghostShipTiles: []
         }
     };
 
@@ -75,7 +77,7 @@ class UserGrid extends React.Component {
                             opponentShots: [...this.state.opponentShots, data.target]
                         })
                     }
-                    if(!this.props.opponentShipsReady) {
+                    if (!this.props.opponentShipsReady) {
                         this.props.setOpponentShipsReady();
                     }
                 }
@@ -83,51 +85,53 @@ class UserGrid extends React.Component {
         }
         //console.log(('A').charCodeAt(0))
         //console.log(('E').charCodeAt(0))
-        if(this.state.tileSelectedFromDropdown){
-          this.setState({tileSelectedFromDropdown:false,
-                          usingDropdown:false})
+        if (this.state.tileSelectedFromDropdown) {
+            this.setState({
+                tileSelectedFromDropdown: false,
+                usingDropdown: false
+            })
         }
     };
 
-    updateFirstShipTileState=(value, idNum) => {
-      this.setState({
-        boat: [{ value, idNum }],           // Array of boat object, set value and idNum of boat tile 
-        shipOccupied: [idNum],              // Array containing index of each cell (tile) in current boat
-        shipTileLaid: true,                 // Boolean, false if no ship tiles laid
-        allShipTilesOccupied: [idNum],      // Array containing index of each ship tile in total
-        shipTileValues: [value],            // Array containing alphanumeric cell indices of all ships
-        placementFail: false,               // Boolean if boat placement failed
-      }, () => this.handleCheckBoatLength())
+    updateFirstShipTileState = (value, idNum) => {
+        this.setState({
+            boat: [{ value, idNum }],           // Array of boat object, set value and idNum of boat tile 
+            shipOccupied: [idNum],              // Array containing index of each cell (tile) in current boat
+            shipTileLaid: true,                 // Boolean, false if no ship tiles laid
+            allShipTilesOccupied: [idNum],      // Array containing index of each ship tile in total
+            shipTileValues: [value],            // Array containing alphanumeric cell indices of all ships
+            placementFail: false,               // Boolean if boat placement failed
+        }, () => this.handleCheckBoatLength())
     }
 
-    updateFirstShipTileForOtherBoatsState=(value, idNum) => {
-      this.setState({
-        boat: [{ value, idNum }],
-        shipOccupied: [idNum],
-        allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
-        shipTileValues: [...this.state.shipTileValues, value],
-        placementFail: false,
-    }, () => this.handleCheckBoatLength()) // Callback to see whether tile filled boat reqs
+    updateFirstShipTileForOtherBoatsState = (value, idNum) => {
+        this.setState({
+            boat: [{ value, idNum }],
+            shipOccupied: [idNum],
+            allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+            shipTileValues: [...this.state.shipTileValues, value],
+            placementFail: false,
+        }, () => this.handleCheckBoatLength()) // Callback to see whether tile filled boat reqs
     }
 
     updateHorizontalShipTiles = (value, idNum) => {
-      this.setState({
-        boat: [...this.state.boat, { value, idNum }],
-        shipOccupied: [...this.state.shipOccupied, idNum],
-        currentShipAlignment: 'horizontal',
-        allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
-        shipTileValues: [...this.state.shipTileValues, value],
-    }, () => this.handleCheckBoatLength())
+        this.setState({
+            boat: [...this.state.boat, { value, idNum }],
+            shipOccupied: [...this.state.shipOccupied, idNum],
+            currentShipAlignment: 'horizontal',
+            allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+            shipTileValues: [...this.state.shipTileValues, value],
+        }, () => this.handleCheckBoatLength())
     }
 
     updateVerticalShipTiles = (value, idNum) => {
-      this.setState({
-        boat: [...this.state.boat, { value, idNum }],
-        shipOccupied: [...this.state.shipOccupied, idNum],
-        currentShipAlignment: 'vertical',
-        allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
-        shipTileValues: [...this.state.shipTileValues, value]
-    }, () => this.handleCheckBoatLength())
+        this.setState({
+            boat: [...this.state.boat, { value, idNum }],
+            shipOccupied: [...this.state.shipOccupied, idNum],
+            currentShipAlignment: 'vertical',
+            allShipTilesOccupied: [...this.state.allShipTilesOccupied, idNum],
+            shipTileValues: [...this.state.shipTileValues, value]
+        }, () => this.handleCheckBoatLength())
     }
 
 
@@ -135,80 +139,122 @@ class UserGrid extends React.Component {
     //function will set the state to reflect the target that the user has selected
     // handleSelectTargetOption = (value) => {
     //   this.setState({
-        // letterDropdown: value.charAt(0),
-        // numberDropdown: value.slice(1),
+    // letterDropdown: value.charAt(0),
+    // numberDropdown: value.slice(1),
     //     selected: value,
     //     message: null,
     //   })
     // }
 
     setLetterSelectedFromDropDown = () => {
-      var e = document.getElementById('letter-dropdown');
-      var value = e.options[e.selectedIndex].value;
-      
-      if (value === '') {
-        this.setState({
-          letterDropdown: '',
-          numberDropdown: '',
-          selected: null
-        })
-      } else if(this.state.numberDropdown){
-        let temp = this.findMyIndex(this.state.letterDropdown, parseInt(value))
-        let temp2 = this.state.letterDropdown + value
-        if(this.state.shipTileValues.indexOf(temp) !== -1){ //&& !this.state.misses.includes(value + this.state.numberDropdown)){
-          this.setState({
-            letterDropdown: value,
-            message:null,
-            selected: value + this.state.numberDropdown,
-            usingDropdown:true,
-            usingMouse:false
-          })
-          this.handleSelectTarget(temp2, temp)
+        var e = document.getElementById('letter-dropdown');
+        var value = e.options[e.selectedIndex].value;
+
+        if (value === '') {
+            this.setState({
+                letterDropdown: '',
+                selected: null
+            })
+        } else if (this.state.numberDropdown) {
+            let temp = this.findMyIndex(this.state.letterDropdown, parseInt(value))
+            if (!this.state.allShipTilesOccupied.includes(temp)) { //&& !this.state.misses.includes(value + this.state.numberDropdown)){
+                this.setState({
+                    letterDropdown: value,
+                    message: null,
+                    selected: value + this.state.numberDropdown,
+                    usingDropdown: true,
+                    usingMouse: false
+                }, () => this.updateGhostShip())
+                //this.handleSelectTarget(temp2, temp)
+            }
+            // else {
+            //     this.setState({
+            //         letterDropdown: value,
+            //         message: null,
+            //         selected: null
+            //     })
+            // }
         }
-        else{
-          this.setState({
-            letterDropdown: value,
-            message: null,
-            numberDropdown: '',
-            selected: null
-          })
+        else {
+            this.setState({
+                letterDropdown: value,
+                message: null,
+            })
         }
-      }
-      else {
-          this.setState({
-            letterDropdown: value,
-            message: null,
-          })
-      }
     }
 
     setNumberSelectedFromDropDown = () => {
-      var e = document.getElementById('number-dropdown');
-      var value = e.options[e.selectedIndex].value;
-      if(value === '') {
-        this.setState({
-          letterDropdown: '',
-          numberDropdown: '',
-          selected: null
-        })
-      }else{
-      let temp = this.findMyIndex(this.state.letterDropdown,parseInt(value))
-      let temp2 = this.state.letterDropdown + value
-      //this.handleSelectTarget(temp2, temp)
-      //this.updateFirstShipTileState(temp2, temp)
-      this.setState({
-        message: null,
-        numberDropdown: value,
-        selected: this.state.letterDropdown + value,
-        usingDropdown:true,
-        usingMouse:false,
-        tileSelectedFromDropdown:true,
-      })
-      this.handleSelectTarget(temp2, temp)
-      }
-      //let temp = this.findMyIndex(this.state.letterDropdown + value)
-      //console.log('hello')
-      //this.updateFirstShipTileState(this.state.selected, temp)
+        var e = document.getElementById('number-dropdown');
+        var value = e.options[e.selectedIndex].value;
+        if (value === '') {
+            this.setState({
+                letterDropdown: '',
+                numberDropdown: '',
+                selected: null
+            })
+        } else if(this.state.letterDropdown) {
+            let temp = this.findMyIndex(this.state.letterDropdown, parseInt(value))
+            console.log(temp)
+            //this.handleSelectTarget(temp2, temp)
+            //this.updateFirstShipTileState(temp2, temp)
+            if (!this.state.allShipTilesOccupied.includes(temp)) {
+                this.setState({
+                    message: null,
+                    numberDropdown: value,
+                    selected: this.state.letterDropdown + value,
+                    usingDropdown: true,
+                    usingMouse: false,
+                    tileSelectedFromDropdown: true,
+                }, () => this.updateGhostShip())
+            }
+            //this.handleSelectTarget(temp2, temp)
+        } else {
+            this.setState({
+                numberDropdown: value,
+                message: null,
+            })
+        }
+        //let temp = this.findMyIndex(this.state.letterDropdown + value)
+        //console.log('hello')
+        //this.updateFirstShipTileState(this.state.selected, temp)
+        
+    }
+
+
+    setBoat = (event) => {
+        try {
+            event.preventDefault();
+            let { boatTiles, indicesArray, valuesArray } = this.makeShipTilesFromSelected();
+
+            for (let i = 0; i < boatTiles.length; i++) {
+                if (this.state.allShipTilesOccupied.includes(boatTiles[i].idNum)) {
+                    throw new Error('Boat contains tiles occupied by another ship.');
+                }
+            }
+
+
+            this.setState({
+                allShipTilesOccupied: [...this.state.allShipTilesOccupied, ...indicesArray],
+                shipTileValues: [...this.state.shipTileValues, ...valuesArray],
+                boat: boatTiles,
+                ghostShipTiles: []
+            }, () => this.handleCheckBoatLength());
+
+        } catch (e) {
+            let mess = `${e}`;
+
+            this.setState({
+                boat: [],
+                selected: '',
+                currentId: '',
+                currentShipAlignment: null,
+                letterDropdown: '',
+                numberDropdown: '',
+                tileSelectedFromDropdown: false
+            }, () => this.props.setError({ error: mess }));
+        }
+        //
+
     }
 
     // laySelectOptionTiles=(value, idNum)=>{
@@ -221,167 +267,284 @@ class UserGrid extends React.Component {
     //   if(this.state.)
     // }
 
+    switchAlignment = () => {
+        let newAlignment = this.state.alignment === 'horizontal' ? 'vertical' : 'horizontal';
+        this.setState({
+            alignment: newAlignment
+        })
+    }
+
+    updateGhostShip = () => {
+        console.log('updateGhostShip')
+        try {
+            if (this.state.selected) {
+                let { valuesArray } = this.makeShipTilesFromSelected();
+    
+                this.setState({
+                    ghostShipTiles: valuesArray
+                })
+            }
+            else {
+                this.setState({
+                    ghostShipTiles: []
+                })
+            }
+        } catch (e) {
+            let message = `${e}`;
+
+            this.setState({
+                ghostShipTiles: [],
+                selected: '',
+                currentId: '',
+                currentShipAlignment: null,
+                letterDropdown: '',
+                numberDropdown: '',
+                tileSelectedFromDropdown: false
+            }, () => this.props.setError({ error: message }));
+        }
+        
+
+    }
+
+    makeShipTilesFromSelected = () => {
+        let letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+
+        let numOfTiles = this.state.playerShips[this.state.counter].length;
+        let currentNum = parseInt(this.state.numberDropdown);
+        let letterIndex = letters.indexOf(this.state.letterDropdown);
+        let boatTiles = [];
+        let indicesArray = [];
+        let valuesArray = [];
+
+        for (let i = 0; i < numOfTiles; i++) {
+            let alphaNumericString = '';
+            if (currentNum > 10 || letterIndex > 9) {
+                throw new Error('Ship out of bounds.');
+            }
+
+            if (this.state.alignment === 'horizontal') {
+                alphaNumericString += this.state.letterDropdown;
+                alphaNumericString += `${currentNum}`;
+                let tileIndex = this.findMyIndex(this.state.letterDropdown, currentNum);
+
+                currentNum++;
+                indicesArray.push(tileIndex);
+                valuesArray.push(alphaNumericString);
+                boatTiles.push({
+                    value: alphaNumericString,
+                    idNum: tileIndex
+                });
+            } else if (this.state.alignment === 'vertical') {
+                alphaNumericString += letters[letterIndex];
+                alphaNumericString += `${currentNum}`;
+                let tileIndex = this.findMyIndex(letters[letterIndex], currentNum);
+
+                letterIndex++;
+                indicesArray.push(tileIndex);
+                valuesArray.push(alphaNumericString);
+                boatTiles.push({
+                    value: alphaNumericString,
+                    idNum: tileIndex
+                });
+            }
+        }
+
+        return {
+            boatTiles,
+            indicesArray,
+            valuesArray
+        };
+    }
+
+
     handleRenderDropDown = () => {
-      let letters = ['Alfa', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Golf', 'Hotel', 'India', 'Juliett'];
-      let numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];    
-      return (
-        <form>
-          <fieldset>
-            <legend>Set Ships</legend>
-              <div>
-                <label htmlFor='letter-dropdown'>Y Coordinate:</label>
+        let letters = ['Alfa', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Golf', 'Hotel', 'India', 'Juliett'];
+        let numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+        return (
+
+            //changing alignment
+            //change letter/number dropdown
+            <form onSubmit={(e) => this.setBoat(e)} >
+
                 <select value={this.state.letterDropdown} id='letter-dropdown' onChange={() => this.setLetterSelectedFromDropDown()}>
-                  <option value={''}>Letter</option>
-                  {letters.map((letter, index) => {
-                    let counter = 0;
-                    if(this.state.usingDropdown){
-                    //let temp = this.findMyIndex(letter.charAt(0), parseInt(num))
-                    //numbers.filter((num) => this.handleCheckValue(letter.charAt(0), num))
-                    // numbers.map(num => {
-                    //  let temp = this.findMyIndex(letter.charAt(0), parseInt(num))
-                    //  if(this.state.allShipTilesOccupied.length>0){
-                    //     if (this.state.allshipTilesOccupied.indexOf(temp) === -1){// || this.state.misses.includes(letter.charAt(0) + num)){
-                    //       counter++
-                    //     }
-                    //     return null
-                    //   }
-                    // })
-                    if(this.state.boat.length>0){
-                      let temp3 = this.state.boat[0].value
-                      temp3 = temp3.slice(0,1)
-                      let temp4 = letter.charCodeAt(0)
-                      let temp5 = temp3.charCodeAt(0)
-                      console.log(temp4)
-                      console.log(temp5)
-                      
-                      if(this.state.counter=== 0 && (Math.abs(temp4-temp5)<5)){
-                        if(this.state.boat.length >= 2){
-                          if(this.state.currentShipAlignment==='horizontal' && ((Math.abs(temp4-temp5))===0)){
-                            return <option key ={index} value={letter.charAt(0)}>{letter}</option>
-                          } //else {
-                            //return <option key ={index} value={letter.charAt(0)}>{letter}</option>
-                          //}
-                        } else {
-                              return <option key ={index} value={letter.charAt(0)}>{letter}</option>
-                      }
-                      } else
-                      if(this.state.counter=== 1 && (Math.abs(temp4-temp5)<4)){
-                        if(this.state.boat.length >= 2){
-                          if(this.state.currentShipAlignment==='horizontal' && ((Math.abs(temp4-temp5))===0)){
-                            return <option key ={index} value={letter.charAt(0)}>{letter}</option>
-                          } else {
-                            return <option key ={index} value={letter.charAt(0)}>{letter}</option>
-                          }
-                          } else {
-                              return <option key ={index} value={letter.charAt(0)}>{letter}</option>
-                        }
-                      } else 
-                      if((this.state.counter===2 || this.state.counter===3) && Math.abs(temp4-temp5)<3){
-                        if(this.state.boat.length >= 2){
-                          if(this.state.currentShipAlignment==='horizontal' && ((Math.abs(temp4-temp5))===0)){
-                            return <option key ={index} value={letter.charAt(0)}>{letter}</option>
-                          } else {
-                            return <option key ={index} value={letter.charAt(0)}>{letter}</option>
-                          }
-                          } else {
-                              return <option key ={index} value={letter.charAt(0)}>{letter}</option>
-                        }
-                      } else
-                      if(this.state.counter=== 4 && (Math.abs(temp4-temp5)<2)){
-                        if(this.state.boat.length >= 2){
-                          if(this.state.currentShipAlignment==='horizontal' && ((Math.abs(temp4-temp5))===0)){
-                            return <option key ={index} value={letter.charAt(0)}>{letter}</option>
-                          } else {
-                            return <option key ={index} value={letter.charAt(0)}>{letter}</option>
-                          }
-                          } else {
-                              return <option key ={index} value={letter.charAt(0)}>{letter}</option>
-                        }
-                      } 
-
-                    } //else {
-                      //return <option key ={index} value={letter.charAt(0)}>{letter}</option>
-                    //}
-                    //if(counter < 10){
-                    //    return <option key={index} value={letter.charAt(0)}>{letter}</option>
-                    //}
-                    //return null
-                  } else return <option key={index} value={letter.charAt(0)}>{letter}</option>
-
-                  })}
+                    <option value={''}>Letter</option>
+                    {letters.map((letter, index) => {
+                        return <option key={index} value={letter.charAt(0)}>{letter}</option>
+                    })}
                 </select>
-              </div>
-              <div>
-                <label htmlFor='number-dropdown'>X Coordinate:</label>
-                <select value={this.state.numberDropdown} id='number-dropdown' onChange={()=> this.setNumberSelectedFromDropDown()}>
-                  <option value={''}>Number</option>
-                  {this.state.letterDropdown && numbers.map((value, index) => {
-                    let temp = this.findMyIndex(this.state.letterDropdown, parseInt(value))
-                    let temp2 = this.state.letterDropdown+value
 
-                    if(this.state.allShipTilesOccupied.length > 0){
-                      if(this.state.allShipTilesOccupied.indexOf(temp)===(-1)){
-                        if(this.state.boat.length>0){
-                            let temp3 = this.state.boat[0].value
-                            temp3 = temp3.slice(1)
-                            console.log(temp3)
-                            console.log(index)
-                            if(this.state.counter=== 0 && Math.abs(value-temp3)<5){
-                              if(this.state.boat.length>=2){
-                                if(this.state.currentShipAlignment==='vertical' && ((parseInt(index)+1) === temp3)){
-                                    return <option key ={index} value={value}>{value}</option>
-                                } else {
-                                  return <option key ={index} value={value}>{value}</option>
-                                }
-                              } else {
-                                  return <option key ={index} value={value}>{value}</option>
-                              }
-                            } else 
-                            if(this.state.counter===1 && Math.abs(value-temp3)<4){
-                              return <option key ={index} value={value}>{value}</option>
-                            } else
-                            if((this.state.counter===2 || this.state.counter===3) && Math.abs(value-temp3)<3){
-                              return <option key ={index} value={value}>{value}</option>
-                            } else
-                            if(this.state.counter===4 && Math.abs(value-temp3)<2){
-                              return <option key ={index} value={value}>{value}</option>
-                            }
-                        } else
-                          return <option key ={index} value={value}>{value}</option>
-                      }
-                    }
-                    else {
-                      return <option key ={index} value={value}>{value}</option>
-                    }
-                  })//.filter((value, index) => {
-                      //let temp = this.findMyIndex(this.state.letterDropdown, parseInt(value))
-                      //let temp2 = this.state.letterDropdown+value
-                      //if(this.handleCheckValue(temp2, temp)){
-                      //  return <option key ={index} value={value}>{value}</option>
-                      //}
-                  //})
-                  }
-                  {/* {this.state.letterDropdown && numbers.map((value, index) => {
-                    let temp = this.findMyIndex(this.state.letterDropdown, parseInt(value))
-                    let temp2 = this.state.letterDropdown+value
-                    console.log(temp2)
-                    if(this.state.allShipTilesOccupied.length > 0){
-                      if(this.state.allShipTilesOccupied.indexOf(temp)===(-1)){//} && !this.state.misses.includes(this.state.letterDropdown + value)){
-                          if(this.handleCheckValue((this.state.letterDropdown+value),temp) === true){
-                            return <option key ={index} value={value}>{value}</option>
-                          }
-                      }
-                      //return null;
-                    } else {
-                      return <option key ={index} value={value}>{value}</option>
-                    }
-                  })} */}
-              </select>
-            </div>
-            <h4>You have selected: {this.state.selected}</h4>
-        </fieldset>
-      </form>
-      )
+                <select value={this.state.numberDropdown} id='number-dropdown' onChange={() => this.setNumberSelectedFromDropDown()}>
+                    <option value={''}>Number</option>
+                    {numbers.map((number, index) => {
+                        return <option key={index} value={number}>{number}</option>
+                    })}
+                </select>
+
+                <button type='button' onClick={async () => {
+                    await this.switchAlignment();
+                    this.updateGhostShip();
+                }}>{this.state.alignment === 'horizontal' ? 'Horizontal' : 'Vertical'}</button>
+                <button type='submit'>Submit</button>
+            </form>
+
+
+            // <form>
+            //     <fieldset>
+            //         <legend>Set Ships</legend>
+            //         <div>
+            //             <label htmlFor='letter-dropdown'>Y Coordinate:</label>
+            //             <select value={this.state.letterDropdown} id='letter-dropdown' onChange={() => this.setLetterSelectedFromDropDown()}>
+            //                 <option value={''}>Letter</option>
+            //                 {letters.map((letter, index) => {
+            //                     let counter = 0;
+            //                     if (this.state.usingDropdown) {
+            //                         //let temp = this.findMyIndex(letter.charAt(0), parseInt(num))
+            //                         //numbers.filter((num) => this.handleCheckValue(letter.charAt(0), num))
+            //                         // numbers.map(num => {
+            //                         //  let temp = this.findMyIndex(letter.charAt(0), parseInt(num))
+            //                         //  if(this.state.allShipTilesOccupied.length>0){
+            //                         //     if (this.state.allshipTilesOccupied.indexOf(temp) === -1){// || this.state.misses.includes(letter.charAt(0) + num)){
+            //                         //       counter++
+            //                         //     }
+            //                         //     return null
+            //                         //   }
+            //                         // })
+            //                         if (this.state.boat.length > 0) {
+            //                             let temp3 = this.state.boat[0].value
+            //                             temp3 = temp3.slice(0, 1)
+            //                             let temp4 = letter.charCodeAt(0)
+            //                             let temp5 = temp3.charCodeAt(0)
+            //                             console.log(temp4)
+            //                             console.log(temp5)
+
+            //                             if (this.state.counter === 0 && (Math.abs(temp4 - temp5) < 5)) {
+            //                                 if (this.state.boat.length >= 2) {
+            //                                     if (this.state.currentShipAlignment === 'horizontal' && ((Math.abs(temp4 - temp5)) === 0)) {
+            //                                         return <option key={index} value={letter.charAt(0)}>{letter}</option>
+            //                                     } //else {
+            //                                     //return <option key ={index} value={letter.charAt(0)}>{letter}</option>
+            //                                     //}
+            //                                 } else {
+            //                                     return <option key={index} value={letter.charAt(0)}>{letter}</option>
+            //                                 }
+            //                             } else
+            //                                 if (this.state.counter === 1 && (Math.abs(temp4 - temp5) < 4)) {
+            //                                     if (this.state.boat.length >= 2) {
+            //                                         if (this.state.currentShipAlignment === 'horizontal' && ((Math.abs(temp4 - temp5)) === 0)) {
+            //                                             return <option key={index} value={letter.charAt(0)}>{letter}</option>
+            //                                         } else {
+            //                                             return <option key={index} value={letter.charAt(0)}>{letter}</option>
+            //                                         }
+            //                                     } else {
+            //                                         return <option key={index} value={letter.charAt(0)}>{letter}</option>
+            //                                     }
+            //                                 } else
+            //                                     if ((this.state.counter === 2 || this.state.counter === 3) && Math.abs(temp4 - temp5) < 3) {
+            //                                         if (this.state.boat.length >= 2) {
+            //                                             if (this.state.currentShipAlignment === 'horizontal' && ((Math.abs(temp4 - temp5)) === 0)) {
+            //                                                 return <option key={index} value={letter.charAt(0)}>{letter}</option>
+            //                                             } else {
+            //                                                 return <option key={index} value={letter.charAt(0)}>{letter}</option>
+            //                                             }
+            //                                         } else {
+            //                                             return <option key={index} value={letter.charAt(0)}>{letter}</option>
+            //                                         }
+            //                                     } else
+            //                                         if (this.state.counter === 4 && (Math.abs(temp4 - temp5) < 2)) {
+            //                                             if (this.state.boat.length >= 2) {
+            //                                                 if (this.state.currentShipAlignment === 'horizontal' && ((Math.abs(temp4 - temp5)) === 0)) {
+            //                                                     return <option key={index} value={letter.charAt(0)}>{letter}</option>
+            //                                                 } else {
+            //                                                     return <option key={index} value={letter.charAt(0)}>{letter}</option>
+            //                                                 }
+            //                                             } else {
+            //                                                 return <option key={index} value={letter.charAt(0)}>{letter}</option>
+            //                                             }
+            //                                         }
+
+            //                         } //else {
+            //                         //return <option key ={index} value={letter.charAt(0)}>{letter}</option>
+            //                         //}
+            //                         //if(counter < 10){
+            //                         //    return <option key={index} value={letter.charAt(0)}>{letter}</option>
+            //                         //}
+            //                         //return null
+            //                     } else return <option key={index} value={letter.charAt(0)}>{letter}</option>
+
+            //                 })}
+            //             </select>
+            //         </div>
+            //         <div>
+            //             <label htmlFor='number-dropdown'>X Coordinate:</label>
+            //             <select value={this.state.numberDropdown} id='number-dropdown' onChange={() => this.setNumberSelectedFromDropDown()}>
+            //                 <option value={''}>Number</option>
+            //                 {this.state.letterDropdown && numbers.map((value, index) => {
+            //                     let temp = this.findMyIndex(this.state.letterDropdown, parseInt(value))
+            //                     let temp2 = this.state.letterDropdown + value
+
+            //                     if (this.state.allShipTilesOccupied.length > 0) {
+            //                         if (this.state.allShipTilesOccupied.indexOf(temp) === (-1)) {
+            //                             if (this.state.boat.length > 0) {
+            //                                 let temp3 = this.state.boat[0].value
+            //                                 temp3 = temp3.slice(1)
+            //                                 console.log(temp3)
+            //                                 console.log(index)
+            //                                 if (this.state.counter === 0 && Math.abs(value - temp3) < 5) {
+            //                                     if (this.state.boat.length >= 2) {
+            //                                         if (this.state.currentShipAlignment === 'vertical' && ((parseInt(index) + 1) === temp3)) {
+            //                                             return <option key={index} value={value}>{value}</option>
+            //                                         } else {
+            //                                             return <option key={index} value={value}>{value}</option>
+            //                                         }
+            //                                     } else {
+            //                                         return <option key={index} value={value}>{value}</option>
+            //                                     }
+            //                                 } else
+            //                                     if (this.state.counter === 1 && Math.abs(value - temp3) < 4) {
+            //                                         return <option key={index} value={value}>{value}</option>
+            //                                     } else
+            //                                         if ((this.state.counter === 2 || this.state.counter === 3) && Math.abs(value - temp3) < 3) {
+            //                                             return <option key={index} value={value}>{value}</option>
+            //                                         } else
+            //                                             if (this.state.counter === 4 && Math.abs(value - temp3) < 2) {
+            //                                                 return <option key={index} value={value}>{value}</option>
+            //                                             }
+            //                             } else
+            //                                 return <option key={index} value={value}>{value}</option>
+            //                         }
+            //                     }
+            //                     else {
+            //                         return <option key={index} value={value}>{value}</option>
+            //                     }
+            //                 })//.filter((value, index) => {
+            //                     //let temp = this.findMyIndex(this.state.letterDropdown, parseInt(value))
+            //                     //let temp2 = this.state.letterDropdown+value
+            //                     //if(this.handleCheckValue(temp2, temp)){
+            //                     //  return <option key ={index} value={value}>{value}</option>
+            //                     //}
+            //                     //})
+            //                 }
+            //                 {/* {this.state.letterDropdown && numbers.map((value, index) => {
+            //         let temp = this.findMyIndex(this.state.letterDropdown, parseInt(value))
+            //         let temp2 = this.state.letterDropdown+value
+            //         console.log(temp2)
+            //         if(this.state.allShipTilesOccupied.length > 0){
+            //           if(this.state.allShipTilesOccupied.indexOf(temp)===(-1)){//} && !this.state.misses.includes(this.state.letterDropdown + value)){
+            //               if(this.handleCheckValue((this.state.letterDropdown+value),temp) === true){
+            //                 return <option key ={index} value={value}>{value}</option>
+            //               }
+            //           }
+            //           //return null;
+            //         } else {
+            //           return <option key ={index} value={value}>{value}</option>
+            //         }
+            //       })} */}
+            //             </select>
+            //         </div>
+            //         <h4>You have selected: {this.state.selected}</h4>
+            //     </fieldset>
+            // </form>
+        )
     }
 
     /*
@@ -432,6 +595,9 @@ class UserGrid extends React.Component {
 
         } else return `Your Fleet is Ready for Battle...`
     };
+
+
+
 
 
     /*
@@ -494,11 +660,11 @@ class UserGrid extends React.Component {
                     counter: this.state.counter + 1,
                     boat: [],
                     currentShipAlignment: null,
-                    numberDropdown:'',
-                    letterDropdown:'',
-                    selected:'',
-                    usingDropdown:false,
-                    currentId:''
+                    numberDropdown: '',
+                    letterDropdown: '',
+                    selected: '',
+                    usingDropdown: false,
+                    currentId: ''
                 })
             } else {        // Occurs when the boat is determined to be invalid
                 this.messageCreator()   // Call to 'messageCreator' results in error message being returned
@@ -551,25 +717,25 @@ class UserGrid extends React.Component {
             if (this.state.boat.length <= this.state.playerShips[this.state.counter].length) {
                 // Next line calls setState for the very first ship tile laid.
                 if ((this.state.boat.length === 0) && (this.state.shipTileLaid === false)) {
-                  if(!this.state.usingDropdown){
-                    this.updateFirstShipTileState(value, idNum)
-                  } else {
-                      if(this.state.tileSelectedFromDropdown){
+                    if (!this.state.usingDropdown) {
                         this.updateFirstShipTileState(value, idNum)
-                      }
-                      return true
-                  }
-                 }
+                    } else {
+                        if (this.state.tileSelectedFromDropdown) {
+                            this.updateFirstShipTileState(value, idNum)
+                        }
+                        return true
+                    }
+                }
                 // setState for the first tile of each subsequent ship 
                 else if ((this.state.boat.length === 0 && this.state.shipTileLaid === true) && (this.state.allShipTilesOccupied.indexOf(idNum) === (-1))) {
-                    if(!this.state.usingDropdown){
-                      this.updateFirstShipTileForOtherBoatsState(value, idNum)
-                    } else {
-                      if(this.state.tileSelectedFromDropdown){
+                    if (!this.state.usingDropdown) {
                         this.updateFirstShipTileForOtherBoatsState(value, idNum)
-                      }
-                      return true
-                  }
+                    } else {
+                        if (this.state.tileSelectedFromDropdown) {
+                            this.updateFirstShipTileForOtherBoatsState(value, idNum)
+                        }
+                        return true
+                    }
                 }
                 /*
                      The following calls setState for ship cells other than the first cell. Ship arrangement
@@ -604,14 +770,14 @@ class UserGrid extends React.Component {
                                 //     occupied' and 'allShipTiles' , and sets the direction to horizontal.
                                 //     'handleCheckBoatLength' function is invoked as callback to see if boat
                                 //     requirements have been fulfilled.
-                                if(!this.state.usingDropdown){
-                                  this.updateHorizontalShipTiles(value, idNum)
-                                } else {
-                                  if(this.state.tileSelectedFromDropdown){
+                                if (!this.state.usingDropdown) {
                                     this.updateHorizontalShipTiles(value, idNum)
-                                  }
-                                  return true
-                              }
+                                } else {
+                                    if (this.state.tileSelectedFromDropdown) {
+                                        this.updateHorizontalShipTiles(value, idNum)
+                                    }
+                                    return true
+                                }
                             }
                         } else // If the cell selected is two cells away from the boat origin
                             if ((lastIdNum === firstIdNum + 2 || lastIdNum === firstIdNum - 2) &&
@@ -620,13 +786,13 @@ class UserGrid extends React.Component {
                                 (this.state.playerShips[this.state.counter].length > 2) &&
                                 (this.state.currentShipAlignment !== 'vertical')) {
                                 if (firstCurrentDigit.charAt(0) === firstDigit.charAt(0)) {
-                                    if(!this.state.usingDropdown){
-                                      this.updateHorizontalShipTiles(value, idNum)
-                                    } else {
-                                      if(this.state.tileSelectedFromDropdown){
+                                    if (!this.state.usingDropdown) {
                                         this.updateHorizontalShipTiles(value, idNum)
-                                      }
-                                      return true
+                                    } else {
+                                        if (this.state.tileSelectedFromDropdown) {
+                                            this.updateHorizontalShipTiles(value, idNum)
+                                        }
+                                        return true
                                     }
                                 }
                             } else // If the cell selected is 3 cells away from the boat origin
@@ -636,14 +802,14 @@ class UserGrid extends React.Component {
                                     (this.state.playerShips[this.state.counter].length > 3) &&
                                     (this.state.currentShipAlignment !== 'vertical')) {
                                     if (firstCurrentDigit.charAt(0) === firstDigit.charAt(0)) {
-                                       if(!this.state.usingDropdown){
-                                          this.updateHorizontalShipTiles(value, idNum)
-                                       } else {
-                                        if(this.state.tileSelectedFromDropdown){
-                                          this.updateHorizontalShipTiles(value, idNum)
+                                        if (!this.state.usingDropdown) {
+                                            this.updateHorizontalShipTiles(value, idNum)
+                                        } else {
+                                            if (this.state.tileSelectedFromDropdown) {
+                                                this.updateHorizontalShipTiles(value, idNum)
+                                            }
+                                            return true
                                         }
-                                        return true
-                                    }
                                     }
                                 } else // If the cell selectedis 4 cells away from the boat origin
                                     if ((lastIdNum === firstIdNum + 4 || lastIdNum === firstIdNum - 4) &&
@@ -652,14 +818,14 @@ class UserGrid extends React.Component {
                                         (this.state.playerShips[this.state.counter].length > 4) &&
                                         (this.state.currentShipAlignment !== 'vertical')) {
                                         if (firstCurrentDigit.charAt(0) === firstDigit.charAt(0)) {
-                                          if(!this.state.usingDropdown){
-                                            this.updateHorizontalShipTiles(value, idNum)
-                                          } else {
-                                            if(this.state.tileSelectedFromDropdown){
-                                              this.updateHorizontalShipTiles(value, idNum)
+                                            if (!this.state.usingDropdown) {
+                                                this.updateHorizontalShipTiles(value, idNum)
+                                            } else {
+                                                if (this.state.tileSelectedFromDropdown) {
+                                                    this.updateHorizontalShipTiles(value, idNum)
+                                                }
+                                                return true
                                             }
-                                            return true
-                                        }
                                         }
                                     }
                         //  The following checks to see if when laying ship tiles vertically, we are in valid range 
@@ -671,25 +837,25 @@ class UserGrid extends React.Component {
                             (this.state.currentShipAlignment !== 'horizontal')) {
                             // setState in vertical alignment sets the 'currentShipAlignment' to vertical
                             //    in state. Once set, change to horizontal cannot be made
-                            if(!this.state.usingDropdown){
+                            if (!this.state.usingDropdown) {
                                 this.updateVerticalShipTiles(value, idNum)
                             } else {
-                              if(this.state.tileSelectedFromDropdown){
-                                this.updateVerticalShipTiles(value, idNum)
-                              }
-                              return true
-                          }
+                                if (this.state.tileSelectedFromDropdown) {
+                                    this.updateVerticalShipTiles(value, idNum)
+                                }
+                                return true
+                            }
                         } else // If two cells above, or below boat origin
                             if ((lastIdNum === firstIdNum + 20 || lastIdNum === firstIdNum - 20) &&
                                 this.state.allShipTilesOccupied.indexOf(lastIdNum) === (-1) &&
                                 (Math.max(...this.state.shipOccupied) - lastIdNum < 50) &&
                                 (this.state.playerShips[this.state.counter].length > 2) &&
                                 (this.state.currentShipAlignment !== 'horizontal')) {
-                                  if(!this.state.usingDropdown){
-                                      this.updateVerticalShipTiles(value, idNum)
-                                  } else {
-                                    if(this.state.tileSelectedFromDropdown){
-                                      this.updateVerticalShipTiles(value, idNum)
+                                if (!this.state.usingDropdown) {
+                                    this.updateVerticalShipTiles(value, idNum)
+                                } else {
+                                    if (this.state.tileSelectedFromDropdown) {
+                                        this.updateVerticalShipTiles(value, idNum)
                                     }
                                     return true
                                 }
@@ -699,28 +865,28 @@ class UserGrid extends React.Component {
                                     (Math.max(...this.state.shipOccupied) - lastIdNum < 50) &&
                                     (this.state.playerShips[this.state.counter].length > 3) &&
                                     (this.state.currentShipAlignment !== 'horizontal')) {
-                                    if(!this.state.usingDropdown){  
+                                    if (!this.state.usingDropdown) {
                                         this.updateVerticalShipTiles(value, idNum)
                                     } else {
-                                      if(this.state.tileSelectedFromDropdown){
-                                        this.updateVerticalShipTiles(value, idNum)
-                                      }
-                                      return true
-                                  }
+                                        if (this.state.tileSelectedFromDropdown) {
+                                            this.updateVerticalShipTiles(value, idNum)
+                                        }
+                                        return true
+                                    }
                                 } else // If four cells above, or below boat origin
                                     if ((lastIdNum === firstIdNum + 40 || lastIdNum === firstIdNum - 40) &&
                                         this.state.allShipTilesOccupied.indexOf(lastIdNum) === (-1) &&
                                         (Math.max(...this.state.shipOccupied) - lastIdNum < 50) &&
                                         (this.state.playerShips[this.state.counter].length > 4) &&
                                         (this.state.currentShipAlignment !== 'horizontal')) {
-                                        if(!this.state.usingDropdown){
+                                        if (!this.state.usingDropdown) {
                                             this.updateVerticalShipTiles(value, idNum)
                                         } else {
-                                          if(this.state.tileSelectedFromDropdown){
-                                            this.updateVerticalShipTiles(value, idNum)
-                                          }
-                                          return true
-                                      }
+                                            if (this.state.tileSelectedFromDropdown) {
+                                                this.updateVerticalShipTiles(value, idNum)
+                                            }
+                                            return true
+                                        }
                                     }
                     }
                 }
@@ -772,23 +938,25 @@ class UserGrid extends React.Component {
             this.props.clearError();
         }
         if (!this.state.shipsReady) {
-            this.handleCheckValue(value, idNum);
-            if(this.state.usingDropdown){
-              this.setState({
-                  selected: value,
-                  message: null,
-                  currentId: idNum,
-                  letterDropdown: value.charAt(0),
-                  numberDropdown: value.slice(1),
-              })
-            } else {
-              this.setState({
-                selected: value,
-                message: null,
-                currentId: idNum,
-              })
-        }
-      };
+            //this.handleCheckValue(value, idNum);
+
+            if (!this.state.allShipTilesOccupied.includes(value)) {
+                this.setState({
+                    selected: value,
+                    message: null,
+                    currentId: idNum,
+                    letterDropdown: value.charAt(0),
+                    numberDropdown: value.slice(1),
+                }, () => this.updateGhostShip())
+            }
+            // else {
+            //     this.setState({
+            //         selected: value,
+            //         message: null,
+            //         currentId: idNum,
+            //     })
+            // }
+        };
     }
 
     /*
@@ -853,21 +1021,21 @@ class UserGrid extends React.Component {
     }
 
     handleClearBoat = () => {
-      let temp = this.state.boat
-      let temp2 = this.state.allShipTilesOccupied
-      temp2.splice(-temp.length, temp.length)
-      let temp3 = this.state.shipTileValues
-      temp3.splice(-temp.length, temp.length)
-      this.setState({
-        boat: [],
-        currentShipAlignment: null,
-        shipOccupied: [],
-        selected:'',
-        currentId:'',
-        letterDropdown:'',
-        numberDropdown:'',
-        usingDropdown:false,
-      })
+        let temp = this.state.boat
+        let temp2 = this.state.allShipTilesOccupied
+        temp2.splice(-temp.length, temp.length)
+        let temp3 = this.state.shipTileValues
+        temp3.splice(-temp.length, temp.length)
+        this.setState({
+            boat: [],
+            currentShipAlignment: null,
+            shipOccupied: [],
+            selected: '',
+            currentId: '',
+            letterDropdown: '',
+            numberDropdown: '',
+            usingDropdown: false,
+        })
     }
 
 
@@ -901,10 +1069,11 @@ class UserGrid extends React.Component {
                             idNumber={this.findMyIndex(letter, num)}
                             handleSelectTarget={this.handleSelectTarget}
                             shipTiles={this.state.shipOccupied}
-                            allShipTiles={this.state.allShipTilesOccupied}
+                            //allShipTiles={this.state.allShipTilesOccupied}
                             shipTileValues={this.state.shipTileValues}
                             opponentShots={this.state.opponentShots}
-                             />
+                            ghostShip={this.state.ghostShipTiles}
+                        />
                     })
                     }
                 </div>
@@ -922,11 +1091,11 @@ class UserGrid extends React.Component {
 
 
     render() {
+        let shipSetForm = this.props.shipsReady ? null: this.handleRenderDropDown();
         return (
             <div className='UserContainer grid'>
                 <div className='UserGrid'>
-                    {this.handleRenderDropDown()}
-                    <button type='button' onClick={this.handleClearBoat}>Clear Current Boat</button>
+                    {shipSetForm}
                     {this.handleRenderGrid()}
                 </div>
                 <span className='ErrorSpan'>

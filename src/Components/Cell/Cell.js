@@ -19,27 +19,32 @@ class Cell extends React.Component {
     let className = 'cell';
 
     if (this.props.hits && this.props.hits.includes(this.props.id)) {
-      className += ' hit'
+      className += ' hit';
     } else if (this.props.misses && this.props.misses.includes(this.props.id)) {
-        className += ' miss'
-      }
+      className += ' miss';
+    }
 
     if (this.props.shipTileValues.length > 0) {
       if (this.props.shipTileValues.includes(this.props.id)) {
-        className += ' ship'
+        className += ' ship';
         if (this.props.opponentShots && this.props.opponentShots.includes(this.props.id)) {
-          className += '-shot'
+          className += '-shot';
         }
       } else if (this.props.opponentShots && this.props.opponentShots.includes(this.props.id)) {
-        className += ' shot'
+        className += ' shot';
       }
     }
     else if (this.props.selected === this.props.id) {
-      className += ' selected'
+      className += ' selected';
     }
-    else if(this.props.label){
-      className+= ' label'
+    else if (this.props.label) {
+      className += ' label';
     }
+
+    if(this.props.ghostShip && this.props.ghostShip.includes(this.props.id)) {
+      className += ' ghostship';
+    }
+
     return className;
   }
 
@@ -56,7 +61,7 @@ class Cell extends React.Component {
     else if (this.props.label) {
       return false;
     }
-    else if(this.props.shipTileValues.length===17){
+    else if (this.props.shipTileValues.length === 17) {
       return false;
     }
     else {
@@ -71,20 +76,16 @@ class Cell extends React.Component {
     }
   }
 
-  handleHover=() => {
-    
+  handleHover = () => {
+
   }
 
   render() {
     return (
-      <div 
+      <div
         className={this.determineClassName()}
         onClick={() => this.handleClick()}
-<<<<<<< HEAD
-        
-=======
         onMouseOver={() => this.handleHover()}
->>>>>>> 4aa533ae7a7e7efa2bb0d686027d757fcbc0c043
       >
         {this.props.label ? this.props.id : ''}
       </div>
