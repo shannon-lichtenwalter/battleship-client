@@ -139,8 +139,6 @@ class GameBoard extends React.Component {
     
   }
 
-  
-
   handleResults = () => {
     let player = this.state.playerNum;
     let gameId = this.state.gameId;
@@ -160,7 +158,6 @@ class GameBoard extends React.Component {
     let versusHeader = this.state.playerUsername && this.state.opponentUsername
       ? <h2>{this.state.playerUsername + ' versus ' + this.state.opponentUsername}</h2>
       : <h2>Waiting for Opponent...</h2>;
-
 
     let userGrid = this.state.socket
       ? <UserGrid
@@ -203,7 +200,6 @@ class GameBoard extends React.Component {
         updateShipsCounter={this.updateShipsCounter} />
       : null;
 
-
     let waitingOnOpponent = (this.state.shipsReady && !this.state.opponentShipsReady)
       ? <p> Waiting For Both Players to Set Their Ships ! </p> : null;
 
@@ -220,14 +216,16 @@ class GameBoard extends React.Component {
     return (
       <div className='gameroom'>
         <Header />
+
         {errorMessage}
         {!this.state.error && versusHeader}
+        
         <div className='grid-box'>
           {userGrid}
           {opponentGrid}
         </div>
+        
         {waitingOnOpponent}
-
         {resultButton}
         {chat}
 

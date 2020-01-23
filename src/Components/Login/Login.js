@@ -55,7 +55,6 @@ class Login extends Component {
     return (
       <div className='login'>
         <Banner />
-        
         <h1>Login</h1>
         
         <form className='loginform' onSubmit={event => this.handleSubmit(event)} onChange={() => this.resetError()}>
@@ -98,7 +97,6 @@ class Login extends Component {
       </div>
     );
   };
-  
 };
 
 export default withRouter(Login);

@@ -43,14 +43,10 @@ class GameHistory extends React.Component {
                 let playerUsername = this.state.history.playerUsername;
                 let opponentUsername = game.player1_username === playerUsername ? game.player2_username : game.player1_username;
 
-
                 let winnerUsername = game[`${[game.winner]}_username`];
                 let winBool = playerUsername === winnerUsername;
                 let winStatus = winBool ? 'Win' : 'Loss';
-
-
-                let playerString = playerUsername === game.player1_username ? 'player1' : 'player2'
-
+                let playerString = playerUsername === game.player1_username ? 'player1' : 'player2';
                 let winReason = null;
 
                 if (game.game_status === 'complete') winReason = 'skill';
@@ -74,6 +70,7 @@ class GameHistory extends React.Component {
         return (
             <div className='gameHistory'>
                 <Header />
+                
                 {userWelcome}
                 <h2>Game History</h2>
                 
