@@ -37,7 +37,7 @@ class GameHistory extends React.Component {
         let completedGames = 'No game history availiable';
         let userWelcome = null
         if (this.state.history) {
-            userWelcome = <h2 className='dashboardWelcome'><span className='username'>{this.state.history.playerUsername}</span>'s Game History</h2>
+            userWelcome = <h2 className='historyWelcome'><span className='username'>{this.state.history.playerUsername}</span>'s Game History</h2>
 
             completedGames = this.state.history.result.map(game => {
                 let playerUsername = this.state.history.playerUsername;
@@ -72,7 +72,7 @@ class GameHistory extends React.Component {
                 <Header />
                 
                 {userWelcome}
-                <h2>Game History</h2>
+                <h1>Game History</h1>
                 
                 <ul className='game-history-list'>
                     {completedGames}

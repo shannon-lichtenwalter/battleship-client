@@ -1,5 +1,6 @@
 import React from 'react';
 import Cell from '../Cell/Cell';
+import Button from '../Button/Button';
 import './OpponentGrid.css';
 
 class OpponentGrid extends React.Component {
@@ -281,7 +282,7 @@ class OpponentGrid extends React.Component {
         <div className='target' aria-live='polite'>
           {this.handleRenderDropDown()}
           <form onSubmit={(event) => this.handleFire(event)}>
-            <button type='submit'>Fire!</button>
+            <Button type='submit'>Fire!</Button>
           </form>
         </div>
         : <p aria-live='polite'>Waiting for {this.props.opponentUsername}{this.props.opponentUsername.charAt(this.props.opponentUsername.length - 1) === 's'

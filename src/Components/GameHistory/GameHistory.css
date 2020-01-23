@@ -7,8 +7,12 @@
     background-color: rgb(30, 52, 90);
 }
 
+.gameHistory h1 {
+    margin-bottom: 2rem;
+}
+
 .gameHistory {
-    margin-top: 10rem;
+    margin-top: 8rem;
 }
 
 .game-history-li {
@@ -32,6 +36,14 @@
     font-weight: bold;
 }
 
+.historyWelcome {
+    font-size: 1.5rem;
+    text-align: left;
+    margin-left: 1rem;
+    margin-top: 8.3rem;
+    margin-bottom: 2rem;
+}
+
 @media screen and (min-width: 900px) {
     .game-history-list {
         width: 75%;
@@ -41,5 +53,13 @@
 @media screen and (min-width: 1025px) {
     .game-history-list {
         width: 65%;
+    }
+
+    .gameHistory {
+        margin-top: 9rem;
+    }
+
+    .historyWelcome {
+        margin-bottom: 3rem;
     }
 }
