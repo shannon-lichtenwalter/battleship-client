@@ -21,8 +21,9 @@
 
 #letter-dropdown,
 #number-dropdown {
-    color: white;
     font-size: 0.98rem;
+    color: black;
+    border: 1px solid white;
 }
 
 .UserContainer h2, .UserContainer p {
@@ -87,22 +88,6 @@
 
     .target {
         width: 95%;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    #letter-dropdown,
-    #number-dropdown {
-    color: white;
-    font-size: 1rem;
-    }
-}
-
-@media screen and (min-width: 1025px) {
-    #letter-dropdown,
-    #number-dropdown {
-    color: white;
-    font-size: 1rem;
     }
 }
 
