@@ -122,7 +122,7 @@ describe.only(`UserGrid Component`, () => {
       wrapper.find('Cell').at(28).simulate('click')
       wrapper.find('Cell').at(29).simulate('click')
       setTimeout(() => {
-          expect(wrapper.text()).toMatch(/All Ships Have Been Set/)
+          expect(wrapper.text()).toMatch(/Your Fleet is Ready for Battle.../)
       }, 1000)
   })
 

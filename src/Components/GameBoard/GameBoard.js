@@ -146,7 +146,6 @@ class GameBoard extends React.Component {
     let gameId = this.state.gameId;
     let playerWinBool = this.state.whoWon === this.state.playerNum ? true : false;
 
-    // this.props.setResults(player, 2, 'my username', 'my opponents username');
     this.props.setResults(player, gameId, this.state.playerUsername, this.state.opponentUsername, playerWinBool);
     this.props.history.push('/result');
   }
