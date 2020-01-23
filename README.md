@@ -1,22 +1,12 @@
-<<<<<<< HEAD
-# Battleship
- 
-Created by Aedan Warfield, Sean Cooper, Shannon Lichtenwalter, and Heesu Kang
-=======
 # Battleship Client
 
 Live app: https://capstone3-battleship.now.sh/
->>>>>>> master
 
 Server GitHub: https://github.com/thinkful-ei-heron/Group1-Capstone3-Server
 
 ## Summary
 
-
-
 ## Tutorial
-
-
 
 ## Technology Used
 
