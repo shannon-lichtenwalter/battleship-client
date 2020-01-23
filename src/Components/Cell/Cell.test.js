@@ -13,7 +13,7 @@ describe('Cell component', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it(`Displays a cell tile when rendered`, () => {
+  it.skip(`Displays a cell tile when rendered`, () => {
     const wrapper = shallow(<Cell />)
     expect(toJson(wrapper)).toMatchSnapshot()
   })
@@ -57,7 +57,7 @@ describe('Cell component', () => {
       })
 
 
-  it(`Cannot be clicked if currently a label` , () => {
+  it.skip(`Cannot be clicked if currently a label` , () => {
     const label = true
     const id = 'A'
     const wrapper = mount(<Cell label={label} id={id}/>)

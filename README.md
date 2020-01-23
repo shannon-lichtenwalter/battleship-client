@@ -1,39 +1,30 @@
+<<<<<<< HEAD
 # Battleship
  
 Created by Aedan Warfield, Sean Cooper, Shannon Lichtenwalter, and Heesu Kang
+=======
+# Battleship Client
 
------------------------
+Live app: https://capstone3-battleship.now.sh/
+>>>>>>> master
 
-## About Project
+Server GitHub: https://github.com/thinkful-ei-heron/Group1-Capstone3-Server
 
-- Live Page:
-- Server Code:
-- Heroku:
+## Summary
 
------------------------
 
-## Screenshots
 
-<!-- ![Landing Page]() -->
+## Tutorial
 
------------------------
 
-## Technologies Used
 
-Client deployed by Zeit
+## Technology Used
 
-- React.js
-- JavaScript
-- HTML
-- CSS
-- JWT
+Javascript, React, CSS, HTML, Socket .io
 
-Server deployed by Heroku
+## Programmers
 
-- Express.js
-- Node.js
-- PostgreSQL
-- WebSocket
-- JWT
-
------------------------
+- Aedan Warfield - Project Manager - https://www.linkedin.com/in/aedanwarfield/
+- Shannon Lichtenwalter - Product Owner - https://www.linkedin.com/in/shannon-lichtenwalter/
+- Sean Cooper - Quality Assurance - https://www.linkedin.com/in/sean-cooper-20799a185/
+- Heesu Kang - CSS Lead - https://www.linkedin.com/in/heesu-kang/

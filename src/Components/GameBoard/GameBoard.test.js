@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import GameBoard from './GameBoard';
+import { MemoryRouter } from 'react-router-dom';
 
 describe('GameBoard component', () => {
   let gameData = {
@@ -19,9 +20,13 @@ describe('GameBoard component', () => {
       shipsReady: null,
     }
 
+    beforeAll(() => {
+      window.scrollTo = jest.fn();
+    })
+
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<GameBoard gameData={gameData}/>, div);
+    ReactDOM.render(<MemoryRouter><GameBoard gameData={gameData}/></MemoryRouter>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 });

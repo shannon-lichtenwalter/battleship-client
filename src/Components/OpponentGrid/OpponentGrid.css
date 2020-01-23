@@ -19,6 +19,33 @@
   margin-top: 5rem;
 }
 
+.progress {
+  margin: 5px;
+  border: 1px solid white;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  margin-left:auto;
+  margin-right: auto;
+  padding: 10px;
+}
+.shipCounter{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  margin-left: 10px;
+  
+}
+
+.shipCounter > li{
+  text-align: left;
+  font-size: 1rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  
+  
+}
+
 @media screen and (min-width: 350px) {
   .OpponentGrid {
       width: 20.08rem;
@@ -49,6 +76,12 @@
   }
 }
 
+@media screen and (min-width: 400px) {
+  .progress{
+    width: 80%;
+  }
+}
+
 @media screen and (min-width: 450px) {
   .OpponentGrid {
     width: 25.2rem;
@@ -67,6 +100,10 @@
   .OpponentContainer h2 {
     margin-top: 7rem;
   }
+
+  .progress{
+    width: 70%;
+  }
 }
 
 @media screen and (min-width: 550px) {
@@ -80,8 +117,8 @@
     width: 29.02rem;
   }
 
-  .OpponentContainer h2 {
-    margin-top: 8rem;
+  .progress{
+    width: 60%;
   }
 }
 

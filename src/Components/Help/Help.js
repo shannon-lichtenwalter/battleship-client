@@ -16,6 +16,33 @@ class Help extends Component {
           <h1>Help</h1>
           <div className='helpIB'>
             <h2>Instructions</h2>
+            Key: 
+            <div className='key'>
+              <div>
+                <div className='cell'></div>
+                <p>Open Target</p>
+              </div>
+              <div>
+                <div className='cell selected'></div>
+                <p>Selected Target</p>
+              </div>
+              <div>
+                <div className='cell hit'></div>
+                <p>Hit Target</p>
+              </div>
+              <div>
+                <div className='cell miss'></div>
+                <p>Missed Target</p>
+              </div>
+              <div>
+                <div className='cell ship'></div>
+                <p>Ship Location</p>
+              </div>
+              <div>
+                <div className='cell sunk'></div>
+                <p>Sunken Ship</p>
+              </div>
+            </div>
             <ul>
               <li>1. If you want to start a new game, then select "Start a New Game". <br />
                   Or if you want to play passive with random person, then select "Resume Game?".</li>

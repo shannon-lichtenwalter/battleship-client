@@ -26,7 +26,7 @@ class Header extends Component {
       <div>
         <Banner />
 
-        <header>
+        <header className='main-header'>
           {firstButton}
           
           <Button onClick={() => {

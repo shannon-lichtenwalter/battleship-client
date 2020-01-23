@@ -8,6 +8,12 @@
   text-decoration: underline;
 }
 
+.disabledButton:hover {
+  color: black;
+  background-color: rgba(171, 208, 245, 0.7);
+  box-shadow:none;
+}
+
 @media screen and (min-width: 900px) {
   .activeGameListItem li {
     font-size: 1.8rem;

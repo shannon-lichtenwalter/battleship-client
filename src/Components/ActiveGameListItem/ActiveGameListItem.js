@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import loadGamesApiService from '../../Services/load-game-api-service';
 import { withRouter } from 'react-router-dom';
 import Button from '../Button/Button';
@@ -29,8 +29,7 @@ class ActiveGameListItem extends React.Component {
   //This function retrieves all game data for an active game. It sets the state of App with the data
   //depending on if the current user is player1 or player2. Then it routes the user to the gameroom.
   handleResumeGame = () => {
-    let currentUserPlayer = Number(this.props.userId) === Number(this.props.game.player1) ? 'player1' : 'player2'
-    return loadGamesApiService.resumeActiveGame(this.props.game.id, currentUserPlayer)
+    return loadGamesApiService.resumeActiveGame(this.props.game.id)
       .then(res => {
         let gameData = res;
         let storeData = {};
@@ -62,6 +61,7 @@ class ActiveGameListItem extends React.Component {
         storeData.room_id = this.props.game.room_id;
         storeData.resumedGame = true;
         storeData.shipTileValues = [];
+        storeData.shipsCounter = gameData.shipsCounter;
         storeData.userShips.map(ship => {
           if (ship.spaces) {
             storeData.shipTileValues = [...storeData.shipTileValues, ...ship.spaces]
@@ -81,25 +81,9 @@ class ActiveGameListItem extends React.Component {
   // that the game has been forfeited and that the user who submitted the
   //forfeit request will be counted as the loser
   handleQuitGame = () => {
-    let playerNum = Number(this.props.userId) === Number(this.props.game.player1) ? 'player1' : 'player2' //param
     let gameId = this.props.game.id;
-    let opponentNum = null;
-    let opponentId = null;
-    
-    if(playerNum === 'player1'){
-      opponentNum = 'player2';
-      opponentId = this.props.game.player2;
-    } else{
-      opponentNum = 'player1';
-      opponentId = this.props.game.player1;
-    }
 
-    let opponentData = {
-      opponentNum,
-      opponentId
-    }
-
-    loadGamesApiService.quitActiveGame(gameId, playerNum, opponentData).then(res =>{
+    loadGamesApiService.quitActiveGame(gameId).then(res =>{
       this.setState({
         quitting:false
       })
@@ -117,31 +101,33 @@ class ActiveGameListItem extends React.Component {
 
   render() {
     return (
-      <div className='activeGameListItem'>
+      <Fragment>
         <li>{this.props.game.player1_username} versus {this.props.game.player2_username}</li>
-        <ul className='activeGameDetails'>
-          <li>GameRoom: #{this.props.game.room_id}</li>
-          <li>Turn: {this.props.userId && this.determineTurn()}</li>
-          <li>
-            <Button onClick={this.handleResumeGame}>
-              Resume Game?
-            </Button>
-            {!this.props.game.player2 
-              ? <p>Waiting for opponent...</p> 
-              : <Button onClick={()=> this.setState({quitting:true})}>
-                Quit Game?
-              </Button>}
-            {this.state.quitting && 
-            <>
-              <h4>Are you sure you want to quit?</h4>
-              <p>Your opponent will be marked as the winner and you will be marked as having lost the game.</p>
-              <button onClick = {() => this.handleQuitGame()}>Quit Game Now</button>
-              <button onClick = {()=> this.setState({quitting:false})}>Keep Game Active</button>
-            </> }
-            {this.state.error && <p>{this.state.error}. Please refresh page.</p>}
-          </li>
-        </ul>
-      </div>
+        <li className='activeGameListItem'>
+          <ul className='activeGameDetails'>
+            <li>GameRoom: #{this.props.game.room_id}</li>
+            <li>Turn: {this.props.userId && this.determineTurn()}</li>
+            <li>
+              <Button onClick={this.handleResumeGame}>
+                Resume Game?
+              </Button>
+              {!this.props.game.player2 
+                ? <button className='disabledButton' type='button' disabled>Awaiting opponent...</button>
+                : <Button onClick={()=> this.setState({quitting:true})}>
+                  Quit Game?
+                </Button>}
+              {this.state.quitting && 
+              <>
+                <h4>Are you sure you want to quit?</h4>
+                <p>Your opponent will be marked as the winner and you will be marked as having lost the game.</p>
+                <button onClick = {() => this.handleQuitGame()}>Quit Game Now</button>
+                <button onClick = {()=> this.setState({quitting:false})}>Keep Game Active</button>
+              </> }
+              {this.state.error && <p>{this.state.error}. Please refresh page.</p>}
+            </li>
+          </ul>
+        </li>
+      </Fragment>
     )
   }
 }

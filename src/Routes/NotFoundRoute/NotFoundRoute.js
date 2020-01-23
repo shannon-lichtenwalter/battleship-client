@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
 class NotFoundRoute extends Component {
+
+  componentDidMount(){
+    document.title = 'Page Not Found'
+  }
+  
   render() {
     return (
       <section>

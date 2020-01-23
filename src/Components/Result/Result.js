@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import LoadGameApiService from '../../Services/load-game-api-service';
 import Button from '../Button/Button';
+import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import './Result.css';
-import LoadGameApiService from '../../Services/load-game-api-service';
-import Header from '../Header/Header';
 
 class Result extends Component {
 
@@ -47,114 +47,44 @@ class Result extends Component {
       const game = this.props.results.game;
       LoadGameApiService.getResults(game)
         .then((res) => {
-          console.log(res[0])
-          console.log(res[0].player1_hits)
-          console.log(res[0].player1_misses)
-          console.log(res[0].player2_hits)
-          console.log(res[0].player2_misses)
+
+          let p1Hits = JSON.parse(res[0].player1_hits);
+          let p1Misses = JSON.parse(res[0].player1_misses);
+          let p2Hits = JSON.parse(res[0].player2_hits);
+          let p2Misses = JSON.parse(res[0].player2_misses);
+
           this.setState({
-            player1_hits: JSON.parse(res[0].player1_hits),
-            player1_misses: JSON.parse(res[0].player1_misses),
-            player2_hits: JSON.parse(res[0].player2_hits),
-            player2_misses: JSON.parse(res[0].player2_misses),
+            player1_hits: p1Hits ? p1Hits: [],
+            player1_misses: p1Misses ? p1Misses: [],
+            player2_hits: p2Hits ? p2Hits: [],
+            player2_misses: p2Misses ? p2Misses: [],
             player: player
-          })
-          this.updateResults()
+          },() => this.updateResults())
+          
         })
         .catch((e) => this.setError(e));
     }
   }
 
   updateResults = () => {
-    let player1HitArrayLength = this.state.player1_hits.length
-    let player1MissArrayLength = this.state.player1_misses.length
-    let player2HitArrayLength = this.state.player2_hits.length
-    let player2MissArrayLength = this.state.player2_misses.length
-    if (this.state.player === 'player1') {
-      if (player1HitArrayLength > player2HitArrayLength) {
-        let totalShots = player1HitArrayLength + player1MissArrayLength
-        let hitRatio = player1HitArrayLength / totalShots
-        let missed = player1MissArrayLength
-        // We are setting the component state to the winner, loser (if its not a tie), player hit ratio,
-        //    total hits on the enemy, total misses on the enemy, and total shots fired in order to render
-        //    the correct results. 
-        this.setState({
-          winner: 'Player 1',
-          loser: 'Player 2',
-          hRatio: hitRatio,
-          totalHits: player1HitArrayLength,
-          totalMisses: missed,
-          totalShots: totalShots
-        })
-      } else if (this.state.player1_hits.length < this.state.player2_hits.length) {
-        let totalShots = player1HitArrayLength + player1MissArrayLength
-        let hitRatio = player1HitArrayLength / totalShots
-        let missed = player1MissArrayLength
-        this.setState({
-          winner: 'Player 2',
-          loser: 'Player 1',
-          hRatio: hitRatio,
-          totalHits: player1HitArrayLength,
-          totalMisses: missed,
-          totalShots: totalShots
-        })
-        // If there is a tie
-      } else {
-        let totalShots = player1HitArrayLength + player1MissArrayLength
-        let hitRatio = player1HitArrayLength / totalShots
-        let missed = player1MissArrayLength
-        this.setState({
-          winner: 'Draw!',
-          loser: 'It Was a Tie!',
-          hRatio: hitRatio,
-          totalHits: player1HitArrayLength,
-          totalMisses: missed,
-          totalShots: totalShots
-        })
-      }
-  // If the current player is 'player2', in the case a loser message is implemented
-  } else {
-      // If 'player2' has more hits than 'player1', they are the victor
-      if(player2HitArrayLength > player1HitArrayLength){
-        let totalShots = player2HitArrayLength + player2MissArrayLength
-        let hitRatio = player2HitArrayLength / totalShots
-        let missed = player2MissArrayLength
-        this.setState({
-          winner: 'Player 2',
-          loser: 'Player 1',
-          hRatio: hitRatio,
-          totalHits: player2HitArrayLength,
-          totalMisses: missed,
-          totalShots: totalShots
-        })
-      // If 'player2' has less hits than 'player1', they lost
-      } else if (player2HitArrayLength < player1HitArrayLength){
-        let totalShots = player2HitArrayLength + player2MissArrayLength
-        let hitRatio = player2HitArrayLength / totalShots
-        let missed = player2MissArrayLength
-        this.setState({
-          winner: 'Player 1',
-          loser: 'Player 2',
-          hRatio: hitRatio,
-          totalHits: player2HitArrayLength,
-          totalMisses: missed,
-          totalShots: totalShots,
-        })
-        // If there is a tie
-      } else {
-        let totalShots = player2HitArrayLength + player2MissArrayLength
-        let hitRatio = player2HitArrayLength / totalShots
-        let missed = player2MissArrayLength
-        this.setState({
-          winner: 'Draw!',
-          loser: 'There Was a Tie!',
-          hRatio: hitRatio,
-          totalHits: player2HitArrayLength,
-          totalMisses: missed,
-          totalShots: totalShots
-        })
-      }
-    }
+    let playerString = this.props.results.player;
+
+
+    let hits = this.state[`${playerString}_hits`].length;
+    let misses = this.state[`${playerString}_misses`].length;
+    let totalShots = hits + misses;
+    let hitRatio = hits / totalShots;
+    let winnerUsername = this.props.results.playerWin ? this.props.results.playerUsername : this.props.results.opponentUsername;
+    let loserUsername = this.props.results.playerWin ? this.props.results.opponentUsername : this.props.results.playerUsername;
+
+    this.setState({
+      winner: winnerUsername,
+      loser: loserUsername,
+      hRatio: hitRatio ? hitRatio: 0,
+      totalHits: hits,
+      totalMisses: misses,
+      totalShots: totalShots
+    });
   }
 
   /*
@@ -168,6 +98,9 @@ class Result extends Component {
 
         <h1>Result</h1>
         <ul className='results-ul'>
+
+          {this.props.results ? <h2>{`${this.props.results.playerUsername} vs ${this.props.results.opponentUsername}`}</h2> : null}
+
           <li><span className='results-left'>Winner: </span>
             <span className='results-right'>{this.state.winner}</span></li>
 

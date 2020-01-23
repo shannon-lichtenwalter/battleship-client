@@ -23,11 +23,13 @@
 }
 
 .player-Win {
-    color: green;
+    color: greenyellow;
+    font-weight: bold;
 }
 
 .player-Loss {
-    color: red;
+    color: #FF0100;
+    font-weight: bold;
 }
 
 @media screen and (min-width: 900px) {

@@ -23,8 +23,8 @@ class OpponentGrid extends React.Component {
   //who fired the shot.
   componentDidMount = () => {
     this.props.socket.on('response', res => {
-      if(this.props.playerNum === res.playerNum){
-        this.checkForHitOrMiss(res.result, res.ship, res.sunk);
+      if (this.props.playerNum === res.playerNum) {
+        this.checkForHitOrMiss(res.result, res.ship, res.sunk, res.target);
       }
     })
   }
@@ -40,22 +40,25 @@ class OpponentGrid extends React.Component {
   }
 
   //changes the message displayed to the user if a hit/miss was made
-  checkForHitOrMiss = (result, ship, sunk) => {
-    if(ship === 'aircraftCarrier'){
-      ship = 'Aircraft Carrier'
+  checkForHitOrMiss = (result, ship, sunk, target) => {
+    let shipName = ship;
+    if (shipName === 'aircraftCarrier') {
+      shipName = 'Aircraft Carrier'
     }
     if (result === 'hit') {
-      let message = `Direct Hit on ${this.props.opponentUsername}${this.props.opponentUsername.charAt(this.props.opponentUsername.length-1) === 's' 
-      ? '\'' 
-      : '\'s'} 
-      ${ship.charAt(0).toUpperCase() + ship.slice(1)}!`
-      
-      if(sunk){
-          message= `You sunk ${this.props.opponentUsername}${this.props.opponentUsername.charAt(this.props.opponentUsername.length-1) === 's' 
-          ? '\'' 
+      let message = `Direct Hit on ${this.props.opponentUsername}${this.props.opponentUsername.charAt(this.props.opponentUsername.length - 1) === 's'
+        ? '\''
+        : '\'s'} 
+        ${shipName.charAt(0).toUpperCase() + shipName.slice(1)}!`
+
+      if (sunk) {
+        message = `You sunk ${this.props.opponentUsername}${this.props.opponentUsername.charAt(this.props.opponentUsername.length - 1) === 's'
+          ? '\''
           : '\'s'} 
-          ${ship.charAt(0).toUpperCase() + ship.slice(1)}!`;
+            ${shipName.charAt(0).toUpperCase() + shipName.slice(1)}!`;
       };
+
+      this.props.updateShipsCounter(ship, target, sunk);
 
       this.setState({
         result: 'hit',
@@ -65,7 +68,7 @@ class OpponentGrid extends React.Component {
         letterDropdown: '',
         numberDropdown: '',
       })
-      } else {
+    } else {
       this.setState({
         result: 'miss',
         message: 'Missed the Target!',
@@ -77,10 +80,10 @@ class OpponentGrid extends React.Component {
     }
   };
 
-//this function makes sure a user has selected a target. If so, post request is 
-//made to the database to determine if it was a hit or a miss on the opponents' ships.
-//with the response from the database we call check for Hits and check for Misses which will update
-//what the user sees based on a hit or a miss.
+  //this function makes sure a user has selected a target. If so, post request is 
+  //made to the database to determine if it was a hit or a miss on the opponents' ship.
+  //with the response from the database we call check for Hits and check for Misses which will update
+  //what the user sees based on a hit or a miss.
   handleFire = (event) => {
     event.preventDefault();
     if (this.state.selected === null) {
@@ -88,11 +91,12 @@ class OpponentGrid extends React.Component {
         message: 'Must Choose a Target'
       })
     } else {
-      this.props.socket.emit('fire', { 
-        target: this.state.selected, 
-        gameId: this.props.gameId, 
-        playerNum: this.props.playerNum, 
-        roomId: this.props.room })
+      this.props.socket.emit('fire', {
+        target: this.state.selected,
+        gameId: this.props.gameId,
+        playerNum: this.props.playerNum,
+        roomId: this.props.room
+      })
     }
   }
 
@@ -104,25 +108,27 @@ class OpponentGrid extends React.Component {
     let x = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
     return y.map((num, index) => {
       return (
-        <div key={index} className='column'>
-          <Cell 
-            id={num} 
-            label={true} 
-            />
+        <div key={index} className='column' aria-hidden="true">
+          <Cell
+            id={num}
+            label={true}
+          />
+
           {x.map((letter, index) => {
             if (num === 0) {
-              return <Cell 
-                key={letter} 
-                id={letter} 
+              return <Cell
+                key={letter}
+                id={letter}
                 label={true} />
             }
-            return <Cell 
+            return <Cell
               key={letter + num}
               id={letter + num}
               handleSelectTarget={this.handleSelectTarget}
               selected={this.state.selected}
               hits={this.state.hits}
-              misses={this.state.misses} />
+              misses={this.state.misses}
+              shipsCounter= {this.props.shipsCounter} />
           })}
         </div>
       )
@@ -140,22 +146,22 @@ class OpponentGrid extends React.Component {
   setLetterSelectedFromDropDown = () => {
     var e = document.getElementById('letter-dropdown');
     var value = e.options[e.selectedIndex].value;
-    
+
     if (value === '') {
       this.setState({
         letterDropdown: '',
         numberDropdown: '',
         selected: null
       })
-    } else if(this.state.numberDropdown){
-      if(!this.state.hits.includes(value + this.state.numberDropdown) && !this.state.misses.includes(value + this.state.numberDropdown)){
+    } else if (this.state.numberDropdown) {
+      if (!this.state.hits.includes(value + this.state.numberDropdown) && !this.state.misses.includes(value + this.state.numberDropdown)) {
         this.setState({
           letterDropdown: value,
-          message:null,
+          message: null,
           selected: value + this.state.numberDropdown
         })
       }
-      else{
+      else {
         this.setState({
           letterDropdown: value,
           message: null,
@@ -165,10 +171,10 @@ class OpponentGrid extends React.Component {
       }
     }
     else {
-        this.setState({
-          letterDropdown: value,
-          message: null,
-        })
+      this.setState({
+        letterDropdown: value,
+        message: null,
+      })
     }
   }
 
@@ -181,18 +187,18 @@ class OpponentGrid extends React.Component {
   setNumberSelectedFromDropDown = () => {
     var e = document.getElementById('number-dropdown');
     var value = e.options[e.selectedIndex].value;
-    if(value === '') {
+    if (value === '') {
       this.setState({
         letterDropdown: '',
         numberDropdown: '',
         selected: null
       })
-    }else{
-    this.setState({
-      message: null,
-      numberDropdown: value,
-      selected: this.state.letterDropdown + value
-    })
+    } else {
+      this.setState({
+        message: null,
+        numberDropdown: value,
+        selected: this.state.letterDropdown + value
+      })
     }
   }
   //this drop down menu will be an alternative to clicking the grid,
@@ -205,62 +211,101 @@ class OpponentGrid extends React.Component {
       <form>
         <fieldset>
           <legend>Take Aim</legend>
-            <div>
-              <label htmlFor='letter-dropdown'>Y Coordinate:</label>
-              <select value={this.state.letterDropdown} id='letter-dropdown' onChange={() => this.setLetterSelectedFromDropDown()}>
-                <option value={''}>Letter</option>
-                {letters.map((letter, index) => {
-                  let counter = 0;
-                  numbers.map(num => {
-                    if (this.state.hits.includes(letter.charAt(0) + num) || this.state.misses.includes(letter.charAt(0) + num)){
-                      counter++
-                    }
-                    return null
-                  })
-                  if(counter < 10){
-                  return <option key={index} value={letter.charAt(0)}>{letter}</option>
+          <div>
+            <label htmlFor='letter-dropdown'>Y Coordinate:</label>
+            <select value={this.state.letterDropdown} id='letter-dropdown' onChange={() => this.setLetterSelectedFromDropDown()}>
+              <option value={''}>Letter</option>
+              {letters.map((letter, index) => {
+                let counter = 0;
+                numbers.map(num => {
+                  if (this.state.hits.includes(letter.charAt(0) + num) || this.state.misses.includes(letter.charAt(0) + num)) {
+                    counter++
                   }
                   return null
-                })}
-              </select>
-            </div>
-            <div>
-              <label htmlFor='number-dropdown'>X Coordinate:</label>
-              <select value={this.state.numberDropdown} id='number-dropdown' onChange={()=> this.setNumberSelectedFromDropDown()}>
-                <option value={''}>Number</option>
-                {this.state.letterDropdown && numbers.map((value, index) => {
-                  if(!this.state.hits.includes(this.state.letterDropdown + value) && !this.state.misses.includes(this.state.letterDropdown + value)){
-                  return <option key ={index} value={value}>{value}</option>
-                  }
-                  return null;
-                })}
+                })
+                if (counter < 10) {
+                  return <option key={index} value={letter.charAt(0)}>{letter}</option>
+                }
+                return null
+              })}
+            </select>
+          </div>
+          <div>
+            <label htmlFor='number-dropdown'>X Coordinate:</label>
+            <select value={this.state.numberDropdown} id='number-dropdown' onChange={() => this.setNumberSelectedFromDropDown()}>
+              <option value={''}>Number</option>
+              {this.state.letterDropdown && numbers.map((value, index) => {
+                if (!this.state.hits.includes(this.state.letterDropdown + value) && !this.state.misses.includes(this.state.letterDropdown + value)) {
+                  return <option key={index} value={value}>{value}</option>
+                }
+                return null;
+              })}
             </select>
           </div>
           <h4>You have selected target: {this.state.selected}</h4>
-      </fieldset>
-    </form>
+        </fieldset>
+      </form>
     )
   }
 
+  //this function will render the visual to the user showing them their progress
+  //and how many of the opponent's ships have been hit
+  renderCounterList = () => {
+    let ships = this.props.shipsCounter;
+    let counter = [];
+    let shipName = null;
+    for (const key in ships) {
+      if (key === 'aircraftCarrier'){
+        shipName = 'Aircraft Carrier'
+      } else {
+        shipName = key.charAt(0).toUpperCase() + key.slice(1)
+      }
+
+      if (ships[key].hit / ships[key].length === 1) {
+        counter.push(`${shipName} : SUNK`)
+      } else {
+        counter.push(`${shipName} : ${ships[key].hit}/${ships[key].length}`)
+      }
+    }
+    return counter.map((ship, index) => {
+      return <li key={index}>{ship}</li>
+    })
+  }
+
   render() {
-    let buttonDisableBool = (this.props.userTurn) ?
-      <div className='target'>
-        {this.handleRenderDropDown()}
-        <form onSubmit={(event) => this.handleFire(event)}>
-          <button type='submit'>Fire!</button>
-        </form>
-      </div>
-      : <p>Waiting for {this.props.opponentUsername}{this.props.opponentUsername.charAt(this.props.opponentUsername.length-1) === 's' 
-      ? '\'' 
-      : '\'s'} move</p>;
+    let buttonDisableBool
+    if (this.props.winnerSet) {
+      buttonDisableBool = null;
+    } else {
+      buttonDisableBool = (this.props.userTurn) ?
+        <div className='target' aria-live='polite'>
+          {this.handleRenderDropDown()}
+          <form onSubmit={(event) => this.handleFire(event)}>
+            <button type='submit'>Fire!</button>
+          </form>
+        </div>
+        : <p aria-live='polite'>Waiting for {this.props.opponentUsername}{this.props.opponentUsername.charAt(this.props.opponentUsername.length - 1) === 's'
+          ? '\''
+          : '\'s'} move</p>;
+    }
 
     return (
       <div className='OpponentContainer grid'>
         <div className='OpponentGrid'>
           {this.handleRenderGrid()}
+          
         </div>
-        <h2 className='message'>{this.state.message && this.state.message} </h2>
+        
+        <h2 className='message' aria-live='assertive'>{this.state.message && this.state.message} </h2>
+        <div className='progress'>
+          <h4>Progress >></h4>
+          <ul className='shipCounter'>
+            {this.renderCounterList()}
+          </ul>
+        </div>
         {buttonDisableBool}
+
+        
       </div>
     )
   }

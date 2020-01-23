@@ -22,16 +22,22 @@ class GameHistory extends React.Component {
     componentDidMount = () => {
         LoadGameApiService.getGameHistory()
             .then(data => {
-                console.log(data);
                 this.setState({
                     history: data
                 })
             })
     }
 
+<<<<<<< HEAD
     handleInspect = (gameId, playerUsername, opponentUsername) => {
         // this.props.setResults(player, 2);
         this.props.setResults('player2', gameId, playerUsername, opponentUsername);
+=======
+
+
+    handleInspect = (player, gameId, playerUsername, opponentUsername, playerWin) => {
+        this.props.setResults(player, gameId, playerUsername, opponentUsername, playerWin);
+>>>>>>> master
         this.props.history.push('/result');
     }
 
@@ -45,9 +51,13 @@ class GameHistory extends React.Component {
                 let playerUsername = this.state.history.playerUsername;
                 let opponentUsername = game.player1_username === playerUsername ? game.player2_username : game.player1_username;
 
+
                 let winnerUsername = game[`${[game.winner]}_username`];
                 let winBool = playerUsername === winnerUsername;
                 let winStatus = winBool ? 'Win' : 'Loss';
+
+
+                let playerString = playerUsername === game.player1_username ? 'player1' : 'player2'
 
                 let winReason = null;
 
@@ -62,9 +72,13 @@ class GameHistory extends React.Component {
                             <p>{winnerUsername} won by {winReason}</p>
                         </div>
                         <div className='game-history-region'>
+<<<<<<< HEAD
                             <Button onClick={() => this.handleInspect(game.game_id, playerUsername, opponentUsername)}>
                                 Inspect
                             </Button>
+=======
+                            <Button onClick={() => this.handleInspect(playerString, game.game_id, playerUsername, opponentUsername, winBool)}>Inspect</Button>
+>>>>>>> master
                         </div>
                     </li>
                 );

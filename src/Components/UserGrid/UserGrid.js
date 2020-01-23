@@ -28,6 +28,7 @@ class UserGrid extends React.Component {
             shipsReady: this.props.shipsReady,
             placementFail: false,
             resumedGame: this.props.resumedGame,
+            mySunkShipTileValues: [],
         }
     };
 
@@ -41,9 +42,33 @@ class UserGrid extends React.Component {
         from the server.
     */
     componentDidMount = () => {
+        //the following code checks to see if the user has any of their own ships sunk
+        let newValues = [...this.state.mySunkShipTileValues];
+        this.state.playerShips.map(ship => {
+            let counter = 0;
+            let shipTileValues = [];
+            if(this.state.opponentShots){
+                this.state.opponentShots.map(shot => {
+                if (ship.spaces.includes(shot)) {
+                    counter++;
+                    shipTileValues.push(shot);
+                }
+                return null;
+            })
+            }
+            if (counter === ship.length) {
+                newValues = [...newValues, ...shipTileValues]
+            }
+            return null;
+        })
+        this.setState({
+            mySunkShipTileValues: newValues
+        })
+
         if (this.props.socket) {
             this.props.socket.on('response', data => {
                 if (data) {
+
                     this.props.changeTurn();
                     let ship = null;
                     if (data.ship === 'aircraftCarrier') {
@@ -59,6 +84,14 @@ class UserGrid extends React.Component {
                         } else {
                             if (data.sunk) {
                                 message = `${this.props.opponentUsername} sunk your ${ship}!`
+                                //the following code is utilized to update the state of userGrid to reflect that
+                                //a user's ship has been sunk
+                                let sunkenShip = this.state.playerShips.filter(ship => ship.name === data.ship);
+                                let values = sunkenShip[0].spaces;
+                                let newSunkValues = [...this.state.mySunkShipTileValues, ...values];
+                                this.setState({
+                                    mySunkShipTileValues: newSunkValues
+                                })
                             } else {
                                 message = `${this.props.opponentUsername} ${data.result} your ${ship}`
 
@@ -68,6 +101,9 @@ class UserGrid extends React.Component {
                             message,
                             opponentShots: [...this.state.opponentShots, data.target]
                         })
+                    }
+                    if (!this.props.opponentShipsReady) {
+                        this.props.setOpponentShipsReady();
                     }
                 }
             })
@@ -530,7 +566,7 @@ class UserGrid extends React.Component {
         let x = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
         return y.map((num, index) => {
             return (
-                <div key={index} className='column'>
+                <div key={index} className='column' aria-hidden="true">
                     <Cell
                         id={num}
                         label={true}
@@ -550,7 +586,8 @@ class UserGrid extends React.Component {
                             shipTiles={this.state.shipOccupied}
                             allShipTiles={this.state.allShipTilesOccupied}
                             shipTileValues={this.state.shipTileValues}
-                            opponentShots={this.state.opponentShots} />
+                            opponentShots={this.state.opponentShots}
+                            mySunkShipTileValues={this.state.mySunkShipTileValues} />
                     })
                     }
                 </div>
@@ -573,9 +610,11 @@ class UserGrid extends React.Component {
                 <div className='UserGrid'>
                     {this.handleRenderGrid()}
                 </div>
-                <span className='ErrorSpan'><p>{this.messageCreator()}</p></span>
+                <span className='ErrorSpan'>
+                    <p>{this.messageCreator()}</p>
+                </span>
                 <h2>{this.handleSetShips()} </h2>
-                {this.state.message && <p>{this.state.message}</p>}
+                {this.state.message && <p aria-live='assertive'>{this.state.message}</p>}
             </div>
         )
     }
