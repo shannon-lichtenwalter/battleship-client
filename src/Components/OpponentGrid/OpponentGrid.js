@@ -247,29 +247,29 @@ class OpponentGrid extends React.Component {
     )
   }
 
-  //this function will render the visual to the user showing them their progress
-  //and how many of the opponent's ships have been hit
-  renderCounterList = () => {
-    let ships = this.props.shipsCounter;
-    let counter = [];
-    let shipName = null;
-    for (const key in ships) {
-      if (key === 'aircraftCarrier'){
-        shipName = 'Aircraft Carrier'
-      } else {
-        shipName = key.charAt(0).toUpperCase() + key.slice(1)
-      }
+  // //this function will render the visual to the user showing them their progress
+  // //and how many of the opponent's ships have been hit
+  // renderCounterList = () => {
+  //   let ships = this.props.shipsCounter;
+  //   let counter = [];
+  //   let shipName = null;
+  //   for (const key in ships) {
+  //     if (key === 'aircraftCarrier'){
+  //       shipName = 'Aircraft Carrier'
+  //     } else {
+  //       shipName = key.charAt(0).toUpperCase() + key.slice(1)
+  //     }
 
-      if (ships[key].hit / ships[key].length === 1) {
-        counter.push(`${shipName} : SUNK`)
-      } else {
-        counter.push(`${shipName} : ${ships[key].hit}/${ships[key].length}`)
-      }
-    }
-    return counter.map((ship, index) => {
-      return <li key={index}>{ship}</li>
-    })
-  }
+  //     if (ships[key].hit / ships[key].length === 1) {
+  //       counter.push(`${shipName} : SUNK`)
+  //     } else {
+  //       counter.push(`${shipName} : ${ships[key].hit}/${ships[key].length}`)
+  //     }
+  //   }
+  //   return counter.map((ship, index) => {
+  //     return <li key={index}>{ship}</li>
+  //   })
+  // }
 
   render() {
     let buttonDisableBool
@@ -294,12 +294,6 @@ class OpponentGrid extends React.Component {
         </div>
         {buttonDisableBool}
         <h2 className='message' aria-live='assertive'>{this.state.message && this.state.message} </h2>
-        <div className='progress'>
-          <h4>Progress >></h4>
-          <ul className='shipCounter'>
-            {this.renderCounterList()}
-          </ul>
-        </div>
         
       </div>
     )
