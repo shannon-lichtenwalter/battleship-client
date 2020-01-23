@@ -23,7 +23,7 @@
 .UserContainer h2, .UserContainer p {
     /* display: block; */
     font-size: 1.3rem;
-    margin-top: 5px;
+    margin: 5px;
 }
 
 @media screen and (min-width: 400px) {
@@ -49,7 +49,7 @@
 
 @media screen and (min-width: 700px) {
     .gameGrid {
-        height: 350px;
+        height: 300px;
         width: 100%;
     }
 
@@ -67,8 +67,8 @@
 
 @media screen and (min-width: 950px) {
     .gameGrid {
-        height: 420px;
-        width: 98%;
+        /* height: 400px; */
+        /* width: 95%; */
     }
 }
 

@@ -18,6 +18,8 @@ p {
 .grid {
   width: 90%;
   margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 10px;
   /* margin-bottom: 2rem; */
   border-bottom: 1px solid grey;
 }
@@ -43,7 +45,12 @@ p {
   }
   .grid-box {
     display:flex;
-    justify-content:center;
+  }
+
+  .OpponentContainer.grid, .UserContainer.grid {
+    margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

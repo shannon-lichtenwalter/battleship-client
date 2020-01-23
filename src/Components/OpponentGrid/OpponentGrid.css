@@ -14,10 +14,69 @@
   margin-top: 5rem;
 } */
 
-.target h3 {
+/* .target h3 {
   font-size: 2rem;
   margin-top: 5rem;
+} */
+
+.targetForm {
+  font-size: 1rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 5px;
+  padding: 0px;
+  /* position: relative;
+  top: -35px; */
 }
+
+.fireButton {
+  margin-top: 5px;
+  width: 60%;
+  padding: 5px;
+}
+
+.chooseTargetForm {
+  width: 100%;
+  padding: 0px;
+  border: 1px solid lightgrey;
+  border-radius:3px;
+}
+
+/* .message {
+  position: relative;
+  top: -25px;
+} */
+
+.selectedTarget {
+  margin: 5px;
+}
+
+.selectors {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.selectors > select {
+  height: 25px;
+  width: 30%;
+}
+
+
+/* .targetForm > fieldset {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+/* .selectors > div {
+  display: flex;
+} */
+
 
 .progress {
   margin: 5px;
@@ -50,7 +109,7 @@
 .OpponentContainer h2, .OpponentContainer p {
   /* display: block; */
   font-size: 1.3rem;
-  margin-top: 5px;;
+  margin: 5px;
   
 }
 /* 
@@ -141,6 +200,16 @@
 }
 
 @media screen and (min-width: 700px) {
+  .selectors {
+    flex-direction: row;
+  }
+  .selectors > select {
+    width: 40%;
+  }
+
+  .fireButton {
+    width: 80%;
+  }
   /* .OpponentGrid {
     width: 33.13rem;
   }
@@ -160,7 +229,12 @@
   } */
 }
 
-@media screen and (min-width: 834px) {
+@media screen and (min-width: 800px) {
+  .chooseTargetForm {
+    width: 90%;
+    margin-left:auto;
+    margin-right: auto;
+  }
   /* .OpponentGrid {
     width: 39.64rem;
   }
@@ -181,6 +255,10 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .chooseTargetForm {
+    width: 80%;
+    font-size: 1.2rem;
+  }
   /* .OpponentGrid {
     width: 48rem;
   }

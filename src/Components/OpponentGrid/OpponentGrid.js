@@ -71,7 +71,7 @@ class OpponentGrid extends React.Component {
     } else {
       this.setState({
         result: 'miss',
-        message: 'Missed the Target!',
+        message: 'You Missed the Target!',
         misses: [...this.state.misses, this.state.selected],
         selected: null,
         letterDropdown: '',
@@ -208,11 +208,11 @@ class OpponentGrid extends React.Component {
     let letters = ['Alfa', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Golf', 'Hotel', 'India', 'Juliett'];
     let numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
     return (
-      <form>
-        <fieldset>
+      <form className='targetForm' onSubmit={(event) => this.handleFire(event)}>
+        <fieldset className='chooseTargetForm'>
           <legend>Take Aim</legend>
-          <div>
-            <label htmlFor='letter-dropdown'>Y Coordinate:</label>
+          <div className='selectors'>
+            <label htmlFor='letter-dropdown'>Y:</label>
             <select value={this.state.letterDropdown} id='letter-dropdown' onChange={() => this.setLetterSelectedFromDropDown()}>
               <option value={''}>Letter</option>
               {letters.map((letter, index) => {
@@ -229,9 +229,7 @@ class OpponentGrid extends React.Component {
                 return null
               })}
             </select>
-          </div>
-          <div>
-            <label htmlFor='number-dropdown'>X Coordinate:</label>
+            <label htmlFor='number-dropdown'>X:</label>
             <select value={this.state.numberDropdown} id='number-dropdown' onChange={() => this.setNumberSelectedFromDropDown()}>
               <option value={''}>Number</option>
               {this.state.letterDropdown && numbers.map((value, index) => {
@@ -242,7 +240,8 @@ class OpponentGrid extends React.Component {
               })}
             </select>
           </div>
-          <h4>You have selected target: {this.state.selected}</h4>
+          <h4 className='selectedTarget'>You have selected target: {this.state.selected}</h4>
+            <button type='submit' className='fireButton'>Fire!</button>
         </fieldset>
       </form>
     )
@@ -280,9 +279,6 @@ class OpponentGrid extends React.Component {
       buttonDisableBool = (this.props.userTurn) ?
         <div className='target' aria-live='polite'>
           {this.handleRenderDropDown()}
-          <form onSubmit={(event) => this.handleFire(event)}>
-            <button type='submit'>Fire!</button>
-          </form>
         </div>
         : <p aria-live='polite'>Waiting for {this.props.opponentUsername}{this.props.opponentUsername.charAt(this.props.opponentUsername.length - 1) === 's'
           ? '\''
@@ -296,7 +292,7 @@ class OpponentGrid extends React.Component {
           {this.handleRenderGrid()}
           
         </div>
-        
+        {buttonDisableBool}
         <h2 className='message' aria-live='assertive'>{this.state.message && this.state.message} </h2>
         <div className='progress'>
           <h4>Progress >></h4>
@@ -304,8 +300,6 @@ class OpponentGrid extends React.Component {
             {this.renderCounterList()}
           </ul>
         </div>
-        {buttonDisableBool}
-
         
       </div>
     )
