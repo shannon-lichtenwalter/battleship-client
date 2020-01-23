@@ -17,8 +17,7 @@ class Signup extends Component {
 
   handleSubmit = (ev) => {
     ev.preventDefault()
-    const { username, password } = ev.target
-
+    const { username, password } = ev.target;
     let user = username.value;
     let pass = password.value;
 
@@ -27,23 +26,17 @@ class Signup extends Component {
       password: pass,
     })
       .then(() => {
-
         username.value = ''
         password.value = ''
-
         AuthApiService.postLogin({
           username: user,
           password: pass
         })
           .then((res) => {
-
             TokenService.saveAuthToken(res.authToken);
-
             this.props.history.push('/dashboard');
-
           })
           .catch(() => this.props.history.push('/login'))
-
       })
       .catch(res => {
         this.setState({ error: res.error })
@@ -63,7 +56,6 @@ class Signup extends Component {
         <h1>Sign up</h1>
 
         <form className='signupform' onSubmit={this.handleSubmit}>
-
           <div>
             <Label htmlFor='signup-username-input'>Choose a username<Required /></Label>
             <Input
@@ -86,6 +78,7 @@ class Signup extends Component {
             />
           </div>
           {errorMessage}
+          
           <div className='signupbtn'>
             <Button type='submit'>Sign up</Button>
             {' '}
@@ -99,12 +92,10 @@ class Signup extends Component {
           <div className='btnLink'>
             <Link to='/login'>Already have an account?</Link>
           </div>
-
         </form>
       </section>
     );
   };
-
 };
 
 export default withRouter(Signup);
