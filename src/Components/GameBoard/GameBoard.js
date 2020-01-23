@@ -111,12 +111,7 @@ class GameBoard extends React.Component {
       })
     });
 
-<<<<<<< HEAD
-    socket.on('win', () => {
-=======
-
     socket.on('win', (data) => {
->>>>>>> master
       this.setState({
         winnerSet: true,
         whoWon: data.winner
@@ -151,13 +146,8 @@ class GameBoard extends React.Component {
     let gameId = this.state.gameId;
     let playerWinBool = this.state.whoWon === this.state.playerNum ? true : false;
 
-<<<<<<< HEAD
-    this.props.setResults(player, 2, 'my username', 'my opponents username');
-    // this.props.setResults(player, gameId, this.state.playerUsername, this.state.opponentUsername);
-=======
     // this.props.setResults(player, 2, 'my username', 'my opponents username');
     this.props.setResults(player, gameId, this.state.playerUsername, this.state.opponentUsername, playerWinBool);
->>>>>>> master
     this.props.history.push('/result');
   }
 
@@ -227,12 +217,6 @@ class GameBoard extends React.Component {
         room={this.state.room} />
       : null;
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> master
     return (
       <div className='gameroom'>
         <Header />
