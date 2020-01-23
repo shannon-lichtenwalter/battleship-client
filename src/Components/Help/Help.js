@@ -55,16 +55,6 @@ class Help extends Component {
             </ul>
           </div>
 
-          <div className='helpIB'>
-            <h2>Bug Report</h2>
-            <ul>
-              <li>1. Email: </li>
-              <li>2. Contact Info: </li>
-              <li>3. Contact Info: </li>
-              <li>4. Contact Info: </li>
-            </ul>
-          </div>
-
           <Button onClick={() => {
             this.props.history.goBack();
           }}> Back
