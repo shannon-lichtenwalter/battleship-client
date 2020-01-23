@@ -78,3 +78,59 @@
         height: 430px;
     }
 }
+
+@media screen and (min-width: 1200px) {
+    #chat {
+        width: 15%;
+        position: absolute;
+        top: 233px;
+        z-index: 0; 
+    }
+
+    #chat-form > fieldset {
+        border: 1px solid grey;
+        border-radius: 2px;
+        font-size: 1.2rem;
+    }
+
+    #chat-form > fieldset > input {
+        font-size: 1rem;
+    }
+
+    .chat-username,
+    .chat-message,
+    .chat-opponent,
+    .chat-me {
+        font-size: 1rem;
+    }
+
+    #chat-window {
+    height: 370px;
+    }
+    .outer {
+        position: relative;
+        overflow: hidden;
+    }
+    .grid-box.one-only{
+        position: relative;
+        left: 0px;
+    }
+    .grid-box{
+        position: relative;
+        left: 100px;
+        z-index: 0; 
+    }
+    .footer{
+        margin-top: 0px;
+    }
+}
+
+
+@media screen and (min-width: 1300px) {
+    #chat {
+        width: 20%;
+    }
+    #chat-window {
+        height: 390px;
+    }
+}

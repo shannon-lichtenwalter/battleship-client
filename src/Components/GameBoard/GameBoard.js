@@ -250,7 +250,7 @@ class GameBoard extends React.Component {
 
         {errorMessage}
         {!this.state.error && versusHeader}
-        {!this.state.error && this.state.opponentShipsReady && <>
+        {!this.state.error && <>
         
         <div className='progress'>
           <h4>Progress >></h4>
@@ -259,9 +259,11 @@ class GameBoard extends React.Component {
           </ul>
         </div>
         </>}
-        <div className={this.determineIfTwoGrids()}>
-          {userGrid}
-          {opponentGrid}
+        <div className='outer'>
+          <div className={this.determineIfTwoGrids()}>
+            {userGrid}
+            {opponentGrid}
+          </div>
         </div>
         
         {waitingOnOpponent}
