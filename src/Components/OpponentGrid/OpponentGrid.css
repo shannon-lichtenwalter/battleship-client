@@ -81,13 +81,17 @@
   
 }
 
-
 @media screen and (min-width: 1024px) {
   .chooseTargetForm {
     width: 80%;
     font-size: 1.2rem;
   }
   
+  #letter-dropdown,
+  #number-dropdown {
+  color: black;
+  font-size: 1rem;
+  }
 }
 
 @media screen and (min-width: 1800px) {
@@ -95,6 +99,5 @@
     width: 50%;
     font-size: 1.2rem;
   }
-  
 }
 

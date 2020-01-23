@@ -91,6 +91,14 @@
     }
 }
 
+@media screen and (min-width: 1024px) {
+    #letter-dropdown,
+    #number-dropdown {
+    color: black;
+    font-size: 1rem;
+    }
+}
+
 
 @media screen and (min-width: 1050px) {
     .gameGrid {
