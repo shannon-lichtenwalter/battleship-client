@@ -1,8 +1,8 @@
 # Battleship Client
 
-Live app: https://capstone3-battleship.now.sh/
+Live app: [Live](https://capstone3-battleship.now.sh/)
 
-Server GitHub: https://github.com/thinkful-ei-heron/Group1-Capstone3-Server
+Server GitHub: [Github](https://github.com/thinkful-ei-heron/Group1-Capstone3-Server)
 
 ## Summary
 
@@ -15,7 +15,7 @@ Javascript, React, CSS, HTML, Socket.io
 ## Screenshots
 
 Landing Page
-![landing](./Screenshot/langing.png)
+![landing](./Screenshot/landing.png)
 
 Login Page
 ![login](./Screenshot/login.png)
