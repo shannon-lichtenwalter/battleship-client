@@ -82,12 +82,6 @@ class Login extends Component {
           {errorMessage}
           <div className='loginbtn'>
             <Button type='submit'>Login</Button>
-            {' '}
-            
-            <Button onClick={() => {
-              this.props.history.push('/guest')
-            }}> Guest
-            </Button> <br />
           </div>
 
           <div className='btnLink'>
