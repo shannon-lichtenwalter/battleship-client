@@ -10,7 +10,27 @@ Server GitHub: https://github.com/thinkful-ei-heron/Group1-Capstone3-Server
 
 ## Technology Used
 
-Javascript, React, CSS, HTML, Socket .io
+Javascript, React, CSS, HTML, Socket.io
+
+## Screenshots
+
+Landing Page
+![landing](./Screenshot/langing.png)
+
+Login Page
+![login](./Screenshot/login.png)
+
+Sign up Page
+![signup](./Screenshot/signup.png)
+
+Dashboard Page
+![dashboard](./Screenshot/dashboard.png)
+
+Result Page
+![result](./Screenshot/result.png)
+
+Help Page
+![Help](./Screenshot/help.png)
 
 ## Programmers
 

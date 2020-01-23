@@ -49,7 +49,7 @@ class Signup extends Component {
   };
 
   render() {
-    let errorMessage = this.state.error ? <p className='errorMessage' aria-live='polite'>{this.state.error}</p> : null;
+    let errorMessage = this.state.error ? <p className='signup-errorMessage' aria-live='polite'>{this.state.error}</p> : null;
     return (
       <section className='signup'>
         <Banner />

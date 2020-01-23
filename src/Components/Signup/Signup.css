@@ -5,3 +5,7 @@
 .signup {
   margin-top: 8rem;
 }
+
+.signup-errorMessage {
+  color: red;
+}

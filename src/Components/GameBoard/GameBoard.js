@@ -151,7 +151,7 @@ class GameBoard extends React.Component {
   render() {
 
     let errorMessage = this.state.error
-      ? <p className='errorMessage'>Uh oh! Something went wrong: {this.state.error}</p>
+      ? <p className='game-errorMessage'>Uh oh! Something went wrong: {this.state.error}</p>
       : null;
 
     let versusHeader = this.state.playerUsername && this.state.opponentUsername
