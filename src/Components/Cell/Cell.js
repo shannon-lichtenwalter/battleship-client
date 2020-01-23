@@ -72,7 +72,7 @@ class Cell extends React.Component {
   handleClick = () => {
     let click = this.canCellBeClicked();
     if (click) {
-      this.props.handleSelectTarget(this.props.id, this.props.idNumber)
+      this.props.handleSelectTarget(this.props.id)
     }
   }
 

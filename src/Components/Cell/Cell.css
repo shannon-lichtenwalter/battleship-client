@@ -36,7 +36,12 @@
   background-color: red;
 }
 
-.ghostship {
+
+.ghostship.ship {
+  border: 3px solid rgb(235, 29, 29);
+}
+
+.ghostship:not(ship) {
   border: 3px solid rgb(54, 241, 54);
 }
 
