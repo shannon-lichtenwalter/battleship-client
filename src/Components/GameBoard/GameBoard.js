@@ -139,14 +139,11 @@ class GameBoard extends React.Component {
     
   }
 
-  
-
   handleResults = () => {
     let player = this.state.playerNum;
     let gameId = this.state.gameId;
     let playerWinBool = this.state.whoWon === this.state.playerNum ? true : false;
 
-    // this.props.setResults(player, 2, 'my username', 'my opponents username');
     this.props.setResults(player, gameId, this.state.playerUsername, this.state.opponentUsername, playerWinBool);
     this.props.history.push('/result');
   }
@@ -184,7 +181,6 @@ class GameBoard extends React.Component {
     let versusHeader = this.state.playerUsername && this.state.opponentUsername
       ? <h2 className='versusHeader'>{this.state.playerUsername} <span className='versus'> versus </span>{this.state.opponentUsername}</h2>
       : <h2 className='versusHeader'>Waiting for Opponent...</h2>;
-
 
     let userGrid = this.state.socket
       ? <UserGrid
@@ -227,7 +223,6 @@ class GameBoard extends React.Component {
         updateShipsCounter={this.updateShipsCounter} />
       : null;
 
-
     let waitingOnOpponent = (this.state.shipsReady && !this.state.opponentShipsReady)
       ? <p> Waiting For Both Players to Set Their Ships ! </p> : null;
 
@@ -244,6 +239,7 @@ class GameBoard extends React.Component {
     return (
       <div className='gameroom'>
         <Header />
+
         {errorMessage}
         {!this.state.error && versusHeader}
         {!this.state.error &&  <>
@@ -259,8 +255,8 @@ class GameBoard extends React.Component {
           {userGrid}
           {opponentGrid}
         </div>
+        
         {waitingOnOpponent}
-
         {resultButton}
         {chat}
 

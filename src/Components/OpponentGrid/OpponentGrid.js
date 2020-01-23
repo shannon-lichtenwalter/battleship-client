@@ -1,5 +1,6 @@
 import React from 'react';
 import Cell from '../Cell/Cell';
+import Button from '../Button/Button';
 import './OpponentGrid.css';
 
 class OpponentGrid extends React.Component {
@@ -22,11 +23,15 @@ class OpponentGrid extends React.Component {
   //Only call checkForHitOrMiss
   //who fired the shot.
   componentDidMount = () => {
-    this.props.socket.on('response', res => {
+
+    if(this.props.socket){
+     this.props.socket.on('response', res => {
       if (this.props.playerNum === res.playerNum) {
         this.checkForHitOrMiss(res.result, res.ship, res.sunk, res.target);
       }
     })
+    }
+
   }
 
   //function will set the state to reflect the target that the user has selected
@@ -246,30 +251,6 @@ class OpponentGrid extends React.Component {
       </form>
     )
   }
-
-  // //this function will render the visual to the user showing them their progress
-  // //and how many of the opponent's ships have been hit
-  // renderCounterList = () => {
-  //   let ships = this.props.shipsCounter;
-  //   let counter = [];
-  //   let shipName = null;
-  //   for (const key in ships) {
-  //     if (key === 'aircraftCarrier'){
-  //       shipName = 'Aircraft Carrier'
-  //     } else {
-  //       shipName = key.charAt(0).toUpperCase() + key.slice(1)
-  //     }
-
-  //     if (ships[key].hit / ships[key].length === 1) {
-  //       counter.push(`${shipName} : SUNK`)
-  //     } else {
-  //       counter.push(`${shipName} : ${ships[key].hit}/${ships[key].length}`)
-  //     }
-  //   }
-  //   return counter.map((ship, index) => {
-  //     return <li key={index}>{ship}</li>
-  //   })
-  // }
 
   render() {
     let buttonDisableBool

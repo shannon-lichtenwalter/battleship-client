@@ -63,6 +63,15 @@
 
 
 
+
+.ghostship.ship {
+  border: 3px solid rgb(235, 29, 29);
+}
+
+.ghostship:not(ship) {
+  border: 3px solid rgb(54, 241, 54);
+}
+
 @media screen and (min-width: 1025px) {
   .cell {
     font-size: 1.2rem;
