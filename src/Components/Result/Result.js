@@ -114,7 +114,7 @@ class Result extends Component {
 
         <Button onClick={() => {
           this.props.history.push('/dashboard')
-        }> Exit
+        }}> Exit
         </Button>
 
         <Footer />
