@@ -15,7 +15,7 @@ Javascript, React, CSS, HTML, Socket.io
 ## Screenshots
 
 Landing Page
-![landing](./Screenshot/landing.png)
+![landing](./Screenshot/landingpage.png)
 
 Login Page
 ![login](./Screenshot/login.png)
