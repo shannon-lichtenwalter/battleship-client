@@ -47,13 +47,15 @@
   
 }
 
-
 .target {
   width: 100%;
 }
 
-
-
+#letter-dropdown,
+#number-dropdown {
+  color: white;
+  font-size: 0.98rem;
+}
 
 @media screen and (min-width: 700px) {
   .selectors {

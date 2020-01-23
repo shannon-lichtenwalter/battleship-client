@@ -20,6 +20,12 @@
     margin-top: 2px;
 }
 
+#letter-dropdown,
+#number-dropdown {
+    color: white;
+    font-size: 0.98rem;
+}
+
 .UserContainer h2, .UserContainer p {
     /* display: block; */
     font-size: 1.3rem;
@@ -34,7 +40,7 @@
 
     .target {
         width: 95%;
-      }
+    }
 }
 
 @media screen and (min-width: 500px) {
@@ -45,7 +51,7 @@
 
     .target {
         width: 90%;
-      }
+    }
 }
 
 @media screen and (min-width: 600px) {
@@ -56,7 +62,7 @@
 
     .target {
         width: 85%;
-      }
+    }
 }
 
 @media screen and (min-width: 700px) {
@@ -67,7 +73,7 @@
 
     .target {
         width: 100%;
-      }
+    }
 
     .cell{
         height: 9%;
@@ -82,7 +88,7 @@
 
     .target {
         width: 95%;
-      }
+    }
 }
 
 
@@ -93,7 +99,7 @@
 
     .target {
         width: 85%;
-      }
+    }
 }
 
 @media screen and (min-width: 1300px) {
@@ -103,7 +109,7 @@
 
     .target {
         width: 70%;
-      }
+    }
 }
 
 @media screen and (min-width: 1420px) {
@@ -113,7 +119,7 @@
 
     .target {
         width: 60%;
-      }
+    }
 
     .cell{
         height: 9%;
@@ -128,5 +134,5 @@
 
     .target {
         width: 50%;
-      }
+    }
 }
