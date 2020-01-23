@@ -19,6 +19,7 @@ class Cell extends React.Component {
     let className = 'cell';
 
     if (this.props.hits && this.props.hits.includes(this.props.id)) {
+
       className += ' hit'
     } 
     else if (this.props.misses && this.props.misses.includes(this.props.id)) {
@@ -56,7 +57,11 @@ class Cell extends React.Component {
         else if(this.props.label){
           className+= ' label'
         }
-    
+
+    if(this.props.ghostShip && this.props.ghostShip.includes(this.props.id)) {
+      className += ' ghostship';
+    }
+
     return className;
   }
 
@@ -73,7 +78,7 @@ class Cell extends React.Component {
     else if (this.props.label) {
       return false;
     }
-    else if(this.props.shipTileValues.length===17){
+    else if (this.props.shipTileValues.length === 17) {
       return false;
     }
     else {
@@ -84,16 +89,20 @@ class Cell extends React.Component {
   handleClick = () => {
     let click = this.canCellBeClicked();
     if (click) {
-      this.props.handleSelectTarget(this.props.id, this.props.idNumber)
+      this.props.handleSelectTarget(this.props.id)
     }
+  }
+
+  handleHover = () => {
+
   }
 
   render() {
     return (
-      <div 
+      <div
         className={this.determineClassName()}
         onClick={() => this.handleClick()}
-        
+        onMouseOver={() => this.handleHover()}
       >
         {this.props.label ? this.props.id : ''}
       </div>

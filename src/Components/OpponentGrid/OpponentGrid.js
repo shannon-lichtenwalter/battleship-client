@@ -23,11 +23,15 @@ class OpponentGrid extends React.Component {
   //Only call checkForHitOrMiss
   //who fired the shot.
   componentDidMount = () => {
-    this.props.socket.on('response', res => {
+
+    if(this.props.socket){
+     this.props.socket.on('response', res => {
       if (this.props.playerNum === res.playerNum) {
         this.checkForHitOrMiss(res.result, res.ship, res.sunk, res.target);
       }
     })
+    }
+
   }
 
   //function will set the state to reflect the target that the user has selected
