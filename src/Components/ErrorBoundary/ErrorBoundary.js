@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../Header/Header';
 import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
 import './ErrorBoundary.css';
 
 class ErrorBoundary extends React.Component {
@@ -23,9 +24,9 @@ class ErrorBoundary extends React.Component {
         <h3 className='errorHandler'> Uh oh! We've had a misfire! Please try returning to
           the homepage...
         </h3>
-        <button>
+        <Button>
           <Link to='/'>Home</Link>
-        </button>
+        </Button>
         </div>
       );
     }

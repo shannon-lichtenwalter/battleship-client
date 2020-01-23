@@ -59,19 +59,19 @@ li {
   .helpIB {
     width: 75%;
   }
-
-  li {
-    padding: 0;
-  }
 }
 
 @media screen and (min-width: 1025px) {
   .helpIB {
     width: 65%;
+    padding: 2rem;
   }
 
   Footer {
     margin-bottom: 2rem;
   }
-}
 
+  .help h2 {
+    margin: 0;
+  }
+}

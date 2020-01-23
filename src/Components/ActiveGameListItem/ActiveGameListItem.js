@@ -98,7 +98,6 @@ class ActiveGameListItem extends React.Component {
     });
   }
 
-
   render() {
     return (
       <Fragment>
@@ -112,7 +111,7 @@ class ActiveGameListItem extends React.Component {
                 Resume Game?
               </Button>
               {!this.props.game.player2 
-                ? <button className='disabledButton' type='button' disabled>Awaiting opponent...</button>
+                ? <Button className='disabledButton' type='button' disabled>Awaiting opponent...</Button>
                 : <Button onClick={()=> this.setState({quitting:true})}>
                   Quit Game?
                 </Button>}
@@ -120,8 +119,8 @@ class ActiveGameListItem extends React.Component {
               <>
                 <h4>Are you sure you want to quit?</h4>
                 <p>Your opponent will be marked as the winner and you will be marked as having lost the game.</p>
-                <button onClick = {() => this.handleQuitGame()}>Quit Game Now</button>
-                <button onClick = {()=> this.setState({quitting:false})}>Keep Game Active</button>
+                <Button onClick = {() => this.handleQuitGame()}>Quit Game Now</Button>
+                <Button onClick = {()=> this.setState({quitting:false})}>Keep Game Active</Button>
               </> }
               {this.state.error && <p>{this.state.error}. Please refresh page.</p>}
             </li>

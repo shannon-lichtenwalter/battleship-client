@@ -116,9 +116,10 @@ class Result extends Component {
           this.props.history.push('/dashboard')
         }}> Exit
         </Button>
-
+        
         <Footer />
       </div>
+    
     );
   };
 };

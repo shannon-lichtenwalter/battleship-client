@@ -10,14 +10,14 @@ Button {
   transition-duration: 0.3s;
 }
 
-button a {
+Button a {
   text-decoration: none;
   color: black;
 }
 
-button a:hover,
-button:hover {
+Button a:hover,
+Button:hover {
   color: white;
   background-color:rgba(9, 58, 138, 0.7);
-  box-shadow: 0 10px 50px 0 rgba(9, 58, 138, 0.5);
+  box-shadow: 0 10px 50px 0 rgba(139, 168, 212, 0.5);
 }
