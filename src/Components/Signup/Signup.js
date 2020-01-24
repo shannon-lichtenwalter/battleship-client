@@ -81,12 +81,6 @@ class Signup extends Component {
           
           <div className='signupbtn'>
             <Button type='submit'>Sign up</Button>
-            {' '}
-
-            <Button onClick={() => {
-              this.props.history.push('/guest')
-            }}> Guest
-            </Button> <br />
           </div>
 
           <div className='btnLink'>

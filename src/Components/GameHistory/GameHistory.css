@@ -13,6 +13,9 @@
 
 .game-history-li {
     display: flex;
+    border-bottom: 1px solid white;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .game-history-region {

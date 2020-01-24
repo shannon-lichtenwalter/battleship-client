@@ -104,7 +104,6 @@ class ActiveGameListItem extends React.Component {
         <li>{this.props.game.player1_username} versus {this.props.game.player2_username}</li>
         <li className='activeGameListItem'>
           <ul className='activeGameDetails'>
-            <li>GameRoom: #{this.props.game.room_id}</li>
             <li>Turn: {this.props.userId && this.determineTurn()}</li>
             <li>
               <Button onClick={this.handleResumeGame}>
