@@ -7,13 +7,21 @@
     background-color: rgb(30, 52, 90);
 }
 
+.historyWelcome > span {
+    color: aqua;
+}
+
+
 .gameHistory h1 {
     margin-bottom: 1rem;
 }
 
-.game-history-li {
+.game-history-li > .line {
+    width: 60%;
+} 
+
+.history-info {
     display: flex;
-    border-bottom: 1px solid white;
     width: 80%;
     margin: 0 auto;
 }
