@@ -56,10 +56,33 @@
 #chat-label {
     color: white;
     font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.5rem;
 }
 
 #chat-form > fieldset {
     border: none;
+}
+
+#chat-input-box{
+    width: 100%;
+    margin: 0;
+    text-align: left;
+}
+
+#chat-button {
+    margin:0;
+}
+
+@media screen and (min-width: 500px) {
+    #chat-input-box {
+        width: 70%;
+        display: inline-block;
+    }
+
+    #chat-button {
+        width: 30%;
+        margin:0;
+    }
 }
 
 @media screen and (min-width: 1025px) {
@@ -140,6 +163,29 @@
         left: 140px;
         z-index: 1; 
     }
+
+    #chat-input-box {
+        width: 100%;
+        display: inline-block;
+    }
+
+    #chat-button {
+        width: 40%;
+        margin:0;
+    }
+}
+
+@media screen and (min-width: 1650px) {
+    #chat-input-box {
+        width: 70%;
+        display: inline-block;
+    }
+
+    #chat-button {
+        width: 30%;
+        margin:0;
+    }
+
 }
 
 @media screen and (min-width: 1750px) {
