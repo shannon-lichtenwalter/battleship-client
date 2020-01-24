@@ -8,22 +8,15 @@
 }
 
 .gameHistory h1 {
-    margin-bottom: 2rem;
-}
-
-.gameHistory {
-    margin-top: 8rem;
+    margin-bottom: 1rem;
 }
 
 .game-history-li {
     display: flex;
-    /* border-bottom: 1px solid white; */
 }
 
 .game-history-region {
     width: 50%;
-    /* text-align: left; */
-    /* border:1px solid red; */
 }
 
 .player-Win {
@@ -40,7 +33,6 @@
     font-size: 1.5rem;
     text-align: left;
     margin-left: 1rem;
-    margin-top: 8.3rem;
     margin-bottom: 2rem;
 }
 
@@ -53,10 +45,6 @@
 @media screen and (min-width: 1025px) {
     .game-history-list {
         width: 65%;
-    }
-
-    .gameHistory {
-        margin-top: 9rem;
     }
 
     .historyWelcome {

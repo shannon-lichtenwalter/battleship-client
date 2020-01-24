@@ -55,7 +55,7 @@ class Login extends Component {
     return (
       <div className='login'>
         <Banner />
-        <h1>Login</h1>
+        <h1 className='login-h1'>Login</h1>
         
         <form className='loginform' onSubmit={event => this.handleSubmit(event)} onChange={() => this.resetError()}>
           <div>

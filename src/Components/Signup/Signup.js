@@ -53,7 +53,7 @@ class Signup extends Component {
     return (
       <section className='signup'>
         <Banner />
-        <h1>Sign up</h1>
+        <h1 className='signup-h1'>Sign up</h1>
 
         <form className='signupform' onSubmit={this.handleSubmit}>
           <div>
