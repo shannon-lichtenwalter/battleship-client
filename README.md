@@ -6,6 +6,10 @@ Server GitHub: https://github.com/thinkful-ei-heron/Group1-Capstone3-Server
 
 ## Summary
 
+Welcome to Battleship! The interactive game where you can challenge opponents in the classic game of sinking ships. 
+
+This application allows the user to play a live game of battleship against another user. The user will receive live updates on their opponents advancements on the game board. Additionally, user's have the ability to leave a game and return to it later.
+
 ## Tutorial
 
 ### How to play
