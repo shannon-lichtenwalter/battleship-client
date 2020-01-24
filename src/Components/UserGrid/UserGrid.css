@@ -1,4 +1,3 @@
-
 .gameGrid{
     display:flex;
     flex-direction: row;
@@ -20,10 +19,33 @@
     margin-top: 2px;
 }
 
+#letter-dropdown,
+#number-dropdown {
+    font-size: 0.98rem;
+    color: black;
+    border: 1px solid white;
+}
+
 .UserContainer h2, .UserContainer p {
     /* display: block; */
     font-size: 1.3rem;
     margin: 5px;
+}
+.setShipForm h2 {
+    width: 100%;
+    text-align: center;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.setShipForm > form > select {
+    height: 2rem;
+    margin: 4px;
+
+}
+
+.setShipForm > form > button {
+    margin-top: 5px;
 }
 
 @media screen and (min-width: 400px) {
@@ -53,6 +75,11 @@
         width: 100%;
     }
 
+    .setShipForm, .UserContainer h2, .UserContainer p, .OpponentContainer h2, .OpponentContainer p{
+        width: 100%;
+        text-align: center;
+    }
+
     .cell{
         height: 9%;
         width: 95%;
@@ -63,26 +90,43 @@
     .gameGrid {
         width: 95%;
     }
-}
+    .setShipForm, .UserContainer h2, .UserContainer p, .OpponentContainer h2, .OpponentContainer p{
+        width: 95%;
+        text-align: center;
+    }
 
+}
 
 @media screen and (min-width: 1050px) {
     .gameGrid {
         width: 85%;
     }
+    .setShipForm, .UserContainer h2, .UserContainer p, .OpponentContainer h2, .OpponentContainer p{
+        width: 85%;
+        text-align: center;
+    }
+
 }
 
 @media screen and (min-width: 1300px) {
     .gameGrid {
         width: 70%;
     }
+    .setShipForm, .UserContainer h2, .UserContainer p, .OpponentContainer h2, .OpponentContainer p{
+        width: 70%;
+        text-align: center;
+    }
+
 }
 
 @media screen and (min-width: 1420px) {
     .gameGrid {
         width: 60%;
     }
-
+    .setShipForm, .UserContainer h2, .UserContainer p, .OpponentContainer h2, .OpponentContainer p{
+        width: 60%;
+        text-align: center;
+    }
     .cell{
         height: 9%;
         width: 98%;
@@ -93,4 +137,9 @@
     .gameGrid {
         width: 50%;
     }
+    .setShipForm, .UserContainer h2, .UserContainer p, .OpponentContainer h2, .OpponentContainer p{
+        width: 50%;
+        text-align: center;
+    }
+
 }

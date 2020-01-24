@@ -1,12 +1,12 @@
 .chat-username {
-    margin:20px;
+    margin: 3px;
     margin-right: 10px;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
 .chat-me {
     color: rgb(57, 206, 252);
-    -shadow: 0 10px 50px 0 rgba(9, 58, 138, 0.5);
+    box-shadow: 0 10px 50px 0 rgba(9, 58, 138, 0.5);
 }
 
 .chat-opponent {
@@ -14,8 +14,8 @@
 }
 
 .chat-message {
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 0px;
+    margin-top: 3px;
     word-break: break-all;
     font-family: 'Roboto Condensed', sans-serif;
     
@@ -58,6 +58,10 @@
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+#chat-form > fieldset {
+    border: none;
+}
+
 @media screen and (min-width: 1025px) {
     #chat {
         width: 60%;
@@ -72,9 +76,78 @@
 
     #chatInput {
         height: 40px;
+        
     }
 
     #chat-window {
         height: 430px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    #chat {
+        width: 23%;
+        position: absolute;
+        top: 250px;
+        left: 10px;
+        z-index: 1;
+    }
+
+    li.chat-li {
+        padding:0px;
+
+    }
+
+    .chat-message {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    .chat-username {
+        margin: 5px;
+    }
+
+    #chat-form > fieldset {
+        border: none;
+        font-size: 1.2rem;
+    }
+
+    #chat-form > fieldset > input {
+        font-size: 1rem;
+    }
+
+    .chat-username,
+    .chat-message,
+    .chat-opponent,
+    .chat-me {
+        font-size: 1rem;
+    }
+        
+    #chat-window {
+    height: 400px;
+    padding: 5px;
+    }
+    .outer {
+        position: relative;
+        overflow: hidden;
+    }
+    .grid-box.one-only{
+        position: relative;
+        left: 0px;
+    }
+    .grid-box{
+        position: relative;
+        left: 140px;
+        z-index: 1; 
+    }
+}
+
+@media screen and (min-width: 1750px) {
+    #chat {
+        width: 30%;
+    }
+
+    .grid-box {
+        left: 200px;
     }
 }

@@ -47,8 +47,8 @@ export default class Chat extends React.Component {
                     this.handleChatMessage(event.target.chatInput.value);
                     event.target.chatInput.value = '';
                 }}> <fieldset>
-                        <legend>Chat with Opponent</legend>
-                        <label htmlFor='chatInput' id='chat-label'>Type Message</label>
+                        {/* <legend>Chat with Opponent</legend> */}
+                        <label htmlFor='chatInput' id='chat-label'>Chat</label>
                         <input type='text' placeholder='Type Here' id='chatInput' aria-label='type message to opponent here' />
                     </fieldset>
                 </form>

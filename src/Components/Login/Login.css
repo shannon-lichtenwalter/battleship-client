@@ -4,12 +4,22 @@
 
 .btnLink {
   padding-top: 2rem;
+  font-size: 1.5rem;
 }
 
 .loginbtn {
   padding-top: 2rem;
 }
 
+/* 
 .login {
   margin-top: 8rem;
+} */
+
+.login-errorMessage {
+  color: red;
+}
+
+.login-h1 {
+  margin-top: 2rem;
 }

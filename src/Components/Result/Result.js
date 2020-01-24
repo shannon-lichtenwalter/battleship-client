@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import LoadGameApiService from '../../Services/load-game-api-service';
 import Button from '../Button/Button';
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import './Result.css';
 
 class Result extends Component {
@@ -88,7 +87,7 @@ class Result extends Component {
       <div className='result'>
         <Header />
 
-        <h1>Result</h1>
+        <h1 className='result-h1'>Result</h1>
         <ul className='results-ul'>
 
           {this.props.results ? <h2>{`${this.props.results.playerUsername} vs ${this.props.results.opponentUsername}`}</h2> : null}
@@ -117,7 +116,6 @@ class Result extends Component {
         }}> Exit
         </Button>
         
-        <Footer />
       </div>
     
     );

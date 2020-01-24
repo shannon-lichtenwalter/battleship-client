@@ -1,5 +1,6 @@
 import React from 'react';
 import Cell from '../Cell/Cell';
+import Button from '../Button/Button';
 import './UserGrid.css';
 import gameMovesApiService from '../../Services/game-moves-api-service';
 
@@ -44,14 +45,14 @@ class UserGrid extends React.Component {
         this.state.playerShips.map(ship => {
             let counter = 0;
             let shipTileValues = [];
-            if(this.state.opponentShots){
+            if (this.state.opponentShots) {
                 this.state.opponentShots.map(shot => {
-                if (ship.spaces.includes(shot)) {
-                    counter++;
-                    shipTileValues.push(shot);
-                }
-                return null;
-            })
+                    if (ship.spaces.includes(shot)) {
+                        counter++;
+                        shipTileValues.push(shot);
+                    }
+                    return null;
+                })
             }
             if (counter === ship.length) {
                 newValues = [...newValues, ...shipTileValues]
@@ -189,7 +190,7 @@ class UserGrid extends React.Component {
                 selected: '',
                 letterDropdown: '',
                 numberDropdown: '',
-                
+
             }, () => this.props.setError({ error: mess }));
         }
     }
@@ -225,7 +226,7 @@ class UserGrid extends React.Component {
                 selected: '',
                 letterDropdown: '',
                 numberDropdown: '',
-                
+
             }, () => this.props.setError({ error: message }));
         }
 
@@ -236,6 +237,7 @@ class UserGrid extends React.Component {
         let letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
         let numOfTiles = this.state.playerShips[this.state.counter].length;
         let valuesArray = [];
+        let reversedBool = false;
 
         let currentNum = parseInt(this.state.numberDropdown);
         let letterIndex = letters.indexOf(this.state.letterDropdown);
@@ -243,21 +245,26 @@ class UserGrid extends React.Component {
         for (let i = 0; i < numOfTiles; i++) {
             let alphaNumericString = '';
             if (currentNum > 10 || letterIndex > 9) {
-                throw new Error('Ship out of bounds.');
+
+                reversedBool = true;
+                currentNum = this.state.alignment === 'horizontal'
+                    ? parseInt(this.state.numberDropdown) - 1
+                    : parseInt(this.state.numberDropdown);
+                letterIndex = letters.indexOf(this.state.letterDropdown) - 1;
             }
 
             if (this.state.alignment === 'horizontal') {
                 alphaNumericString += this.state.letterDropdown;
                 alphaNumericString += `${currentNum}`;
 
-                currentNum++;
+                reversedBool ? currentNum-- : currentNum++;
                 valuesArray.push(alphaNumericString);
-            } 
+            }
             else if (this.state.alignment === 'vertical') {
                 alphaNumericString += letters[letterIndex];
                 alphaNumericString += `${currentNum}`;
 
-                letterIndex++;
+                reversedBool ? letterIndex-- : letterIndex++;
                 valuesArray.push(alphaNumericString);
             }
         }
@@ -287,11 +294,11 @@ class UserGrid extends React.Component {
                     })}
                 </select>
 
-                <button type='button' onClick={async () => {
+                <Button type='button' onClick={async () => {
                     await this.switchAlignment();
                     this.updateGhostShip();
-                }}>{this.state.alignment === 'horizontal' ? 'Horizontal' : 'Vertical'}</button>
-                <button type='submit'>Submit</button>
+                }}>{this.state.alignment === 'horizontal' ? 'Horizontal' : 'Vertical'}</Button>
+                <Button type='submit'>Submit</Button>
             </form>
         );
     }
@@ -329,8 +336,8 @@ class UserGrid extends React.Component {
                         opponentShots: [],
                         shipsReady: false,
                     })
-                }); 
-        // Continue to set ship tiles until all boats are set
+                });
+            // Continue to set ship tiles until all boats are set
         } else if (this.state.counter <= 4) {
             return `Please select cells for ${this.state.playerShips[this.state.counter].name}.
             This ship is ${this.state.playerShips[this.state.counter].length} spaces long`
@@ -348,7 +355,7 @@ class UserGrid extends React.Component {
     */
     handleCheckBoatLength = (boatArray) => {
         if (boatArray.length === this.state.playerShips[this.state.counter].length) {
-        
+
             let currentShips = [...this.state.playerShips];
             currentShips[this.state.counter].spaces = boatArray;
             // Sets 'playerShips' in state to newly updated current ship values, increases counter.
@@ -433,7 +440,7 @@ class UserGrid extends React.Component {
         })
     };
 
-    
+
     /*
         The following function closes socket listener when the component unmounts
     */
@@ -450,10 +457,12 @@ class UserGrid extends React.Component {
             <div className='UserContainer grid'>
                 <h2>Your Ships</h2>
                 <div className='UserGrid gameGrid'>
-                    {shipSetForm}
                     {this.handleRenderGrid()}
                 </div>
-                {!this.state.message && <h2>{this.handleSetShips()} </h2>}
+                <div className='setShipForm'>
+                    {!this.state.message && <h2>{this.handleSetShips()} </h2>}
+                    {shipSetForm}
+                </div>
                 {this.state.message && <p aria-live='assertive'>{this.state.message}</p>}
             </div>
         )

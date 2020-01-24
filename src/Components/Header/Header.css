@@ -5,15 +5,14 @@
   left: 0;
   right: 0;
   overflow: hidden;
-  position: fixed;
   width: 100%;
+  z-index: 2;
 }
 
 .main-header Button {
   width: 100%;
   margin: 0 auto;
   background-color: rgb(162, 188, 214);
-  margin-top: 4.5rem;
   border-radius: 0;
   border: 0;
   transition-duration: 0.3s;
@@ -23,8 +22,3 @@
   background-color:rgb(16, 43, 86);
 }
 
-@media screen and (min-width: 1025px) {
-  .main-header Button {
-    margin-top: 4.8rem;
-  }
-}

@@ -172,10 +172,18 @@ class GameBoard extends React.Component {
     })
   }
 
+  determineIfTwoGrids = () => {
+    let className = 'grid-box one-only';
+    if((this.state.shipsReady && this.state.opponentShipsReady && this.state.socket)){
+      className = 'grid-box'
+    }
+    return className
+  }
+
   render() {
 
     let errorMessage = this.state.error
-      ? <p className='errorMessage'>Uh oh! Something went wrong: {this.state.error}</p>
+      ? <p className='game-errorMessage'>Uh oh! Something went wrong: {this.state.error}</p>
       : null;
 
     let versusHeader = this.state.playerUsername && this.state.opponentUsername
@@ -242,18 +250,18 @@ class GameBoard extends React.Component {
 
         {errorMessage}
         {!this.state.error && versusHeader}
-        {!this.state.error &&  <>
-        
         <div className='progress'>
           <h4>Progress >></h4>
           <ul className='shipCounter'>
             {this.renderCounterList()}
           </ul>
         </div>
-        </>}
-        <div className='grid-box'>
-          {userGrid}
-          {opponentGrid}
+        
+        <div className='outer'>
+          <div className={this.determineIfTwoGrids()}>
+            {userGrid}
+            {opponentGrid}
+          </div>
         </div>
         
         {waitingOnOpponent}

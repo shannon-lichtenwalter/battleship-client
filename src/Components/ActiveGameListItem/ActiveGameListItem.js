@@ -101,6 +101,7 @@ class ActiveGameListItem extends React.Component {
   render() {
     return (
       <Fragment>
+        <div className={this.props.index === 0 ? '' : 'line'}></div>
         <li>{this.props.game.player1_username} versus {this.props.game.player2_username}</li>
         <li className='activeGameListItem'>
           <ul className='activeGameDetails'>
@@ -115,16 +116,17 @@ class ActiveGameListItem extends React.Component {
                   Quit Game?
                 </Button>}
               {this.state.quitting && 
-              <>
+              <div className='quittingOptions'>
                 <h4>Are you sure you want to quit?</h4>
                 <p>Your opponent will be marked as the winner and you will be marked as having lost the game.</p>
-                <Button onClick = {() => this.handleQuitGame()}>Quit Game Now</Button>
-                <Button onClick = {()=> this.setState({quitting:false})}>Keep Game Active</Button>
-              </> }
+                <Button className='quitGameButton' onClick = {() => this.handleQuitGame()}>Quit Game Now</Button>
+                <Button className='keepGameActive' onClick = {()=> this.setState({quitting:false})}>Keep Game Active</Button>
+              </div> }
               {this.state.error && <p>{this.state.error}. Please refresh page.</p>}
             </li>
           </ul>
         </li>
+        
       </Fragment>
     )
   }
