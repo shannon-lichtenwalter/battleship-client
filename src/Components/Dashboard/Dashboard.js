@@ -186,7 +186,7 @@ class Dashboard extends Component {
           </ul>
         </div>
         }
-
+      <Footer />
       </div>
     );
   };
