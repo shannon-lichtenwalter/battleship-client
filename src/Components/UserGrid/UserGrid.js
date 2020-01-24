@@ -381,7 +381,7 @@ class UserGrid extends React.Component {
         }
         if (!this.state.shipsReady) {
 
-            if (!this.state.shipTileValues.includes(value)) {
+            if (this.state.shipTileValues && !this.state.shipTileValues.includes(value)) {
                 this.setState({
                     selected: value,
                     letterDropdown: value.charAt(0),

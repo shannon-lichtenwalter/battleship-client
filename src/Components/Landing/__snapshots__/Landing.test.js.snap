@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing component Displays the Landing page component when rendered 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <withRouter(Landing)>
+      <Route>
+        <Landing
+          history={
+            Object {
+              "action": "POP",
+              "block": [Function],
+              "createHref": [Function],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "length": 1,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+              "push": [Function],
+              "replace": [Function],
+            }
+          }
+          location={
+            Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            }
+          }
+          match={
+            Object {
+              "isExact": true,
+              "params": Object {},
+              "path": "/",
+              "url": "/",
+            }
+          }
+        >
+          <div
+            className="landingPage"
+          >
+            <header
+              className="landing"
+            >
+              <h1>
+                BATTLESHIP
+              </h1>
+              <nav
+                aria-label="click to view app info"
+                className="arrow-nav"
+              >
+                <div
+                  className="arrow"
+                  onClick={[Function]}
+                />
+              </nav>
+            </header>
+            <div
+              aria-live="polite"
+              id="app-info"
+            >
+              <p
+                aria-label="app information"
+              >
+                Welcome to Battleship! The interactive game where you can challenge opponents in the classic game of sinking ships. This application allows the user to play a live game of battleship against another user. The user will receive live updates on their opponents advancements on the game board. Additionally, user's have the ability to leave a game and return to it later. To test out the site please create a new account, or log in with the username: **** and password: ****. Fire Away!
+              </p>
+              <ForwardRef
+                onClick={[Function]}
+              >
+                <button
+                  className="Button"
+                  onClick={[Function]}
+                >
+                   Proceed to Login
+                </button>
+              </ForwardRef>
+            </div>
+          </div>
+        </Landing>
+      </Route>
+    </withRouter(Landing)>
+  </Router>
+</BrowserRouter>
+`;

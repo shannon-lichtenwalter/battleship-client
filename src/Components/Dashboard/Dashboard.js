@@ -88,40 +88,45 @@ class Dashboard extends Component {
   //the second fetch call is to retrieve all stats for the logged in user.
   componentDidMount() {
     document.title = 'Welcome to your Dashboard!'
-    LoadGameApiService.getAllActiveGames()
-      .then(res => {
-        this.setState({
-          activeGames: res.result,
-          userId: res.userId
+    try{
+      LoadGameApiService.getAllActiveGames()
+        .then(res => {
+          this.setState({
+            activeGames: res.result,
+            userId: res.userId
+          })
+          return res
+        }).then(res => {
+          let myTurnGames = [];
+          let opponentTurnGames = [];
+          res.result.map(game => {
+            if (res.userId === game.player1 && game.turn === 'player1') {
+              return myTurnGames.push(game)
+            }
+            else if (res.userId === game.player2 && game.turn === 'player2') {
+              return myTurnGames.push(game)
+            }
+            else {
+              return opponentTurnGames.push(game)
+            }
+          });
+          this.setState({
+            myTurnGames,
+            opponentTurnGames,
+          })
         })
-        return res
-      }).then(res => {
-        let myTurnGames = [];
-        let opponentTurnGames = [];
-        res.result.map(game => {
-          if (res.userId === game.player1 && game.turn === 'player1') {
-            return myTurnGames.push(game)
-          }
-          else if (res.userId === game.player2 && game.turn === 'player2') {
-            return myTurnGames.push(game)
-          }
-          else {
-            return opponentTurnGames.push(game)
-          }
-        });
-        this.setState({
-          myTurnGames,
-          opponentTurnGames,
-        })
-      })
-      .catch((e) => this.setError(e));
+        .catch((e) => this.setError(e));
 
-    LoadGameApiService.getAllUserStats()
-      .then(res => {
-        this.setState({
-          userStats: res
+      LoadGameApiService.getAllUserStats()
+        .then(res => {
+          this.setState({
+            userStats: res
+          })
         })
-      })
+      }
+    catch(error){
+      error({error:'Something went wrong'})
+    }
   }
 
   render() {

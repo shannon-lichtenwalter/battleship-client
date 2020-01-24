@@ -26,8 +26,14 @@ class Landing extends Component {
               the user to play a live game of battleship against another user. The user will
               receive live updates on their opponents advancements on the game board. Additionally,
               user's have the ability to leave a game and return to it later.
-              To test out the site please create a new account, or log in with the username: ****
-              and password: ****.
+            </p>
+            <p aria-label='app information'>
+              To test out the site please create a new account, or log in with the username: TestUser1
+              and password: Password123. To test the live game feature you will have to log in as a different
+              user via a separate internet browser (ie: Safari, Chrome, Firefox etc.) OR log in on a mobile device
+              using the username: TestUser2 and password: Password123. This will give you the ability to play against yourself
+              in the two separate browsers. Alternatively, you may give the second user login information to a friend and 
+              challenge them in a game of Battleship.
 
               Fire Away!
             </p>

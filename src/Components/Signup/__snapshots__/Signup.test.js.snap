@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup Component Displays the signup page when rendered 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <withRouter(Signup)>
+      <Route>
+        <Signup
+          history={
+            Object {
+              "action": "POP",
+              "block": [Function],
+              "createHref": [Function],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "length": 1,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+              "push": [Function],
+              "replace": [Function],
+            }
+          }
+          location={
+            Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            }
+          }
+          match={
+            Object {
+              "isExact": true,
+              "params": Object {},
+              "path": "/",
+              "url": "/",
+            }
+          }
+          onRegistrationSuccess={[Function]}
+        >
+          <section
+            className="signup"
+          >
+            <Banner>
+              <div
+                className="banner"
+              >
+                <h1>
+                  BATTLESHIP
+                </h1>
+              </div>
+            </Banner>
+            <h1>
+              Sign up
+            </h1>
+            <form
+              className="signupform"
+              onSubmit={[Function]}
+            >
+              <div>
+                <Label
+                  htmlFor="signup-username-input"
+                >
+                  <label
+                    className="Label"
+                    htmlFor="signup-username-input"
+                  >
+                    Choose a username
+                    <Required>
+                      <span
+                        className="Required"
+                      >
+                        *
+                      </span>
+                    </Required>
+                  </label>
+                </Label>
+                <ForwardRef
+                  aria-required={true}
+                  id="signup-username-input"
+                  name="username"
+                  required={true}
+                >
+                  <input
+                    aria-required={true}
+                    className="Input"
+                    id="signup-username-input"
+                    name="username"
+                    required={true}
+                    type="text"
+                  />
+                </ForwardRef>
+              </div>
+              <div>
+                <Label
+                  htmlFor="signup-password-input"
+                >
+                  <label
+                    className="Label"
+                    htmlFor="signup-password-input"
+                  >
+                    Choose a password
+                    <Required>
+                      <span
+                        className="Required"
+                      >
+                        *
+                      </span>
+                    </Required>
+                  </label>
+                </Label>
+                <ForwardRef
+                  aria-required={true}
+                  id="signup-password-input"
+                  name="password"
+                  required={true}
+                  type="password"
+                >
+                  <input
+                    aria-required={true}
+                    className="Input"
+                    id="signup-password-input"
+                    name="password"
+                    required={true}
+                    type="password"
+                  />
+                </ForwardRef>
+              </div>
+              <div
+                className="signupbtn"
+              >
+                <ForwardRef
+                  type="submit"
+                >
+                  <button
+                    className="Button"
+                    type="submit"
+                  >
+                    Sign up
+                  </button>
+                </ForwardRef>
+              </div>
+              <div
+                className="btnLink"
+              >
+                <Link
+                  replace={false}
+                  to="/login"
+                >
+                  <a
+                    href="/login"
+                    onClick={[Function]}
+                  >
+                    Already have an account?
+                  </a>
+                </Link>
+              </div>
+            </form>
+          </section>
+        </Signup>
+      </Route>
+    </withRouter(Signup)>
+  </Router>
+</BrowserRouter>
+`;

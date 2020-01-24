@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dashboard component Displays the Dashboard component when rendered 1`] = `
+exports[`GameHistory component Displays the 'GameHistory' component when rendered 1`] = `
 <BrowserRouter>
   <Router
     history={
@@ -24,9 +24,9 @@ exports[`Dashboard component Displays the Dashboard component when rendered 1`] 
       }
     }
   >
-    <withRouter(Dashboard)>
+    <withRouter(GameHistory)>
       <Route>
-        <Dashboard
+        <GameHistory
           history={
             Object {
               "action": "POP",
@@ -65,7 +65,7 @@ exports[`Dashboard component Displays the Dashboard component when rendered 1`] 
           }
         >
           <div
-            className="dashboard"
+            className="gameHistory"
           >
             <withRouter(Header)>
               <Route>
@@ -155,98 +155,23 @@ exports[`Dashboard component Displays the Dashboard component when rendered 1`] 
                 </Header>
               </Route>
             </withRouter(Header)>
-            <h2
-              className="dashboardWelcome"
+            <h1>
+              Game History
+            </h1>
+            <ul
+              className="game-history-list"
             >
-              Welcome back, 
-              <span
-                className="username"
-              />
-            </h2>
-            <h3
-              className="dash-h3"
-            >
-              Stats
-            </h3>
-            <div
-              className="stats"
-            >
-              <div
-                className="stat-box"
-              >
-                <h4
-                  className="stat-title"
-                >
-                  Wins
-                </h4>
-                <p
-                  className="stat-para"
-                />
-              </div>
-              <div
-                className="stat-box"
-              >
-                <h4
-                  className="stat-title"
-                >
-                  Losses
-                </h4>
-                <p
-                  className="stat-para"
-                />
-              </div>
-              <div
-                className="stat-box"
-              >
-                <h4
-                  className="stat-title"
-                >
-                  Win Ratio
-                </h4>
-                <p
-                  className="stat-para"
-                >
-                  NaN%
-                </p>
-              </div>
-            </div>
-            <div
-              className="startGames"
-            >
-              <h3
-                className="dash-h3"
-              >
-                Play Battleship
-              </h3>
-              <ForwardRef
-                onClick={[Function]}
-              >
-                <button
-                  className="Button"
-                  onClick={[Function]}
-                >
-                  Start a New Game
-                </button>
-              </ForwardRef>
-              <h4>
-                Return to an Active Game:
-              </h4>
-              <ul
-                className="activeGames"
-              >
-                <li />
-                <li />
-              </ul>
-            </div>
+              No game history availiable
+            </ul>
             <Footer>
               <footer>
                 Copyright © since 2020
               </footer>
             </Footer>
           </div>
-        </Dashboard>
+        </GameHistory>
       </Route>
-    </withRouter(Dashboard)>
+    </withRouter(GameHistory)>
   </Router>
 </BrowserRouter>
 `;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dashboard component Displays the Dashboard component when rendered 1`] = `
+exports[`GameBoard component Displays the Gameboard component (Container for UserGrid, OpponentGrid, Chat) 1`] = `
 <BrowserRouter>
   <Router
     history={
@@ -24,9 +24,44 @@ exports[`Dashboard component Displays the Dashboard component when rendered 1`] 
       }
     }
   >
-    <withRouter(Dashboard)>
+    <withRouter(GameBoard)
+      gameData={
+        Object {
+          "currentUser": null,
+          "gameId": null,
+          "opponentHits": Array [],
+          "opponentMisses": Array [],
+          "opponentShips": null,
+          "resumedGame": null,
+          "room_id": null,
+          "shipTileValues": Array [],
+          "shipsReady": null,
+          "turn": null,
+          "userHits": Array [],
+          "userMisses": Array [],
+          "userShips": Array [],
+        }
+      }
+    >
       <Route>
-        <Dashboard
+        <GameBoard
+          gameData={
+            Object {
+              "currentUser": null,
+              "gameId": null,
+              "opponentHits": Array [],
+              "opponentMisses": Array [],
+              "opponentShips": null,
+              "resumedGame": null,
+              "room_id": null,
+              "shipTileValues": Array [],
+              "shipsReady": null,
+              "turn": null,
+              "userHits": Array [],
+              "userMisses": Array [],
+              "userShips": Array [],
+            }
+          }
           history={
             Object {
               "action": "POP",
@@ -65,7 +100,7 @@ exports[`Dashboard component Displays the Dashboard component when rendered 1`] 
           }
         >
           <div
-            className="dashboard"
+            className="gameroom"
           >
             <withRouter(Header)>
               <Route>
@@ -156,97 +191,42 @@ exports[`Dashboard component Displays the Dashboard component when rendered 1`] 
               </Route>
             </withRouter(Header)>
             <h2
-              className="dashboardWelcome"
+              className="versusHeader"
             >
-              Welcome back, 
-              <span
-                className="username"
-              />
+              Waiting for Opponent...
             </h2>
-            <h3
-              className="dash-h3"
-            >
-              Stats
-            </h3>
             <div
-              className="stats"
+              className="progress"
             >
-              <div
-                className="stat-box"
-              >
-                <h4
-                  className="stat-title"
-                >
-                  Wins
-                </h4>
-                <p
-                  className="stat-para"
-                />
-              </div>
-              <div
-                className="stat-box"
-              >
-                <h4
-                  className="stat-title"
-                >
-                  Losses
-                </h4>
-                <p
-                  className="stat-para"
-                />
-              </div>
-              <div
-                className="stat-box"
-              >
-                <h4
-                  className="stat-title"
-                >
-                  Win Ratio
-                </h4>
-                <p
-                  className="stat-para"
-                >
-                  NaN%
-                </p>
-              </div>
-            </div>
-            <div
-              className="startGames"
-            >
-              <h3
-                className="dash-h3"
-              >
-                Play Battleship
-              </h3>
-              <ForwardRef
-                onClick={[Function]}
-              >
-                <button
-                  className="Button"
-                  onClick={[Function]}
-                >
-                  Start a New Game
-                </button>
-              </ForwardRef>
               <h4>
-                Return to an Active Game:
+                Progress &gt;&gt;
               </h4>
               <ul
-                className="activeGames"
-              >
-                <li />
-                <li />
-              </ul>
+                className="shipCounter"
+              />
             </div>
+            <div
+              className="grid-box"
+            />
+            <ForwardRef
+              onClick={[Function]}
+            >
+              <button
+                className="Button"
+                onClick={[Function]}
+              >
+                Back
+              </button>
+            </ForwardRef>
             <Footer>
               <footer>
                 Copyright © since 2020
               </footer>
             </Footer>
           </div>
-        </Dashboard>
+        </GameBoard>
       </Route>
-    </withRouter(Dashboard)>
+    </withRouter(GameBoard)>
   </Router>
 </BrowserRouter>
 `;
