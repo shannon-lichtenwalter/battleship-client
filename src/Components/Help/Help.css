@@ -1,10 +1,8 @@
 .key {
-  width: 80%;
-  border: 1px solid grey;
+  width: 100%;
   border-radius: 2px;
   margin-left:auto;
   margin-right:auto;
-  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -42,7 +40,34 @@
 li {
   font-size: 1.3rem;
   display: block;
-  padding: 0 1rem;
+}
+
+ol {
+  padding: 0 20px;
+}
+
+.li-indent {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.ul-list-styling {
+  padding-left: 50px;
+}
+
+.left-h3 {
+  color: rgb(123, 235, 255);
+}
+
+.long-string-style {
+  width: 57%;
+  margin:0;
+  text-align: left;
+}
+
+
+#instructions-help, ol, .li-left-align {
+  text-align: left;
 }
 
 .helpIB {
@@ -53,6 +78,12 @@ li {
   margin: 0 auto;
   border-radius: 1rem;
   background-color: rgb(30, 52, 90);
+}
+
+@media screen and (min-width: 700px) {
+  .helpIB {
+    padding: 0
+  }
 }
 
 @media screen and (min-width: 900px) {
@@ -73,5 +104,22 @@ li {
 
   .help h2 {
     margin: 0;
+  }
+
+  .left-h3 {
+    text-align: left;
+  }
+
+  .key {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .key > div {
+    width: 50%;
+    display:flex;
+    word-wrap: break-word;
+    justify-content: flex-start;
+    align-items:center;
   }
 }
