@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import LoadGameApiService from '../../Services/load-game-api-service';
 import Button from '../Button/Button';
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import './Result.css';
 
 class Result extends Component {
@@ -117,7 +116,6 @@ class Result extends Component {
         }}> Exit
         </Button>
         
-        <Footer />
       </div>
     
     );

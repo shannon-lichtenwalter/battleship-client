@@ -88,7 +88,8 @@
     #chat {
         width: 23%;
         position: absolute;
-        top: 235px;
+        top: 250px;
+        left: 10px;
         z-index: 1;
     }
 

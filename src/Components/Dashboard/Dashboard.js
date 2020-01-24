@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import ActiveGameListItem from '../ActiveGameListItem/ActiveGameListItem';
 import LoadGameApiService from '../../Services/load-game-api-service';
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import Button from '../Button/Button.js';
 import './Dashboard.css';
 
@@ -184,7 +183,6 @@ class Dashboard extends Component {
             })}
           </ul>
         </div>
-        <Footer />
 
       </div>
     );

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Button from '../Button/Button';
-import Footer from '../Footer/Footer';
 import './Help.css';
 import Header from '../Header/Header';
 
@@ -95,7 +94,6 @@ class Help extends Component {
           }}> Back
           </Button>
 
-          <Footer />
         </div>
       </div>
     );

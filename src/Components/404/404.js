@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import Header from '../../Components/Header/Header';
-import Button from '../../Components/Button/Button';
+import Header from '../Header/Header';
+import Button from '../Button/Button';
 
-class NotFoundRoute extends Component {
+class NotFound extends Component {
 
   componentDidMount(){
     document.title = 'Page Not Found'
@@ -26,6 +26,6 @@ class NotFoundRoute extends Component {
   }
 };
 
-export default withRouter(NotFoundRoute);
+export default withRouter(NotFound);
 
 

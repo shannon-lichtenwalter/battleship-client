@@ -5,7 +5,6 @@ import './GameHistory.css';
 import Button from '../Button/Button';
 import Header from '../Header/Header';
 import './GameHistory.css';
-import Footer from '../Footer/Footer';
 
 class GameHistory extends React.Component {
     state = {
@@ -77,8 +76,6 @@ class GameHistory extends React.Component {
                 <ul className='game-history-list'>
                     {completedGames}
                 </ul>
-
-                <Footer />
             </div>
         );
     }

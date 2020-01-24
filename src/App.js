@@ -13,7 +13,7 @@ import GameHistory from './Components/GameHistory/GameHistory';
 import GameBoard from './Components/GameBoard/GameBoard';
 import Result from './Components/Result/Result';
 import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary';
-import NotFoundRoute from './Routes/NotFoundRoute/NotFoundRoute';
+import NotFound from './Components/404/404';
 
 export default class App extends Component {
   state = {
@@ -155,7 +155,7 @@ export default class App extends Component {
               }
             />
             <Route
-              component={NotFoundRoute}
+              component={NotFound}
             />
           </Switch>
         </ErrorBoundary>
