@@ -13,7 +13,7 @@ describe(`Chat component`, () => {
         ReactDOM.unmountComponentAtNode(div);
     });
 
-    it.skip(`Displays a chat window when rendered`, () => {
+    it(`Displays a chat window when rendered`, () => {
         const wrapper = shallow(<Chat />)
         expect(toJson(wrapper)).toMatchSnapshot()
     })
@@ -28,9 +28,9 @@ describe(`Chat component`, () => {
         expect(wrapper.contains(<ul id='chat-window'></ul>)).toEqual(true)
     })
 
-    it.skip(`Expects a label for the chat input area`, () => { 
+    it(`Expects a label for the chat input area`, () => { 
         const wrapper = shallow(<Chat />)
-        expect(wrapper.text()).toMatch(/Chat Input/)
+        expect(wrapper.text()).toMatch(/Chat with Opponent/)
     })
 
     it(`Stores messages received from the other player from data found in component state`, () => {

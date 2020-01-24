@@ -9,9 +9,9 @@ exports[`Cell component Cannot be clicked if currently a label 1`] = `
   shipTileValues={Array []}
 >
   <div
-    className="cell"
-    id="label"
+    className="cell label"
     onClick={[Function]}
+    onMouseOver={[Function]}
   >
     A
   </div>
@@ -21,7 +21,7 @@ exports[`Cell component Cannot be clicked if currently a label 1`] = `
 exports[`Cell component Displays a cell tile when rendered 1`] = `
 <div
   className="cell"
-  id=""
   onClick={[Function]}
+  onMouseOver={[Function]}
 />
 `;

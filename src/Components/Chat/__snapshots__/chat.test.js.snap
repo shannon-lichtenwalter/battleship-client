@@ -2,6 +2,8 @@
 
 exports[`Chat component Displays a chat window when rendered 1`] = `
 <div
+  aria-label="chat-box"
+  aria-live="polite"
   id="chat"
 >
   <ul
@@ -11,17 +13,24 @@ exports[`Chat component Displays a chat window when rendered 1`] = `
     id="chat-form"
     onSubmit={[Function]}
   >
-    <label
-      htmlFor="chatInput"
-      id="chat-label"
-    >
-      Chat Input
-    </label>
-    <input
-      id="chatInput"
-      placeholder="Type your message here."
-      type="text"
-    />
+     
+    <fieldset>
+      <legend>
+        Chat with Opponent
+      </legend>
+      <label
+        htmlFor="chatInput"
+        id="chat-label"
+      >
+        Type Message
+      </label>
+      <input
+        aria-label="type message to opponent here"
+        id="chatInput"
+        placeholder="Type Here"
+        type="text"
+      />
+    </fieldset>
   </form>
 </div>
 `;
