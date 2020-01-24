@@ -451,10 +451,12 @@ class UserGrid extends React.Component {
             <div className='UserContainer grid'>
                 <h2>Your Ships</h2>
                 <div className='UserGrid gameGrid'>
-                    {shipSetForm}
                     {this.handleRenderGrid()}
                 </div>
+                <div className='setShipForm'>
                 {!this.state.message && <h2>{this.handleSetShips()} </h2>}
+                {shipSetForm}
+                </div>
                 {this.state.message && <p aria-live='assertive'>{this.state.message}</p>}
             </div>
         )

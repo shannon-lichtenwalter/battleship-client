@@ -9,7 +9,7 @@ import './GameBoard.css';
 import TokenService from '../../Services/token-service';
 import Chat from '../Chat/Chat';
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+// import Footer from '../Footer/Footer';
 
 class GameBoard extends React.Component {
   state = {
@@ -172,6 +172,14 @@ class GameBoard extends React.Component {
     })
   }
 
+  determineIfTwoGrids = () => {
+    let className = 'grid-box one-only';
+    if((this.state.shipsReady && this.state.opponentShipsReady && this.state.socket)){
+      className = 'grid-box'
+    }
+    return className
+  }
+
   render() {
 
     let errorMessage = this.state.error
@@ -242,7 +250,7 @@ class GameBoard extends React.Component {
 
         {errorMessage}
         {!this.state.error && versusHeader}
-        {!this.state.error &&  <>
+        {!this.state.error && <>
         
         <div className='progress'>
           <h4>Progress >></h4>
@@ -251,9 +259,11 @@ class GameBoard extends React.Component {
           </ul>
         </div>
         </>}
-        <div className='grid-box'>
-          {userGrid}
-          {opponentGrid}
+        <div className='outer'>
+          <div className={this.determineIfTwoGrids()}>
+            {userGrid}
+            {opponentGrid}
+          </div>
         </div>
         
         {waitingOnOpponent}
@@ -261,7 +271,7 @@ class GameBoard extends React.Component {
         {chat}
 
         <Button onClick={() => this.props.history.push('/dashboard')}>Back</Button>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     )
   };

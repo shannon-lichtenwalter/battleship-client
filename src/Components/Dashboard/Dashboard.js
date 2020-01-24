@@ -132,8 +132,8 @@ class Dashboard extends Component {
 
         <h2 className='dashboardWelcome'>Welcome back, <span className='username'>{this.state.userStats.username}</span></h2>
         {this.state.error && <p>Uh oh! Something went wrong: {this.state.error}</p>}
-        <h3 className='dash-h3'>Stats</h3>
-
+        {/* <h3 className='dash-h3'>Stats</h3> */}
+        <h3 className='dash-h3'>Play Battleship</h3>
         <div className='stats'>
           <div className='stat-box'>
             <h4 className='stat-title'>Wins</h4>
@@ -156,14 +156,9 @@ class Dashboard extends Component {
         </div>
 
         <div className='startGames'>
-
-          <h3 className='dash-h3'>Play Battleship</h3>          
           <Button onClick={()=> this.handleNewGame()}>
-
             Start a New Game
           </Button>
-          
-          <h4>Return to an Active Game:</h4>
           <ul className='activeGames'>
             <li>{this.state.myTurnGames.length !== 0 && <h4>Your Turn!</h4>}</li>
             {this.state.myTurnGames && this.state.myTurnGames.map((game, index) => {

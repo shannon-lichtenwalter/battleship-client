@@ -1,6 +1,5 @@
 import React from 'react';
 import Cell from '../Cell/Cell';
-import Button from '../Button/Button';
 import './OpponentGrid.css';
 
 class OpponentGrid extends React.Component {
@@ -246,7 +245,7 @@ class OpponentGrid extends React.Component {
             </select>
           </div>
           <h4 className='selectedTarget'>You have selected target: {this.state.selected}</h4>
-            <Button type='submit' className='fireButton'>Fire!</Button>
+            <button type='submit' className='fireButton'>Fire!</button>
         </fieldset>
       </form>
     )
