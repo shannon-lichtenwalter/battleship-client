@@ -1,5 +1,6 @@
 import React from 'react';
 import Cell from '../Cell/Cell';
+import Button from '../Button/Button';
 import './UserGrid.css';
 import gameMovesApiService from '../../Services/game-moves-api-service';
 
@@ -287,11 +288,11 @@ class UserGrid extends React.Component {
                     })}
                 </select>
 
-                <button type='button' onClick={async () => {
+                <Button type='button' onClick={async () => {
                     await this.switchAlignment();
                     this.updateGhostShip();
-                }}>{this.state.alignment === 'horizontal' ? 'Horizontal' : 'Vertical'}</button>
-                <button type='submit'>Submit</button>
+                }}>{this.state.alignment === 'horizontal' ? 'Horizontal' : 'Vertical'}</Button>
+                <Button type='submit'>Submit</Button>
             </form>
         );
     }

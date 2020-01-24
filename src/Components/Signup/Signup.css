@@ -2,6 +2,10 @@
   padding-top: 2rem;
 }
 
-.signup {
-  margin-top: 8rem;
+.signup-errorMessage {
+  color: red;
+}
+
+.signup-h1 {
+  margin-top: 2rem;
 }

@@ -24,13 +24,17 @@
   margin-right: 20px;
 }
 
+.key p {
+  font-size: 0.9rem;
+}
+
 .helpIB ul {
   list-style-type: none;
   display: inline;
 }
 
 .help {
-  margin-top: 10rem;
+  margin-top: 2rem;
 }
 
 .help h1 {
