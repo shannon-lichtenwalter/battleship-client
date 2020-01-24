@@ -156,13 +156,9 @@ class Dashboard extends Component {
         </div>
 
         <div className='startGames'>
-
-                   
           <Button onClick={()=> this.handleNewGame()}>
-
             Start a New Game
           </Button>
-
           <ul className='activeGames'>
             <li>{this.state.myTurnGames.length !== 0 && <h4>Your Turn!</h4>}</li>
             {this.state.myTurnGames && this.state.myTurnGames.map((game, index) => {

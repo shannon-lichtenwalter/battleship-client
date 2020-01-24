@@ -1,6 +1,5 @@
 import React from 'react';
 import Cell from '../Cell/Cell';
-import Button from '../Button/Button';
 import './OpponentGrid.css';
 
 class OpponentGrid extends React.Component {
