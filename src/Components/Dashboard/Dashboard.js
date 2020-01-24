@@ -128,12 +128,10 @@ class Dashboard extends Component {
     return (
       <div className='dashboard'>
         <Header />
-
-        <h2 className='dashboardWelcome'>Welcome back, <span className='username'>{this.state.userStats.username}</span></h2>
+        {this.state.userStats.username && <h2 className='dashboardWelcome'>Welcome back, <span className='username'>{this.state.userStats.username}</span></h2>}
         {this.state.error && <p>Uh oh! Something went wrong: {this.state.error}</p>}
-        {/* <h3 className='dash-h3'>Stats</h3> */}
-        <h3 className='dash-h3'>Play Battleship</h3>
-        <div className='stats'>
+        {this.state.userStats.username && <h3 className='dash-h3'>Play Battleship</h3>}
+        {this.state.userStats.username && <div className='stats'>
           <div className='stat-box'>
             <h4 className='stat-title'>Wins</h4>
             <p className='stat-para'>{this.state.userStats.wins}</p>
@@ -153,8 +151,9 @@ class Dashboard extends Component {
             </p>
           </div>
         </div>
+        }
 
-        <div className='startGames'>
+        {this.state.userStats.username && <div className='startGames'>
           <Button onClick={()=> this.handleNewGame()}>
             Start a New Game
           </Button>
@@ -163,6 +162,7 @@ class Dashboard extends Component {
             {this.state.myTurnGames && this.state.myTurnGames.map((game, index) => {
               return <ActiveGameListItem
                 key={index}
+                index={index}
                 setGameData={this.props.setGameData}
                 game={game}
                 userId={this.state.userId}
@@ -173,7 +173,8 @@ class Dashboard extends Component {
             <li>{this.state.opponentTurnGames.length !== 0 && <h4>Waiting For Opponent...</h4>}</li>
             {this.state.opponentTurnGames && this.state.opponentTurnGames.map((game, index) => {
             return <ActiveGameListItem 
-              key={index} 
+              key={index}
+              index={index} 
               setGameData={this.props.setGameData} 
               game={game} 
               userId={this.state.userId}
@@ -183,7 +184,8 @@ class Dashboard extends Component {
             })}
           </ul>
         </div>
-
+        }
+      <Footer />
       </div>
     );
   };

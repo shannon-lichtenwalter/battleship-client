@@ -26,11 +26,17 @@ Sign up Page
 Dashboard Page
 ![dashboard](./Screenshot/dashboard.png)
 
+Gameboard Page
+![gameboard](./Screenshot/gameboard.png)
+
 Result Page
 ![result](./Screenshot/result.png)
 
+Game History Page
+![gamehistory](./Screenshot/gamehistory.png)
+
 Help Page
-![Help](./Screenshot/help.png)
+![help](./Screenshot/helppage.png)
 
 ## Programmers
 

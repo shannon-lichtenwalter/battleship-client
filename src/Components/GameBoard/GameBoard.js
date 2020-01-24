@@ -9,6 +9,7 @@ import './GameBoard.css';
 import TokenService from '../../Services/token-service';
 import Chat from '../Chat/Chat';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 class GameBoard extends React.Component {
   state = {
@@ -268,6 +269,7 @@ class GameBoard extends React.Component {
         {chat}
 
         <Button onClick={() => this.props.history.push('/dashboard')}>Back</Button>
+        <Footer />
       </div>
     )
   };
