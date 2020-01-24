@@ -24,13 +24,13 @@ Sign up Page
 ![signup](./Screenshot/signup.png)
 
 Dashboard Page
-![dashboard](./Screenshot/dashboardpage.png)
+![dashboard](./Screenshot/dashboard.png)
 
 Gameboard Page
 ![gameboard](./Screenshot/gameboard.png)
 
 Result Page
-![result](./Screenshot/resultpage.png)
+![result](./Screenshot/result.png)
 
 Game History Page
 ![gamehistory](./Screenshot/gamehistory.png)
