@@ -153,10 +153,10 @@ export default class App extends Component {
               />
               }
             />
+            <Route
+              component={NotFoundRoute}
+            />
           </ErrorBoundary>
-          <Route
-            component={NotFoundRoute}
-          />
         </Switch>
       </main>
     );
