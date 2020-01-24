@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error Boundary Component Renders without errors 1`] = `"<withRouter(Header) /> Uh oh! We've had a misfire! Please try returning to the homepage...<Link />"`;

@@ -1,0 +1,6508 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserGrid Component Displays no ship tiles as selected by default 1`] = `
+<UserGrid>
+  <div
+    className="UserContainer grid"
+  >
+    <h2>
+      Your Ships
+    </h2>
+    <div
+      className="UserGrid gameGrid"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <select
+          id="letter-dropdown"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value=""
+          >
+            Letter
+          </option>
+          <option
+            key="0"
+            value="A"
+          >
+            Alfa
+          </option>
+          <option
+            key="1"
+            value="B"
+          >
+            Bravo
+          </option>
+          <option
+            key="2"
+            value="C"
+          >
+            Charlie
+          </option>
+          <option
+            key="3"
+            value="D"
+          >
+            Delta
+          </option>
+          <option
+            key="4"
+            value="E"
+          >
+            Echo
+          </option>
+          <option
+            key="5"
+            value="F"
+          >
+            Foxtrot
+          </option>
+          <option
+            key="6"
+            value="G"
+          >
+            Golf
+          </option>
+          <option
+            key="7"
+            value="H"
+          >
+            Hotel
+          </option>
+          <option
+            key="8"
+            value="I"
+          >
+            India
+          </option>
+          <option
+            key="9"
+            value="J"
+          >
+            Juliett
+          </option>
+        </select>
+        <select
+          id="number-dropdown"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value=""
+          >
+            Number
+          </option>
+          <option
+            key="0"
+            value="1"
+          >
+            1
+          </option>
+          <option
+            key="1"
+            value="2"
+          >
+            2
+          </option>
+          <option
+            key="2"
+            value="3"
+          >
+            3
+          </option>
+          <option
+            key="3"
+            value="4"
+          >
+            4
+          </option>
+          <option
+            key="4"
+            value="5"
+          >
+            5
+          </option>
+          <option
+            key="5"
+            value="6"
+          >
+            6
+          </option>
+          <option
+            key="6"
+            value="7"
+          >
+            7
+          </option>
+          <option
+            key="7"
+            value="8"
+          >
+            8
+          </option>
+          <option
+            key="8"
+            value="9"
+          >
+            9
+          </option>
+          <option
+            key="9"
+            value="10"
+          >
+            10
+          </option>
+        </select>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          Horizontal
+        </button>
+        <button
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="0"
+      >
+        <Cell
+          id={0}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            0
+          </div>
+        </Cell>
+        <Cell
+          id="A"
+          idNumber={-2}
+          key="A"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            A
+          </div>
+        </Cell>
+        <Cell
+          id="B"
+          idNumber={-2}
+          key="B"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            B
+          </div>
+        </Cell>
+        <Cell
+          id="C"
+          idNumber={-2}
+          key="C"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            C
+          </div>
+        </Cell>
+        <Cell
+          id="D"
+          idNumber={-2}
+          key="D"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            D
+          </div>
+        </Cell>
+        <Cell
+          id="E"
+          idNumber={-2}
+          key="E"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            E
+          </div>
+        </Cell>
+        <Cell
+          id="F"
+          idNumber={-2}
+          key="F"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            F
+          </div>
+        </Cell>
+        <Cell
+          id="G"
+          idNumber={-2}
+          key="G"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            G
+          </div>
+        </Cell>
+        <Cell
+          id="H"
+          idNumber={-2}
+          key="H"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            H
+          </div>
+        </Cell>
+        <Cell
+          id="I"
+          idNumber={-2}
+          key="I"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            I
+          </div>
+        </Cell>
+        <Cell
+          id="J"
+          idNumber={-2}
+          key="J"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            J
+          </div>
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="1"
+      >
+        <Cell
+          id={1}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            1
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A1"
+          idNumber={-2}
+          key="A1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B1"
+          idNumber={-2}
+          key="B1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C1"
+          idNumber={-2}
+          key="C1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D1"
+          idNumber={-2}
+          key="D1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E1"
+          idNumber={-2}
+          key="E1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F1"
+          idNumber={-2}
+          key="F1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G1"
+          idNumber={-2}
+          key="G1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H1"
+          idNumber={-2}
+          key="H1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I1"
+          idNumber={-2}
+          key="I1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J1"
+          idNumber={-2}
+          key="J1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="2"
+      >
+        <Cell
+          id={2}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            2
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A2"
+          idNumber={-2}
+          key="A2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B2"
+          idNumber={-2}
+          key="B2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C2"
+          idNumber={-2}
+          key="C2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D2"
+          idNumber={-2}
+          key="D2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E2"
+          idNumber={-2}
+          key="E2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F2"
+          idNumber={-2}
+          key="F2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G2"
+          idNumber={-2}
+          key="G2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H2"
+          idNumber={-2}
+          key="H2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I2"
+          idNumber={-2}
+          key="I2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J2"
+          idNumber={-2}
+          key="J2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="3"
+      >
+        <Cell
+          id={3}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            3
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A3"
+          idNumber={-2}
+          key="A3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B3"
+          idNumber={-2}
+          key="B3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C3"
+          idNumber={-2}
+          key="C3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D3"
+          idNumber={-2}
+          key="D3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E3"
+          idNumber={-2}
+          key="E3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F3"
+          idNumber={-2}
+          key="F3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G3"
+          idNumber={-2}
+          key="G3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H3"
+          idNumber={-2}
+          key="H3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I3"
+          idNumber={-2}
+          key="I3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J3"
+          idNumber={-2}
+          key="J3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="4"
+      >
+        <Cell
+          id={4}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            4
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A4"
+          idNumber={-2}
+          key="A4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B4"
+          idNumber={-2}
+          key="B4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C4"
+          idNumber={-2}
+          key="C4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D4"
+          idNumber={-2}
+          key="D4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E4"
+          idNumber={-2}
+          key="E4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F4"
+          idNumber={-2}
+          key="F4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G4"
+          idNumber={-2}
+          key="G4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H4"
+          idNumber={-2}
+          key="H4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I4"
+          idNumber={-2}
+          key="I4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J4"
+          idNumber={-2}
+          key="J4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="5"
+      >
+        <Cell
+          id={5}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            5
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A5"
+          idNumber={-2}
+          key="A5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B5"
+          idNumber={-2}
+          key="B5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C5"
+          idNumber={-2}
+          key="C5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D5"
+          idNumber={-2}
+          key="D5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E5"
+          idNumber={-2}
+          key="E5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F5"
+          idNumber={-2}
+          key="F5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G5"
+          idNumber={-2}
+          key="G5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H5"
+          idNumber={-2}
+          key="H5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I5"
+          idNumber={-2}
+          key="I5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J5"
+          idNumber={-2}
+          key="J5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="6"
+      >
+        <Cell
+          id={6}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            6
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A6"
+          idNumber={-2}
+          key="A6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B6"
+          idNumber={-2}
+          key="B6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C6"
+          idNumber={-2}
+          key="C6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D6"
+          idNumber={-2}
+          key="D6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E6"
+          idNumber={-2}
+          key="E6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F6"
+          idNumber={-2}
+          key="F6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G6"
+          idNumber={-2}
+          key="G6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H6"
+          idNumber={-2}
+          key="H6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I6"
+          idNumber={-2}
+          key="I6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J6"
+          idNumber={-2}
+          key="J6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="7"
+      >
+        <Cell
+          id={7}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            7
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A7"
+          idNumber={-2}
+          key="A7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B7"
+          idNumber={-2}
+          key="B7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C7"
+          idNumber={-2}
+          key="C7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D7"
+          idNumber={-2}
+          key="D7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E7"
+          idNumber={-2}
+          key="E7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F7"
+          idNumber={-2}
+          key="F7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G7"
+          idNumber={-2}
+          key="G7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H7"
+          idNumber={-2}
+          key="H7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I7"
+          idNumber={-2}
+          key="I7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J7"
+          idNumber={-2}
+          key="J7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="8"
+      >
+        <Cell
+          id={8}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            8
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A8"
+          idNumber={-2}
+          key="A8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B8"
+          idNumber={-2}
+          key="B8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C8"
+          idNumber={-2}
+          key="C8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D8"
+          idNumber={-2}
+          key="D8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E8"
+          idNumber={-2}
+          key="E8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F8"
+          idNumber={-2}
+          key="F8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G8"
+          idNumber={-2}
+          key="G8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H8"
+          idNumber={-2}
+          key="H8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I8"
+          idNumber={-2}
+          key="I8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J8"
+          idNumber={-2}
+          key="J8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="9"
+      >
+        <Cell
+          id={9}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            9
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A9"
+          idNumber={-2}
+          key="A9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B9"
+          idNumber={-2}
+          key="B9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C9"
+          idNumber={-2}
+          key="C9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D9"
+          idNumber={-2}
+          key="D9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E9"
+          idNumber={-2}
+          key="E9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F9"
+          idNumber={-2}
+          key="F9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G9"
+          idNumber={-2}
+          key="G9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H9"
+          idNumber={-2}
+          key="H9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I9"
+          idNumber={-2}
+          key="I9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J9"
+          idNumber={-2}
+          key="J9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="10"
+      >
+        <Cell
+          id={10}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            10
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A10"
+          idNumber={-2}
+          key="A10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B10"
+          idNumber={-2}
+          key="B10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C10"
+          idNumber={-2}
+          key="C10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D10"
+          idNumber={-2}
+          key="D10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E10"
+          idNumber={-2}
+          key="E10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F10"
+          idNumber={-2}
+          key="F10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G10"
+          idNumber={-2}
+          key="G10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H10"
+          idNumber={-2}
+          key="H10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I10"
+          idNumber={-2}
+          key="I10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J10"
+          idNumber={-2}
+          key="J10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+    </div>
+    <h2>
+      Please select cells for aircraftCarrier.
+            This ship is 5 spaces long
+       
+    </h2>
+  </div>
+</UserGrid>
+`;
+
+exports[`UserGrid Component Selects only the cell selected (A1) for a ship tile on the first click 1`] = `
+<UserGrid>
+  <div
+    className="UserContainer grid"
+  >
+    <h2>
+      Your Ships
+    </h2>
+    <div
+      className="UserGrid gameGrid"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <select
+          id="letter-dropdown"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value=""
+          >
+            Letter
+          </option>
+          <option
+            key="0"
+            value="A"
+          >
+            Alfa
+          </option>
+          <option
+            key="1"
+            value="B"
+          >
+            Bravo
+          </option>
+          <option
+            key="2"
+            value="C"
+          >
+            Charlie
+          </option>
+          <option
+            key="3"
+            value="D"
+          >
+            Delta
+          </option>
+          <option
+            key="4"
+            value="E"
+          >
+            Echo
+          </option>
+          <option
+            key="5"
+            value="F"
+          >
+            Foxtrot
+          </option>
+          <option
+            key="6"
+            value="G"
+          >
+            Golf
+          </option>
+          <option
+            key="7"
+            value="H"
+          >
+            Hotel
+          </option>
+          <option
+            key="8"
+            value="I"
+          >
+            India
+          </option>
+          <option
+            key="9"
+            value="J"
+          >
+            Juliett
+          </option>
+        </select>
+        <select
+          id="number-dropdown"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value=""
+          >
+            Number
+          </option>
+          <option
+            key="0"
+            value="1"
+          >
+            1
+          </option>
+          <option
+            key="1"
+            value="2"
+          >
+            2
+          </option>
+          <option
+            key="2"
+            value="3"
+          >
+            3
+          </option>
+          <option
+            key="3"
+            value="4"
+          >
+            4
+          </option>
+          <option
+            key="4"
+            value="5"
+          >
+            5
+          </option>
+          <option
+            key="5"
+            value="6"
+          >
+            6
+          </option>
+          <option
+            key="6"
+            value="7"
+          >
+            7
+          </option>
+          <option
+            key="7"
+            value="8"
+          >
+            8
+          </option>
+          <option
+            key="8"
+            value="9"
+          >
+            9
+          </option>
+          <option
+            key="9"
+            value="10"
+          >
+            10
+          </option>
+        </select>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          Horizontal
+        </button>
+        <button
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="0"
+      >
+        <Cell
+          id={0}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            0
+          </div>
+        </Cell>
+        <Cell
+          id="A"
+          idNumber={-2}
+          key="A"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            A
+          </div>
+        </Cell>
+        <Cell
+          id="B"
+          idNumber={-2}
+          key="B"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            B
+          </div>
+        </Cell>
+        <Cell
+          id="C"
+          idNumber={-2}
+          key="C"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            C
+          </div>
+        </Cell>
+        <Cell
+          id="D"
+          idNumber={-2}
+          key="D"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            D
+          </div>
+        </Cell>
+        <Cell
+          id="E"
+          idNumber={-2}
+          key="E"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            E
+          </div>
+        </Cell>
+        <Cell
+          id="F"
+          idNumber={-2}
+          key="F"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            F
+          </div>
+        </Cell>
+        <Cell
+          id="G"
+          idNumber={-2}
+          key="G"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            G
+          </div>
+        </Cell>
+        <Cell
+          id="H"
+          idNumber={-2}
+          key="H"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            H
+          </div>
+        </Cell>
+        <Cell
+          id="I"
+          idNumber={-2}
+          key="I"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            I
+          </div>
+        </Cell>
+        <Cell
+          id="J"
+          idNumber={-2}
+          key="J"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            J
+          </div>
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="1"
+      >
+        <Cell
+          id={1}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            1
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A1"
+          idNumber={-2}
+          key="A1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B1"
+          idNumber={-2}
+          key="B1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C1"
+          idNumber={-2}
+          key="C1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D1"
+          idNumber={-2}
+          key="D1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E1"
+          idNumber={-2}
+          key="E1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F1"
+          idNumber={-2}
+          key="F1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G1"
+          idNumber={-2}
+          key="G1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H1"
+          idNumber={-2}
+          key="H1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I1"
+          idNumber={-2}
+          key="I1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J1"
+          idNumber={-2}
+          key="J1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="2"
+      >
+        <Cell
+          id={2}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            2
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A2"
+          idNumber={-2}
+          key="A2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B2"
+          idNumber={-2}
+          key="B2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C2"
+          idNumber={-2}
+          key="C2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D2"
+          idNumber={-2}
+          key="D2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E2"
+          idNumber={-2}
+          key="E2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F2"
+          idNumber={-2}
+          key="F2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G2"
+          idNumber={-2}
+          key="G2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H2"
+          idNumber={-2}
+          key="H2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I2"
+          idNumber={-2}
+          key="I2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J2"
+          idNumber={-2}
+          key="J2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="3"
+      >
+        <Cell
+          id={3}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            3
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A3"
+          idNumber={-2}
+          key="A3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B3"
+          idNumber={-2}
+          key="B3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C3"
+          idNumber={-2}
+          key="C3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D3"
+          idNumber={-2}
+          key="D3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E3"
+          idNumber={-2}
+          key="E3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F3"
+          idNumber={-2}
+          key="F3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G3"
+          idNumber={-2}
+          key="G3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H3"
+          idNumber={-2}
+          key="H3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I3"
+          idNumber={-2}
+          key="I3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J3"
+          idNumber={-2}
+          key="J3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="4"
+      >
+        <Cell
+          id={4}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            4
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A4"
+          idNumber={-2}
+          key="A4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B4"
+          idNumber={-2}
+          key="B4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C4"
+          idNumber={-2}
+          key="C4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D4"
+          idNumber={-2}
+          key="D4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E4"
+          idNumber={-2}
+          key="E4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F4"
+          idNumber={-2}
+          key="F4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G4"
+          idNumber={-2}
+          key="G4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H4"
+          idNumber={-2}
+          key="H4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I4"
+          idNumber={-2}
+          key="I4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J4"
+          idNumber={-2}
+          key="J4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="5"
+      >
+        <Cell
+          id={5}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            5
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A5"
+          idNumber={-2}
+          key="A5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B5"
+          idNumber={-2}
+          key="B5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C5"
+          idNumber={-2}
+          key="C5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D5"
+          idNumber={-2}
+          key="D5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E5"
+          idNumber={-2}
+          key="E5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F5"
+          idNumber={-2}
+          key="F5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G5"
+          idNumber={-2}
+          key="G5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H5"
+          idNumber={-2}
+          key="H5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I5"
+          idNumber={-2}
+          key="I5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J5"
+          idNumber={-2}
+          key="J5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="6"
+      >
+        <Cell
+          id={6}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            6
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A6"
+          idNumber={-2}
+          key="A6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B6"
+          idNumber={-2}
+          key="B6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C6"
+          idNumber={-2}
+          key="C6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D6"
+          idNumber={-2}
+          key="D6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E6"
+          idNumber={-2}
+          key="E6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F6"
+          idNumber={-2}
+          key="F6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G6"
+          idNumber={-2}
+          key="G6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H6"
+          idNumber={-2}
+          key="H6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I6"
+          idNumber={-2}
+          key="I6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J6"
+          idNumber={-2}
+          key="J6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="7"
+      >
+        <Cell
+          id={7}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            7
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A7"
+          idNumber={-2}
+          key="A7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B7"
+          idNumber={-2}
+          key="B7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C7"
+          idNumber={-2}
+          key="C7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D7"
+          idNumber={-2}
+          key="D7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E7"
+          idNumber={-2}
+          key="E7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F7"
+          idNumber={-2}
+          key="F7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G7"
+          idNumber={-2}
+          key="G7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H7"
+          idNumber={-2}
+          key="H7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I7"
+          idNumber={-2}
+          key="I7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J7"
+          idNumber={-2}
+          key="J7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="8"
+      >
+        <Cell
+          id={8}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            8
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A8"
+          idNumber={-2}
+          key="A8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B8"
+          idNumber={-2}
+          key="B8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C8"
+          idNumber={-2}
+          key="C8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D8"
+          idNumber={-2}
+          key="D8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E8"
+          idNumber={-2}
+          key="E8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F8"
+          idNumber={-2}
+          key="F8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G8"
+          idNumber={-2}
+          key="G8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H8"
+          idNumber={-2}
+          key="H8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I8"
+          idNumber={-2}
+          key="I8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J8"
+          idNumber={-2}
+          key="J8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="9"
+      >
+        <Cell
+          id={9}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            9
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A9"
+          idNumber={-2}
+          key="A9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B9"
+          idNumber={-2}
+          key="B9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C9"
+          idNumber={-2}
+          key="C9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D9"
+          idNumber={-2}
+          key="D9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E9"
+          idNumber={-2}
+          key="E9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F9"
+          idNumber={-2}
+          key="F9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G9"
+          idNumber={-2}
+          key="G9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H9"
+          idNumber={-2}
+          key="H9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I9"
+          idNumber={-2}
+          key="I9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J9"
+          idNumber={-2}
+          key="J9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="10"
+      >
+        <Cell
+          id={10}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            10
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A10"
+          idNumber={-2}
+          key="A10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B10"
+          idNumber={-2}
+          key="B10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C10"
+          idNumber={-2}
+          key="C10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D10"
+          idNumber={-2}
+          key="D10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E10"
+          idNumber={-2}
+          key="E10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F10"
+          idNumber={-2}
+          key="F10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G10"
+          idNumber={-2}
+          key="G10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H10"
+          idNumber={-2}
+          key="H10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I10"
+          idNumber={-2}
+          key="I10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J10"
+          idNumber={-2}
+          key="J10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+    </div>
+    <h2>
+      Please select cells for aircraftCarrier.
+            This ship is 5 spaces long
+       
+    </h2>
+  </div>
+</UserGrid>
+`;
+
+exports[`UserGrid Component Selects only valid tiles as ship tiles, and not the tiles reserved for labels 1`] = `
+<UserGrid>
+  <div
+    className="UserContainer grid"
+  >
+    <h2>
+      Your Ships
+    </h2>
+    <div
+      className="UserGrid gameGrid"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <select
+          id="letter-dropdown"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value=""
+          >
+            Letter
+          </option>
+          <option
+            key="0"
+            value="A"
+          >
+            Alfa
+          </option>
+          <option
+            key="1"
+            value="B"
+          >
+            Bravo
+          </option>
+          <option
+            key="2"
+            value="C"
+          >
+            Charlie
+          </option>
+          <option
+            key="3"
+            value="D"
+          >
+            Delta
+          </option>
+          <option
+            key="4"
+            value="E"
+          >
+            Echo
+          </option>
+          <option
+            key="5"
+            value="F"
+          >
+            Foxtrot
+          </option>
+          <option
+            key="6"
+            value="G"
+          >
+            Golf
+          </option>
+          <option
+            key="7"
+            value="H"
+          >
+            Hotel
+          </option>
+          <option
+            key="8"
+            value="I"
+          >
+            India
+          </option>
+          <option
+            key="9"
+            value="J"
+          >
+            Juliett
+          </option>
+        </select>
+        <select
+          id="number-dropdown"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value=""
+          >
+            Number
+          </option>
+          <option
+            key="0"
+            value="1"
+          >
+            1
+          </option>
+          <option
+            key="1"
+            value="2"
+          >
+            2
+          </option>
+          <option
+            key="2"
+            value="3"
+          >
+            3
+          </option>
+          <option
+            key="3"
+            value="4"
+          >
+            4
+          </option>
+          <option
+            key="4"
+            value="5"
+          >
+            5
+          </option>
+          <option
+            key="5"
+            value="6"
+          >
+            6
+          </option>
+          <option
+            key="6"
+            value="7"
+          >
+            7
+          </option>
+          <option
+            key="7"
+            value="8"
+          >
+            8
+          </option>
+          <option
+            key="8"
+            value="9"
+          >
+            9
+          </option>
+          <option
+            key="9"
+            value="10"
+          >
+            10
+          </option>
+        </select>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          Horizontal
+        </button>
+        <button
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="0"
+      >
+        <Cell
+          id={0}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            0
+          </div>
+        </Cell>
+        <Cell
+          id="A"
+          idNumber={-2}
+          key="A"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            A
+          </div>
+        </Cell>
+        <Cell
+          id="B"
+          idNumber={-2}
+          key="B"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            B
+          </div>
+        </Cell>
+        <Cell
+          id="C"
+          idNumber={-2}
+          key="C"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            C
+          </div>
+        </Cell>
+        <Cell
+          id="D"
+          idNumber={-2}
+          key="D"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            D
+          </div>
+        </Cell>
+        <Cell
+          id="E"
+          idNumber={-2}
+          key="E"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            E
+          </div>
+        </Cell>
+        <Cell
+          id="F"
+          idNumber={-2}
+          key="F"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            F
+          </div>
+        </Cell>
+        <Cell
+          id="G"
+          idNumber={-2}
+          key="G"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            G
+          </div>
+        </Cell>
+        <Cell
+          id="H"
+          idNumber={-2}
+          key="H"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            H
+          </div>
+        </Cell>
+        <Cell
+          id="I"
+          idNumber={-2}
+          key="I"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            I
+          </div>
+        </Cell>
+        <Cell
+          id="J"
+          idNumber={-2}
+          key="J"
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            J
+          </div>
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="1"
+      >
+        <Cell
+          id={1}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            1
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A1"
+          idNumber={-2}
+          key="A1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B1"
+          idNumber={-2}
+          key="B1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C1"
+          idNumber={-2}
+          key="C1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D1"
+          idNumber={-2}
+          key="D1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E1"
+          idNumber={-2}
+          key="E1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F1"
+          idNumber={-2}
+          key="F1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G1"
+          idNumber={-2}
+          key="G1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H1"
+          idNumber={-2}
+          key="H1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I1"
+          idNumber={-2}
+          key="I1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J1"
+          idNumber={-2}
+          key="J1"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="2"
+      >
+        <Cell
+          id={2}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            2
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A2"
+          idNumber={-2}
+          key="A2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B2"
+          idNumber={-2}
+          key="B2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C2"
+          idNumber={-2}
+          key="C2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D2"
+          idNumber={-2}
+          key="D2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E2"
+          idNumber={-2}
+          key="E2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F2"
+          idNumber={-2}
+          key="F2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G2"
+          idNumber={-2}
+          key="G2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H2"
+          idNumber={-2}
+          key="H2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I2"
+          idNumber={-2}
+          key="I2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J2"
+          idNumber={-2}
+          key="J2"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="3"
+      >
+        <Cell
+          id={3}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            3
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A3"
+          idNumber={-2}
+          key="A3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B3"
+          idNumber={-2}
+          key="B3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C3"
+          idNumber={-2}
+          key="C3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D3"
+          idNumber={-2}
+          key="D3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E3"
+          idNumber={-2}
+          key="E3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F3"
+          idNumber={-2}
+          key="F3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G3"
+          idNumber={-2}
+          key="G3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H3"
+          idNumber={-2}
+          key="H3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I3"
+          idNumber={-2}
+          key="I3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J3"
+          idNumber={-2}
+          key="J3"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="4"
+      >
+        <Cell
+          id={4}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            4
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A4"
+          idNumber={-2}
+          key="A4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B4"
+          idNumber={-2}
+          key="B4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C4"
+          idNumber={-2}
+          key="C4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D4"
+          idNumber={-2}
+          key="D4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E4"
+          idNumber={-2}
+          key="E4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F4"
+          idNumber={-2}
+          key="F4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G4"
+          idNumber={-2}
+          key="G4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H4"
+          idNumber={-2}
+          key="H4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I4"
+          idNumber={-2}
+          key="I4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J4"
+          idNumber={-2}
+          key="J4"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="5"
+      >
+        <Cell
+          id={5}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            5
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A5"
+          idNumber={-2}
+          key="A5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B5"
+          idNumber={-2}
+          key="B5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C5"
+          idNumber={-2}
+          key="C5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D5"
+          idNumber={-2}
+          key="D5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E5"
+          idNumber={-2}
+          key="E5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F5"
+          idNumber={-2}
+          key="F5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G5"
+          idNumber={-2}
+          key="G5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H5"
+          idNumber={-2}
+          key="H5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I5"
+          idNumber={-2}
+          key="I5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J5"
+          idNumber={-2}
+          key="J5"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="6"
+      >
+        <Cell
+          id={6}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            6
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A6"
+          idNumber={-2}
+          key="A6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B6"
+          idNumber={-2}
+          key="B6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C6"
+          idNumber={-2}
+          key="C6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D6"
+          idNumber={-2}
+          key="D6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E6"
+          idNumber={-2}
+          key="E6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F6"
+          idNumber={-2}
+          key="F6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G6"
+          idNumber={-2}
+          key="G6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H6"
+          idNumber={-2}
+          key="H6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I6"
+          idNumber={-2}
+          key="I6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J6"
+          idNumber={-2}
+          key="J6"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="7"
+      >
+        <Cell
+          id={7}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            7
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A7"
+          idNumber={-2}
+          key="A7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B7"
+          idNumber={-2}
+          key="B7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C7"
+          idNumber={-2}
+          key="C7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D7"
+          idNumber={-2}
+          key="D7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E7"
+          idNumber={-2}
+          key="E7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F7"
+          idNumber={-2}
+          key="F7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G7"
+          idNumber={-2}
+          key="G7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H7"
+          idNumber={-2}
+          key="H7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I7"
+          idNumber={-2}
+          key="I7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J7"
+          idNumber={-2}
+          key="J7"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="8"
+      >
+        <Cell
+          id={8}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            8
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A8"
+          idNumber={-2}
+          key="A8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B8"
+          idNumber={-2}
+          key="B8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C8"
+          idNumber={-2}
+          key="C8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D8"
+          idNumber={-2}
+          key="D8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E8"
+          idNumber={-2}
+          key="E8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F8"
+          idNumber={-2}
+          key="F8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G8"
+          idNumber={-2}
+          key="G8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H8"
+          idNumber={-2}
+          key="H8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I8"
+          idNumber={-2}
+          key="I8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J8"
+          idNumber={-2}
+          key="J8"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="9"
+      >
+        <Cell
+          id={9}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            9
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A9"
+          idNumber={-2}
+          key="A9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B9"
+          idNumber={-2}
+          key="B9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C9"
+          idNumber={-2}
+          key="C9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D9"
+          idNumber={-2}
+          key="D9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E9"
+          idNumber={-2}
+          key="E9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F9"
+          idNumber={-2}
+          key="F9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G9"
+          idNumber={-2}
+          key="G9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H9"
+          idNumber={-2}
+          key="H9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I9"
+          idNumber={-2}
+          key="I9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J9"
+          idNumber={-2}
+          key="J9"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+      <div
+        aria-hidden="true"
+        className="column"
+        key="10"
+      >
+        <Cell
+          id={10}
+          idNumber={-2}
+          label={true}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell label"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            10
+          </div>
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="A10"
+          idNumber={-2}
+          key="A10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="B10"
+          idNumber={-2}
+          key="B10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="C10"
+          idNumber={-2}
+          key="C10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="D10"
+          idNumber={-2}
+          key="D10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="E10"
+          idNumber={-2}
+          key="E10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="F10"
+          idNumber={-2}
+          key="F10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="G10"
+          idNumber={-2}
+          key="G10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="H10"
+          idNumber={-2}
+          key="H10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="I10"
+          idNumber={-2}
+          key="I10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+        <Cell
+          ghostShip={Array []}
+          handleSelectTarget={[Function]}
+          id="J10"
+          idNumber={-2}
+          key="J10"
+          mySunkShipTileValues={Array []}
+          selected={null}
+          shipTileValues={Array []}
+        >
+          <div
+            className="cell"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+        </Cell>
+      </div>
+    </div>
+    <h2>
+      Please select cells for aircraftCarrier.
+            This ship is 5 spaces long
+       
+    </h2>
+  </div>
+</UserGrid>
+`;
