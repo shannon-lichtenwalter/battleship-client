@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import Button from '../Button/Button';
 import './Help.css';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 class Help extends Component {
 
@@ -93,7 +94,7 @@ class Help extends Component {
             this.props.history.goBack();
           }}> Back
           </Button>
-
+          <Footer />
         </div>
       </div>
     );

@@ -4,6 +4,7 @@ import ActiveGameListItem from '../ActiveGameListItem/ActiveGameListItem';
 import LoadGameApiService from '../../Services/load-game-api-service';
 import Header from '../Header/Header';
 import Button from '../Button/Button.js';
+import Footer from '../Footer/Footer';
 import './Dashboard.css';
 
 class Dashboard extends Component {

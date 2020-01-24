@@ -4,6 +4,7 @@ import LoadGameApiService from '../../Services/load-game-api-service';
 import './GameHistory.css';
 import Button from '../Button/Button';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import './GameHistory.css';
 
 class GameHistory extends React.Component {
@@ -83,6 +84,7 @@ class GameHistory extends React.Component {
                 <ul className='game-history-list'>
                     {completedGames}
                 </ul>
+                <Footer />
             </div>
         );
     }
