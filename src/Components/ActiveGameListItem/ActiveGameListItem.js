@@ -101,6 +101,7 @@ class ActiveGameListItem extends React.Component {
   render() {
     return (
       <Fragment>
+        <div className={this.props.index === 0 ? '' : 'line'}></div>
         <li>{this.props.game.player1_username} versus {this.props.game.player2_username}</li>
         <li className='activeGameListItem'>
           <ul className='activeGameDetails'>
@@ -125,7 +126,7 @@ class ActiveGameListItem extends React.Component {
             </li>
           </ul>
         </li>
-        <div className='line'></div>
+        
       </Fragment>
     )
   }

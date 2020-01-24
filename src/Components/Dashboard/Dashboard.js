@@ -164,6 +164,7 @@ class Dashboard extends Component {
             {this.state.myTurnGames && this.state.myTurnGames.map((game, index) => {
               return <ActiveGameListItem
                 key={index}
+                index={index}
                 setGameData={this.props.setGameData}
                 game={game}
                 userId={this.state.userId}
@@ -174,7 +175,8 @@ class Dashboard extends Component {
             <li>{this.state.opponentTurnGames.length !== 0 && <h4>Waiting For Opponent...</h4>}</li>
             {this.state.opponentTurnGames && this.state.opponentTurnGames.map((game, index) => {
             return <ActiveGameListItem 
-              key={index} 
+              key={index}
+              index={index} 
               setGameData={this.props.setGameData} 
               game={game} 
               userId={this.state.userId}

@@ -11,11 +11,9 @@
   box-shadow:none;
 }
 .line {
-  width: 70%;
+  width: 200px;
   border-bottom: 1px solid lightgrey;
-  margin: 0 auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin: 20px auto;
 }
 
 .quitGameButton, .keepGameActive {
@@ -42,6 +40,12 @@
   margin-right:auto;
 }
 
+@media screen and (min-width: 650px) {
+  .line{
+    width: 300px;
+  }
+}
+
 @media screen and (min-width: 900px) {
   .activeGameListItem li {
     font-size: 1.8rem;
@@ -51,7 +55,4 @@
     font-size: 1.6rem;
   }
 
-  .line {
-    width: 40%;
-  }
 }
