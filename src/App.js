@@ -94,31 +94,32 @@ export default class App extends Component {
   render() {
     return (
       <main>
-        <Switch>
-          <Route
-            exact
-            path={'/'}
-            component={Landing}
-          />
+        <ErrorBoundary>
+          <Switch>
+            <Route
+              exact
+              path={'/'}
+              component={Landing}
+            />
 
-          <PublicOnlyRoute
-            exact
-            path={'/signup'}
-            component={Signup}
-          />
+            <PublicOnlyRoute
+              exact
+              path={'/signup'}
+              component={Signup}
+            />
 
-          <PublicOnlyRoute
-            exact
-            path={'/login'}
-            component={Login}
-          />
+            <PublicOnlyRoute
+              exact
+              path={'/login'}
+              component={Login}
+            />
 
-          <PrivateOnlyRoute
-            exact
-            path={'/help'}
-            component={Help}
-          />
-          <ErrorBoundary>
+            <PrivateOnlyRoute
+              exact
+              path={'/help'}
+              component={Help}
+            />
+
             <PrivateOnlyRoute
               exact
               path={'/dashboard'}
@@ -144,7 +145,7 @@ export default class App extends Component {
                 setResults={this.setResultData}
               />}
             />
-
+            
             <PrivateOnlyRoute
               exact
               path={'/history'}
@@ -153,11 +154,11 @@ export default class App extends Component {
               />
               }
             />
-          </ErrorBoundary>
-          <Route
-            component={NotFoundRoute}
-          />
-        </Switch>
+            <Route
+              component={NotFoundRoute}
+            />
+          </Switch>
+        </ErrorBoundary>
       </main>
     );
   }

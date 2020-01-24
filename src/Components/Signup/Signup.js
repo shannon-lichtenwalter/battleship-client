@@ -49,11 +49,11 @@ class Signup extends Component {
   };
 
   render() {
-    let errorMessage = this.state.error ? <p className='errorMessage' aria-live='polite'>{this.state.error}</p> : null;
+    let errorMessage = this.state.error ? <p className='signup-errorMessage' aria-live='polite'>{this.state.error}</p> : null;
     return (
       <section className='signup'>
         <Banner />
-        <h1>Sign up</h1>
+        <h1 className='signup-h1'>Sign up</h1>
 
         <form className='signupform' onSubmit={this.handleSubmit}>
           <div>
@@ -81,12 +81,6 @@ class Signup extends Component {
           
           <div className='signupbtn'>
             <Button type='submit'>Sign up</Button>
-            {' '}
-
-            <Button onClick={() => {
-              this.props.history.push('/guest')
-            }}> Guest
-            </Button> <br />
           </div>
 
           <div className='btnLink'>

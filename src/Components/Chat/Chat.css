@@ -1,12 +1,12 @@
 .chat-username {
-    margin:20px;
+    margin: 3px;
     margin-right: 10px;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
 .chat-me {
     color: rgb(57, 206, 252);
-    text-shadow: 0 10px 50px 0 rgba(9, 58, 138, 0.5);
+    box-shadow: 0 10px 50px 0 rgba(9, 58, 138, 0.5);
 }
 
 .chat-opponent {
@@ -14,8 +14,8 @@
 }
 
 .chat-message {
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 0px;
+    margin-top: 3px;
     word-break: break-all;
     font-family: 'Roboto Condensed', sans-serif;
     

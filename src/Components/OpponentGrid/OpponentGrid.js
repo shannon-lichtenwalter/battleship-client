@@ -245,7 +245,7 @@ class OpponentGrid extends React.Component {
             </select>
           </div>
           <h4 className='selectedTarget'>You have selected target: {this.state.selected}</h4>
-            <button type='submit' className='fireButton'>Fire!</button>
+            <Button type='submit' className='fireButton'>Fire!</Button>
         </fieldset>
       </form>
     )

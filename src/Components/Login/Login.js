@@ -50,12 +50,12 @@ class Login extends Component {
   }
 
   render() {
-    let errorMessage = this.state.error ? <p className='errorMessage'>{this.state.error}</p>: null;
+    let errorMessage = this.state.error ? <p className='login-errorMessage'>{this.state.error}</p>: null;
 
     return (
       <div className='login'>
         <Banner />
-        <h1>Login</h1>
+        <h1 className='login-h1'>Login</h1>
         
         <form className='loginform' onSubmit={event => this.handleSubmit(event)} onChange={() => this.resetError()}>
           <div>
@@ -82,12 +82,6 @@ class Login extends Component {
           {errorMessage}
           <div className='loginbtn'>
             <Button type='submit'>Login</Button>
-            {' '}
-            
-            <Button onClick={() => {
-              this.props.history.push('/guest')
-            }}> Guest
-            </Button> <br />
           </div>
 
           <div className='btnLink'>
