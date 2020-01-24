@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../Header/Header';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
-import './ErrorBoundary.css';
 
 class ErrorBoundary extends React.Component {
   constructor(props){
