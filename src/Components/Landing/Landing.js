@@ -27,7 +27,7 @@ class Landing extends Component {
               receive live updates on their opponents advancements on the game board. Additionally,
               user's have the ability to leave a game and return to it later.
             </p>
-            <p aria-label='app information'>
+            <p>
               To test out the site please create a new account, or log in with the username: TestUser1
               and password: Password123. To test the live game feature you will have to log in as a different
               user via a separate internet browser (ie: Safari, Chrome, Firefox etc.) OR log in on a mobile device
