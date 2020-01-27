@@ -1,19 +1,10 @@
 {
   "version": 2,
-  "alias": "capstone3-battleship",
-  "name": "battleship",
+  "alias": "battleship-capstone",
+  "name": "battleship-capstone",
   "routes": [
-    {
-      "src": "^/static/(.*)",
-      "dest": "/static/$1"
-    },
-    { 
-      "handle": "filesystem" 
-    },
-    { 
-      "src": "/.*", 
-      "dest": "/index.html" 
-    }
+      { "handle": "filesystem" },
+      { "src": "/.*", "dest": "/index.html" }
   ]
 }
 
